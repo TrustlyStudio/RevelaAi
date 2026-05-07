@@ -1,0 +1,50 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Inter', sans-serif;
+  
+  --color-brand-magenta: #E91E8C;
+  --color-brand-purple: #8B3FD9;
+  --color-brand-dark-blue: #1A1F3A;
+  --color-brand-off-white: #F9FAFB;
+  --color-brand-warm-gray: #6B7280;
+  --color-brand-white: #FFFFFF;
+  --color-brand-mint: #10B981;
+  --color-brand-coral: #EF4444;
+}
+
+@layer base {
+  body {
+    @apply bg-brand-off-white text-brand-dark-blue font-sans antialiased selection:bg-brand-magenta selection:text-white;
+  }
+}
+
+.gradient-text {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-brand-magenta to-brand-purple;
+}
+
+.gradient-bg {
+  @apply bg-gradient-to-r from-brand-magenta to-brand-purple text-white;
+}
+
+.hover-gradient-bg {
+  @apply relative z-10 before:absolute before:inset-0 before:bg-gradient-to-r before:from-brand-magenta before:to-brand-purple before:-z-10 before:opacity-0 hover:before:opacity-100 before:transition-opacity before:duration-300;
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(229, 231, 235, 0.5);
+  backdrop-filter: blur(10px);
+}
+
+@keyframes border-glow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.animate-border-glow {
+  animation: border-glow 3s ease infinite;
+  background-size: 200% 200%;
+}
+
