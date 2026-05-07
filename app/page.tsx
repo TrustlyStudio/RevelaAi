@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
+import { WaitlistModal } from '@/components/WaitlistModal';
 import { 
   ArrowRight, 
   CheckCircle2, 
@@ -79,6 +80,7 @@ export default function Home() {
         </defs>
       </svg>
       <Header />
+      <WaitlistModal />
       
       <main className="flex-grow pt-24 lg:pt-32 overflow-hidden">
         
@@ -128,7 +130,7 @@ export default function Home() {
               className="flex flex-col sm:flex-row items-center gap-6"
             >
               <Link 
-                href="#kontakt"
+                href="#warteliste"
                 className="w-full sm:w-auto relative overflow-hidden group bg-gradient-to-r from-rose-500 to-purple-600 text-white px-10 py-5 rounded-full font-bold text-xl shadow-xl shadow-rose-500/25 hover:shadow-2xl hover:shadow-purple-600/30 transition-all duration-300 hover:-translate-y-1"
               >
                 <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-in-out"></div>
@@ -434,7 +436,7 @@ export default function Home() {
             
             <motion.div variants={fadeInUp} className="mt-16 md:mt-32 flex justify-center">
               <Link 
-                href="#kontakt"
+                href="#warteliste"
                 className="inline-flex items-center gap-2 px-8 py-4 bg-slate-900 text-white rounded-full font-bold shadow-lg shadow-slate-900/20 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group"
               >
                 Willst du auch so aussehen?
@@ -575,9 +577,9 @@ export default function Home() {
                     </li>
                   ))}
                 </ul>
-                <button className="w-full py-4 rounded-xl font-bold text-slate-900 bg-gray-100 hover:bg-gray-200 transition-colors">
+                <Link href="#warteliste" className="w-full py-4 rounded-xl font-bold text-slate-900 bg-gray-100 hover:bg-gray-200 transition-colors inline-block text-center">
                   Konditionen sichern
-                </button>
+                </Link>
               </motion.div>
 
               {/* Professional */}
@@ -607,9 +609,9 @@ export default function Home() {
                       </li>
                     ))}
                   </ul>
-                  <button className="w-full py-4 rounded-xl font-bold text-white bg-gradient-to-r from-rose-500 to-purple-600 shadow-lg shadow-rose-500/25 hover:shadow-xl hover:-translate-y-0.5 transition-all mt-auto">
+                  <Link href="#warteliste" className="w-full py-4 rounded-xl font-bold text-white bg-gradient-to-r from-rose-500 to-purple-600 shadow-lg shadow-rose-500/25 hover:shadow-xl hover:-translate-y-0.5 transition-all mt-auto inline-block text-center">
                     Konditionen sichern
-                  </button>
+                  </Link>
                 </div>
               </motion.div>
 
@@ -630,9 +632,9 @@ export default function Home() {
                     </li>
                   ))}
                 </ul>
-                <button className="w-full py-4 rounded-xl font-bold text-slate-900 border border-gray-300 hover:bg-gray-50 transition-colors">
+                <Link href="#warteliste" className="w-full py-4 rounded-xl font-bold text-slate-900 border border-gray-300 hover:bg-gray-50 transition-colors inline-block text-center">
                   Auf die Warteliste
-                </button>
+                </Link>
               </motion.div>
 
             </motion.div>
@@ -710,7 +712,7 @@ export default function Home() {
                   Lass uns einfach unverbindlich telefonieren. Wir klären alle deine offenen Fragen und schauen gemeinsam, ob unser Modell genau das Richtige für dich ist.
                 </p>
                 <Link 
-                  href="#kontakt"
+                  href="#warteliste"
                   className="inline-flex items-center gap-3 bg-gradient-to-r from-rose-500 to-purple-600 px-10 py-5 rounded-full font-bold text-white text-xl shadow-xl shadow-rose-500/30 hover:scale-105 transition-transform duration-300"
                 >
                   <span className="relative z-10">Auf Warteliste eintragen</span>

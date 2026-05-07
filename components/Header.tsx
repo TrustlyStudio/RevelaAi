@@ -79,7 +79,7 @@ export function Header() {
                 Login
               </Link>
               <Link 
-                href="#kontakt" 
+                href="#warteliste" 
                 className="relative overflow-hidden gradient-bg px-5 py-2.5 rounded-full text-white font-medium shadow-md shadow-brand-purple/20 hover:shadow-xl hover:shadow-brand-magenta/40 hover:-translate-y-0.5 transition-all duration-300 text-sm group"
               >
                 <span className="relative z-10">Warteliste</span>
