@@ -7,6 +7,7 @@ import { Footer } from '@/components/Footer';
 import { WaitlistModal } from '@/components/WaitlistModal';
 import { AnimatedHeroText } from '@/components/AnimatedHeroText';
 import { SocialProofWidget } from '@/components/SocialProofWidget';
+import { InfiniteLogoTicker } from '@/components/InfiniteLogoTicker';
 import { 
   ArrowRight, 
   CheckCircle2, 
@@ -168,28 +169,11 @@ export default function Home() {
         </section>
 
         {/* --- TRUST SECTION --- */}
-        <section className="py-12 bg-white border-y border-gray-200">
+        <section className="py-12 bg-white border-y border-gray-200 overflow-hidden relative">
           <div className="max-w-7xl mx-auto px-4 text-center">
-            <p className="text-sm font-bold tracking-widest text-slate-400 uppercase mb-8">Über 150+ ambitionierte Unternehmen vertrauen bereits auf uns</p>
-            <div className="flex flex-wrap justify-center items-center gap-10 md:gap-20">
-               <div className="flex items-center gap-2 text-2xl font-black font-serif tracking-tighter text-slate-900 opacity-40 grayscale transition-all duration-300 hover:grayscale-0 hover:opacity-100 cursor-default">
-                  <Command className="w-8 h-8 text-rose-500" />
-                  <span>NEXUS</span>
-               </div>
-               <div className="flex items-center gap-2 text-xl font-bold tracking-widest uppercase font-mono text-slate-800 opacity-40 grayscale transition-all duration-300 hover:grayscale-0 hover:opacity-100 cursor-default">
-                  <Hexagon className="w-8 h-8 text-blue-600 fill-blue-600/20" />
-                  <span>Lumina</span>
-               </div>
-               <div className="flex items-center gap-2 text-2xl font-bold tracking-tight text-slate-900 opacity-40 grayscale transition-all duration-300 hover:grayscale-0 hover:opacity-100 cursor-default">
-                  <Triangle className="w-8 h-8 text-emerald-500 fill-emerald-500/20" />
-                  <span>TechCore</span>
-               </div>
-               <div className="flex items-center gap-2 text-2xl italic font-serif text-slate-800 opacity-40 grayscale transition-all duration-300 hover:grayscale-0 hover:opacity-100 cursor-default">
-                  <Leaf className="w-8 h-8 text-green-600" />
-                  <span>EcoRise</span>
-               </div>
-            </div>
+            <p className="text-sm font-bold tracking-widest text-slate-400 uppercase mb-4">Über 150+ ambitionierte Unternehmen vertrauen bereits auf uns</p>
           </div>
+          <InfiniteLogoTicker />
         </section>
 
         {/* --- PROBLEM AGITATION SECTION --- */}
@@ -201,42 +185,66 @@ export default function Home() {
             variants={staggerContainer}
             className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
           >
-            <motion.div variants={fadeInUp} className="text-center max-w-4xl mx-auto mb-20">
-              <h2 className="text-sm font-bold tracking-wider text-rose-500 uppercase mb-4">Erkennst du dich hier wieder?</h2>
+            <motion.div 
+              variants={{
+                hidden: { opacity: 0, scale: 0.9, y: 30 },
+                visible: { opacity: 1, scale: 1, y: 0, transition: { duration: 0.6, type: "spring", bounce: 0.4 } }
+              }} 
+              className="text-center max-w-4xl mx-auto mb-20"
+            >
+              <h2 className="text-sm font-bold tracking-wider text-rose-500 uppercase mb-4 inline-block relative">
+                <motion.span
+                  initial={{ width: 0 }}
+                  whileInView={{ width: "100%" }}
+                  transition={{ delay: 0.3, duration: 0.6 }}
+                  className="absolute -bottom-1 left-0 h-0.5 bg-rose-200"
+                ></motion.span>
+                Erkennst du dich hier wieder?
+              </h2>
               <h3 className="text-4xl md:text-5xl font-black text-slate-900 tracking-tight mb-6">Warum die meisten Websites still <br className="hidden md:block"/>Geld verbrennen.</h3>
               <p className="text-xl text-gray-500 font-medium">Es ist Zeit für eine Lösung, die wirklich funktioniert und einfach ist.</p>
             </motion.div>
 
             <div className="grid md:grid-cols-3 gap-8">
-              <motion.div variants={fadeInUp} className="bg-white rounded-[2rem] p-10 border border-gray-100 shadow-xl shadow-gray-200/50 hover:-translate-y-2 transition-transform duration-300 relative overflow-hidden group">
-                <div className="w-16 h-16 rounded-2xl bg-gray-50 flex items-center justify-center text-rose-500 mb-8 relative z-10 group-hover:scale-110 transition-transform">
-                  <TrendingDown className="w-8 h-8" />
-                </div>
-                <h4 className="text-2xl font-bold text-slate-900 mb-4 relative z-10">Die &quot;Schaufenster&quot;-Falle</h4>
-                <p className="text-gray-500 leading-relaxed relative z-10 font-medium">
-                  Deine Website sieht okay aus, aber niemand meldet sich darüber. Sie ist nur ein digitales Schaufenster, das keine neuen Kunden anlockt, weil die richtige Vorgehensweise fehlt.
-                </p>
-              </motion.div>
-
-              <motion.div variants={fadeInUp} className="bg-white rounded-[2rem] p-10 border border-gray-100 shadow-xl shadow-gray-200/50 hover:-translate-y-2 transition-transform duration-300 relative overflow-hidden group">
-                <div className="w-16 h-16 rounded-2xl bg-gray-50 flex items-center justify-center text-purple-600 mb-8 relative z-10 group-hover:scale-110 transition-transform">
-                  <Clock className="w-8 h-8" />
-                </div>
-                <h4 className="text-2xl font-bold text-slate-900 mb-4 relative z-10">Ladezeiten aus der Hölle</h4>
-                <p className="text-gray-500 leading-relaxed relative z-10 font-medium">
-                  Dein Baukasten-System (wie WordPress) ist anfällig für Fehler und lädt zu langsam. Wusstest du, dass Besucher sofort abspringen, wenn eine Seite länger als 3 Sekunden lädt?
-                </p>
-              </motion.div>
-
-              <motion.div variants={fadeInUp} className="bg-white rounded-[2rem] p-10 border border-gray-100 shadow-xl shadow-gray-200/50 hover:-translate-y-2 transition-transform duration-300 relative overflow-hidden group">
-                <div className="w-16 h-16 rounded-2xl bg-gray-50 flex items-center justify-center text-slate-700 mb-8 relative z-10 group-hover:scale-110 transition-transform">
-                  <AlertCircle className="w-8 h-8" />
-                </div>
-                <h4 className="text-2xl font-bold text-slate-900 mb-4 relative z-10">Der Agentur-Schock</h4>
-                <p className="text-gray-500 leading-relaxed relative z-10 font-medium">
-                  Du zahlst Tausende von Euros für die Erstellung. Danach ist die Agentur schwer erreichbar, deine Seite veraltet langsam und jede kleine Änderung auf der Seite kostet wieder extra.
-                </p>
-              </motion.div>
+              {[
+                {
+                  icon: <TrendingDown className="w-8 h-8" />,
+                  title: 'Die "Schaufenster"-Falle',
+                  desc: 'Deine Website sieht okay aus, aber niemand meldet sich darüber. Sie ist nur ein digitales Schaufenster, das keine neuen Kunden anlockt, weil die richtige Vorgehensweise fehlt.',
+                  color: 'text-rose-500'
+                },
+                {
+                  icon: <Clock className="w-8 h-8" />,
+                  title: 'Ladezeiten aus der Hölle',
+                  desc: 'Dein Baukasten-System (wie WordPress) ist anfällig für Fehler und lädt zu langsam. Wusstest du, dass Besucher sofort abspringen, wenn eine Seite länger als 3 Sekunden lädt?',
+                  color: 'text-purple-600'
+                },
+                {
+                  icon: <AlertCircle className="w-8 h-8" />,
+                  title: 'Der Agentur-Schock',
+                  desc: 'Du zahlst Tausende von Euros für die Erstellung. Danach ist die Agentur schwer erreichbar, deine Seite veraltet langsam und jede kleine Änderung auf der Seite kostet wieder extra.',
+                  color: 'text-slate-700'
+                }
+              ].map((card, i) => (
+                <motion.div 
+                  key={i}
+                  variants={{
+                    hidden: { opacity: 0, y: 50, scale: 0.9, rotateX: -10 },
+                    visible: { opacity: 1, y: 0, scale: 1, rotateX: 0, transition: { type: "spring", stiffness: 100, damping: 15 } }
+                  }} 
+                  whileHover={{ y: -8, scale: 1.02 }}
+                  className="bg-white rounded-[2rem] p-10 border border-gray-100 shadow-xl shadow-gray-200/50 transition-all duration-300 relative overflow-hidden group"
+                  style={{ perspective: 1000 }}
+                >
+                  <div className={`w-16 h-16 rounded-2xl bg-gray-50 flex items-center justify-center ${card.color} mb-8 relative z-10 group-hover:scale-110 group-hover:-rotate-3 transition-transform duration-300`}>
+                    {card.icon}
+                  </div>
+                  <h4 className="text-2xl font-bold text-slate-900 mb-4 relative z-10">{card.title}</h4>
+                  <p className="text-gray-500 leading-relaxed relative z-10 font-medium">
+                    {card.desc}
+                  </p>
+                </motion.div>
+              ))}
             </div>
           </motion.div>
         </section>
@@ -345,108 +353,6 @@ export default function Home() {
                 </div>
               </motion.div>
             </div>
-          </motion.div>
-        </section>
-
-        {/* --- SHOWCASE / PORTFOLIO SECTION --- */}
-        <section className="py-24 bg-white relative overflow-hidden border-t border-gray-100">
-          <motion.div 
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
-            variants={staggerContainer}
-            className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
-          >
-            <motion.div variants={fadeInUp} className="text-center max-w-3xl mx-auto mb-16">
-              <h2 className="text-sm font-bold tracking-wider text-rose-500 uppercase mb-4">Ausgewählte Projekte</h2>
-              <h3 className="text-4xl md:text-5xl font-black text-slate-900 tracking-tight mb-6">
-                So könnte dein neuer Auftritt aussehen.
-              </h3>
-              <p className="text-xl text-gray-500 font-medium">
-                Websites, die nicht nur atemberaubend aussehen, sondern auch psychologisch darauf optimiert sind, aus Besuchern echte Kunden zu machen.
-              </p>
-            </motion.div>
-
-            <motion.div variants={fadeInUp} className="grid md:grid-cols-2 gap-10 pb-12">
-              {/* Project 1 */}
-              <div className="group relative rounded-3xl overflow-hidden bg-gray-100 shadow-lg shadow-gray-200/50 block">
-                <div className="relative h-[300px] sm:h-[400px] w-full overflow-hidden">
-                  <div className="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/30 to-transparent z-10 transition-opacity duration-300 group-hover:opacity-90"></div>
-                  <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop" alt="Projekt Beispiel" className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" />
-                  
-                  <div className="absolute bottom-0 left-0 right-0 p-8 z-20">
-                    <div className="flex gap-2 mb-3">
-                      <span className="bg-rose-500 text-white text-xs font-bold px-3 py-1 rounded-full shadow-sm">Immobilien</span>
-                      <span className="bg-white/20 text-white text-xs font-bold px-3 py-1 rounded-full backdrop-blur-sm border border-white/20">Lead-Gen</span>
-                    </div>
-                    <h4 className="text-2xl lg:text-3xl font-bold text-white mb-2">Alpha Makler</h4>
-                    <p className="text-gray-300 font-medium text-sm sm:text-base w-full max-w-sm">Premium Online-Präsenz für exklusive Immobilien mit integriertem Bewertungs-Rechner.</p>
-                  </div>
-                </div>
-              </div>
-
-              {/* Project 2 */}
-              <div className="group relative rounded-3xl overflow-hidden bg-gray-100 shadow-lg shadow-gray-200/50 block md:translate-y-12">
-                <div className="relative h-[300px] sm:h-[400px] w-full overflow-hidden">
-                  <div className="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/30 to-transparent z-10 transition-opacity duration-300 group-hover:opacity-90"></div>
-                  <img src="https://images.unsplash.com/photo-1547658719-da2b51159128?w=800&h=600&fit=crop" alt="Projekt Beispiel" className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" />
-                  
-                  <div className="absolute bottom-0 left-0 right-0 p-8 z-20">
-                    <div className="flex gap-2 mb-3">
-                      <span className="bg-purple-600 text-white text-xs font-bold px-3 py-1 rounded-full shadow-sm">SaaS / Tech</span>
-                      <span className="bg-white/20 text-white text-xs font-bold px-3 py-1 rounded-full backdrop-blur-sm border border-white/20">B2B</span>
-                    </div>
-                    <h4 className="text-2xl lg:text-3xl font-bold text-white mb-2">CloudSync App</h4>
-                    <p className="text-gray-300 font-medium text-sm sm:text-base w-full max-w-sm">Dunkel-gehaltenes, hochkonvertierendes Design für ein innovatives Tech-Startup.</p>
-                  </div>
-                </div>
-              </div>
-
-              {/* Project 3 */}
-              <div className="group relative rounded-3xl overflow-hidden bg-gray-100 shadow-lg shadow-gray-200/50 block">
-                <div className="relative h-[300px] sm:h-[400px] w-full overflow-hidden">
-                  <div className="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/30 to-transparent z-10 transition-opacity duration-300 group-hover:opacity-90"></div>
-                  <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=800&h=600&fit=crop" alt="Projekt Beispiel" className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" />
-                  
-                  <div className="absolute bottom-0 left-0 right-0 p-8 z-20">
-                    <div className="flex gap-2 mb-3">
-                      <span className="bg-amber-500 text-white text-xs font-bold px-3 py-1 rounded-full shadow-sm">Handwerk</span>
-                      <span className="bg-white/20 text-white text-xs font-bold px-3 py-1 rounded-full backdrop-blur-sm border border-white/20">Booking</span>
-                    </div>
-                    <h4 className="text-2xl lg:text-3xl font-bold text-white mb-2">Meisterbetrieb Müller</h4>
-                    <p className="text-gray-300 font-medium text-sm sm:text-base w-full max-w-sm">Vertrauensweckende Experten-Seite mit automatischer Handwerker-Terminvereinbarung.</p>
-                  </div>
-                </div>
-              </div>
-
-              {/* Project 4 */}
-              <div className="group relative rounded-3xl overflow-hidden bg-gray-100 shadow-lg shadow-gray-200/50 block md:translate-y-12">
-                <div className="relative h-[300px] sm:h-[400px] w-full overflow-hidden">
-                  <div className="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/30 to-transparent z-10 transition-opacity duration-300 group-hover:opacity-90"></div>
-                  <img src="https://images.unsplash.com/photo-1618761714954-0b8cd0026356?w=800&h=600&fit=crop" alt="Projekt Beispiel" className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" />
-                  
-                  <div className="absolute bottom-0 left-0 right-0 p-8 z-20">
-                    <div className="flex gap-2 mb-3">
-                      <span className="bg-emerald-500 text-white text-xs font-bold px-3 py-1 rounded-full shadow-sm">Beratung</span>
-                      <span className="bg-white/20 text-white text-xs font-bold px-3 py-1 rounded-full backdrop-blur-sm border border-white/20">Corporate</span>
-                    </div>
-                    <h4 className="text-2xl lg:text-3xl font-bold text-white mb-2">Finance Vision</h4>
-                    <p className="text-gray-300 font-medium text-sm sm:text-base w-full max-w-sm">Ästhetisch cleane Beraterseite, die Autorität und Fachwissen direkt vermittelt.</p>
-                  </div>
-                </div>
-              </div>
-
-            </motion.div>
-            
-            <motion.div variants={fadeInUp} className="mt-16 md:mt-32 flex justify-center">
-              <Link 
-                href="#warteliste"
-                className="inline-flex items-center gap-2 px-8 py-4 bg-slate-900 text-white rounded-full font-bold shadow-lg shadow-slate-900/20 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group"
-              >
-                Willst du auch so aussehen?
-                <ArrowRight className="w-5 h-5 ml-1 group-hover:translate-x-1 transition-transform" />
-              </Link>
-            </motion.div>
           </motion.div>
         </section>
 

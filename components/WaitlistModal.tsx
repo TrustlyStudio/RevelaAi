@@ -20,7 +20,30 @@ export function WaitlistModal() {
     datenschutz: false,
     gotcha: ''
   });
+  const [errors, setErrors] = useState<Record<string, string>>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const validateUrl = (url: string) => {
+    if (!url) return true;
+    try {
+      new URL(url.startsWith('http') ? url : `https://${url}`);
+      return true;
+    } catch {
+      return false;
+    }
+  };
+
+  const validateEmail = (email: string) => {
+    if (!email) return true;
+    const re = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i;
+    return re.test(email);
+  };
+
+  const validateTelefon = (telefon: string) => {
+    if (!telefon) return true;
+    const re = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/;
+    return re.test(telefon);
+  };
   const [isSuccess, setIsSuccess] = useState(false);
 
   useEffect(() => {
@@ -56,6 +79,7 @@ export function WaitlistModal() {
     setTimeout(() => {
       setStep(0);
       setIsSuccess(false);
+      setErrors({});
       setFormData({
         ziel: '',
         website: '',
@@ -298,26 +322,42 @@ export function WaitlistModal() {
                           <label className="block text-sm font-bold text-slate-700 mb-2">Wie lautet der Link zur Website? (optional)</label>
                           <input 
                             type="url" 
-                            className="w-full p-4 border-2 border-gray-200 rounded-xl focus:outline-none focus:border-rose-500 focus:ring-4 focus:ring-rose-500/10 font-medium transition-all"
+                            className={`w-full p-4 border-2 rounded-xl focus:outline-none focus:ring-4 font-medium transition-all ${
+                              errors.websiteUrl 
+                                ? 'border-red-300 focus:border-red-500 focus:ring-red-500/10 bg-red-50/50' 
+                                : 'border-gray-200 focus:border-rose-500 focus:ring-rose-500/10'
+                            }`}
                             value={formData.websiteUrl}
-                            onChange={(e) => setFormData({...formData, websiteUrl: e.target.value})}
+                            onChange={(e) => {
+                              const val = e.target.value;
+                              setFormData({...formData, websiteUrl: val});
+                              if (val && !validateUrl(val)) {
+                                setErrors(prev => ({...prev, websiteUrl: 'Bitte gib eine gültige URL ein.'}));
+                              } else {
+                                setErrors(prev => ({...prev, websiteUrl: ''}));
+                              }
+                            }}
                             placeholder="z.B. https://meineseite.de"
                           />
+                          {errors.websiteUrl && (
+                            <p className="mt-2 text-sm font-semibold text-red-500">{errors.websiteUrl}</p>
+                          )}
                         </motion.div>
                       )}
                     </AnimatePresence>
                     
                     <AnimatePresence>
                       {formData.website.startsWith('Ja') && (
-                        <motion.button
-                          initial={{ opacity: 0, y: 10 }}
-                          animate={{ opacity: 1, y: 0 }}
-                          exit={{ opacity: 0, y: 10 }}
-                          type="submit"
-                          className="w-full py-4 mt-6 bg-slate-900 text-white rounded-xl font-bold text-lg hover:bg-slate-800 transition-colors"
-                        >
-                          Weiter
-                        </motion.button>
+                          <motion.button
+                            initial={{ opacity: 0, y: 10 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            exit={{ opacity: 0, y: 10 }}
+                            type="submit"
+                            disabled={!!errors.websiteUrl}
+                            className="w-full py-4 mt-6 bg-slate-900 text-white rounded-xl font-bold text-lg hover:bg-slate-800 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+                          >
+                            Weiter
+                          </motion.button>
                       )}
                     </AnimatePresence>
                   </motion.form>
@@ -389,12 +429,26 @@ export function WaitlistModal() {
                            type="email" 
                            required={!formData.noEmail}
                            disabled={formData.noEmail}
-                           pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
-                           className="w-full p-4 border-2 border-gray-200 rounded-xl focus:outline-none focus:border-rose-500 focus:ring-4 focus:ring-rose-500/10 font-medium transition-all disabled:bg-gray-100 disabled:opacity-60"
+                           className={`w-full p-4 border-2 rounded-xl focus:outline-none focus:ring-4 font-medium transition-all disabled:bg-gray-100 disabled:opacity-60 ${
+                             errors.email && !formData.noEmail 
+                               ? 'border-red-300 focus:border-red-500 focus:ring-red-500/10 bg-red-50/50' 
+                               : 'border-gray-200 focus:border-rose-500 focus:ring-rose-500/10'
+                           }`}
                            value={formData.email}
-                           onChange={(e) => setFormData({...formData, email: e.target.value})}
+                           onChange={(e) => {
+                             const val = e.target.value;
+                             setFormData({...formData, email: val});
+                             if (val && !validateEmail(val)) {
+                               setErrors(prev => ({...prev, email: 'Bitte gib eine gültige E-Mail-Adresse ein.'}));
+                             } else {
+                               setErrors(prev => ({...prev, email: ''}));
+                             }
+                           }}
                            placeholder="name@unternehmen.de"
                          />
+                         {errors.email && !formData.noEmail && (
+                           <p className="mt-2 text-sm font-semibold text-red-500">{errors.email}</p>
+                         )}
                          <div className="mt-3">
                             <label className="flex items-center gap-3 cursor-pointer group">
                                <div className="relative flex items-center justify-center w-5 h-5">
@@ -404,6 +458,11 @@ export function WaitlistModal() {
                                    checked={formData.noEmail}
                                    onChange={(e) => {
                                      setFormData({...formData, noEmail: e.target.checked, email: e.target.checked ? '' : formData.email});
+                                     if (e.target.checked) {
+                                       setErrors(prev => ({...prev, email: ''}));
+                                     } else {
+                                       // Revalidate telefon if noEmail goes false? No, telefon isn't required if noEmail is false, but if it has a value we keep its error.
+                                     }
                                    }}
                                  />
                                  <CheckCircle2 className="w-3.5 h-3.5 text-white absolute pointer-events-none opacity-0 peer-checked:opacity-100 transition-opacity" strokeWidth={4} />
@@ -424,12 +483,26 @@ export function WaitlistModal() {
                                <input 
                                  type="tel" 
                                  required={formData.noEmail}
-                                 pattern="^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$"
-                                 className="w-full p-4 border-2 border-gray-200 rounded-xl focus:outline-none focus:border-rose-500 focus:ring-4 focus:ring-rose-500/10 font-medium transition-all"
+                                 className={`w-full p-4 border-2 rounded-xl focus:outline-none focus:ring-4 font-medium transition-all ${
+                                   errors.telefon 
+                                     ? 'border-red-300 focus:border-red-500 focus:ring-red-500/10 bg-red-50/50' 
+                                     : 'border-gray-200 focus:border-rose-500 focus:ring-rose-500/10'
+                                 }`}
                                  value={formData.telefon}
-                                 onChange={(e) => setFormData({...formData, telefon: e.target.value})}
+                                 onChange={(e) => {
+                                   const val = e.target.value;
+                                   setFormData({...formData, telefon: val});
+                                   if (val && !validateTelefon(val)) {
+                                     setErrors(prev => ({...prev, telefon: 'Bitte gib eine gültige Telefonnummer ein.'}));
+                                   } else {
+                                     setErrors(prev => ({...prev, telefon: ''}));
+                                   }
+                                 }}
                                  placeholder="z.B. +49 123 456789"
                                />
+                               {errors.telefon && (
+                                 <p className="mt-2 text-sm font-semibold text-red-500">{errors.telefon}</p>
+                               )}
                              </motion.div>
                            )}
                          </AnimatePresence>
@@ -466,7 +539,7 @@ export function WaitlistModal() {
                     
                     <button 
                       type="submit"
-                      disabled={isSubmitting || !formData.name || (!formData.email && (!formData.noEmail || !formData.telefon)) || !formData.datenschutz}
+                      disabled={isSubmitting || !formData.name || (!formData.email && (!formData.noEmail || !formData.telefon)) || !formData.datenschutz || !!(errors.email && !formData.noEmail) || !!errors.telefon}
                       className="w-full py-4 bg-gradient-to-r from-rose-500 to-purple-600 text-white shadow-xl shadow-rose-500/20 rounded-xl font-bold text-lg hover:shadow-2xl hover:-translate-y-0.5 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:translate-y-0 disabled:hover:shadow-none transition-all flex justify-center items-center gap-2"
                     >
                       {isSubmitting ? (
