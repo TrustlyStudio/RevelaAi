@@ -5,6 +5,8 @@ import { motion, AnimatePresence } from 'motion/react';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
 import { WaitlistModal } from '@/components/WaitlistModal';
+import { AnimatedHeroText } from '@/components/AnimatedHeroText';
+import { SocialProofWidget } from '@/components/SocialProofWidget';
 import { 
   ArrowRight, 
   CheckCircle2, 
@@ -81,6 +83,7 @@ export default function Home() {
       </svg>
       <Header />
       <WaitlistModal />
+      <SocialProofWidget />
       
       <main className="flex-grow pt-24 lg:pt-32 overflow-hidden">
         
@@ -111,7 +114,8 @@ export default function Home() {
               transition={{ duration: 0.6, delay: 0.1 }}
               className="text-5xl md:text-7xl lg:text-8xl font-black tracking-tighter leading-[1.05] mb-8 max-w-5xl"
             >
-              Du hast eine Website. Aber <span className="bg-clip-text text-transparent bg-gradient-to-r from-rose-500 to-purple-600">niemand meldet sich?</span>
+              Du hast eine Website. 
+              <span className="block mt-2 md:mt-4"><AnimatedHeroText /></span>
             </motion.h1>
             
             <motion.p 

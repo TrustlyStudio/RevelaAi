@@ -11,11 +11,14 @@ export function WaitlistModal() {
   const [formData, setFormData] = useState({
     ziel: '',
     website: '',
+    websiteUrl: '',
     unternehmen: '',
     name: '',
     email: '',
+    telefon: '',
     noEmail: false,
-    datenschutz: false
+    datenschutz: false,
+    gotcha: ''
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
@@ -31,11 +34,24 @@ export function WaitlistModal() {
     
     checkHash();
     window.addEventListener('hashchange', checkHash);
-    return () => window.removeEventListener('hashchange', checkHash);
+    
+    const handleGlobalClick = (e: MouseEvent) => {
+      const link = (e.target as Element).closest('a');
+      if (link && link.href.includes('#warteliste')) {
+        setIsOpen(true);
+      }
+    };
+    document.addEventListener('click', handleGlobalClick);
+
+    return () => {
+      window.removeEventListener('hashchange', checkHash);
+      document.removeEventListener('click', handleGlobalClick);
+    };
   }, []);
 
   const closeModal = () => {
-    window.location.hash = '';
+    // Remove the hash from the URL without reloading the page
+    history.replaceState(null, '', window.location.pathname + window.location.search);
     setIsOpen(false);
     setTimeout(() => {
       setStep(0);
@@ -43,11 +59,14 @@ export function WaitlistModal() {
       setFormData({
         ziel: '',
         website: '',
+        websiteUrl: '',
         unternehmen: '',
         name: '',
         email: '',
+        telefon: '',
         noEmail: false,
-        datenschutz: false
+        datenschutz: false,
+        gotcha: ''
       });
     }, 300);
   };
@@ -57,6 +76,13 @@ export function WaitlistModal() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    
+    // Honeypot check
+    if (formData.gotcha) {
+      setIsSuccess(true);
+      return;
+    }
+
     if (!formData.datenschutz) {
       alert("Bitte stimme den Datenschutzbestimmungen zu.");
       return;
@@ -64,15 +90,16 @@ export function WaitlistModal() {
     
     setIsSubmitting(true);
     try {
-      const response = await fetch("https://formspree.io/f/xdabllpv", {
+      const { gotcha, ...submitData } = formData;
+      const response = await fetch("/api/waitlist", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
         },
         body: JSON.stringify({
-          ...formData,
-          email: formData.noEmail ? "Keine geschäftliche E-Mail vorhanden" : formData.email,
-          _subject: `Neue Wartelisten-Anmeldung: ${formData.unternehmen || formData.name}`
+          ...submitData,
+          email: submitData.noEmail ? "Keine geschäftliche E-Mail vorhanden" : submitData.email,
+          _subject: `Neue Wartelisten-Anmeldung: ${submitData.unternehmen || submitData.name}`
         })
       });
       
@@ -149,9 +176,9 @@ export function WaitlistModal() {
                     <div className="w-20 h-20 rounded-full bg-emerald-100 text-emerald-500 flex items-center justify-center mx-auto mb-6">
                       <CheckCircle2 className="w-10 h-10" />
                     </div>
-                    <h3 className="text-3xl font-black text-slate-900 mb-4">Du bist auf der Liste!</h3>
+                    <h3 className="text-3xl font-black text-slate-900 mb-4">Du bist auf der Warteliste!</h3>
                     <p className="text-gray-500 text-lg mb-8">
-                      Wir haben deine Daten erhalten und melden uns in Kürze bei dir mit den nächsten Schritten.
+                      Vielen Dank für dein Interesse. Wir haben deine Daten erhalten und melden uns sehr bald bei dir, um die nächsten Schritte und Details zu besprechen.
                     </p>
                     <button 
                       onClick={closeModal}
@@ -250,13 +277,49 @@ export function WaitlistModal() {
                             checked={formData.website === opt}
                             onChange={() => {
                               setFormData({...formData, website: opt});
-                              setTimeout(handleNext, 300);
+                              if (!opt.startsWith('Ja')) {
+                                setTimeout(handleNext, 300);
+                              }
                             }}
                           />
                           <span className="ml-4 font-semibold text-slate-700">{opt}</span>
                         </label>
                       ))}
                     </div>
+
+                    <AnimatePresence>
+                      {formData.website.startsWith('Ja') && (
+                        <motion.div
+                          initial={{ opacity: 0, height: 0, marginTop: 0 }}
+                          animate={{ opacity: 1, height: 'auto', marginTop: 16 }}
+                          exit={{ opacity: 0, height: 0, marginTop: 0 }}
+                          className="overflow-hidden"
+                        >
+                          <label className="block text-sm font-bold text-slate-700 mb-2">Wie lautet der Link zur Website? (optional)</label>
+                          <input 
+                            type="url" 
+                            className="w-full p-4 border-2 border-gray-200 rounded-xl focus:outline-none focus:border-rose-500 focus:ring-4 focus:ring-rose-500/10 font-medium transition-all"
+                            value={formData.websiteUrl}
+                            onChange={(e) => setFormData({...formData, websiteUrl: e.target.value})}
+                            placeholder="z.B. https://meineseite.de"
+                          />
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
+                    
+                    <AnimatePresence>
+                      {formData.website.startsWith('Ja') && (
+                        <motion.button
+                          initial={{ opacity: 0, y: 10 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          exit={{ opacity: 0, y: 10 }}
+                          type="submit"
+                          className="w-full py-4 mt-6 bg-slate-900 text-white rounded-xl font-bold text-lg hover:bg-slate-800 transition-colors"
+                        >
+                          Weiter
+                        </motion.button>
+                      )}
+                    </AnimatePresence>
                   </motion.form>
                 ) : step === 3 ? (
                   <motion.form 
@@ -326,9 +389,11 @@ export function WaitlistModal() {
                            type="email" 
                            required={!formData.noEmail}
                            disabled={formData.noEmail}
+                           pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
                            className="w-full p-4 border-2 border-gray-200 rounded-xl focus:outline-none focus:border-rose-500 focus:ring-4 focus:ring-rose-500/10 font-medium transition-all disabled:bg-gray-100 disabled:opacity-60"
                            value={formData.email}
                            onChange={(e) => setFormData({...formData, email: e.target.value})}
+                           placeholder="name@unternehmen.de"
                          />
                          <div className="mt-3">
                             <label className="flex items-center gap-3 cursor-pointer group">
@@ -346,9 +411,41 @@ export function WaitlistModal() {
                                <span className="text-sm font-medium text-gray-500 group-hover:text-slate-900 transition-colors">Ich habe noch keine geschäftliche E-Mail</span>
                             </label>
                          </div>
+
+                         <AnimatePresence>
+                           {formData.noEmail && (
+                             <motion.div 
+                               initial={{ opacity: 0, height: 0, marginTop: 0 }}
+                               animate={{ opacity: 1, height: 'auto', marginTop: 16 }}
+                               exit={{ opacity: 0, height: 0, marginTop: 0 }}
+                               className="overflow-hidden"
+                             >
+                               <label className="block text-sm font-bold text-slate-700 mb-2">Telefonnummer</label>
+                               <input 
+                                 type="tel" 
+                                 required={formData.noEmail}
+                                 pattern="^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$"
+                                 className="w-full p-4 border-2 border-gray-200 rounded-xl focus:outline-none focus:border-rose-500 focus:ring-4 focus:ring-rose-500/10 font-medium transition-all"
+                                 value={formData.telefon}
+                                 onChange={(e) => setFormData({...formData, telefon: e.target.value})}
+                                 placeholder="z.B. +49 123 456789"
+                               />
+                             </motion.div>
+                           )}
+                         </AnimatePresence>
                        </div>
 
-                       <div className="pt-4 border-t border-gray-100">
+                        <div className="pt-4 border-t border-gray-100">
+                          {/* Honeypot field for bot protection */}
+                          <input 
+                            type="text" 
+                            name="_gotcha" 
+                            className="hidden" 
+                            tabIndex={-1} 
+                            autoComplete="off" 
+                            value={formData.gotcha}
+                            onChange={(e) => setFormData({...formData, gotcha: e.target.value})}
+                          />
                           <label className="flex items-start gap-3 cursor-pointer group">
                                <div className="relative flex items-center justify-center w-5 h-5 mt-0.5 shrink-0">
                                  <input 
@@ -369,7 +466,7 @@ export function WaitlistModal() {
                     
                     <button 
                       type="submit"
-                      disabled={isSubmitting || !formData.name || (!formData.email && !formData.noEmail) || !formData.datenschutz}
+                      disabled={isSubmitting || !formData.name || (!formData.email && (!formData.noEmail || !formData.telefon)) || !formData.datenschutz}
                       className="w-full py-4 bg-gradient-to-r from-rose-500 to-purple-600 text-white shadow-xl shadow-rose-500/20 rounded-xl font-bold text-lg hover:shadow-2xl hover:-translate-y-0.5 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:translate-y-0 disabled:hover:shadow-none transition-all flex justify-center items-center gap-2"
                     >
                       {isSubmitting ? (
