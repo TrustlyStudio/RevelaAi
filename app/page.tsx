@@ -12,6 +12,7 @@ import { InfiniteLogoTicker } from '@/components/InfiniteLogoTicker';
 import { ConversionChart } from '@/components/ConversionChart';
 import { ComparisonSection } from '@/components/ComparisonSection';
 import { HowItWorksSection } from '@/components/HowItWorksSection';
+import { CustomerProjects } from '@/components/CustomerProjects';
 import { AnimatedCounter } from '@/components/AnimatedCounter';
 import { 
   ArrowRight, 
@@ -470,6 +471,9 @@ export default function Home() {
             </div>
           </motion.div>
         </section>
+
+        {/* --- CUSTOMER PROJECTS --- */}
+        <CustomerProjects />
 
         {/* --- HOW IT FEELS (BENEFITS BENTO) --- */}
         <section className="py-24 lg:py-32 bg-slate-50 relative overflow-hidden">
