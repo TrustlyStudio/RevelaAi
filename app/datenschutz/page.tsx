@@ -3,7 +3,7 @@ import { Footer } from "@/components/Footer";
 
 export default function Datenschutz() {
   return (
-    <div className="flex flex-col min-h-screen bg-gray-50 font-sans text-slate-900 leading-relaxed">
+    <div className="flex flex-col min-h-screen bg-gray-50 dark:bg-slate-900 font-sans text-slate-900 dark:text-white leading-relaxed">
       <Header />
       <main className="flex-grow pt-32 pb-20 max-w-4xl mx-auto px-6">
         <h1 className="text-4xl font-black mb-8">Datenschutzerklärung</h1>

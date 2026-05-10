@@ -32,7 +32,7 @@ export function InfiniteLogoTicker() {
         {[...logos, ...logos, ...logos, ...logos].map((logo, index) => (
           <div
             key={index}
-            className={`flex items-center gap-3 text-slate-400 hover:text-slate-900 transition-colors duration-500 cursor-default shrink-0 opacity-70 hover:opacity-100 px-4`}
+            className={`flex items-center gap-3 text-slate-400 hover:text-slate-900 dark:hover:text-white transition-colors duration-500 cursor-default shrink-0 opacity-70 hover:opacity-100 px-4`}
           >
             {logo.icon}
             <span className={logo.className}>{logo.name}</span>
@@ -40,8 +40,8 @@ export function InfiniteLogoTicker() {
         ))}
       </motion.div>
       
-      <div className="pointer-events-none absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-slate-50 to-transparent"></div>
-      <div className="pointer-events-none absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-slate-50 to-transparent"></div>
+      <div className="pointer-events-none absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-slate-50 dark:from-slate-950 to-transparent"></div>
+      <div className="pointer-events-none absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-slate-50 dark:from-slate-950 to-transparent"></div>
     </div>
   );
 }

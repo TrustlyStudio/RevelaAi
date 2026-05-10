@@ -5,6 +5,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { motion, AnimatePresence } from 'motion/react';
 import { Menu, X, ArrowRight, Instagram, Linkedin, User } from 'lucide-react';
+import { ThemeToggle } from './ThemeToggle';
 
 export function Header() {
   const [timeLeft, setTimeLeft] = useState({ hours: 16, minutes: 24, seconds: 42 });
@@ -71,7 +72,7 @@ export function Header() {
           <div className="absolute inset-0 bg-gradient-to-r from-rose-500/20 to-purple-600/20 animate-pulse"></div>
           
           <div className="relative z-10 flex flex-wrap items-center justify-center gap-2 md:gap-4 font-medium text-center">
-            <span className="bg-rose-500 text-white px-2 py-0.5 rounded text-xs font-bold tracking-wider uppercase shadow-sm">Aktion</span>
+            <span className="bg-rose-500 text-white px-2 py-0.5 rounded text-xs font-bold tracking-wider uppercase shadow-sm dark:shadow-none">Aktion</span>
             <span>Sichere dir <strong>15% Rabatt</strong> auf dein Jahresleasing!</span>
             <span className="flex items-center gap-1.5 font-mono bg-white/10 px-2 py-0.5 rounded">
                <svg className="w-4 h-4 text-rose-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -86,13 +87,13 @@ export function Header() {
       </div>
       
       {/* Main Header */}
-      <header className="bg-white/95 backdrop-blur-md border-b border-gray-100 transition-all relative z-50">
+      <header className="bg-white/95 dark:bg-slate-950/95 backdrop-blur-md border-b border-gray-100 dark:border-slate-800 transition-all relative z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-20">
             <div className="flex-shrink-0 flex items-center">
               {/* Logo */}
               <Link href="/" className="flex items-center gap-2 group" onClick={closeMobileMenu}>
-                <Image src="/Revela_Logo_Minimal_Lockup.png" alt="Revela Logo" width={160} height={48} className="h-10 md:h-12 w-auto group-hover:scale-105 transition-transform object-contain" />
+                <Image src="/Revela_Logo_Minimal_Lockup.png" alt="Revela Logo" width={160} height={48} className="h-10 md:h-12 w-auto group-hover:scale-105 transition-transform object-contain dark:invert" />
               </Link>
             </div>
             
@@ -105,21 +106,22 @@ export function Header() {
             </nav>
 
             <div className="hidden md:flex items-center gap-2 lg:gap-4">
-              <div className="flex items-center gap-2 lg:gap-3 mr-1 lg:mr-2 border-r border-gray-200 pr-3 lg:pr-5">
-                <a href="https://www.instagram.com/revela.de/" target="_blank" rel="noopener noreferrer" className="p-2 rounded-full text-slate-400 hover:bg-rose-50 hover:text-brand-magenta hover:scale-110 active:scale-95 transition-all" aria-label="Instagram">
+              <div className="flex items-center gap-2 lg:gap-3 mr-1 lg:mr-2 border-r border-gray-200 dark:border-slate-700 dark:border-slate-800 pr-3 lg:pr-5">
+                <a href="https://www.instagram.com/revela.de/" target="_blank" rel="noopener noreferrer" className="p-2 rounded-full text-slate-400 hover:bg-rose-50 hover:text-brand-magenta dark:hover:bg-slate-800 dark:hover:text-rose-400 hover:scale-110 active:scale-95 transition-all" aria-label="Instagram">
                   <Instagram className="w-4 h-4 lg:w-5 lg:h-5" />
                 </a>
-                <a href="https://www.linkedin.com/company/revela-ai/" target="_blank" rel="noopener noreferrer" className="p-2 rounded-full text-slate-400 hover:bg-rose-50 hover:text-brand-magenta hover:scale-110 active:scale-95 transition-all" aria-label="LinkedIn">
+                <a href="https://www.linkedin.com/company/revela-ai/" target="_blank" rel="noopener noreferrer" className="p-2 rounded-full text-slate-400 hover:bg-rose-50 hover:text-brand-magenta dark:hover:bg-slate-800 dark:hover:text-rose-400 hover:scale-110 active:scale-95 transition-all" aria-label="LinkedIn">
                   <Linkedin className="w-4 h-4 lg:w-5 lg:h-5" />
                 </a>
+                <ThemeToggle />
               </div>
               
               <Link 
                 href="#kontakt" 
-                className="flex items-center gap-2 px-3 py-2 rounded-full text-slate-600 font-medium hover:text-slate-900 hover:bg-slate-100 active:scale-95 transition-all duration-300 text-sm group"
+                className="flex items-center gap-2 px-3 py-2 rounded-full text-slate-600 dark:text-slate-300 font-medium hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800 active:scale-95 transition-all duration-300 text-sm group"
               >
-                <div className="w-6 h-6 rounded-full bg-slate-100 group-hover:bg-white flex items-center justify-center border border-transparent group-hover:border-slate-200 shadow-sm transition-all">
-                  <User className="w-3.5 h-3.5 text-slate-500 group-hover:text-slate-900" />
+                <div className="w-6 h-6 rounded-full bg-slate-100 dark:bg-slate-800 group-hover:bg-white dark:group-hover:bg-slate-900 flex items-center justify-center border border-transparent group-hover:border-slate-200 dark:border-slate-700 shadow-sm dark:shadow-none transition-all">
+                  <User className="w-3.5 h-3.5 text-slate-500 dark:text-slate-400 group-hover:text-slate-900 dark:hover:text-white" />
                 </div>
                 <span className="hidden lg:block">Kunden-Login</span>
                 <span className="lg:hidden">Login</span>
@@ -147,7 +149,7 @@ export function Header() {
             <div className="md:hidden flex items-center">
               <button 
                 onClick={toggleMobileMenu}
-                className="text-brand-dark-blue focus:outline-none p-2 -mr-2 bg-gray-50 rounded-full hover:bg-gray-100 transition-colors"
+                className="text-brand-dark-blue focus:outline-none p-2 -mr-2 bg-gray-50 dark:bg-slate-900 rounded-full hover:bg-gray-100 transition-colors"
                 aria-label="Menü umschalten"
               >
                 <motion.div
@@ -170,7 +172,7 @@ export function Header() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20, transition: { duration: 0.2 } }}
             transition={{ type: 'spring', damping: 25, stiffness: 200 }}
-            className="fixed inset-0 z-40 bg-white/95 backdrop-blur-xl md:hidden pt-36 pb-6 px-6 flex flex-col justify-between overflow-y-auto"
+            className="fixed inset-0 z-40 bg-white/95 dark:bg-slate-950/95 backdrop-blur-xl md:hidden pt-36 pb-6 px-6 flex flex-col justify-between overflow-y-auto"
           >
             <div className="flex flex-col gap-6">
               <div className="space-y-4">
@@ -186,7 +188,7 @@ export function Header() {
                       <Link 
                         href={link.href} 
                         onClick={closeMobileMenu}
-                        className="flex items-center justify-between p-4 rounded-2xl text-xl font-bold text-slate-800 hover:bg-gray-50 hover:text-brand-magenta transition-all group"
+                        className="flex items-center justify-between p-4 rounded-2xl text-xl font-bold text-slate-800 dark:text-slate-100 hover:bg-gray-50 dark:hover:bg-slate-900 hover:text-brand-magenta transition-all group"
                       >
                         {link.label}
                         <ArrowRight className="w-5 h-5 text-gray-300 group-hover:text-brand-magenta group-hover:translate-x-1 transition-all" />
@@ -197,13 +199,16 @@ export function Header() {
               </div>
             </div>
 
-            <div className="flex justify-center gap-6 mt-6">
-               <a href="https://www.instagram.com/revela.de/" target="_blank" rel="noopener noreferrer" className="p-3 bg-gray-50 rounded-full text-slate-400 hover:bg-rose-50 hover:text-brand-magenta transition-colors shadow-sm border border-gray-100" aria-label="Instagram">
+            <div className="flex justify-center items-center gap-6 mt-6">
+               <a href="https://www.instagram.com/revela.de/" target="_blank" rel="noopener noreferrer" className="p-3 bg-gray-50 dark:bg-slate-900 dark:bg-slate-800 rounded-full text-slate-400 hover:bg-rose-50 hover:text-brand-magenta dark:hover:text-rose-400 transition-colors shadow-sm dark:shadow-none border border-gray-100 dark:border-slate-800 dark:border-slate-700" aria-label="Instagram">
                  <Instagram className="w-6 h-6" />
                </a>
-               <a href="https://www.linkedin.com/company/revela-ai/" target="_blank" rel="noopener noreferrer" className="p-3 bg-gray-50 rounded-full text-slate-400 hover:bg-rose-50 hover:text-brand-magenta transition-colors shadow-sm border border-gray-100" aria-label="LinkedIn">
+               <a href="https://www.linkedin.com/company/revela-ai/" target="_blank" rel="noopener noreferrer" className="p-3 bg-gray-50 dark:bg-slate-900 dark:bg-slate-800 rounded-full text-slate-400 hover:bg-rose-50 hover:text-brand-magenta dark:hover:text-rose-400 transition-colors shadow-sm dark:shadow-none border border-gray-100 dark:border-slate-800 dark:border-slate-700" aria-label="LinkedIn">
                  <Linkedin className="w-6 h-6" />
                </a>
+               <div className="flex items-center justify-center p-1 bg-gray-50 dark:bg-slate-900 dark:bg-slate-800 rounded-full shadow-sm dark:shadow-none border border-gray-100 dark:border-slate-800 dark:border-slate-700">
+                 <ThemeToggle />
+               </div>
             </div>
 
             <motion.div 
@@ -212,7 +217,7 @@ export function Header() {
               transition={{ delay: 0.4 }}
               className="mt-12 space-y-4"
             >
-              <div className="bg-gray-50 rounded-2xl p-6 border border-gray-100">
+              <div className="bg-gray-50 dark:bg-slate-900 rounded-2xl p-6 border border-gray-100 dark:border-slate-800">
                 <p className="text-sm text-gray-500 mb-4 text-center font-medium">Lass uns gemeinsam durchstarten</p>
                 <Link 
                   href="#warteliste" 
@@ -224,7 +229,7 @@ export function Header() {
                 <Link 
                   href="#kontakt" 
                   onClick={closeMobileMenu}
-                  className="w-full flex items-center justify-center py-4 mt-3 rounded-xl font-bold text-slate-800 bg-white border border-gray-200 shadow-sm active:scale-95 transition-all text-lg"
+                  className="w-full flex items-center justify-center py-4 mt-3 rounded-xl font-bold text-slate-800 dark:text-slate-100 bg-white dark:bg-slate-900 border border-gray-200 dark:border-slate-700 shadow-sm dark:shadow-none active:scale-95 transition-all text-lg"
                 >
                   Login
                 </Link>

@@ -65,10 +65,10 @@ export function SocialProofWidget() {
           transition={{ type: "spring", stiffness: 350, damping: 25 }}
           className="fixed bottom-6 left-6 z-50 max-w-[calc(100vw-48px)] sm:max-w-xs"
         >
-          <div className="bg-white rounded-xl shadow-[0_8px_30px_rgb(0,0,0,0.12)] p-4 pr-8 border border-slate-200 flex items-start gap-3 relative cursor-default">
+          <div className="bg-white dark:bg-slate-900 rounded-xl shadow-[0_8px_30px_rgb(0,0,0,0.12)] p-4 pr-8 border border-slate-200 dark:border-slate-700 flex items-start gap-3 relative cursor-default">
             <button 
               onClick={handleClose}
-              className="absolute top-2 right-2 w-6 h-6 rounded-full flex items-center justify-center text-slate-400 hover:text-slate-800 hover:bg-slate-100 transition-colors z-10"
+              className="absolute top-2 right-2 w-6 h-6 rounded-full flex items-center justify-center text-slate-400 hover:text-slate-800 dark:hover:text-slate-100 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors z-10"
               aria-label="Schließen"
             >
               <X className="w-3.5 h-3.5" />
@@ -79,10 +79,10 @@ export function SocialProofWidget() {
             </div>
             
             <div className="pt-0.5">
-              <p className="text-sm font-semibold text-slate-800 leading-tight">
+              <p className="text-sm font-semibold text-slate-800 dark:text-slate-100 leading-tight">
                 {notification.name} <span className="text-slate-400 font-normal">aus {notification.location}</span>
               </p>
-              <p className="text-xs text-slate-600 mt-1 leading-snug">
+              <p className="text-xs text-slate-600 dark:text-slate-300 mt-1 leading-snug">
                 {notification.action}
               </p>
               <span className="text-[10px] text-slate-400 font-medium block mt-1.5 uppercase tracking-wider">

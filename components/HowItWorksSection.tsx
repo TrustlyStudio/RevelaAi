@@ -44,8 +44,8 @@ const fadeInUp = {
 
 export function HowItWorksSection() {
   return (
-    <section className="py-24 lg:py-32 bg-white relative overflow-hidden border-t border-slate-200">
-      <div className="absolute top-1/2 left-0 w-full h-px bg-gradient-to-r from-transparent via-slate-200 to-transparent -z-10 hidden lg:block" />
+    <section className="py-24 lg:py-32 bg-white dark:bg-slate-900 relative overflow-hidden border-t border-slate-200 dark:border-slate-700">
+      <div className="absolute top-1/2 left-0 w-full h-px bg-gradient-to-r from-transparent via-slate-200 dark:via-slate-800 to-transparent -z-10 hidden lg:block" />
       
       <motion.div 
         initial="hidden"
@@ -55,10 +55,10 @@ export function HowItWorksSection() {
         className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
       >
         <motion.div variants={fadeInUp} className="text-center max-w-3xl mx-auto mb-20">
-          <h2 className="text-4xl md:text-5xl font-sans font-bold text-slate-900 tracking-tight mb-6">
+          <h2 className="text-4xl md:text-5xl font-sans font-bold text-slate-900 dark:text-white tracking-tight mb-6">
             In 3 Schritten zu deinem<br />digitalen Vorsprung.
           </h2>
-          <p className="text-xl text-slate-600 leading-relaxed">
+          <p className="text-xl text-slate-600 dark:text-slate-300 leading-relaxed">
             Keine zeitraubenden Workshops. Keine komplexen Aufgaben für dich. Wir haben unseren Prozess so optimiert, dass du dich auf dein Kerngeschäft konzentrieren kannst.
           </p>
         </motion.div>
@@ -73,7 +73,7 @@ export function HowItWorksSection() {
               variants={fadeInUp}
               className="relative z-10 flex flex-col items-center text-center group"
             >
-              <div className={`w-24 h-24 rounded-2xl bg-white border border-slate-200 shadow-sm flex items-center justify-center mb-8 relative group-hover:scale-105 transition-transform duration-300`}>
+              <div className={`w-24 h-24 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 shadow-sm dark:shadow-none flex items-center justify-center mb-8 relative group-hover:scale-105 transition-transform duration-300`}>
                 <div className={`w-16 h-16 rounded-xl ${step.iconBg} border flex items-center justify-center`}>
                   {step.icon}
                 </div>
@@ -83,8 +83,8 @@ export function HowItWorksSection() {
                 </div>
               </div>
               
-              <h3 className="text-2xl font-bold text-slate-900 mb-4">{step.title}</h3>
-              <p className="text-slate-600 leading-relaxed max-w-sm">
+              <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-4">{step.title}</h3>
+              <p className="text-slate-600 dark:text-slate-300 leading-relaxed max-w-sm">
                 {step.desc}
               </p>
             </motion.div>

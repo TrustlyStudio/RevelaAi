@@ -32,7 +32,7 @@ export function AnimatedHeroText() {
           transition={{ duration: 0.5, ease: "easeInOut" }}
           className="[grid-area:content] pb-2 block leading-[1.1]"
         >
-          <span className="text-slate-800 mr-2 md:mr-4">Aber</span>
+          <span className="text-slate-800 dark:text-slate-100 mr-2 md:mr-4">Aber</span>
           <span className="bg-clip-text text-transparent bg-gradient-to-r from-rose-500 to-purple-600">
             {phrases[index]}
           </span>
