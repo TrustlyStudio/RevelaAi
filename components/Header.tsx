@@ -5,7 +5,6 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { motion, AnimatePresence } from 'motion/react';
 import { Menu, X, ArrowRight, Instagram, Linkedin, User } from 'lucide-react';
-import { ThemeToggle } from './ThemeToggle';
 
 export function Header() {
   const [timeLeft, setTimeLeft] = useState({ hours: 16, minutes: 24, seconds: 42 });
@@ -113,7 +112,6 @@ export function Header() {
                 <a href="https://www.linkedin.com/company/revela-ai/" target="_blank" rel="noopener noreferrer" className="p-2 rounded-full text-slate-400 hover:bg-rose-50 hover:text-brand-magenta dark:hover:bg-slate-800 dark:hover:text-rose-400 hover:scale-110 active:scale-95 transition-all" aria-label="LinkedIn">
                   <Linkedin className="w-4 h-4 lg:w-5 lg:h-5" />
                 </a>
-                <ThemeToggle />
               </div>
               
               <Link 
@@ -206,9 +204,6 @@ export function Header() {
                <a href="https://www.linkedin.com/company/revela-ai/" target="_blank" rel="noopener noreferrer" className="p-3 bg-gray-50 dark:bg-slate-900 dark:bg-slate-800 rounded-full text-slate-400 hover:bg-rose-50 hover:text-brand-magenta dark:hover:text-rose-400 transition-colors shadow-sm dark:shadow-none border border-gray-100 dark:border-slate-800 dark:border-slate-700" aria-label="LinkedIn">
                  <Linkedin className="w-6 h-6" />
                </a>
-               <div className="flex items-center justify-center p-1 bg-gray-50 dark:bg-slate-900 dark:bg-slate-800 rounded-full shadow-sm dark:shadow-none border border-gray-100 dark:border-slate-800 dark:border-slate-700">
-                 <ThemeToggle />
-               </div>
             </div>
 
             <motion.div 

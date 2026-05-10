@@ -8,8 +8,6 @@ const inter = Inter({
   display: 'swap',
 });
 
-import { ThemeProvider } from '@/components/ThemeProvider';
-
 export const metadata: Metadata = {
   title: 'Revela Web & Marketing Agency',
   description: 'Individuell programmierte, KI-optimierte Websites zur Miete ab 199€/Monat. Maximal conversion-fokussiert mit der Revela-Methode.',
@@ -17,11 +15,9 @@ export const metadata: Metadata = {
 
 export default function RootLayout({children}: {children: React.ReactNode}) {
   return (
-    <html lang="de" className={`scroll-smooth ${inter.variable}`} suppressHydrationWarning>
-      <body suppressHydrationWarning className="min-h-screen bg-brand-off-white font-sans text-brand-dark-blue dark:bg-[#0B0F19] dark:text-slate-100 transition-colors duration-300">
-        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-          {children}
-        </ThemeProvider>
+    <html lang="de" className={`scroll-smooth ${inter.variable}`}>
+      <body className="min-h-screen bg-brand-off-white font-sans text-brand-dark-blue transition-colors duration-300">
+        {children}
       </body>
     </html>
   );
