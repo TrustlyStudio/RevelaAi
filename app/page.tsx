@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import Image from 'next/image';
 import { motion, AnimatePresence, useScroll, useTransform, useSpring } from 'motion/react';
 import { Header } from '@/components/Header';
@@ -96,8 +96,13 @@ export default function Home() {
   const [openFaq, setOpenFaq] = useState<number | null>(0);
   const [isYearly, setIsYearly] = useState(true);
   const [currentTestimonialIndex, setCurrentTestimonialIndex] = useState(0);
-
+  const [isSimulatingLoad, setIsSimulatingLoad] = useState(true);
   const containerRef = useRef(null);
+
+  useEffect(() => {
+    const timer = setTimeout(() => setIsSimulatingLoad(false), 1200);
+    return () => clearTimeout(timer);
+  }, []);
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ["start start", "end end"]
@@ -236,7 +241,28 @@ export default function Home() {
               </motion.div>
             </div>
 
-            <HeroInteractiveDashboard />
+            {isSimulatingLoad ? (
+              <div className="flex-1 w-full relative">
+                <div className="aspect-[4/3.5] md:aspect-[4/3] w-full bg-slate-50 animate-pulse rounded-3xl border border-slate-200 shadow-xl overflow-hidden flex flex-col">
+                  {/* Fake Header */}
+                  <div className="h-10 border-b border-slate-200 bg-slate-100 flex items-center px-4 gap-2">
+                     <div className="w-2.5 h-2.5 rounded-full bg-slate-200"></div>
+                     <div className="w-2.5 h-2.5 rounded-full bg-slate-200"></div>
+                     <div className="w-2.5 h-2.5 rounded-full bg-slate-200"></div>
+                     <div className="ml-4 w-32 md:w-48 h-4 bg-slate-200 rounded-md"></div>
+                  </div>
+                  {/* Fake Content Spinner */}
+                  <div className="flex-1 flex items-center justify-center">
+                    <div className="flex flex-col items-center gap-3">
+                      <div className="w-10 h-10 border-4 border-slate-300 border-t-rose-500 rounded-full animate-spin"></div>
+                      <span className="text-sm font-medium text-slate-400">Lade Dashboard...</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ) : (
+              <HeroInteractiveDashboard />
+            )}
 
           </div>
         </section>
@@ -484,7 +510,38 @@ export default function Home() {
         </section>
 
         {/* --- CUSTOMER PROJECTS --- */}
-        <CustomerProjects />
+        {isSimulatingLoad ? (
+          <section className="py-16 md:py-24 bg-white border-t border-slate-200 overflow-hidden">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-10 flex flex-col md:flex-row md:items-end justify-between gap-6">
+              <div className="max-w-2xl w-full">
+                <div className="h-10 bg-slate-100 w-2/3 rounded animate-pulse mb-4"></div>
+                <div className="h-6 bg-slate-100 w-full rounded animate-pulse"></div>
+                <div className="h-6 bg-slate-100 w-4/5 rounded animate-pulse mt-2"></div>
+              </div>
+              <div className="hidden md:flex gap-3">
+                <div className="w-12 h-12 rounded-full bg-slate-100 animate-pulse"></div>
+                <div className="w-12 h-12 rounded-full bg-slate-100 animate-pulse"></div>
+              </div>
+            </div>
+            
+            <div className="flex px-4 md:px-8 gap-4 md:gap-6 overflow-hidden max-w-[1920px] mx-auto">
+              {[1, 2, 3].map((i) => (
+                <div key={i} className="min-w-[85vw] md:min-w-[400px] lg:min-w-[480px] h-[320px] md:h-[360px] bg-slate-50 rounded-2xl border border-slate-200 flex flex-col overflow-hidden animate-pulse shrink-0">
+                  <div className="h-10 border-b border-slate-200 bg-slate-100 flex items-center px-4 gap-2">
+                     <div className="w-2.5 h-2.5 rounded-full bg-slate-200"></div>
+                     <div className="w-2.5 h-2.5 rounded-full bg-slate-200"></div>
+                     <div className="w-2.5 h-2.5 rounded-full bg-slate-200"></div>
+                  </div>
+                  <div className="flex-1 flex items-center justify-center">
+                    <div className="w-10 h-10 border-4 border-slate-300 border-t-rose-500 rounded-full animate-spin"></div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </section>
+        ) : (
+          <CustomerProjects />
+        )}
 
         {/* --- HOW IT FEELS (BENEFITS BENTO) --- */}
         <section className="py-20 lg:py-32 bg-slate-50 relative overflow-hidden">

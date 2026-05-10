@@ -9,6 +9,18 @@ import { Menu, X, ArrowRight, Instagram, Linkedin, User } from 'lucide-react';
 export function Header() {
   const [timeLeft, setTimeLeft] = useState({ hours: 16, minutes: 24, seconds: 42 });
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50);
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll();
+
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -86,7 +98,7 @@ export function Header() {
       </div>
       
       {/* Main Header */}
-      <header className="bg-white/95 backdrop-blur-md border-b border-gray-100 transition-all relative z-50">
+      <header className={`transition-all duration-300 relative z-50 ${isScrolled ? 'bg-white shadow-md border-transparent' : 'bg-white/95 backdrop-blur-md border-b border-gray-100'}`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-20">
             <div className="flex-shrink-0 flex items-center">

@@ -1,7 +1,7 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'motion/react';
+import React, { useState, useEffect, useRef } from 'react';
+import { motion, AnimatePresence, useScroll, useTransform } from 'motion/react';
 import { Activity, TrendingUp, Users, Target, MousePointer2, Zap } from 'lucide-react';
 
 export function HeroInteractiveDashboard() {
@@ -9,6 +9,16 @@ export function HeroInteractiveDashboard() {
   const [traffic, setTraffic] = useState(5000);
   const [isHovered, setIsHovered] = useState(false);
   const [mounted, setMounted] = useState(false);
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start end", "end start"]
+  });
+
+  // Background blur and floating element parallax transformations
+  const bgY = useTransform(scrollYProgress, [0, 1], [-150, 150]);
+  const floatingY = useTransform(scrollYProgress, [0, 1], [80, -80]);
 
   useEffect(() => {
     // eslint-disable-next-line react-hooks/set-state-in-effect
@@ -28,6 +38,7 @@ export function HeroInteractiveDashboard() {
 
   return (
     <motion.div 
+      ref={containerRef}
       initial={{ opacity: 0, x: 40 }}
       animate={{ opacity: 1, x: 0 }}
       transition={{ duration: 0.8, delay: 0.2 }}
@@ -176,27 +187,36 @@ export function HeroInteractiveDashboard() {
 
       {/* Decorative Floating Element */}
       <motion.div 
-        animate={{ 
-          y: [0, -10, 0],
-          rotate: [0, 5, 0]
-        }}
-        transition={{ 
-          duration: 4,
-          repeat: Infinity,
-          ease: "easeInOut"
-        }}
-        className="absolute -top-6 -right-6 bg-white border border-slate-200 rounded-2xl p-4 shadow-xl z-30 hidden lg:flex items-center gap-3"
+        style={{ y: floatingY }}
+        className="absolute -top-6 -right-6 z-30 hidden lg:flex pointer-events-none"
       >
-        <div className="w-10 h-10 rounded-full bg-emerald-500/10 flex items-center justify-center">
-          <MousePointer2 className="w-5 h-5 text-emerald-500" />
-        </div>
-        <div>
-          <div className="text-[10px] font-bold text-slate-500 tracking-wider uppercase">Conversion Rate</div>
-          <div className="text-xl font-bold text-slate-900">{(conversionRate * REVELA_MULTIPLIER).toFixed(1)}% <span className="text-xs text-emerald-500 tracking-normal">▲</span></div>
-        </div>
+        <motion.div 
+          animate={{ 
+            y: [0, -10, 0],
+            rotate: [0, 5, 0]
+          }}
+          transition={{ 
+            duration: 4,
+            repeat: Infinity,
+            ease: "easeInOut"
+          }}
+          className="bg-white border border-slate-200 rounded-2xl p-4 shadow-xl flex items-center gap-3 pointer-events-auto"
+        >
+          <div className="w-10 h-10 rounded-full bg-emerald-500/10 flex items-center justify-center">
+            <MousePointer2 className="w-5 h-5 text-emerald-500" />
+          </div>
+          <div>
+            <div className="text-[10px] font-bold text-slate-500 tracking-wider uppercase">Conversion Rate</div>
+            <div className="text-xl font-bold text-slate-900">{(conversionRate * REVELA_MULTIPLIER).toFixed(1)}% <span className="text-xs text-emerald-500 tracking-normal">▲</span></div>
+          </div>
+        </motion.div>
       </motion.div>
 
-      <div className="absolute -bottom-10 -left-10 w-48 h-48 bg-gradient-to-br from-rose-500/20 to-purple-600/20 blur-[100px] -z-10"></div>
+      {/* Subtle parallax background glow */}
+      <motion.div 
+        style={{ y: bgY }}
+        className="absolute -bottom-20 -left-20 w-64 h-64 md:w-96 md:h-96 bg-gradient-to-br from-rose-500/20 to-purple-600/20 blur-[100px] pointer-events-none -z-10"
+      />
     </motion.div>
   );
 }
