@@ -2,42 +2,37 @@
 
 import React from 'react';
 import { motion } from 'motion/react';
-import { Command, Hexagon, Triangle, Leaf, Zap, Cloud, Coffee, Shield } from 'lucide-react';
+import { Sparkles, Command, Hexagon, Zap, Shield, Asterisk, Target, Triangle } from 'lucide-react';
 
 const logos = [
-  { icon: <Command className="w-8 h-8 text-rose-500" />, name: "NEXUS", className: "font-serif tracking-tighter" },
-  { icon: <Hexagon className="w-8 h-8 text-blue-600 fill-blue-600/20" />, name: "Lumina", className: "uppercase font-mono tracking-widest text-xl" },
-  { icon: <Triangle className="w-8 h-8 text-emerald-500 fill-emerald-500/20" />, name: "TechCore", className: "tracking-tight" },
-  { icon: <Leaf className="w-8 h-8 text-green-600" />, name: "EcoRise", className: "italic font-serif" },
-  { icon: <Zap className="w-8 h-8 text-amber-500 fill-amber-500/20" />, name: "AeroDynamics", className: "tracking-wide font-medium" },
-  { icon: <Cloud className="w-8 h-8 text-sky-500 fill-sky-500/20" />, name: "CloudScale", className: "font-black" },
-  { icon: <Coffee className="w-8 h-8 text-orange-800" />, name: "BrewOps", className: "tracking-wider font-light" },
-  { icon: <Shield className="w-8 h-8 text-indigo-600 fill-indigo-600/20" />, name: "DefendTech", className: "uppercase font-bold tracking-tight" },
+  { icon: <Command className="w-5 h-5 md:w-6 md:h-6" />, name: "NEXUS", className: "font-serif tracking-tighter text-xl md:text-2xl" },
+  { icon: <Hexagon className="w-5 h-5 md:w-6 md:h-6" />, name: "LUMINA", className: "uppercase font-sans font-black tracking-widest text-lg md:text-xl" },
+  { icon: <Asterisk className="w-5 h-5 md:w-6 md:h-6" />, name: "TechCore", className: "font-mono tracking-tight lowercase text-xl md:text-2xl" },
+  { icon: <Triangle className="w-5 h-5 md:w-6 md:h-6" />, name: "EcoRise", className: "italic font-serif font-medium text-xl md:text-2xl" },
+  { icon: <Zap className="w-5 h-5 md:w-6 md:h-6" />, name: "AeroDynamics", className: "font-sans font-semibold tracking-wide uppercase text-lg md:text-xl" },
+  { icon: <Target className="w-5 h-5 md:w-6 md:h-6" />, name: "CloudScale", className: "font-sans font-bold tracking-tighter text-xl md:text-2xl" },
+  { icon: <Sparkles className="w-5 h-5 md:w-6 md:h-6" />, name: "BrewOps", className: "font-mono tracking-widest uppercase text-lg md:text-xl" },
+  { icon: <Shield className="w-5 h-5 md:w-6 md:h-6" />, name: "DefendTech", className: "font-serif font-black tracking-tight text-xl md:text-2xl" },
 ];
 
 export function InfiniteLogoTicker() {
   return (
     <div className="relative flex overflow-x-hidden group">
-      {/* 
-        We use two identical sets of logos animating from 0 to -100%.
-        This creates a seamless loop.
-      */}
       <motion.div
         className="py-12 flex items-center gap-16 md:gap-32 w-max px-8 md:px-16"
         animate={{
           x: ['0%', '-50%'],
         }}
         transition={{
-          duration: 30,
+          duration: 70,
           ease: "linear",
           repeat: Infinity,
         }}
       >
-        {/* Render the logos twice inside the same flex container to ensure smooth loop */}
         {[...logos, ...logos, ...logos, ...logos].map((logo, index) => (
           <div
             key={index}
-            className={`flex items-center gap-2 text-2xl font-bold text-slate-800 opacity-40 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-300 cursor-default shrink-0`}
+            className={`flex items-center gap-3 text-slate-400 hover:text-slate-900 transition-colors duration-500 cursor-default shrink-0 opacity-70 hover:opacity-100 px-4`}
           >
             {logo.icon}
             <span className={logo.className}>{logo.name}</span>
@@ -45,12 +40,8 @@ export function InfiniteLogoTicker() {
         ))}
       </motion.div>
       
-      {/* 
-        Optional: Add faded edges if you want the "fade in/out" effect on the sides 
-        of the scroll area. It makes it look more polished.
-      */}
-      <div className="pointer-events-none absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-white to-transparent"></div>
-      <div className="pointer-events-none absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-white to-transparent"></div>
+      <div className="pointer-events-none absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-slate-50 to-transparent"></div>
+      <div className="pointer-events-none absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-slate-50 to-transparent"></div>
     </div>
   );
 }

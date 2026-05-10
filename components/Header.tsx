@@ -2,8 +2,9 @@
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { motion, AnimatePresence } from 'motion/react';
-import { Menu, X, ArrowRight } from 'lucide-react';
+import { Menu, X, ArrowRight, Instagram, Linkedin, User } from 'lucide-react';
 
 export function Header() {
   const [timeLeft, setTimeLeft] = useState({ hours: 16, minutes: 24, seconds: 42 });
@@ -56,15 +57,16 @@ export function Header() {
   };
 
   const navLinks = [
-    { href: '#vorteile', label: 'Vorteile' },
-    { href: '#methode', label: 'Die Methode' },
-    { href: '#preise', label: 'Preise' },
+    { href: '/#vorteile', label: 'Vorteile' },
+    { href: '/#methode', label: 'Die Methode' },
+    { href: '/preise', label: 'Preise' },
+    { href: '/faq', label: 'FAQ' },
   ];
 
   return (
-    <>
+    <div className="sticky top-0 left-0 right-0 z-50 flex flex-col">
       {/* Top Banner */}
-      <div className="fixed top-0 left-0 right-0 z-[60] bg-slate-950 text-white overflow-hidden text-sm border-b border-rose-500/30">
+      <div className="bg-slate-950 text-white overflow-hidden text-sm border-b border-rose-500/30 relative z-[60]">
         <div className="relative flex items-center justify-center p-2.5">
           <div className="absolute inset-0 bg-gradient-to-r from-rose-500/20 to-purple-600/20 animate-pulse"></div>
           
@@ -84,13 +86,13 @@ export function Header() {
       </div>
       
       {/* Main Header */}
-      <header className="fixed top-[53px] md:top-[41px] left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-100 transition-all">
+      <header className="bg-white/95 backdrop-blur-md border-b border-gray-100 transition-all relative z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-20">
             <div className="flex-shrink-0 flex items-center">
               {/* Logo */}
               <Link href="/" className="flex items-center gap-2 group" onClick={closeMobileMenu}>
-                <img src="/Revela_Logo_Minimal_Lockup.png" alt="Revela Logo" className="h-10 md:h-12 w-auto group-hover:scale-105 transition-transform object-contain" />
+                <Image src="/Revela_Logo_Minimal_Lockup.png" alt="Revela Logo" width={160} height={48} className="h-10 md:h-12 w-auto group-hover:scale-105 transition-transform object-contain" />
               </Link>
             </div>
             
@@ -102,19 +104,42 @@ export function Header() {
               ))}
             </nav>
 
-            <div className="hidden md:flex items-center gap-4">
+            <div className="hidden md:flex items-center gap-2 lg:gap-4">
+              <div className="flex items-center gap-2 lg:gap-3 mr-1 lg:mr-2 border-r border-gray-200 pr-3 lg:pr-5">
+                <a href="https://www.instagram.com/revela.de/" target="_blank" rel="noopener noreferrer" className="p-2 rounded-full text-slate-400 hover:bg-rose-50 hover:text-brand-magenta hover:scale-110 active:scale-95 transition-all" aria-label="Instagram">
+                  <Instagram className="w-4 h-4 lg:w-5 lg:h-5" />
+                </a>
+                <a href="https://www.linkedin.com/company/revela-ai/" target="_blank" rel="noopener noreferrer" className="p-2 rounded-full text-slate-400 hover:bg-rose-50 hover:text-brand-magenta hover:scale-110 active:scale-95 transition-all" aria-label="LinkedIn">
+                  <Linkedin className="w-4 h-4 lg:w-5 lg:h-5" />
+                </a>
+              </div>
+              
               <Link 
                 href="#kontakt" 
-                className="px-5 py-2.5 rounded-full border border-gray-200 text-brand-dark-blue font-medium hover:text-brand-magenta hover:border-brand-magenta/30 hover:shadow-md hover:shadow-brand-magenta/10 hover:-translate-y-0.5 transition-all duration-300 text-sm"
+                className="flex items-center gap-2 px-3 py-2 rounded-full text-slate-600 font-medium hover:text-slate-900 hover:bg-slate-100 active:scale-95 transition-all duration-300 text-sm group"
               >
-                Login
+                <div className="w-6 h-6 rounded-full bg-slate-100 group-hover:bg-white flex items-center justify-center border border-transparent group-hover:border-slate-200 shadow-sm transition-all">
+                  <User className="w-3.5 h-3.5 text-slate-500 group-hover:text-slate-900" />
+                </div>
+                <span className="hidden lg:block">Kunden-Login</span>
+                <span className="lg:hidden">Login</span>
               </Link>
+              
               <Link 
                 href="#warteliste" 
-                className="relative overflow-hidden gradient-bg px-5 py-2.5 rounded-full text-white font-medium shadow-md shadow-brand-purple/20 hover:shadow-xl hover:shadow-brand-magenta/40 hover:-translate-y-0.5 transition-all duration-300 text-sm group"
+                className="relative overflow-hidden flex items-center justify-center gap-2 bg-gradient-to-r from-rose-500 to-purple-600 px-5 lg:px-6 py-2.5 rounded-full text-white font-bold shadow-lg shadow-rose-500/25 hover:shadow-xl hover:shadow-rose-500/40 hover:-translate-y-0.5 hover:scale-105 active:scale-95 transition-all duration-300 text-sm group"
               >
-                <span className="relative z-10">Warteliste</span>
                 <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-in-out"></div>
+                <span className="relative z-10 flex items-center gap-2">
+                  <span>Warteliste</span>
+                  <div className="w-5 h-5 rounded-full bg-white/20 flex items-center justify-center group-hover:bg-white/40 transition-colors">
+                    <ArrowRight className="w-3 h-3 group-hover:translate-x-0.5 transition-transform" />
+                  </div>
+                </span>
+                <span className="absolute -top-1 -right-1 flex h-3 w-3">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-rose-400 opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-3 w-3 bg-rose-500"></span>
+                </span>
               </Link>
             </div>
             
@@ -172,6 +197,15 @@ export function Header() {
               </div>
             </div>
 
+            <div className="flex justify-center gap-6 mt-6">
+               <a href="https://www.instagram.com/revela.de/" target="_blank" rel="noopener noreferrer" className="p-3 bg-gray-50 rounded-full text-slate-400 hover:bg-rose-50 hover:text-brand-magenta transition-colors shadow-sm border border-gray-100" aria-label="Instagram">
+                 <Instagram className="w-6 h-6" />
+               </a>
+               <a href="https://www.linkedin.com/company/revela-ai/" target="_blank" rel="noopener noreferrer" className="p-3 bg-gray-50 rounded-full text-slate-400 hover:bg-rose-50 hover:text-brand-magenta transition-colors shadow-sm border border-gray-100" aria-label="LinkedIn">
+                 <Linkedin className="w-6 h-6" />
+               </a>
+            </div>
+
             <motion.div 
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -199,6 +233,6 @@ export function Header() {
           </motion.div>
         )}
       </AnimatePresence>
-    </>
+    </div>
   );
 }
