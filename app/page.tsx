@@ -1,8 +1,8 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import Image from 'next/image';
-import { motion, AnimatePresence } from 'motion/react';
+import { motion, AnimatePresence, useScroll, useTransform, useSpring } from 'motion/react';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
 import { WaitlistModal } from '@/components/WaitlistModal';
@@ -14,6 +14,7 @@ import { ComparisonSection } from '@/components/ComparisonSection';
 import { HowItWorksSection } from '@/components/HowItWorksSection';
 import { CustomerProjects } from '@/components/CustomerProjects';
 import { AnimatedCounter } from '@/components/AnimatedCounter';
+import { HeroInteractiveDashboard } from '@/components/HeroInteractiveDashboard';
 import { 
   ArrowRight, 
   CheckCircle2, 
@@ -96,6 +97,23 @@ export default function Home() {
   const [isYearly, setIsYearly] = useState(true);
   const [currentTestimonialIndex, setCurrentTestimonialIndex] = useState(0);
 
+  const containerRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start start", "end end"]
+  });
+
+  const smoothProgress = useSpring(scrollYProgress, {
+    stiffness: 100,
+    damping: 30,
+    restDelta: 0.001
+  });
+
+  const y1 = useTransform(smoothProgress, [0, 1], [0, -200]);
+  const y2 = useTransform(smoothProgress, [0, 1], [0, -400]);
+  const rotate1 = useTransform(smoothProgress, [0, 1], [0, 45]);
+  const scale1 = useTransform(smoothProgress, [0, 0.5, 1], [1, 1.2, 1]);
+
   const nextTestimonial = () => {
     setCurrentTestimonialIndex((prev) => (prev + 1) % testimonialsData.length);
   };
@@ -105,7 +123,7 @@ export default function Home() {
   };
 
   return (
-    <div className="flex flex-col min-h-screen bg-gray-50 dark:bg-[#0B0F19] font-sans text-slate-900 dark:text-white selection:bg-rose-500/30">
+    <div ref={containerRef} className="flex flex-col min-h-screen bg-gray-50 dark:bg-[#0B0F19] font-sans text-slate-900 dark:text-white selection:bg-rose-500/30">
       <svg width="0" height="0" className="absolute">
         <defs>
           <linearGradient id="brand-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -118,9 +136,31 @@ export default function Home() {
       <WaitlistModal />
       <SocialProofWidget />
       
+      {/* Scroll Progress Bar */}
+      <motion.div
+        className="fixed top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-rose-500 via-purple-500 to-indigo-500 z-[100] origin-left"
+        style={{ scaleX: smoothProgress }}
+      />
+      
       <main className="flex-grow overflow-hidden relative">
         {/* Subtle dot matrix background for SaaS feel */}
         <div className="absolute inset-0 z-[-1] bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]"></div>
+        
+        {/* Parallax Background Elements */}
+        <motion.div style={{ y: y1, rotate: rotate1, scale: scale1 }} className="absolute top-[10%] right-[5%] w-[40rem] h-[40rem] bg-indigo-500/5 rounded-full blur-[120px] pointer-events-none z-0 hidden dark:block" />
+        <motion.div style={{ y: y2, scale: scale1 }} className="absolute top-[40%] left-[-10%] w-[50rem] h-[50rem] bg-rose-500/5 rounded-full blur-[150px] pointer-events-none z-0 hidden dark:block" />
+        <motion.div style={{ y: y1 }} className="absolute bottom-[20%] right-[-10%] w-[45rem] h-[45rem] bg-purple-500/5 rounded-full blur-[130px] pointer-events-none z-0 hidden dark:block" />
+        
+        {/* Decorative Floating Elements */}
+        <motion.div style={{ y: y1, rotate: 12 }} className="absolute top-[15%] left-[5%] opacity-[0.03] dark:opacity-[0.07] pointer-events-none z-0">
+          <Hexagon size={120} className="text-slate-900 dark:text-white" />
+        </motion.div>
+        <motion.div style={{ y: y2, rotate: -15 }} className="absolute top-[45%] right-[8%] opacity-[0.03] dark:opacity-[0.07] pointer-events-none z-0">
+          <Triangle size={160} className="text-slate-900 dark:text-white" />
+        </motion.div>
+        <motion.div style={{ y: y1, rotate: 45 }} className="absolute top-[75%] left-[10%] opacity-[0.03] dark:opacity-[0.07] pointer-events-none z-0">
+          <Command size={100} className="text-slate-900 dark:text-white" />
+        </motion.div>
         
         {/* --- HERO SECTION --- */}
         <section className="relative pt-16 pb-24 lg:pt-32 lg:pb-40 bg-white dark:bg-[#0B0F19] overflow-hidden">
@@ -200,54 +240,19 @@ export default function Home() {
               </motion.div>
             </div>
 
-            <motion.div 
-              initial={{ opacity: 0, x: 40 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              className="flex-1 w-full relative"
-            >
-              <div className="aspect-[4/3] w-full bg-slate-50 dark:bg-[#0B0F19] rounded-2xl border border-slate-200 dark:border-slate-800 shadow-xl overflow-hidden relative">
-                <div className="absolute top-0 inset-x-0 h-10 border-b border-slate-200 dark:border-slate-800 bg-white dark:bg-[#0B0F19] flex items-center px-4 gap-2">
-                  <div className="w-3 h-3 rounded-full bg-rose-500/20"></div>
-                  <div className="w-3 h-3 rounded-full bg-amber-500/20"></div>
-                  <div className="w-3 h-3 rounded-full bg-emerald-500/20"></div>
-                  <div className="ml-4 h-5 w-48 bg-slate-100 dark:bg-slate-800 rounded-md"></div>
-                </div>
-                <div className="p-8 pt-16 h-full flex flex-col gap-6">
-                  <div className="flex gap-6">
-                    <div className="w-1/3 h-32 bg-white dark:bg-[#0B0F19] rounded-xl border border-slate-100 dark:border-slate-800 shadow-sm dark:shadow-none p-4 flex flex-col justify-between">
-                      <div className="w-8 h-8 rounded-full bg-rose-50 flex items-center justify-center">
-                        <Activity className="w-4 h-4 text-rose-500" />
-                      </div>
-                      <div>
-                        <div className="text-2xl font-bold text-slate-900 dark:text-white">+700%</div>
-                        <div className="text-xs text-slate-500 dark:text-slate-300">Conversion</div>
-                      </div>
-                    </div>
-                    <div className="w-2/3 h-32 bg-white dark:bg-[#0B0F19] rounded-xl border border-slate-100 dark:border-slate-800 shadow-sm dark:shadow-none p-4 flex flex-col gap-3">
-                      <div className="h-4 w-1/4 bg-slate-100 dark:bg-slate-800 rounded"></div>
-                      <div className="h-2 w-full bg-slate-50 dark:bg-[#0B0F19] rounded"></div>
-                      <div className="h-2 w-full bg-slate-50 dark:bg-[#0B0F19] rounded"></div>
-                      <div className="h-2 w-3/4 bg-slate-50 dark:bg-[#0B0F19] rounded"></div>
-                    </div>
-                  </div>
-                  <div className="flex-1 bg-gradient-to-br from-rose-500/5 to-purple-600/5 rounded-xl border border-slate-100 dark:border-slate-800 shadow-sm dark:shadow-none p-6 flex flex-col justify-end">
-                    <div className="w-full h-1/2 flex items-end gap-2">
-                      {[40, 60, 45, 80, 55, 90, 75, 100].map((height, i) => (
-                        <div key={i} className="flex-1 bg-gradient-to-t from-purple-600/40 to-rose-500/40 rounded-t-sm" style={{ height: `${height}%` }}></div>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="absolute -bottom-6 -left-6 w-32 h-32 bg-gradient-to-br from-rose-500 to-purple-600 blur-[80px] opacity-30 -z-10"></div>
-            </motion.div>
+            <HeroInteractiveDashboard />
 
           </div>
         </section>
 
         {/* --- TRUST SECTION --- */}
-        <section className="py-16 md:py-20 bg-slate-50 dark:bg-[#0B0F19] border-y border-slate-200 dark:border-slate-800 overflow-hidden relative">
+        <motion.section 
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 1 }}
+          className="py-16 md:py-20 bg-slate-50 dark:bg-[#0B0F19] border-y border-slate-200 dark:border-slate-800 overflow-hidden relative"
+        >
           <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-slate-300 to-transparent"></div>
           <div className="max-w-7xl mx-auto px-4 text-center mb-8">
             <h6 className="text-[11px] md:text-sm font-semibold tracking-[0.2em] text-slate-500 dark:text-slate-300 uppercase">
@@ -256,7 +261,7 @@ export default function Home() {
           </div>
           <InfiniteLogoTicker />
           <div className="absolute bottom-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-slate-300 to-transparent"></div>
-        </section>
+        </motion.section>
 
         {/* --- PROBLEM AGITATION SECTION --- */}
         <section className="py-24 lg:py-32 bg-slate-50 dark:bg-[#0B0F19] relative overflow-hidden" id="probleme">
@@ -418,6 +423,12 @@ export default function Home() {
 
         {/* --- STATISTICS / ROI SECTION --- */}
         <section className="py-24 lg:py-32 bg-slate-900 relative border-t border-slate-800 text-white overflow-hidden">
+          {/* Parallax background glow for dark section */}
+          <motion.div 
+            style={{ y: y1 }}
+            className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-rose-500/5 to-transparent pointer-events-none" 
+          />
+          
           <motion.div 
             initial="hidden"
             whileInView="visible"
@@ -500,7 +511,11 @@ export default function Home() {
 
             <motion.div variants={fadeInUp} className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
               {/* Item 1: Design */}
-              <div className="bg-white dark:bg-[#0B0F19] border border-slate-200 dark:border-slate-800 rounded-2xl p-6 md:p-8 shadow-sm dark:shadow-none hover:shadow-xl hover:-translate-y-1 hover:border-slate-300 dark:hover:border-rose-500/50 dark:hover:shadow-[0_0_30px_-5px_rgba(244,63,94,0.15)] transition-all duration-300 group relative overflow-hidden">
+              <motion.div 
+                whileHover={{ y: -8, scale: 1.02 }}
+                transition={{ type: "spring", stiffness: 400, damping: 10 }}
+                className="bg-white dark:bg-[#0B0F19] border border-slate-200 dark:border-slate-800 rounded-2xl p-6 md:p-8 shadow-sm dark:shadow-none hover:shadow-xl hover:border-slate-300 dark:hover:border-rose-500/50 dark:hover:shadow-[0_0_30px_-5px_rgba(244,63,94,0.15)] transition-all duration-300 group relative overflow-hidden"
+              >
                 <div className="absolute top-0 right-0 w-32 h-32 bg-slate-50 dark:bg-[#0B0F19] rounded-bl-full -z-10 group-hover:scale-110 transition-transform duration-500"></div>
                 <div className="w-12 h-12 rounded-xl bg-slate-50 dark:bg-[#0B0F19] border border-slate-100 dark:border-slate-800 flex items-center justify-center text-slate-900 dark:text-white mb-6 group-hover:scale-110 group-hover:bg-slate-900 group-hover:text-white transition-all duration-300">
                   <MonitorSmartphone className="w-6 h-6" />
@@ -509,10 +524,14 @@ export default function Home() {
                 <p className="text-slate-600 dark:text-slate-200 text-sm md:text-base leading-relaxed">
                   Wir kreieren maßgeschneiderte Erlebnisse statt 08/15-Vorlagen. Hochwertig, modern und exakt auf deine Zielgruppe zugeschnitten. Dein Auftritt strahlt sofortige Autorität aus.
                 </p>
-              </div>
+              </motion.div>
 
               {/* Item 2: Speed */}
-              <div className="bg-white dark:bg-[#0B0F19] border border-slate-200 dark:border-slate-800 rounded-2xl p-6 md:p-8 shadow-sm dark:shadow-none hover:shadow-xl hover:-translate-y-1 hover:border-amber-200 transition-all duration-300 group relative overflow-hidden">
+              <motion.div 
+                whileHover={{ y: -8, scale: 1.02 }}
+                transition={{ type: "spring", stiffness: 400, damping: 10 }}
+                className="bg-white dark:bg-[#0B0F19] border border-slate-200 dark:border-slate-800 rounded-2xl p-6 md:p-8 shadow-sm dark:shadow-none hover:shadow-xl hover:border-amber-200 transition-all duration-300 group relative overflow-hidden"
+              >
                 <div className="absolute top-0 right-0 w-32 h-32 bg-amber-50/50 rounded-bl-full -z-10 group-hover:scale-110 transition-transform duration-500"></div>
                 <div className="w-12 h-12 rounded-xl bg-amber-50 border border-amber-100 flex items-center justify-center text-amber-600 mb-6 group-hover:scale-110 group-hover:bg-amber-500 group-hover:text-white transition-all duration-300">
                   <Zap className="w-6 h-6" />
@@ -521,10 +540,14 @@ export default function Home() {
                 <p className="text-slate-600 dark:text-slate-200 text-sm md:text-base leading-relaxed">
                   Jede Millisekunde zählt. Unsere Architektur garantiert blitzschnelle Ladezeiten – Google liebt das, und deine Nutzer noch mehr.
                 </p>
-              </div>
+              </motion.div>
 
               {/* Item 3: Security & Flatrate */}
-              <div className="bg-white dark:bg-[#0B0F19] border border-slate-200 dark:border-slate-800 rounded-2xl p-6 md:p-8 shadow-sm dark:shadow-none hover:shadow-xl hover:-translate-y-1 hover:border-blue-200 transition-all duration-300 group relative overflow-hidden">
+              <motion.div 
+                whileHover={{ y: -8, scale: 1.02 }}
+                transition={{ type: "spring", stiffness: 400, damping: 10 }}
+                className="bg-white dark:bg-[#0B0F19] border border-slate-200 dark:border-slate-800 rounded-2xl p-6 md:p-8 shadow-sm dark:shadow-none hover:shadow-xl hover:border-blue-200 transition-all duration-300 group relative overflow-hidden"
+              >
                 <div className="absolute top-0 right-0 w-32 h-32 bg-blue-50/50 rounded-bl-full -z-10 group-hover:scale-110 transition-transform duration-500"></div>
                 <div className="w-12 h-12 rounded-xl bg-blue-50 border border-blue-100 flex items-center justify-center text-blue-600 mb-6 group-hover:scale-110 group-hover:bg-blue-600 group-hover:text-white transition-all duration-300">
                   <ShieldCheck className="w-6 h-6" />
@@ -533,10 +556,14 @@ export default function Home() {
                 <p className="text-slate-600 dark:text-slate-200 text-sm md:text-base leading-relaxed">
                   Lehn dich zurück. Inklusive Domain, E-Mail, rechtssicherem Cookie-Banner und SSL. Updates und Backups laufen unsichtbar im Hintergrund.
                 </p>
-              </div>
+              </motion.div>
 
               {/* Item 4: Conversion & SEO */}
-              <div className="bg-white dark:bg-[#0B0F19] border border-slate-200 dark:border-slate-800 rounded-2xl p-6 md:p-8 shadow-sm dark:shadow-none hover:shadow-xl hover:-translate-y-1 hover:border-emerald-200 transition-all duration-300 group relative overflow-hidden">
+              <motion.div 
+                whileHover={{ y: -8, scale: 1.02 }}
+                transition={{ type: "spring", stiffness: 400, damping: 10 }}
+                className="bg-white dark:bg-[#0B0F19] border border-slate-200 dark:border-slate-800 rounded-2xl p-6 md:p-8 shadow-sm dark:shadow-none hover:shadow-xl hover:border-emerald-200 transition-all duration-300 group relative overflow-hidden"
+              >
                 <div className="absolute top-0 right-0 w-32 h-32 bg-emerald-50/50 rounded-bl-full -z-10 group-hover:scale-110 transition-transform duration-500"></div>
                 <div className="w-12 h-12 rounded-xl bg-emerald-50 border border-emerald-100 flex items-center justify-center text-emerald-600 mb-6 group-hover:scale-110 group-hover:bg-emerald-600 group-hover:text-white transition-all duration-300">
                   <Target className="w-6 h-6" />
@@ -545,10 +572,14 @@ export default function Home() {
                 <p className="text-slate-600 dark:text-slate-200 text-sm md:text-base leading-relaxed">
                   Kein blindes Raten. Jedes Element ist strategisch auf Neukundengewinnung optimiert. Dank modernsten SEO-Standards wirst du in deiner Region optimal auf Google gefunden.
                 </p>
-              </div>
+              </motion.div>
 
               {/* Item 5: Portal */}
-              <div className="bg-white dark:bg-[#0B0F19] border border-slate-200 dark:border-slate-800 rounded-2xl p-6 md:p-8 shadow-sm dark:shadow-none hover:shadow-xl hover:-translate-y-1 hover:border-purple-200 transition-all duration-300 group relative overflow-hidden">
+              <motion.div 
+                whileHover={{ y: -8, scale: 1.02 }}
+                transition={{ type: "spring", stiffness: 400, damping: 10 }}
+                className="bg-white dark:bg-[#0B0F19] border border-slate-200 dark:border-slate-800 rounded-2xl p-6 md:p-8 shadow-sm dark:shadow-none hover:shadow-xl hover:border-purple-200 transition-all duration-300 group relative overflow-hidden"
+              >
                 <div className="absolute top-0 right-0 w-32 h-32 bg-purple-50/50 rounded-bl-full -z-10 group-hover:scale-110 transition-transform duration-500"></div>
                 <div className="w-12 h-12 rounded-xl bg-purple-50 border border-purple-100 flex items-center justify-center text-purple-600 mb-6 group-hover:scale-110 group-hover:bg-purple-600 group-hover:text-white transition-all duration-300">
                   <LayoutDashboard className="w-6 h-6" />
@@ -557,10 +588,14 @@ export default function Home() {
                 <p className="text-slate-600 dark:text-slate-200 text-sm md:text-base leading-relaxed">
                   Behalte die volle Kontrolle. In deinem Dashboard verwaltest du Rechnungen, forderst mit einem Klick Änderungen an und überblickst deinen Traffic.
                 </p>
-              </div>
+              </motion.div>
 
               {/* Item 6: Ansprechpartner */}
-              <div className="bg-white dark:bg-[#0B0F19] border border-slate-200 dark:border-slate-800 rounded-2xl p-6 md:p-8 shadow-sm dark:shadow-none hover:shadow-xl hover:-translate-y-1 hover:border-rose-200 transition-all duration-300 group relative overflow-hidden">
+              <motion.div 
+                whileHover={{ y: -8, scale: 1.02 }}
+                transition={{ type: "spring", stiffness: 400, damping: 10 }}
+                className="bg-white dark:bg-[#0B0F19] border border-slate-200 dark:border-slate-800 rounded-2xl p-6 md:p-8 shadow-sm dark:shadow-none hover:shadow-xl hover:border-rose-200 transition-all duration-300 group relative overflow-hidden"
+              >
                 <div className="absolute top-0 right-0 w-32 h-32 bg-rose-50/50 rounded-bl-full -z-10 group-hover:scale-110 transition-transform duration-500"></div>
                 <div className="w-12 h-12 rounded-xl bg-rose-50 border border-rose-100 flex items-center justify-center text-rose-600 mb-6 group-hover:scale-110 group-hover:bg-rose-600 group-hover:text-white transition-all duration-300">
                   <MessageSquare className="w-6 h-6" />
@@ -569,7 +604,7 @@ export default function Home() {
                 <p className="text-slate-600 dark:text-slate-200 text-sm md:text-base leading-relaxed">
                   Keine anonymen Support-Tickets oder Hotlines. Du bekommst einen direkten, persönlichen Ansprechpartner, der dein Projekt in- und auswendig kennt.
                 </p>
-              </div>
+              </motion.div>
             </motion.div>
           </motion.div>
         </section>

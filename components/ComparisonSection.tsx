@@ -137,35 +137,44 @@ export function ComparisonSection() {
 
             <div className="divide-y divide-slate-100">
               {comparisonData.map((row, i) => (
-                <div key={i} className="grid grid-cols-4 group hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors">
-                  <div className="p-6 lg:p-8 flex items-center">
+                <div key={i} className="grid grid-cols-4 group hover:bg-slate-50 dark:hover:bg-slate-800 transition-all duration-300">
+                  <div className="p-6 lg:p-8 flex items-center transform transition-transform group-hover:translate-x-1">
                     <span className="font-semibold text-slate-900 dark:text-white">{row.feature}</span>
                   </div>
                   
                   {/* Builder */}
-                  <div className="p-6 lg:p-8 border-l border-slate-100 dark:border-slate-800 flex flex-col items-center justify-center text-center gap-3">
+                  <motion.div 
+                    whileHover={{ scale: 1.05 }}
+                    className="p-6 lg:p-8 border-l border-slate-100 dark:border-slate-800 flex flex-col items-center justify-center text-center gap-3"
+                  >
                     <div className="w-10 h-10 rounded-full bg-white dark:bg-slate-900 shadow-sm dark:shadow-none border border-slate-100 dark:border-slate-800 flex items-center justify-center">
                       {row.builder.icon}
                     </div>
                     <span className={`text-sm font-medium ${row.builder.type === 'bad' ? 'text-slate-600 dark:text-slate-300' : 'text-slate-900 dark:text-white'}`}>{row.builder.text}</span>
-                  </div>
+                  </motion.div>
 
                   {/* Agency */}
-                  <div className="p-6 lg:p-8 border-l border-slate-100 dark:border-slate-800 flex flex-col items-center justify-center text-center gap-3">
+                  <motion.div 
+                    whileHover={{ scale: 1.05 }}
+                    className="p-6 lg:p-8 border-l border-slate-100 dark:border-slate-800 flex flex-col items-center justify-center text-center gap-3"
+                  >
                     <div className="w-10 h-10 rounded-full bg-white dark:bg-slate-900 shadow-sm dark:shadow-none border border-slate-100 dark:border-slate-800 flex items-center justify-center">
                       {row.agency.icon}
                     </div>
                     <span className={`text-sm font-medium ${row.agency.type === 'bad' ? 'text-slate-600 dark:text-slate-300' : 'text-slate-900 dark:text-white'}`}>{row.agency.text}</span>
-                  </div>
+                  </motion.div>
 
                   {/* Revela */}
-                  <div className="p-6 lg:p-8 border-l border-slate-900 bg-slate-900 relative flex flex-col items-center justify-center text-center gap-3">
-                    <div className="absolute inset-0 bg-gradient-to-b from-transparent to-white dark:to-slate-900/5 opacity-0 group-hover:opacity-100 transition-opacity"></div>
-                    <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center relative z-10">
+                  <motion.div 
+                    whileHover={{ scale: 1.05, zIndex: 10 }}
+                    className="p-6 lg:p-8 border-l border-slate-900 bg-slate-900 relative flex flex-col items-center justify-center text-center gap-3 shadow-[inset_0_0_20px_rgba(0,0,0,0.5)]"
+                  >
+                    <div className="absolute inset-0 bg-gradient-to-b from-indigo-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                    <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center relative z-10 shadow-[0_0_15px_rgba(255,255,255,0.1)]">
                       {row.revela.icon}
                     </div>
                     <span className="text-sm font-semibold text-white relative z-10">{row.revela.text}</span>
-                  </div>
+                  </motion.div>
                 </div>
               ))}
             </div>

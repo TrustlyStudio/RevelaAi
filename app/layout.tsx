@@ -9,6 +9,7 @@ const inter = Inter({
 });
 
 import { ThemeProvider } from '@/components/ThemeProvider';
+import { CookieConsent } from '@/components/CookieConsent';
 
 export const metadata: Metadata = {
   title: 'Revela Web & Marketing Agency',
@@ -21,6 +22,7 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
       <body suppressHydrationWarning className="min-h-screen bg-brand-off-white font-sans text-brand-dark-blue dark:bg-[#0B0F19] dark:text-slate-100 transition-colors duration-300">
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           {children}
+          <CookieConsent />
         </ThemeProvider>
       </body>
     </html>
