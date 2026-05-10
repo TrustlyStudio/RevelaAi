@@ -1,5 +1,20 @@
+import { Metadata } from 'next';
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
+
+export const metadata: Metadata = {
+  title: 'Datenschutzerklärung',
+  description: 'Datenschutzerklärung für Revela Webseitenleasing. Informationen zu Cookies, Analytics und Datenerfassung auf unserer Website.',
+  keywords: ['Datenschutz', 'Privacy Policy', 'DSGVO', 'Revela'],
+  openGraph: {
+    title: 'Datenschutzerklärung | Revela',
+    description: 'Datenschutzerklärung für Revela Webseitenleasing.',
+    url: 'https://revela-ai.de/datenschutz',
+  },
+  alternates: {
+    canonical: 'https://revela-ai.de/datenschutz',
+  },
+};
 
 export default function Datenschutz() {
   return (

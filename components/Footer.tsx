@@ -21,23 +21,27 @@ export function Footer() {
           {/* Links Column 1 */}
           <div>
             <h4 className="text-white font-bold mb-6 text-sm">Lösungen</h4>
-            <ul className="space-y-4 text-sm font-medium">
-              <li><Link href="#methode" className="hover:text-white transition-colors block">Unsere Methode</Link></li>
-              <li><Link href="#referenzen" className="hover:text-white transition-colors block">Erfolgsstories</Link></li>
-              <li><Link href="#preise" className="hover:text-white transition-colors block">Preise & Pläne</Link></li>
-              <li><Link href="#warteliste" className="hover:text-white transition-colors block">Kostenloses Erstgespräch</Link></li>
-            </ul>
+            <nav aria-label="Footer Navigation Lösungen">
+              <ul className="space-y-4 text-sm font-medium">
+                <li><Link href="#methode" className="hover:text-white transition-colors block">Unsere Methode</Link></li>
+                <li><Link href="#referenzen" className="hover:text-white transition-colors block">Erfolgsstories</Link></li>
+                <li><Link href="#preise" className="hover:text-white transition-colors block">Preise & Pläne</Link></li>
+                <li><Link href="#warteliste" className="hover:text-white transition-colors block">Kostenloses Erstgespräch</Link></li>
+              </ul>
+            </nav>
           </div>
 
           {/* Links Column 2 */}
           <div>
             <h4 className="text-white font-bold mb-6 text-sm">Unternehmen</h4>
-            <ul className="space-y-4 text-sm font-medium">
-              <li><Link href="/ueber-uns" className="hover:text-white transition-colors block">Über uns</Link></li>
-              <li><Link href="/karriere" className="hover:text-white transition-colors block">Karriere</Link></li>
-              <li><Link href="/blog" className="hover:text-white transition-colors block">Blog</Link></li>
-              <li><Link href="/kontakt" className="hover:text-white transition-colors block">Kontakt</Link></li>
-            </ul>
+            <nav aria-label="Footer Navigation Unternehmen">
+              <ul className="space-y-4 text-sm font-medium">
+                <li><Link href="/ueber-uns" className="hover:text-white transition-colors block">Über uns</Link></li>
+                <li><Link href="/karriere" className="hover:text-white transition-colors block">Karriere</Link></li>
+                <li><Link href="/blog" className="hover:text-white transition-colors block">Blog</Link></li>
+                <li><Link href="/kontakt" className="hover:text-white transition-colors block">Kontakt</Link></li>
+              </ul>
+            </nav>
           </div>
 
           {/* Contact Col */}

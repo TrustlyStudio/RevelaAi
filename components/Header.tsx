@@ -108,7 +108,7 @@ export function Header() {
               </Link>
             </div>
             
-            <nav className="hidden md:flex space-x-10">
+            <nav aria-label="Main Navigation" className="hidden md:flex space-x-10">
               {navLinks.map((link) => (
                 <Link key={link.href} href={link.href} className="text-brand-dark-blue text-sm hover:text-brand-magenta transition-colors font-medium">
                   {link.label}
@@ -187,7 +187,7 @@ export function Header() {
             <div className="flex flex-col gap-6">
               <div className="space-y-4">
                 <p className="text-[10px] font-bold text-gray-400 uppercase tracking-widest pl-4">Navigation</p>
-                <nav className="flex flex-col space-y-1">
+                <nav aria-label="Mobile Navigation" className="flex flex-col space-y-1">
                   {navLinks.map((link, i) => (
                     <motion.div
                       key={link.href}
