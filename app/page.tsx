@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useRef, useEffect } from 'react';
+import { useState, useRef } from 'react';
 import Image from 'next/image';
 import { motion, AnimatePresence, useScroll, useTransform, useSpring } from 'motion/react';
 import { Header } from '@/components/Header';
@@ -96,36 +96,8 @@ export default function Home() {
   const [openFaq, setOpenFaq] = useState<number | null>(0);
   const [isYearly, setIsYearly] = useState(true);
   const [currentTestimonialIndex, setCurrentTestimonialIndex] = useState(0);
-  const [isSimulatingLoad, setIsSimulatingLoad] = useState(true);
+
   const containerRef = useRef(null);
-
-  const problemRef = useRef(null);
-  const { scrollYProgress: problemProgress } = useScroll({
-    target: problemRef,
-    offset: ["start end", "end start"]
-  });
-  const problemY1 = useTransform(problemProgress, [0, 1], [50, -50]);
-  const problemY2 = useTransform(problemProgress, [0, 1], [100, -100]);
-  const problemY3 = useTransform(problemProgress, [0, 1], [150, -150]);
-
-  const solutionRef = useRef(null);
-  const { scrollYProgress: solutionProgress } = useScroll({
-    target: solutionRef,
-    offset: ["start end", "end start"]
-  });
-  const solutionImgY = useTransform(solutionProgress, [0, 1], [50, -50]);
-
-  const statsRef = useRef(null);
-  const { scrollYProgress: statsProgress } = useScroll({
-    target: statsRef,
-    offset: ["start end", "end start"]
-  });
-  const statsCardY = useTransform(statsProgress, [0, 1], [80, -80]);
-
-  useEffect(() => {
-    const timer = setTimeout(() => setIsSimulatingLoad(false), 1200);
-    return () => clearTimeout(timer);
-  }, []);
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ["start start", "end end"]
@@ -264,28 +236,7 @@ export default function Home() {
               </motion.div>
             </div>
 
-            {isSimulatingLoad ? (
-              <div className="flex-1 w-full relative">
-                <div className="aspect-[4/3.5] md:aspect-[4/3] w-full bg-slate-50 animate-pulse rounded-3xl border border-slate-200 shadow-xl overflow-hidden flex flex-col">
-                  {/* Fake Header */}
-                  <div className="h-10 border-b border-slate-200 bg-slate-100 flex items-center px-4 gap-2">
-                     <div className="w-2.5 h-2.5 rounded-full bg-slate-200"></div>
-                     <div className="w-2.5 h-2.5 rounded-full bg-slate-200"></div>
-                     <div className="w-2.5 h-2.5 rounded-full bg-slate-200"></div>
-                     <div className="ml-4 w-32 md:w-48 h-4 bg-slate-200 rounded-md"></div>
-                  </div>
-                  {/* Fake Content Spinner */}
-                  <div className="flex-1 flex items-center justify-center">
-                    <div className="flex flex-col items-center gap-3">
-                      <div className="w-10 h-10 border-4 border-slate-300 border-t-rose-500 rounded-full animate-spin"></div>
-                      <span className="text-sm font-medium text-slate-400">Lade Dashboard...</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            ) : (
-              <HeroInteractiveDashboard />
-            )}
+            <HeroInteractiveDashboard />
 
           </div>
         </section>
@@ -309,7 +260,7 @@ export default function Home() {
         </motion.section>
 
         {/* --- PROBLEM AGITATION SECTION --- */}
-        <section ref={problemRef} className="py-20 lg:py-32 bg-slate-50 relative overflow-hidden" id="probleme">
+        <section className="py-20 lg:py-32 bg-slate-50 relative overflow-hidden" id="probleme">
           <motion.div 
             initial="hidden"
             whileInView="visible"
@@ -319,8 +270,8 @@ export default function Home() {
           >
             <motion.div 
               variants={{
-                hidden: { opacity: 0, scale: 0.95 },
-                visible: { opacity: 1, scale: 1, transition: { duration: 0.6, ease: "easeOut" } }
+                hidden: { opacity: 0, scale: 0.9, y: 30 },
+                visible: { opacity: 1, scale: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } }
               }} 
               className="text-center max-w-3xl mx-auto mb-16 md:mb-20"
             >
@@ -355,10 +306,9 @@ export default function Home() {
               ].map((card, i) => (
                 <motion.div 
                   key={i}
-                  style={{ y: i === 0 ? problemY1 : i === 1 ? problemY2 : problemY3 }}
                   variants={{
-                    hidden: { opacity: 0, scale: 0.95 },
-                    visible: { opacity: 1, scale: 1, transition: { duration: 0.5 } }
+                    hidden: { opacity: 0, y: 15 },
+                    visible: { opacity: 1, y: 0, transition: { duration: 0.5 } }
                   }} 
                   className="bg-white rounded-2xl p-6 md:p-8 border border-slate-200 shadow-sm hover:shadow-xl hover:-translate-y-1 hover:border-slate-300 transition-all duration-300 group"
                 >
@@ -376,7 +326,7 @@ export default function Home() {
         </section>
 
         {/* --- THE SOLUTION / METHOD --- */}
-        <section ref={solutionRef} className="py-20 lg:py-32 bg-white relative border-t border-slate-200">
+        <section className="py-20 lg:py-32 bg-white relative border-t border-slate-200">
           <motion.div 
             initial="hidden"
             whileInView="visible"
@@ -385,14 +335,7 @@ export default function Home() {
             className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
           >
             <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
-              <motion.div 
-                style={{ y: solutionImgY }} 
-                variants={{
-                  hidden: { opacity: 0, scale: 0.95 },
-                  visible: { opacity: 1, scale: 1, transition: { duration: 0.6 } }
-                }} 
-                className="order-2 lg:order-1 relative w-full aspect-square md:aspect-auto md:h-[600px] bg-slate-50 rounded-2xl border border-slate-200 overflow-hidden flex items-center justify-center p-6 md:p-12 shadow-inner"
-              >
+              <motion.div variants={fadeInUp} className="order-2 lg:order-1 relative w-full aspect-square md:aspect-auto md:h-[600px] bg-slate-50 rounded-2xl border border-slate-200 overflow-hidden flex items-center justify-center p-6 md:p-12 shadow-inner">
                 <div className="relative z-10 bg-white rounded-xl p-6 md:p-8 shadow-sm border border-slate-200 w-full max-w-md">
                   <div className="flex justify-between items-center mb-8 pb-4 border-b border-slate-100">
                     <h5 className="font-semibold text-slate-900 text-lg">Ergebnisse</h5>
@@ -475,7 +418,7 @@ export default function Home() {
         </section>
 
         {/* --- STATISTICS / ROI SECTION --- */}
-        <section ref={statsRef} className="py-20 lg:py-32 bg-slate-900 relative border-t border-slate-800 text-white overflow-hidden">
+        <section className="py-20 lg:py-32 bg-slate-900 relative border-t border-slate-800 text-white overflow-hidden">
           {/* Parallax background glow for dark section */}
           <motion.div 
             style={{ y: y1 }}
@@ -515,14 +458,7 @@ export default function Home() {
                 </div>
               </motion.div>
 
-              <motion.div 
-                style={{ y: statsCardY }} 
-                variants={{
-                  hidden: { opacity: 0, scale: 0.95 },
-                  visible: { opacity: 1, scale: 1, transition: { duration: 0.6 } }
-                }} 
-                className="relative h-[300px] md:h-[400px] w-full rounded-xl bg-slate-800 border border-slate-700 p-6 md:p-8 flex flex-col shadow-2xl"
-              >
+              <motion.div variants={fadeInUp} className="relative h-[300px] md:h-[400px] w-full rounded-xl bg-slate-800 border border-slate-700 p-6 md:p-8 flex flex-col shadow-2xl">
                 <div className="flex justify-between items-center mb-6 md:mb-8 border-b border-slate-700 pb-4 md:pb-6">
                   <div>
                     <h4 className="text-sm md:text-lg font-bold text-white">Conversion-Gate</h4>
@@ -548,38 +484,7 @@ export default function Home() {
         </section>
 
         {/* --- CUSTOMER PROJECTS --- */}
-        {isSimulatingLoad ? (
-          <section className="py-16 md:py-24 bg-white border-t border-slate-200 overflow-hidden">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-10 flex flex-col md:flex-row md:items-end justify-between gap-6">
-              <div className="max-w-2xl w-full">
-                <div className="h-10 bg-slate-100 w-2/3 rounded animate-pulse mb-4"></div>
-                <div className="h-6 bg-slate-100 w-full rounded animate-pulse"></div>
-                <div className="h-6 bg-slate-100 w-4/5 rounded animate-pulse mt-2"></div>
-              </div>
-              <div className="hidden md:flex gap-3">
-                <div className="w-12 h-12 rounded-full bg-slate-100 animate-pulse"></div>
-                <div className="w-12 h-12 rounded-full bg-slate-100 animate-pulse"></div>
-              </div>
-            </div>
-            
-            <div className="flex px-4 md:px-8 gap-4 md:gap-6 overflow-hidden max-w-[1920px] mx-auto">
-              {[1, 2, 3].map((i) => (
-                <div key={i} className="min-w-[85vw] md:min-w-[400px] lg:min-w-[480px] h-[320px] md:h-[360px] bg-slate-50 rounded-2xl border border-slate-200 flex flex-col overflow-hidden animate-pulse shrink-0">
-                  <div className="h-10 border-b border-slate-200 bg-slate-100 flex items-center px-4 gap-2">
-                     <div className="w-2.5 h-2.5 rounded-full bg-slate-200"></div>
-                     <div className="w-2.5 h-2.5 rounded-full bg-slate-200"></div>
-                     <div className="w-2.5 h-2.5 rounded-full bg-slate-200"></div>
-                  </div>
-                  <div className="flex-1 flex items-center justify-center">
-                    <div className="w-10 h-10 border-4 border-slate-300 border-t-rose-500 rounded-full animate-spin"></div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </section>
-        ) : (
-          <CustomerProjects />
-        )}
+        <CustomerProjects />
 
         {/* --- HOW IT FEELS (BENEFITS BENTO) --- */}
         <section className="py-20 lg:py-32 bg-slate-50 relative overflow-hidden">
