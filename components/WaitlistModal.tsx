@@ -115,10 +115,11 @@ export function WaitlistModal() {
     setIsSubmitting(true);
     try {
       const { gotcha, ...submitData } = formData;
-      const response = await fetch("/api/waitlist", {
+      const response = await fetch(process.env.NEXT_PUBLIC_FORMSPREE_URL || "https://formspree.io/f/xdabllpv", {
         method: "POST",
         headers: {
-          "Content-Type": "application/json"
+          "Content-Type": "application/json",
+          "Accept": "application/json"
         },
         body: JSON.stringify({
           ...submitData,
