@@ -29,7 +29,7 @@ export function CustomerProjects() {
   };
 
   return (
-    <section className="py-16 md:py-24 bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-700 overflow-hidden">
+    <section className="py-16 md:py-24 bg-white border-t border-slate-200 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-10 flex flex-col md:flex-row md:items-end justify-between gap-6">
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
@@ -37,10 +37,10 @@ export function CustomerProjects() {
           viewport={{ once: true }}
           className="max-w-2xl text-center md:text-left"
         >
-          <h2 className="text-3xl md:text-4xl font-sans font-bold text-slate-900 dark:text-white tracking-tight mb-4">
+          <h2 className="text-3xl md:text-4xl font-sans font-bold text-slate-900 tracking-tight mb-4">
             Zuletzt gelaunchte Kundenprojekte.
           </h2>
-          <p className="text-slate-600 dark:text-slate-300 text-lg">
+          <p className="text-slate-600 text-lg">
             Ein Querschnitt unserer Arbeit. Wir bauen Systeme, die in jeder Branche als Premium-Plattform wahrgenommen werden.
           </p>
         </motion.div>
@@ -48,14 +48,14 @@ export function CustomerProjects() {
         <div className="hidden md:flex gap-3">
           <button 
             onClick={scrollLeft}
-            className="w-12 h-12 rounded-full border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 shadow-sm dark:shadow-none flex items-center justify-center text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-slate-50 dark:hover:bg-slate-800 hover:scale-105 active:scale-95 transition-all"
+            className="w-12 h-12 rounded-full border border-slate-200 bg-white shadow-sm flex items-center justify-center text-slate-600 hover:text-slate-900:text-white hover:bg-slate-50:bg-slate-800 hover:scale-105 active:scale-95 transition-all"
             aria-label="Zurück scrollen"
           >
             <ChevronLeft className="w-6 h-6" />
           </button>
           <button 
             onClick={scrollRight}
-            className="w-12 h-12 rounded-full border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 shadow-sm dark:shadow-none flex items-center justify-center text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-slate-50 dark:hover:bg-slate-800 hover:scale-105 active:scale-95 transition-all"
+            className="w-12 h-12 rounded-full border border-slate-200 bg-white shadow-sm flex items-center justify-center text-slate-600 hover:text-slate-900:text-white hover:bg-slate-50:bg-slate-800 hover:scale-105 active:scale-95 transition-all"
             aria-label="Weiter scrollen"
           >
             <ChevronRight className="w-6 h-6" />
@@ -65,8 +65,8 @@ export function CustomerProjects() {
 
       <div className="relative w-full max-w-[1920px] mx-auto group/slider">
         {/* Gradient fades for edges */}
-        <div className="absolute inset-y-0 left-0 w-8 md:w-24 bg-gradient-to-r from-white dark:from-slate-900 to-transparent z-10 pointer-events-none"></div>
-        <div className="absolute inset-y-0 right-0 w-8 md:w-24 bg-gradient-to-l from-white dark:from-slate-900 to-transparent z-10 pointer-events-none"></div>
+        <div className="absolute inset-y-0 left-0 w-8 md:w-24 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none"></div>
+        <div className="absolute inset-y-0 right-0 w-8 md:w-24 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none"></div>
 
         <div 
           ref={sliderRef}
@@ -81,22 +81,22 @@ export function CustomerProjects() {
               transition={{ delay: idx * 0.1 }}
               className="min-w-[85vw] md:min-w-[400px] lg:min-w-[480px] snap-center flex-shrink-0 cursor-default"
             >
-              <div className="rounded-2xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-950 overflow-hidden shadow-sm dark:shadow-none hover:shadow-xl transition-all duration-300 group flex flex-col h-[320px] md:h-[360px]">
+              <div className="rounded-2xl border border-slate-200 bg-slate-50 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 group flex flex-col h-[320px] md:h-[360px]">
                 {/* Browser Header */}
-                <div className="h-10 border-b border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 flex items-center px-4 gap-3 relative z-20">
+                <div className="h-10 border-b border-slate-200 bg-white flex items-center px-4 gap-3 relative z-20">
                   <div className="flex gap-1.5">
                     <div className="w-2.5 h-2.5 rounded-full bg-slate-200 group-hover:bg-rose-500 transition-colors duration-300"></div>
                     <div className="w-2.5 h-2.5 rounded-full bg-slate-200 group-hover:bg-amber-500 transition-colors duration-300 delay-75"></div>
                     <div className="w-2.5 h-2.5 rounded-full bg-slate-200 group-hover:bg-emerald-500 transition-colors duration-300 delay-150"></div>
                   </div>
                   <div className="absolute left-1/2 -translate-x-1/2 w-1/2 flex justify-center">
-                    <div className="bg-slate-100 dark:bg-slate-800 rounded-md text-[10px] text-slate-400 px-3 py-1 font-mono truncate w-full text-center group-hover:text-slate-600 dark:group-hover:text-slate-300 transition-colors duration-300">
+                    <div className="bg-slate-100 rounded-md text-[10px] text-slate-400 px-3 py-1 font-mono truncate w-full text-center group-hover:text-slate-600:text-slate-300 transition-colors duration-300">
                       {project.url}
                     </div>
                   </div>
                 </div>
                 {/* Browser Content */}
-                <div className="flex-1 relative overflow-hidden bg-slate-100 dark:bg-slate-800">
+                <div className="flex-1 relative overflow-hidden bg-slate-100">
                   <Image
                     src={project.image}
                     alt={`${project.name} Website Screenshot`}

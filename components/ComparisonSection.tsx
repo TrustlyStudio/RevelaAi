@@ -49,7 +49,7 @@ const fadeInUp = {
 
 export function ComparisonSection() {
   return (
-    <section className="py-24 lg:py-32 bg-white dark:bg-slate-900 relative border-t border-slate-200 dark:border-slate-700">
+    <section className="py-24 lg:py-32 bg-white relative border-t border-slate-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div 
           initial="hidden"
@@ -60,10 +60,10 @@ export function ComparisonSection() {
           }}
           className="text-center max-w-3xl mx-auto mb-16"
         >
-          <motion.h2 variants={fadeInUp} className="text-4xl md:text-5xl font-sans font-bold text-slate-900 dark:text-white tracking-tight mb-6">
+          <motion.h2 variants={fadeInUp} className="text-4xl md:text-5xl font-sans font-bold text-slate-900 tracking-tight mb-6">
             Der unfaire Vorteil.
           </motion.h2>
-          <motion.p variants={fadeInUp} className="text-xl text-slate-600 dark:text-slate-300 leading-relaxed">
+          <motion.p variants={fadeInUp} className="text-xl text-slate-600 leading-relaxed">
             Warum du mit einem Web-Leasing bei Revela das Beste aus beiden Welten kombinierst: Premium-Qualität ohne das Premium-Risiko.
           </motion.p>
         </motion.div>
@@ -80,13 +80,13 @@ export function ComparisonSection() {
             {['builder', 'agency', 'revela'].map((colKey, index) => (
               <div 
                 key={colKey} 
-                className={`rounded-2xl border ${colKey === 'revela' ? 'border-slate-800 bg-slate-900 text-white shadow-xl' : 'border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-white'} p-6 relative overflow-hidden`}
+                className={`rounded-2xl border ${colKey === 'revela' ? 'border-slate-800 bg-slate-900 text-white shadow-xl' : 'border-slate-200 bg-slate-50 text-slate-900'} p-6 relative overflow-hidden`}
               >
                 {colKey === 'revela' && (
                   <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-indigo-500/20 to-purple-500/20 blur-2xl rounded-full -z-0"></div>
                 )}
                 
-                <h3 className={`text-2xl font-bold mb-6 text-center ${colKey === 'revela' ? 'text-white' : 'text-slate-900 dark:text-white'}`}>
+                <h3 className={`text-2xl font-bold mb-6 text-center ${colKey === 'revela' ? 'text-white' : 'text-slate-900'}`}>
                   {colKey === 'builder' && 'DIY Baukasten'}
                   {colKey === 'agency' && 'Traditionelle Agentur'}
                   {colKey === 'revela' && 'Revela Leasing'}
@@ -95,11 +95,11 @@ export function ComparisonSection() {
                 <div className="space-y-6 relative z-10">
                   {comparisonData.map((row, i) => (
                     <div key={i} className="flex flex-col gap-2">
-                      <span className={`text-sm font-semibold uppercase tracking-wider ${colKey === 'revela' ? 'text-slate-400' : 'text-slate-500 dark:text-slate-400'}`}>
+                      <span className={`text-sm font-semibold uppercase tracking-wider ${colKey === 'revela' ? 'text-slate-400' : 'text-slate-500'}`}>
                         {row.feature}
                       </span>
                       <div className="flex items-center gap-3">
-                         <div className={`flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center ${colKey === 'revela' && (row as any)[colKey].type === 'good' ? 'bg-emerald-500/20 text-emerald-400' : 'bg-white dark:bg-slate-900 shadow-sm dark:shadow-none border border-slate-100 dark:border-slate-800'}`}>
+                         <div className={`flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center ${colKey === 'revela' && (row as any)[colKey].type === 'good' ? 'bg-emerald-500/20 text-emerald-400' : 'bg-white shadow-sm border border-slate-100'}`}>
                            {(row as any)[colKey].icon}
                          </div>
                          <span className="font-medium">
@@ -114,18 +114,18 @@ export function ComparisonSection() {
           </div>
 
           {/* Desktop view: Table */}
-          <div className="hidden md:block w-full overflow-hidden rounded-3xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 shadow-sm dark:shadow-none">
-            <div className="grid grid-cols-4 border-b border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-950">
+          <div className="hidden md:block w-full overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm">
+            <div className="grid grid-cols-4 border-b border-slate-200 bg-slate-50">
               <div className="p-6 lg:p-8 flex items-end">
                 <span className="text-sm font-bold tracking-widest text-slate-400 uppercase">Kriterium</span>
               </div>
-              <div className="p-6 lg:p-8 text-center border-l border-slate-200 dark:border-slate-700">
-                <h3 className="text-xl font-bold text-slate-900 dark:text-white">DIY Baukasten</h3>
-                <p className="text-sm text-slate-500 dark:text-slate-400 mt-2">Wix, Jimdo, etc.</p>
+              <div className="p-6 lg:p-8 text-center border-l border-slate-200">
+                <h3 className="text-xl font-bold text-slate-900">DIY Baukasten</h3>
+                <p className="text-sm text-slate-500 mt-2">Wix, Jimdo, etc.</p>
               </div>
-              <div className="p-6 lg:p-8 text-center border-l border-slate-200 dark:border-slate-700">
-                <h3 className="text-xl font-bold text-slate-900 dark:text-white">Traditionelle Agentur</h3>
-                <p className="text-sm text-slate-500 dark:text-slate-400 mt-2">Klassisches Projekt</p>
+              <div className="p-6 lg:p-8 text-center border-l border-slate-200">
+                <h3 className="text-xl font-bold text-slate-900">Traditionelle Agentur</h3>
+                <p className="text-sm text-slate-500 mt-2">Klassisches Projekt</p>
               </div>
               <div className="p-6 lg:p-8 text-center border-l border-slate-900 bg-slate-900 text-white relative overflow-hidden">
                 <div className="absolute top-0 right-0 w-full h-full bg-gradient-to-br from-indigo-500/10 to-purple-500/10 -z-0"></div>
@@ -137,31 +137,31 @@ export function ComparisonSection() {
 
             <div className="divide-y divide-slate-100">
               {comparisonData.map((row, i) => (
-                <div key={i} className="grid grid-cols-4 group hover:bg-slate-50 dark:hover:bg-slate-800 transition-all duration-300">
+                <div key={i} className="grid grid-cols-4 group hover:bg-slate-50:bg-slate-800 transition-all duration-300">
                   <div className="p-6 lg:p-8 flex items-center transform transition-transform group-hover:translate-x-1">
-                    <span className="font-semibold text-slate-900 dark:text-white">{row.feature}</span>
+                    <span className="font-semibold text-slate-900">{row.feature}</span>
                   </div>
                   
                   {/* Builder */}
                   <motion.div 
                     whileHover={{ scale: 1.05 }}
-                    className="p-6 lg:p-8 border-l border-slate-100 dark:border-slate-800 flex flex-col items-center justify-center text-center gap-3"
+                    className="p-6 lg:p-8 border-l border-slate-100 flex flex-col items-center justify-center text-center gap-3"
                   >
-                    <div className="w-10 h-10 rounded-full bg-white dark:bg-slate-900 shadow-sm dark:shadow-none border border-slate-100 dark:border-slate-800 flex items-center justify-center">
+                    <div className="w-10 h-10 rounded-full bg-white shadow-sm border border-slate-100 flex items-center justify-center">
                       {row.builder.icon}
                     </div>
-                    <span className={`text-sm font-medium ${row.builder.type === 'bad' ? 'text-slate-600 dark:text-slate-300' : 'text-slate-900 dark:text-white'}`}>{row.builder.text}</span>
+                    <span className={`text-sm font-medium ${row.builder.type === 'bad' ? 'text-slate-600' : 'text-slate-900'}`}>{row.builder.text}</span>
                   </motion.div>
 
                   {/* Agency */}
                   <motion.div 
                     whileHover={{ scale: 1.05 }}
-                    className="p-6 lg:p-8 border-l border-slate-100 dark:border-slate-800 flex flex-col items-center justify-center text-center gap-3"
+                    className="p-6 lg:p-8 border-l border-slate-100 flex flex-col items-center justify-center text-center gap-3"
                   >
-                    <div className="w-10 h-10 rounded-full bg-white dark:bg-slate-900 shadow-sm dark:shadow-none border border-slate-100 dark:border-slate-800 flex items-center justify-center">
+                    <div className="w-10 h-10 rounded-full bg-white shadow-sm border border-slate-100 flex items-center justify-center">
                       {row.agency.icon}
                     </div>
-                    <span className={`text-sm font-medium ${row.agency.type === 'bad' ? 'text-slate-600 dark:text-slate-300' : 'text-slate-900 dark:text-white'}`}>{row.agency.text}</span>
+                    <span className={`text-sm font-medium ${row.agency.type === 'bad' ? 'text-slate-600' : 'text-slate-900'}`}>{row.agency.text}</span>
                   </motion.div>
 
                   {/* Revela */}
@@ -180,10 +180,10 @@ export function ComparisonSection() {
             </div>
             
             {/* CTA row at bottom of Revela column */}
-            <div className="grid grid-cols-4 bg-slate-50 dark:bg-slate-950 border-t border-slate-200 dark:border-slate-700">
+            <div className="grid grid-cols-4 bg-slate-50 border-t border-slate-200">
               <div className="col-span-3"></div>
               <div className="p-6 text-center border-l border-slate-900 bg-slate-900">
-                <a href="#preise" className="inline-block bg-white dark:bg-slate-900 text-slate-900 dark:text-white font-bold py-3 px-6 rounded-xl hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors text-sm whitespace-nowrap shadow-md">
+                <a href="#preise" className="inline-block bg-white text-slate-900 font-bold py-3 px-6 rounded-xl hover:bg-slate-100:bg-slate-800 transition-colors text-sm whitespace-nowrap shadow-md">
                   Pläne vergleichen
                 </a>
               </div>

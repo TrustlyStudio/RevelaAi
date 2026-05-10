@@ -35,45 +35,45 @@ export function HeroInteractiveDashboard() {
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
-      <div className="aspect-[4/3.5] md:aspect-[4/3] w-full bg-white dark:bg-[#0B0F19] rounded-3xl border border-slate-200 dark:border-slate-800 shadow-2xl overflow-hidden relative group">
+      <div className="aspect-[4/3.5] md:aspect-[4/3] w-full bg-white rounded-3xl border border-slate-200 shadow-2xl overflow-hidden relative group">
         
         {/* Browser Header */}
-        <div className="absolute top-0 inset-x-0 h-12 border-b border-slate-200 dark:border-slate-800 bg-slate-50/50 dark:bg-[#0B0F19]/50 backdrop-blur-sm flex items-center px-6 gap-2 z-20">
+        <div className="absolute top-0 inset-x-0 h-10 border-b border-slate-200 bg-slate-50/50 backdrop-blur-sm flex items-center px-4 gap-2 z-20">
           <div className="flex gap-1.5">
-            <div className="w-3 h-3 rounded-full bg-rose-500/30"></div>
-            <div className="w-3 h-3 rounded-full bg-amber-500/30"></div>
-            <div className="w-3 h-3 rounded-full bg-emerald-500/30"></div>
+            <div className="w-2.5 h-2.5 rounded-full bg-rose-500/30"></div>
+            <div className="w-2.5 h-2.5 rounded-full bg-amber-500/30"></div>
+            <div className="w-2.5 h-2.5 rounded-full bg-emerald-500/30"></div>
           </div>
-          <div className="ml-6 px-3 py-1 bg-white dark:bg-slate-800 rounded-md text-[10px] font-mono text-slate-400 dark:text-slate-500 border border-slate-100 dark:border-slate-700 w-48 truncate">
+          <div className="ml-4 px-2 py-0.5 bg-white rounded-md text-[9px] font-mono text-slate-400 border border-slate-100 w-32 md:w-48 truncate">
             conversion-optimizer.revela.app
           </div>
         </div>
 
         {/* Dashboard Content */}
-        <div className="p-6 md:p-8 pt-20 h-full flex flex-col gap-6 relative">
+        <div className="p-4 md:p-8 pt-14 md:pt-20 h-full flex flex-col gap-4 md:gap-6 relative">
           
           {/* Header Section */}
           <div className="flex items-center justify-between">
             <div>
-              <h3 className="text-sm font-bold text-slate-900 dark:text-white flex items-center gap-2">
-                <Target className="w-4 h-4 text-rose-500" />
+              <h3 className="text-xs md:text-sm font-bold text-slate-900 flex items-center gap-2">
+                <Target className="w-3.5 h-3.5 md:w-4 h-4 text-rose-500" />
                 Revenue Potential
               </h3>
-              <p className="text-[10px] text-slate-500 dark:text-slate-200">Interaktive Conversion-Vorschau</p>
+              <p className="text-[9px] md:text-[10px] text-slate-500">Interaktive Conversion-Vorschau</p>
             </div>
-            <div className="px-3 py-1 bg-emerald-50 dark:bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 text-[10px] font-bold rounded-full border border-emerald-100 dark:border-emerald-500/20">
+            <div className="px-2 py-0.5 bg-emerald-50 text-emerald-600 text-[9px] md:text-[10px] font-bold rounded-full border border-emerald-100">
               Live Simulation
             </div>
           </div>
 
           {/* Interactive Controls */}
-          <div className="grid grid-cols-2 gap-4">
-            <div className="space-y-3 bg-slate-50 dark:bg-slate-800/50 p-4 rounded-2xl border border-slate-100 dark:border-slate-700">
+          <div className="grid grid-cols-2 gap-3 md:gap-4">
+            <div className="space-y-2 md:space-y-3 bg-slate-50 p-3 md:p-4 rounded-xl md:rounded-2xl border border-slate-100">
               <div className="flex justify-between items-center">
-                <label className="text-[10px] font-bold uppercase tracking-wider text-slate-500 dark:text-slate-200 flex items-center gap-1.5">
+                <label className="text-[9px] md:text-[10px] font-bold uppercase tracking-wider text-slate-500 flex items-center gap-1.5">
                   <Users className="w-3 h-3" /> Traffic
                 </label>
-                <span suppressHydrationWarning className="text-xs font-mono font-bold text-slate-900 dark:text-white">{formatNumber(traffic)}</span>
+                <span suppressHydrationWarning className="text-[10px] md:text-xs font-mono font-bold text-slate-900">{formatNumber(traffic)}</span>
               </div>
               <input 
                 type="range" 
@@ -82,16 +82,16 @@ export function HeroInteractiveDashboard() {
                 step="500"
                 value={traffic}
                 onChange={(e) => setTraffic(parseInt(e.target.value))}
-                className="w-full h-1.5 bg-slate-200 dark:bg-slate-700 rounded-lg appearance-none cursor-pointer accent-rose-500"
+                className="w-full h-1 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-rose-500"
               />
             </div>
             
-            <div className="space-y-3 bg-slate-50 dark:bg-slate-800/50 p-4 rounded-2xl border border-slate-100 dark:border-slate-700">
+            <div className="space-y-2 md:space-y-3 bg-slate-50 p-3 md:p-4 rounded-xl md:rounded-2xl border border-slate-100">
               <div className="flex justify-between items-center">
-                <label className="text-[10px] font-bold uppercase tracking-wider text-slate-500 dark:text-slate-200 flex items-center gap-1.5">
+                <label className="text-[9px] md:text-[10px] font-bold uppercase tracking-wider text-slate-500 flex items-center gap-1.5">
                   <Activity className="w-3 h-3" /> Aktuelle CV
                 </label>
-                <span className="text-xs font-mono font-bold text-slate-900 dark:text-white">{conversionRate}%</span>
+                <span className="text-[10px] md:text-xs font-mono font-bold text-slate-900">{conversionRate}%</span>
               </div>
               <input 
                 type="range" 
@@ -100,70 +100,70 @@ export function HeroInteractiveDashboard() {
                 step="0.1"
                 value={conversionRate}
                 onChange={(e) => setConversionRate(parseFloat(e.target.value))}
-                className="w-full h-1.5 bg-slate-200 dark:bg-slate-700 rounded-lg appearance-none cursor-pointer accent-purple-600"
+                className="w-full h-1 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-purple-600"
               />
             </div>
           </div>
 
           {/* Visualization / Results */}
-          <div className="flex-1 flex gap-4 mt-2">
+          <div className="flex-1 flex gap-3 md:gap-4 mt-1 md:mt-2">
             
             {/* Main Result Card */}
-            <div className="flex-1 bg-gradient-to-br from-slate-900 to-slate-800 dark:from-slate-800 dark:to-slate-950 rounded-2xl p-6 flex flex-col justify-between relative overflow-hidden group/card shadow-lg">
-              <div className="absolute top-0 right-0 w-32 h-32 bg-rose-500/10 rounded-full blur-3xl -mr-16 -mt-16 transition-opacity duration-500 group-hover/card:opacity-100 opacity-50"></div>
+            <div className="flex-1 bg-gradient-to-br from-slate-900 to-slate-800 rounded-xl md:rounded-2xl p-4 md:p-6 flex flex-col justify-between relative overflow-hidden group/card shadow-lg">
+              <div className="absolute top-0 right-0 w-24 h-24 md:w-32 md:h-32 bg-rose-500/10 rounded-full blur-2xl md:blur-3xl -mr-12 md:-mr-16 -mt-12 md:-mt-16 transition-opacity duration-500 group-hover/card:opacity-100 opacity-50"></div>
               
               <div>
-                <span className="text-[9px] font-bold text-slate-400 uppercase tracking-[0.2em] mb-1 block">Mit Revela Optimization</span>
+                <span className="text-[8px] md:text-[9px] font-bold text-slate-400 uppercase tracking-[0.2em] mb-1 block">Mit Revela Optimization</span>
                 <AnimatePresence mode="wait">
                   <motion.div 
                     key={projectedLeads}
-                    initial={{ opacity: 0, y: 10 }}
+                    initial={{ opacity: 0, y: 5 }}
                     animate={{ opacity: 1, y: 0 }}
-                    className="text-4xl md:text-5xl font-sans font-black text-white tracking-tighter"
+                    className="text-3xl md:text-5xl font-sans font-black text-white tracking-tighter"
                   >
-                    {projectedLeads} <span className="text-xl text-rose-400">Leads</span>
+                    {projectedLeads} <span className="text-lg text-rose-400">Leads</span>
                   </motion.div>
                 </AnimatePresence>
               </div>
 
-              <div className="flex items-center gap-2 mt-4">
-                <div className="flex-1 h-3 bg-slate-700 rounded-full overflow-hidden">
+              <div className="flex items-center gap-2 mt-3 md:mt-4">
+                <div className="flex-1 h-2 md:h-3 bg-slate-700 rounded-full overflow-hidden">
                   <motion.div 
                     initial={{ width: 0 }}
                     animate={{ width: `${(projectedLeads / (traffic * 0.15)) * 100}%` }}
                     className="h-full bg-gradient-to-r from-rose-500 to-purple-600 shadow-[0_0_15px_rgba(244,63,94,0.5)]"
                   />
                 </div>
-                <span className="text-[10px] font-bold text-rose-400">+{REVELA_MULTIPLIER}x</span>
+                <span className="text-[9px] md:text-[10px] font-bold text-rose-400">+{REVELA_MULTIPLIER}x</span>
               </div>
             </div>
 
             {/* Comparison Column */}
-            <div className="w-1/3 flex flex-col gap-4">
-              <div className="flex-1 bg-slate-50 dark:bg-slate-800 rounded-2xl p-4 border border-slate-100 dark:border-slate-700 flex flex-col justify-center gap-2">
-                <span className="text-[8px] font-bold text-slate-500 dark:text-slate-200 uppercase">Vorher</span>
-                <div className="text-xl font-bold text-slate-900 dark:text-white">{currentLeads}</div>
-                <div className="w-full h-1 bg-slate-200 dark:bg-slate-700 rounded-full overflow-hidden">
+            <div className="w-1/3 flex flex-col gap-3 md:gap-4">
+              <div className="flex-1 bg-slate-50 rounded-xl md:rounded-2xl p-3 md:p-4 border border-slate-100 flex flex-col justify-center gap-1 md:gap-2">
+                <span className="text-[7px] md:text-[8px] font-bold text-slate-500 uppercase">Vorher</span>
+                <div className="text-lg md:text-xl font-bold text-slate-900">{currentLeads}</div>
+                <div className="w-full h-1 bg-slate-200 rounded-full overflow-hidden">
                   <motion.div 
                     animate={{ width: '30%' }}
-                    className="h-full bg-slate-400 dark:bg-slate-500"
+                    className="h-full bg-slate-400"
                   />
                 </div>
               </div>
-              <div className="flex-1 bg-rose-50 dark:bg-rose-500/10 rounded-2xl p-4 border border-rose-100 dark:border-rose-500/20 flex flex-col justify-center gap-1 group/lift">
-                <TrendingUp className="w-4 h-4 text-rose-500 mb-1 group-hover/lift:scale-110 transition-transform" />
-                <span className="text-[8px] font-bold text-rose-500 uppercase tracking-wider">Lift</span>
-                <div className="text-xl font-black text-rose-600 dark:text-rose-400">+{lift}</div>
+              <div className="flex-1 bg-rose-50 rounded-xl md:rounded-2xl p-3 md:p-4 border border-rose-100 flex flex-col justify-center gap-0.5 md:gap-1 group/lift">
+                <TrendingUp className="w-3.5 h-3.5 md:w-4 h-4 text-rose-500 mb-0.5 md:mb-1 group-hover/lift:scale-110 transition-transform" />
+                <span className="text-[7px] md:text-[8px] font-bold text-rose-500 uppercase tracking-wider">Lift</span>
+                <div className="text-lg md:text-xl font-black text-rose-600">+{lift}</div>
               </div>
             </div>
           </div>
 
           {/* Bottom Callout */}
-          <div className="flex items-center gap-3 p-3 bg-indigo-50 dark:bg-indigo-500/10 rounded-xl border border-indigo-100 dark:border-indigo-500/20">
-             <div className="w-8 h-8 rounded-full bg-white dark:bg-slate-800 flex items-center justify-center shadow-sm">
-                <Zap className="w-4 h-4 text-indigo-600 dark:text-indigo-400 fill-indigo-600/20" />
+          <div className="flex items-center gap-2 md:gap-3 p-3 bg-indigo-50 rounded-lg md:rounded-xl border border-indigo-100">
+             <div className="w-7 h-7 md:w-8 md:h-8 rounded-full bg-white flex shrink-0 items-center justify-center shadow-sm">
+                <Zap className="w-3.5 h-3.5 md:w-4 h-4 text-indigo-600 fill-indigo-600/20" />
              </div>
-             <p className="text-[10px] text-indigo-900 dark:text-indigo-200 leading-tight">
+             <p className="text-[9px] md:text-[10px] text-indigo-900 leading-tight">
                <span className="font-bold">Prognose:</span> Revela nutzt <span className="font-bold">Next.js 15 & KI-Edge</span> Rendering für sub-50ms Ladezeiten.
              </p>
           </div>
@@ -185,14 +185,14 @@ export function HeroInteractiveDashboard() {
           repeat: Infinity,
           ease: "easeInOut"
         }}
-        className="absolute -top-6 -right-6 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-2xl p-4 shadow-xl z-30 hidden lg:flex items-center gap-3"
+        className="absolute -top-6 -right-6 bg-white border border-slate-200 rounded-2xl p-4 shadow-xl z-30 hidden lg:flex items-center gap-3"
       >
         <div className="w-10 h-10 rounded-full bg-emerald-500/10 flex items-center justify-center">
           <MousePointer2 className="w-5 h-5 text-emerald-500" />
         </div>
         <div>
-          <div className="text-[10px] font-bold text-slate-500 dark:text-slate-200 tracking-wider uppercase">Conversion Rate</div>
-          <div className="text-xl font-bold text-slate-900 dark:text-white">{(conversionRate * REVELA_MULTIPLIER).toFixed(1)}% <span className="text-xs text-emerald-500 tracking-normal">▲</span></div>
+          <div className="text-[10px] font-bold text-slate-500 tracking-wider uppercase">Conversion Rate</div>
+          <div className="text-xl font-bold text-slate-900">{(conversionRate * REVELA_MULTIPLIER).toFixed(1)}% <span className="text-xs text-emerald-500 tracking-normal">▲</span></div>
         </div>
       </motion.div>
 

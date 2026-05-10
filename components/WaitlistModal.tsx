@@ -155,16 +155,16 @@ export function WaitlistModal() {
             initial={{ opacity: 0, scale: 0.95, y: 20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.95, y: 20 }}
-            className="relative w-full max-w-xl bg-white dark:bg-slate-900 rounded-3xl shadow-2xl overflow-hidden flex flex-col max-h-[90vh]"
+            className="relative w-full max-w-xl bg-white rounded-3xl shadow-2xl overflow-hidden flex flex-col max-h-[90vh]"
           >
             {/* Header */}
-            <div className="flex justify-between items-center p-6 border-b border-gray-100 dark:border-slate-800 bg-gray-50 dark:bg-slate-900/50">
+            <div className="flex justify-between items-center p-6 border-b border-gray-100 bg-gray-50">
               <div className="flex items-center gap-3">
                 <div className="w-10 h-10 rounded-full bg-gradient-to-br from-rose-500 to-purple-600 flex items-center justify-center text-white shadow-md">
                   <span className="font-black text-lg text-white">R</span>
                 </div>
                 <div>
-                  <h3 className="font-bold text-slate-900 dark:text-white leading-tight">Revela Warteliste</h3>
+                  <h3 className="font-bold text-slate-900 leading-tight">Revela Warteliste</h3>
                   <p className="text-xs text-gray-500 font-medium">Unverbindlich & Kostenlos</p>
                 </div>
               </div>
@@ -200,7 +200,7 @@ export function WaitlistModal() {
                     <div className="w-20 h-20 rounded-full bg-emerald-100 text-emerald-500 flex items-center justify-center mx-auto mb-6">
                       <CheckCircle2 className="w-10 h-10" />
                     </div>
-                    <h3 className="text-3xl font-black text-slate-900 dark:text-white mb-4">Du bist auf der Warteliste!</h3>
+                    <h3 className="text-3xl font-black text-slate-900 mb-4">Du bist auf der Warteliste!</h3>
                     <p className="text-gray-500 text-lg mb-8">
                       Vielen Dank für dein Interesse. Wir haben deine Daten erhalten und melden uns sehr bald bei dir, um die nächsten Schritte und Details zu besprechen.
                     </p>
@@ -223,7 +223,7 @@ export function WaitlistModal() {
                     <div className="inline-flex items-center gap-2 px-3 py-1 bg-rose-50 text-rose-600 rounded-full text-xs font-bold tracking-wider mb-6">
                       <Zap className="w-3.5 h-3.5" /> Streng limitiert
                     </div>
-                    <h3 className="text-3xl sm:text-4xl font-black text-slate-900 dark:text-white mb-6 tracking-tight">
+                    <h3 className="text-3xl sm:text-4xl font-black text-slate-900 mb-6 tracking-tight">
                       Sichere dir <span className="text-transparent bg-clip-text bg-gradient-to-r from-rose-500 to-purple-600">15% Rabatt</span> und den perfekten Start!
                     </h3>
                     <p className="text-gray-500 text-lg mb-10">
@@ -250,13 +250,13 @@ export function WaitlistModal() {
                     onSubmit={(e) => { e.preventDefault(); if(formData.ziel) handleNext(); }}
                   >
                     <div className="mb-2 text-sm font-bold text-rose-500 uppercase tracking-widest">Schritt 1 von 4</div>
-                    <h3 className="text-2xl font-black text-slate-900 dark:text-white mb-8">Was ist dein aktuelles Hauptziel?</h3>
+                    <h3 className="text-2xl font-black text-slate-900 mb-8">Was ist dein aktuelles Hauptziel?</h3>
                     
                     <div className="space-y-3">
                       {['Mehr Kunden gewinnen', 'Modernes, hochwertigeres Auftreten', 'Bessere Sichtbarkeit bei Google', 'Anderes Ziel'].map((goal) => (
                         <label 
                           key={goal}
-                          className={`flex items-center p-5 border rounded-2xl cursor-pointer transition-all ${formData.ziel === goal ? 'border-rose-500 bg-rose-50/50 shadow-sm dark:shadow-none' : 'border-gray-200 dark:border-slate-700 hover:border-rose-300 hover:bg-gray-50 dark:bg-slate-900'}`}
+                          className={`flex items-center p-5 border rounded-2xl cursor-pointer transition-all ${formData.ziel === goal ? 'border-rose-500 bg-rose-50/50 shadow-sm' : 'border-gray-200 hover:border-rose-300 hover:bg-gray-50'}`}
                         >
                           <input 
                             type="radio" 
@@ -283,16 +283,16 @@ export function WaitlistModal() {
                     onSubmit={(e) => { e.preventDefault(); if(formData.website) handleNext(); }}
                   >
                     <div className="flex justify-between items-center mb-2">
-                       <button type="button" onClick={handlePrev} className="text-sm font-bold text-gray-400 hover:text-slate-900 dark:hover:text-white transition-colors">Zurück</button>
+                       <button type="button" onClick={handlePrev} className="text-sm font-bold text-gray-400 hover:text-slate-900:text-white transition-colors">Zurück</button>
                        <div className="text-sm font-bold text-rose-500 uppercase tracking-widest">Schritt 2 von 4</div>
                     </div>
-                    <h3 className="text-2xl font-black text-slate-900 dark:text-white mb-8">Hast du bereits eine Website?</h3>
+                    <h3 className="text-2xl font-black text-slate-900 mb-8">Hast du bereits eine Website?</h3>
                     
                     <div className="space-y-3">
                       {['Ja, aber sie muss erneuert werden', 'Ja, ich brauche nur Wartung/Support', 'Nein, ich starte komplett neu', 'Noch in Planung'].map((opt) => (
                         <label 
                           key={opt}
-                          className={`flex items-center p-5 border rounded-2xl cursor-pointer transition-all ${formData.website === opt ? 'border-purple-600 bg-purple-50/50 shadow-sm dark:shadow-none' : 'border-gray-200 dark:border-slate-700 hover:border-purple-300 hover:bg-gray-50 dark:bg-slate-900'}`}
+                          className={`flex items-center p-5 border rounded-2xl cursor-pointer transition-all ${formData.website === opt ? 'border-purple-600 bg-purple-50/50 shadow-sm' : 'border-gray-200 hover:border-purple-300 hover:bg-gray-50'}`}
                         >
                           <input 
                             type="radio" 
@@ -325,7 +325,7 @@ export function WaitlistModal() {
                             className={`w-full p-4 border-2 rounded-xl focus:outline-none focus:ring-4 font-medium transition-all ${
                               errors.websiteUrl 
                                 ? 'border-red-300 focus:border-red-500 focus:ring-red-500/10 bg-red-50/50' 
-                                : 'border-gray-200 dark:border-slate-700 focus:border-rose-500 focus:ring-rose-500/10'
+                                : 'border-gray-200 focus:border-rose-500 focus:ring-rose-500/10'
                             }`}
                             value={formData.websiteUrl}
                             onChange={(e) => {
@@ -371,17 +371,17 @@ export function WaitlistModal() {
                     onSubmit={(e) => { e.preventDefault(); if(formData.unternehmen) handleNext(); }}
                   >
                     <div className="flex justify-between items-center mb-2">
-                       <button type="button" onClick={handlePrev} className="text-sm font-bold text-gray-400 hover:text-slate-900 dark:hover:text-white transition-colors">Zurück</button>
+                       <button type="button" onClick={handlePrev} className="text-sm font-bold text-gray-400 hover:text-slate-900:text-white transition-colors">Zurück</button>
                        <div className="text-sm font-bold text-rose-500 uppercase tracking-widest">Schritt 3 von 4</div>
                     </div>
-                    <h3 className="text-2xl font-black text-slate-900 dark:text-white mb-8">Wie heißt dein Unternehmen oder Projekt?</h3>
+                    <h3 className="text-2xl font-black text-slate-900 mb-8">Wie heißt dein Unternehmen oder Projekt?</h3>
                     
                     <div className="mb-8">
                        <input 
                          type="text" 
                          required
                          placeholder="z.B. Alpha Consult GmbH"
-                         className="w-full p-4 md:p-5 border-2 border-gray-200 dark:border-slate-700 rounded-2xl text-lg focus:outline-none focus:border-rose-500 focus:ring-4 focus:ring-rose-500/10 font-medium transition-all"
+                         className="w-full p-4 md:p-5 border-2 border-gray-200 rounded-2xl text-lg focus:outline-none focus:border-rose-500 focus:ring-4 focus:ring-rose-500/10 font-medium transition-all"
                          value={formData.unternehmen}
                          onChange={(e) => setFormData({...formData, unternehmen: e.target.value})}
                          autoFocus
@@ -406,10 +406,10 @@ export function WaitlistModal() {
                     onSubmit={handleSubmit}
                   >
                     <div className="flex justify-between items-center mb-4">
-                       <button type="button" onClick={handlePrev} className="text-sm font-bold text-gray-400 hover:text-slate-900 dark:hover:text-white transition-colors">Zurück</button>
+                       <button type="button" onClick={handlePrev} className="text-sm font-bold text-gray-400 hover:text-slate-900:text-white transition-colors">Zurück</button>
                        <div className="text-sm font-bold text-emerald-500 uppercase tracking-widest flex items-center gap-1">Fast geschafft! <Zap className="w-3.5 h-3.5" /></div>
                     </div>
-                    <h3 className="text-2xl font-black text-slate-900 dark:text-white mb-8">Wohin dürfen wir die Infos schicken?</h3>
+                    <h3 className="text-2xl font-black text-slate-900 mb-8">Wohin dürfen wir die Infos schicken?</h3>
                     
                     <div className="space-y-5 mb-8">
                        <div>
@@ -417,7 +417,7 @@ export function WaitlistModal() {
                          <input 
                            type="text" 
                            required
-                           className="w-full p-4 border-2 border-gray-200 dark:border-slate-700 rounded-xl focus:outline-none focus:border-rose-500 focus:ring-4 focus:ring-rose-500/10 font-medium transition-all"
+                           className="w-full p-4 border-2 border-gray-200 rounded-xl focus:outline-none focus:border-rose-500 focus:ring-4 focus:ring-rose-500/10 font-medium transition-all"
                            value={formData.name}
                            onChange={(e) => setFormData({...formData, name: e.target.value})}
                          />
@@ -432,7 +432,7 @@ export function WaitlistModal() {
                            className={`w-full p-4 border-2 rounded-xl focus:outline-none focus:ring-4 font-medium transition-all disabled:bg-gray-100 disabled:opacity-60 ${
                              errors.email && !formData.noEmail 
                                ? 'border-red-300 focus:border-red-500 focus:ring-red-500/10 bg-red-50/50' 
-                               : 'border-gray-200 dark:border-slate-700 focus:border-rose-500 focus:ring-rose-500/10'
+                               : 'border-gray-200 focus:border-rose-500 focus:ring-rose-500/10'
                            }`}
                            value={formData.email}
                            onChange={(e) => {
@@ -467,7 +467,7 @@ export function WaitlistModal() {
                                  />
                                  <CheckCircle2 className="w-3.5 h-3.5 text-white absolute pointer-events-none opacity-0 peer-checked:opacity-100 transition-opacity" strokeWidth={4} />
                                </div>
-                               <span className="text-sm font-medium text-gray-500 group-hover:text-slate-900 dark:hover:text-white transition-colors">Ich habe noch keine geschäftliche E-Mail</span>
+                               <span className="text-sm font-medium text-gray-500 group-hover:text-slate-900:text-white transition-colors">Ich habe noch keine geschäftliche E-Mail</span>
                             </label>
                          </div>
 
@@ -486,7 +486,7 @@ export function WaitlistModal() {
                                  className={`w-full p-4 border-2 rounded-xl focus:outline-none focus:ring-4 font-medium transition-all ${
                                    errors.telefon 
                                      ? 'border-red-300 focus:border-red-500 focus:ring-red-500/10 bg-red-50/50' 
-                                     : 'border-gray-200 dark:border-slate-700 focus:border-rose-500 focus:ring-rose-500/10'
+                                     : 'border-gray-200 focus:border-rose-500 focus:ring-rose-500/10'
                                  }`}
                                  value={formData.telefon}
                                  onChange={(e) => {
@@ -508,7 +508,7 @@ export function WaitlistModal() {
                          </AnimatePresence>
                        </div>
 
-                        <div className="pt-4 border-t border-gray-100 dark:border-slate-800">
+                        <div className="pt-4 border-t border-gray-100">
                           {/* Honeypot field for bot protection */}
                           <input 
                             type="text" 

@@ -123,7 +123,7 @@ export default function Home() {
   };
 
   return (
-    <div ref={containerRef} className="flex flex-col min-h-screen bg-gray-50 dark:bg-[#0B0F19] font-sans text-slate-900 dark:text-white selection:bg-rose-500/30">
+    <div ref={containerRef} className="flex flex-col min-h-screen bg-gray-50 font-sans text-slate-900 selection:bg-rose-500/30">
       <svg width="0" height="0" className="absolute">
         <defs>
           <linearGradient id="brand-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -138,86 +138,82 @@ export default function Home() {
       
       {/* Scroll Progress Bar */}
       <motion.div
-        className="fixed top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-rose-500 via-purple-500 to-indigo-500 z-[100] origin-left"
+        className="fixed top-0 left-0 right-0 h-1 bg-gradient-to-r from-rose-500 via-purple-500 to-indigo-500 z-[100] origin-left"
         style={{ scaleX: smoothProgress }}
       />
       
       <main className="flex-grow overflow-hidden relative">
         {/* Subtle dot matrix background for SaaS feel */}
-        <div className="absolute inset-0 z-[-1] bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]"></div>
+        <div className="absolute inset-0 z-[-1] bg-[linear-gradient(to_right,#80808008_1px,transparent_1px),linear-gradient(to_bottom,#80808008_1px,transparent_1px)] bg-[size:24px_24px]"></div>
         
         {/* Parallax Background Elements */}
-        <motion.div style={{ y: y1, rotate: rotate1, scale: scale1 }} className="absolute top-[10%] right-[5%] w-[40rem] h-[40rem] bg-indigo-500/5 rounded-full blur-[120px] pointer-events-none z-0 hidden dark:block" />
-        <motion.div style={{ y: y2, scale: scale1 }} className="absolute top-[40%] left-[-10%] w-[50rem] h-[50rem] bg-rose-500/5 rounded-full blur-[150px] pointer-events-none z-0 hidden dark:block" />
-        <motion.div style={{ y: y1 }} className="absolute bottom-[20%] right-[-10%] w-[45rem] h-[45rem] bg-purple-500/5 rounded-full blur-[130px] pointer-events-none z-0 hidden dark:block" />
+        <motion.div style={{ y: y1, rotate: rotate1, scale: scale1 }} className="absolute top-[10%] right-[5%] w-[40rem] h-[40rem] bg-indigo-500/5 rounded-full blur-[120px] pointer-events-none z-0 hidden" />
+        <motion.div style={{ y: y2, scale: scale1 }} className="absolute top-[40%] left-[-10%] w-[50rem] h-[50rem] bg-rose-500/5 rounded-full blur-[150px] pointer-events-none z-0 hidden" />
+        <motion.div style={{ y: y1 }} className="absolute bottom-[20%] right-[-10%] w-[45rem] h-[45rem] bg-purple-500/5 rounded-full blur-[130px] pointer-events-none z-0 hidden" />
         
         {/* Decorative Floating Elements */}
-        <motion.div style={{ y: y1, rotate: 12 }} className="absolute top-[15%] left-[5%] opacity-[0.03] dark:opacity-[0.07] pointer-events-none z-0">
-          <Hexagon size={120} className="text-slate-900 dark:text-white" />
+        <motion.div style={{ y: y1, rotate: 12 }} className="absolute top-[15%] left-[5%] opacity-[0.03] pointer-events-none z-0">
+          <Hexagon size={120} className="text-slate-900" />
         </motion.div>
-        <motion.div style={{ y: y2, rotate: -15 }} className="absolute top-[45%] right-[8%] opacity-[0.03] dark:opacity-[0.07] pointer-events-none z-0">
-          <Triangle size={160} className="text-slate-900 dark:text-white" />
+        <motion.div style={{ y: y2, rotate: -15 }} className="absolute top-[45%] right-[8%] opacity-[0.03] pointer-events-none z-0">
+          <Triangle size={160} className="text-slate-900" />
         </motion.div>
-        <motion.div style={{ y: y1, rotate: 45 }} className="absolute top-[75%] left-[10%] opacity-[0.03] dark:opacity-[0.07] pointer-events-none z-0">
-          <Command size={100} className="text-slate-900 dark:text-white" />
+        <motion.div style={{ y: y1, rotate: 45 }} className="absolute top-[75%] left-[10%] opacity-[0.03] pointer-events-none z-0">
+          <Command size={100} className="text-slate-900" />
         </motion.div>
         
         {/* --- HERO SECTION --- */}
-        <section className="relative pt-16 pb-24 lg:pt-32 lg:pb-40 bg-white dark:bg-[#0B0F19] overflow-hidden">
-          {/* Ambient Glow in Dark Mode */}
-          <div className="absolute top-0 right-0 -mr-40 -mt-40 w-96 h-96 bg-brand-purple/20 rounded-full blur-3xl hidden dark:block opacity-70 pointer-events-none"></div>
-          <div className="absolute bottom-0 left-0 -ml-40 -mb-40 w-[30rem] h-[30rem] bg-brand-magenta/10 rounded-full blur-3xl hidden dark:block opacity-60 pointer-events-none"></div>
-
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
+        <section className="relative pt-12 pb-20 md:pt-20 lg:pt-32 lg:pb-40 bg-white overflow-hidden">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 flex flex-col lg:flex-row items-center gap-10 lg:gap-20">
             
-            <div className="flex-1 text-left">
+            <div className="flex-1 text-center lg:text-left">
               <motion.div
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 15 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5 }}
-                className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-50 dark:bg-[#0B0F19] border border-slate-200 dark:border-slate-800 mb-6"
+                className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-50 border border-slate-100 mb-6"
               >
                 <span className="w-2 h-2 rounded-full bg-gradient-to-r from-rose-500 to-purple-600"></span>
-                <span className="text-xs font-semibold uppercase tracking-wider text-slate-700 dark:text-slate-200">
+                <span className="text-[10px] md:text-xs font-semibold uppercase tracking-wider text-slate-700">
                   Premium Web-Leasing Agentur
                 </span>
               </motion.div>
               
               <motion.h1 
-                initial={{ opacity: 0, y: 30 }}
+                initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.1 }}
-                className="text-5xl lg:text-7xl font-sans font-bold tracking-tight text-slate-900 dark:text-white leading-[1.1] mb-6"
+                className="text-4xl sm:text-5xl lg:text-7xl font-sans font-bold tracking-tight text-slate-900 leading-[1.1] mb-6"
               >
                 Du hast eine Website. 
                 <span className="block mt-2"><AnimatedHeroText /></span>
               </motion.h1>
               
               <motion.p 
-                initial={{ opacity: 0, y: 30 }}
+                initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.2 }}
-                className="text-lg text-slate-600 dark:text-slate-200 mb-10 max-w-2xl leading-relaxed"
+                className="text-base sm:text-lg text-slate-600 mb-10 max-w-2xl mx-auto lg:mx-0 leading-relaxed"
               >
                 Schluss mit langsamen Baukasten-Seiten und überteuerten Rechnungen von Agenturen. Miete eine professionelle, moderne Website, die nachweislich Kunden gewinnt – Wartung und Support sind bereits inklusive.
               </motion.p>
               
               <motion.div 
-                initial={{ opacity: 0, y: 30 }}
+                initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.3 }}
-                className="flex flex-col sm:flex-row items-start gap-4"
+                className="flex flex-col sm:flex-row items-center lg:items-start gap-4 justify-center lg:justify-start"
               >
                 <Link 
                   href="#warteliste"
-                  className="w-full sm:w-auto bg-slate-900 dark:bg-white text-white dark:text-slate-900 px-8 py-4 rounded-lg font-semibold text-base hover:bg-slate-800 dark:hover:bg-slate-200 transition-all duration-200 flex items-center justify-center gap-2 group shadow-md shadow-slate-900/10 dark:shadow-white/10 dark:shadow-[0_0_20px_rgba(255,255,255,0.15)]"
+                  className="w-full sm:w-auto bg-slate-900 text-white px-8 py-4 rounded-xl font-bold text-base hover:bg-slate-800 transition-all duration-300 flex items-center justify-center gap-2 group shadow-lg shadow-slate-900/10 active:scale-95"
                 >
                   Auf die Warteliste
-                  <span className="bg-rose-500 text-white text-[10px] uppercase font-bold tracking-wider px-2 py-0.5 rounded-full ml-1">-15% für early birds</span>
+                  <span className="bg-rose-500 text-white text-[9px] md:text-[10px] uppercase font-bold tracking-wider px-2 py-0.5 rounded-full ml-1">-15% für early birds</span>
                 </Link>
                 <Link 
                   href="#preise"
-                  className="w-full sm:w-auto bg-white dark:bg-[#0B0F19] text-slate-900 dark:text-white border border-slate-200 dark:border-slate-800 px-8 py-4 rounded-lg font-semibold text-base hover:bg-slate-50 dark:hover:bg-slate-800 hover:border-slate-300 dark:hover:border-rose-500/50 dark:hover:shadow-[0_0_30px_-5px_rgba(244,63,94,0.15)] transition-all duration-200 flex items-center justify-center"
+                  className="w-full sm:w-auto bg-white text-slate-900 border border-slate-200 px-8 py-4 rounded-xl font-bold text-base hover:bg-slate-50 hover:border-slate-300 transition-all duration-300 flex items-center justify-center active:scale-95"
                 >
                   Preise ansehen
                 </Link>
@@ -227,14 +223,14 @@ export default function Home() {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.8, duration: 1 }}
-                className="mt-10 flex flex-wrap items-center gap-6 text-sm text-slate-500 dark:text-slate-300"
+                className="mt-10 flex flex-wrap items-center justify-center lg:justify-start gap-4 md:gap-6 text-xs md:text-sm text-slate-500"
               >
                 <div className="flex items-center gap-1.5">
-                  <CheckCircle2 className="w-4 h-4 text-slate-400" />
+                  <CheckCircle2 className="w-4 h-4 text-emerald-500" />
                   <span>Monatlich kündbar</span>
                 </div>
                 <div className="flex items-center gap-1.5">
-                  <CheckCircle2 className="w-4 h-4 text-slate-400" />
+                  <CheckCircle2 className="w-4 h-4 text-emerald-500" />
                   <span>0€ Setup-Kosten</span>
                 </div>
               </motion.div>
@@ -251,11 +247,11 @@ export default function Home() {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 1 }}
-          className="py-16 md:py-20 bg-slate-50 dark:bg-[#0B0F19] border-y border-slate-200 dark:border-slate-800 overflow-hidden relative"
+          className="py-12 md:py-20 bg-slate-50 border-y border-slate-200 overflow-hidden relative"
         >
           <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-slate-300 to-transparent"></div>
           <div className="max-w-7xl mx-auto px-4 text-center mb-8">
-            <h6 className="text-[11px] md:text-sm font-semibold tracking-[0.2em] text-slate-500 dark:text-slate-300 uppercase">
+            <h6 className="text-[11px] md:text-sm font-semibold tracking-[0.2em] text-slate-500 uppercase">
               Die erste Wahl für über 150+ ambitionierte Unternehmen
             </h6>
           </div>
@@ -264,7 +260,7 @@ export default function Home() {
         </motion.section>
 
         {/* --- PROBLEM AGITATION SECTION --- */}
-        <section className="py-24 lg:py-32 bg-slate-50 dark:bg-[#0B0F19] relative overflow-hidden" id="probleme">
+        <section className="py-20 lg:py-32 bg-slate-50 relative overflow-hidden" id="probleme">
           <motion.div 
             initial="hidden"
             whileInView="visible"
@@ -277,12 +273,12 @@ export default function Home() {
                 hidden: { opacity: 0, scale: 0.9, y: 30 },
                 visible: { opacity: 1, scale: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } }
               }} 
-              className="text-center max-w-3xl mx-auto mb-20"
+              className="text-center max-w-3xl mx-auto mb-16 md:mb-20"
             >
-              <h2 className="text-4xl md:text-5xl font-sans font-bold text-slate-900 dark:text-white tracking-tight mb-6">
+              <h2 className="text-3xl md:text-5xl font-sans font-bold text-slate-900 tracking-tight mb-6">
                 Warum deine aktuelle Website heimlich Geld verbrennt.
               </h2>
-              <p className="text-xl text-slate-600 dark:text-slate-200 leading-relaxed">
+              <p className="text-base md:text-xl text-slate-600 leading-relaxed max-w-2xl mx-auto">
                 Du verlierst jeden Tag potenzielle Kunden an die Konkurrenz, ohne es überhaupt zu bemerken. Das sind die drei größten Wachstums-Bremsen.
               </p>
             </motion.div>
@@ -311,16 +307,16 @@ export default function Home() {
                 <motion.div 
                   key={i}
                   variants={{
-                    hidden: { opacity: 0, y: 30 },
+                    hidden: { opacity: 0, y: 15 },
                     visible: { opacity: 1, y: 0, transition: { duration: 0.5 } }
                   }} 
-                  className="bg-white dark:bg-[#0B0F19] rounded-2xl p-6 md:p-8 border border-slate-200 dark:border-slate-800 shadow-sm dark:shadow-none hover:shadow-xl hover:-translate-y-1 hover:border-slate-300 dark:hover:border-rose-500/50 dark:hover:shadow-[0_0_30px_-5px_rgba(244,63,94,0.15)] transition-all duration-300 group"
+                  className="bg-white rounded-2xl p-6 md:p-8 border border-slate-200 shadow-sm hover:shadow-xl hover:-translate-y-1 hover:border-slate-300 transition-all duration-300 group"
                 >
                   <div className={`w-12 h-12 rounded-xl mb-6 flex items-center justify-center border ${card.iconBg} group-hover:scale-110 transition-transform duration-300 relative`}>
                     {card.icon}
                   </div>
-                  <h4 className="text-xl font-bold text-slate-900 dark:text-white mb-3 group-hover:text-indigo-600 transition-colors">{card.title}</h4>
-                  <p className="text-slate-600 dark:text-slate-200 text-sm md:text-base leading-relaxed">
+                  <h4 className="text-xl font-bold text-slate-900 mb-3 group-hover:text-indigo-600 transition-colors">{card.title}</h4>
+                  <p className="text-slate-600 text-sm md:text-base leading-relaxed">
                     {card.desc}
                   </p>
                 </motion.div>
@@ -330,7 +326,7 @@ export default function Home() {
         </section>
 
         {/* --- THE SOLUTION / METHOD --- */}
-        <section className="py-24 lg:py-32 bg-white dark:bg-[#0B0F19] relative border-t border-slate-200 dark:border-slate-800">
+        <section className="py-20 lg:py-32 bg-white relative border-t border-slate-200">
           <motion.div 
             initial="hidden"
             whileInView="visible"
@@ -339,39 +335,39 @@ export default function Home() {
             className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
           >
             <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
-              <motion.div variants={fadeInUp} className="order-2 lg:order-1 relative w-full aspect-square md:aspect-auto md:h-[600px] bg-slate-50 dark:bg-[#0B0F19] rounded-2xl border border-slate-200 dark:border-slate-800 overflow-hidden flex items-center justify-center p-6 md:p-12 shadow-inner">
-                <div className="relative z-10 bg-white dark:bg-[#0B0F19] rounded-xl p-8 shadow-sm dark:shadow-none border border-slate-200 dark:border-slate-800 w-full max-w-md">
-                  <div className="flex justify-between items-center mb-8 pb-4 border-b border-slate-100 dark:border-slate-800">
-                    <h5 className="font-semibold text-slate-900 dark:text-white text-lg">Ergebnisse</h5>
+              <motion.div variants={fadeInUp} className="order-2 lg:order-1 relative w-full aspect-square md:aspect-auto md:h-[600px] bg-slate-50 rounded-2xl border border-slate-200 overflow-hidden flex items-center justify-center p-6 md:p-12 shadow-inner">
+                <div className="relative z-10 bg-white rounded-xl p-6 md:p-8 shadow-sm border border-slate-200 w-full max-w-md">
+                  <div className="flex justify-between items-center mb-8 pb-4 border-b border-slate-100">
+                    <h5 className="font-semibold text-slate-900 text-lg">Ergebnisse</h5>
                   </div>
                   
                   <div className="space-y-8">
                     <div>
                       <div className="flex justify-between mb-2">
-                         <span className="text-sm font-medium text-slate-500 dark:text-slate-300">Mtl. Besucher</span>
-                         <span className="text-sm font-semibold text-slate-900 dark:text-white">+45%</span>
+                         <span className="text-sm font-medium text-slate-500">Mtl. Besucher</span>
+                         <span className="text-sm font-semibold text-slate-900">+45%</span>
                       </div>
-                      <div className="w-full h-2 bg-slate-100 dark:bg-slate-800 rounded-full overflow-hidden">
+                      <div className="w-full h-2 bg-slate-100 rounded-full overflow-hidden">
                         <div className="h-full bg-slate-900 w-[78%] rounded-full"></div>
                       </div>
                     </div>
                     
                     <div>
                       <div className="flex justify-between mb-2">
-                         <span className="text-sm font-medium text-slate-500 dark:text-slate-300">Conversion Rate</span>
-                         <span className="text-sm font-semibold text-slate-900 dark:text-white">+120%</span>
+                         <span className="text-sm font-medium text-slate-500">Conversion Rate</span>
+                         <span className="text-sm font-semibold text-slate-900">+120%</span>
                       </div>
-                      <div className="w-full h-2 bg-slate-100 dark:bg-slate-800 rounded-full overflow-hidden">
+                      <div className="w-full h-2 bg-slate-100 rounded-full overflow-hidden">
                         <div className="h-full bg-slate-900 w-[55%] rounded-full"></div>
                       </div>
                     </div>
                     
                     <div>
                       <div className="flex justify-between mb-2">
-                         <span className="text-sm font-medium text-slate-500 dark:text-slate-300">Qualifizierte Leads</span>
-                         <span className="text-sm font-semibold text-slate-900 dark:text-white">42 diesen Monat</span>
+                         <span className="text-sm font-medium text-slate-500">Qualifizierte Leads</span>
+                         <span className="text-sm font-semibold text-slate-900">42 diesen Monat</span>
                       </div>
-                      <div className="w-full h-2 bg-slate-100 dark:bg-slate-800 rounded-full overflow-hidden">
+                      <div className="w-full h-2 bg-slate-100 rounded-full overflow-hidden">
                         <div className="h-full bg-slate-900 w-[85%] rounded-full"></div>
                       </div>
                     </div>
@@ -380,39 +376,39 @@ export default function Home() {
               </motion.div>
 
               <motion.div variants={fadeInUp} className="order-1 lg:order-2">
-                <h3 className="text-3xl md:text-4xl font-sans font-bold text-slate-900 dark:text-white tracking-tight mb-6">
+                <h3 className="text-3xl md:text-4xl font-sans font-bold text-slate-900 tracking-tight mb-6">
                   Mieten statt teuer kaufen.
                 </h3>
-                <p className="text-lg text-slate-600 dark:text-slate-200 mb-10 leading-relaxed">
+                <p className="text-lg text-slate-600 mb-10 leading-relaxed">
                   Vergiss hohe Einmalzahlungen. Wir haben den Markt umgekrempelt: Bei uns bekommst du eine moderne, hochwertige Website im bequemen Abo. Wir kümmern uns um die komplizierte Technik und halten alles am Laufen.
                 </p>
                 
                 <div className="space-y-8">
                   <div className="flex gap-4">
                     <div className="mt-1">
-                      <Search className="w-6 h-6 text-slate-900 dark:text-white" />
+                      <Search className="w-6 h-6 text-slate-900" />
                     </div>
                     <div>
-                      <h4 className="text-lg font-bold text-slate-900 dark:text-white mb-1">1. Gemeinsamer Plan</h4>
-                      <p className="text-slate-600 dark:text-slate-200">Wir analysieren exakt, wonach deine Kunden suchen und strukturieren die Seite entsprechend.</p>
+                      <h4 className="text-lg font-bold text-slate-900 mb-1">1. Gemeinsamer Plan</h4>
+                      <p className="text-slate-600">Wir analysieren exakt, wonach deine Kunden suchen und strukturieren die Seite entsprechend.</p>
                     </div>
                   </div>
                   <div className="flex gap-4">
                     <div className="mt-1">
-                      <Gem className="w-6 h-6 text-slate-900 dark:text-white" />
+                      <Gem className="w-6 h-6 text-slate-900" />
                     </div>
                     <div>
-                      <h4 className="text-lg font-bold text-slate-900 dark:text-white mb-1">2. Hochwertiges Design</h4>
-                      <p className="text-slate-600 dark:text-slate-200">Individuelles, conversion-optimiertes Design. Blitzschnell und perfekt für alle Endgeräte.</p>
+                      <h4 className="text-lg font-bold text-slate-900 mb-1">2. Hochwertiges Design</h4>
+                      <p className="text-slate-600">Individuelles, conversion-optimiertes Design. Blitzschnell und perfekt für alle Endgeräte.</p>
                     </div>
                   </div>
                   <div className="flex gap-4">
                     <div className="mt-1">
-                      <ShieldCheck className="w-6 h-6 text-slate-900 dark:text-white" />
+                      <ShieldCheck className="w-6 h-6 text-slate-900" />
                     </div>
                     <div>
-                      <h4 className="text-lg font-bold text-slate-900 dark:text-white mb-1">3. Mieten & entspannen</h4>
-                      <p className="text-slate-600 dark:text-slate-200">Sicherheit, Hosting und Updates laufen vollautomatisch im Hintergrund ohne dein Zutun.</p>
+                      <h4 className="text-lg font-bold text-slate-900 mb-1">3. Mieten & entspannen</h4>
+                      <p className="text-slate-600">Sicherheit, Hosting und Updates laufen vollautomatisch im Hintergrund ohne dein Zutun.</p>
                     </div>
                   </div>
                 </div>
@@ -422,7 +418,7 @@ export default function Home() {
         </section>
 
         {/* --- STATISTICS / ROI SECTION --- */}
-        <section className="py-24 lg:py-32 bg-slate-900 relative border-t border-slate-800 text-white overflow-hidden">
+        <section className="py-20 lg:py-32 bg-slate-900 relative border-t border-slate-800 text-white overflow-hidden">
           {/* Parallax background glow for dark section */}
           <motion.div 
             style={{ y: y1 }}
@@ -436,45 +432,45 @@ export default function Home() {
             variants={staggerContainer}
             className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10"
           >
-            <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+            <div className="grid lg:grid-cols-2 gap-12 lg:gap-24 items-center">
               
-              <motion.div variants={fadeInUp}>
+              <motion.div variants={fadeInUp} className="text-center lg:text-left">
                 <h3 className="text-3xl md:text-4xl font-sans font-bold tracking-tight mb-6">
                   Eine Webseite, die sich selbst bezahlt macht.
                 </h3>
-                <p className="text-lg text-slate-400 mb-10 leading-relaxed">
-                  Viele Unternehmer sehen eine Website als Kostenblock. Wir sehen sie als deinen härtesten Mitarbeiter. 
+                <p className="text-base md:text-lg text-slate-400 mb-10 leading-relaxed">
+                  Viele Unternehmer sehen eine Website als Kosten block. Wir sehen sie als deinen härtesten Mitarbeiter. 
                   Durch psychologisch optimiertes Design, rasante Ladezeiten und klare Conversion-Pfade steigen deine Anfragen drastisch an.
                 </p>
-                <div className="grid sm:grid-cols-2 gap-8">
+                <div className="grid grid-cols-2 gap-6 md:gap-8">
                   <div>
-                    <h5 className="font-bold text-slate-200 text-3xl mb-1"><AnimatedCounter to={65} prefix="-" suffix="%" /></h5>
-                    <p className="text-slate-400 text-sm">Absprungrate sinkt</p>
+                    <h5 className="font-bold text-slate-200 text-2xl md:text-3xl mb-1"><AnimatedCounter to={65} prefix="-" suffix="%" /></h5>
+                    <p className="text-slate-400 text-xs md:text-sm">Absprungrate sinkt</p>
                   </div>
                   <div>
-                    <h5 className="font-bold text-slate-200 text-3xl mb-1"><AnimatedCounter to={120} prefix="+" suffix="%" /></h5>
-                    <p className="text-slate-400 text-sm">Interaktionsrate</p>
+                    <h5 className="font-bold text-slate-200 text-2xl md:text-3xl mb-1"><AnimatedCounter to={120} prefix="+" suffix="%" /></h5>
+                    <p className="text-slate-400 text-xs md:text-sm">Interaktionsrate</p>
                   </div>
-                  <div className="sm:col-span-2">
-                    <h5 className="font-bold text-white text-4xl mb-2"><AnimatedCounter to={700} prefix="Bis zu +" suffix="%" /> Leads</h5>
-                    <p className="text-slate-400">Mehr messbare Kundenanfragen aus dem selben Traffic.</p>
+                  <div className="col-span-2">
+                    <h5 className="font-bold text-white text-3xl md:text-4xl mb-2"><AnimatedCounter to={700} prefix="Bis zu +" suffix="%" /> Leads</h5>
+                    <p className="text-slate-400 text-sm">Mehr messbare Kundenanfragen aus dem selben Traffic.</p>
                   </div>
                 </div>
               </motion.div>
 
-              <motion.div variants={fadeInUp} className="relative h-[400px] w-full rounded-xl bg-slate-800 border border-slate-700 p-6 md:p-8 flex flex-col shadow-2xl">
-                <div className="flex justify-between items-center mb-8 border-b border-slate-700 pb-6">
+              <motion.div variants={fadeInUp} className="relative h-[300px] md:h-[400px] w-full rounded-xl bg-slate-800 border border-slate-700 p-6 md:p-8 flex flex-col shadow-2xl">
+                <div className="flex justify-between items-center mb-6 md:mb-8 border-b border-slate-700 pb-4 md:pb-6">
                   <div>
-                    <h4 className="text-lg font-bold text-white">Conversion-Gate</h4>
+                    <h4 className="text-sm md:text-lg font-bold text-white">Conversion-Gate</h4>
                   </div>
-                  <div className="flex items-center gap-4">
+                  <div className="flex items-center gap-3 md:gap-4">
                     <div className="flex items-center gap-2">
                       <div className="w-2 h-2 rounded-full bg-slate-500"></div>
-                      <span className="text-xs font-semibold text-slate-400 uppercase tracking-wider">Alt</span>
+                      <span className="text-[10px] font-semibold text-slate-400 uppercase tracking-wider">Alt</span>
                     </div>
                     <div className="flex items-center gap-2">
                       <div className="w-2 h-2 rounded-full bg-gradient-to-r from-rose-500 to-purple-500"></div>
-                      <span className="text-xs font-semibold text-white uppercase tracking-wider">Neu</span>
+                      <span className="text-[10px] font-semibold text-white uppercase tracking-wider">Neu</span>
                     </div>
                   </div>
                 </div>
@@ -491,7 +487,7 @@ export default function Home() {
         <CustomerProjects />
 
         {/* --- HOW IT FEELS (BENEFITS BENTO) --- */}
-        <section className="py-24 lg:py-32 bg-slate-50 dark:bg-[#0B0F19] relative overflow-hidden">
+        <section className="py-20 lg:py-32 bg-slate-50 relative overflow-hidden">
           <motion.div 
             initial="hidden"
             whileInView="visible"
@@ -499,12 +495,12 @@ export default function Home() {
             variants={staggerContainer}
             className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10"
           >
-            <motion.div variants={fadeInUp} className="text-center max-w-3xl mx-auto mb-20">
-              <h2 className="text-4xl md:text-5xl font-sans font-bold tracking-tight text-slate-900 dark:text-white mb-6">
+            <motion.div variants={fadeInUp} className="text-center max-w-3xl mx-auto mb-16 md:mb-20">
+              <h2 className="text-3xl md:text-5xl font-sans font-bold tracking-tight text-slate-900 mb-6">
                 Wir machen die Technik.<br className="hidden md:block"/>
                 Du dominierst den Markt.
               </h2>
-              <p className="text-xl text-slate-600 dark:text-slate-200 leading-relaxed">
+              <p className="text-base md:text-xl text-slate-600 leading-relaxed max-w-2xl mx-auto">
                 Vergiss frustrierende Baukästen und unzuverlässige Freelancer. Du erhältst ein hochkonvertierendes System, das Tag und Nacht für dich arbeitet.
               </p>
             </motion.div>
@@ -512,96 +508,96 @@ export default function Home() {
             <motion.div variants={fadeInUp} className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
               {/* Item 1: Design */}
               <motion.div 
-                whileHover={{ y: -8, scale: 1.02 }}
+                whileHover={{ y: -5, scale: 1.01 }}
                 transition={{ type: "spring", stiffness: 400, damping: 10 }}
-                className="bg-white dark:bg-[#0B0F19] border border-slate-200 dark:border-slate-800 rounded-2xl p-6 md:p-8 shadow-sm dark:shadow-none hover:shadow-xl hover:border-slate-300 dark:hover:border-rose-500/50 dark:hover:shadow-[0_0_30px_-5px_rgba(244,63,94,0.15)] transition-all duration-300 group relative overflow-hidden"
+                className="bg-white border border-slate-200 rounded-2xl p-6 md:p-8 shadow-sm hover:shadow-xl hover:border-slate-300 transition-all duration-300 group relative overflow-hidden"
               >
-                <div className="absolute top-0 right-0 w-32 h-32 bg-slate-50 dark:bg-[#0B0F19] rounded-bl-full -z-10 group-hover:scale-110 transition-transform duration-500"></div>
-                <div className="w-12 h-12 rounded-xl bg-slate-50 dark:bg-[#0B0F19] border border-slate-100 dark:border-slate-800 flex items-center justify-center text-slate-900 dark:text-white mb-6 group-hover:scale-110 group-hover:bg-slate-900 group-hover:text-white transition-all duration-300">
+                <div className="absolute top-0 right-0 w-32 h-32 bg-slate-50 rounded-bl-full -z-10 group-hover:scale-110 transition-transform duration-500"></div>
+                <div className="w-12 h-12 rounded-xl bg-slate-50 border border-slate-100 flex items-center justify-center text-slate-900 mb-6 group-hover:scale-110 group-hover:bg-slate-900 group-hover:text-white transition-all duration-300">
                   <MonitorSmartphone className="w-6 h-6" />
                 </div>
-                <h4 className="text-xl font-bold mb-3 text-slate-900 dark:text-white">Premium Custom Design</h4>
-                <p className="text-slate-600 dark:text-slate-200 text-sm md:text-base leading-relaxed">
+                <h4 className="text-xl font-bold mb-3 text-slate-900">Premium Custom Design</h4>
+                <p className="text-slate-600 text-sm md:text-base leading-relaxed">
                   Wir kreieren maßgeschneiderte Erlebnisse statt 08/15-Vorlagen. Hochwertig, modern und exakt auf deine Zielgruppe zugeschnitten. Dein Auftritt strahlt sofortige Autorität aus.
                 </p>
               </motion.div>
 
               {/* Item 2: Speed */}
               <motion.div 
-                whileHover={{ y: -8, scale: 1.02 }}
+                whileHover={{ y: -5, scale: 1.01 }}
                 transition={{ type: "spring", stiffness: 400, damping: 10 }}
-                className="bg-white dark:bg-[#0B0F19] border border-slate-200 dark:border-slate-800 rounded-2xl p-6 md:p-8 shadow-sm dark:shadow-none hover:shadow-xl hover:border-amber-200 transition-all duration-300 group relative overflow-hidden"
+                className="bg-white border border-slate-200 rounded-2xl p-6 md:p-8 shadow-sm hover:shadow-xl hover:border-amber-200 transition-all duration-300 group relative overflow-hidden"
               >
                 <div className="absolute top-0 right-0 w-32 h-32 bg-amber-50/50 rounded-bl-full -z-10 group-hover:scale-110 transition-transform duration-500"></div>
                 <div className="w-12 h-12 rounded-xl bg-amber-50 border border-amber-100 flex items-center justify-center text-amber-600 mb-6 group-hover:scale-110 group-hover:bg-amber-500 group-hover:text-white transition-all duration-300">
                   <Zap className="w-6 h-6" />
                 </div>
-                <h4 className="text-xl font-bold mb-3 text-slate-900 dark:text-white">Lichtgeschwindigkeit</h4>
-                <p className="text-slate-600 dark:text-slate-200 text-sm md:text-base leading-relaxed">
+                <h4 className="text-xl font-bold mb-3 text-slate-900">Lichtgeschwindigkeit</h4>
+                <p className="text-slate-600 text-sm md:text-base leading-relaxed">
                   Jede Millisekunde zählt. Unsere Architektur garantiert blitzschnelle Ladezeiten – Google liebt das, und deine Nutzer noch mehr.
                 </p>
               </motion.div>
 
               {/* Item 3: Security & Flatrate */}
               <motion.div 
-                whileHover={{ y: -8, scale: 1.02 }}
+                whileHover={{ y: -5, scale: 1.01 }}
                 transition={{ type: "spring", stiffness: 400, damping: 10 }}
-                className="bg-white dark:bg-[#0B0F19] border border-slate-200 dark:border-slate-800 rounded-2xl p-6 md:p-8 shadow-sm dark:shadow-none hover:shadow-xl hover:border-blue-200 transition-all duration-300 group relative overflow-hidden"
+                className="bg-white border border-slate-200 rounded-2xl p-6 md:p-8 shadow-sm hover:shadow-xl hover:border-blue-200 transition-all duration-300 group relative overflow-hidden"
               >
                 <div className="absolute top-0 right-0 w-32 h-32 bg-blue-50/50 rounded-bl-full -z-10 group-hover:scale-110 transition-transform duration-500"></div>
                 <div className="w-12 h-12 rounded-xl bg-blue-50 border border-blue-100 flex items-center justify-center text-blue-600 mb-6 group-hover:scale-110 group-hover:bg-blue-600 group-hover:text-white transition-all duration-300">
                   <ShieldCheck className="w-6 h-6" />
                 </div>
-                <h4 className="text-xl font-bold mb-3 text-slate-900 dark:text-white">Sorglos-Flatrate (DSGVO)</h4>
-                <p className="text-slate-600 dark:text-slate-200 text-sm md:text-base leading-relaxed">
+                <h4 className="text-xl font-bold mb-3 text-slate-900">Sorglos-Flatrate (DSGVO)</h4>
+                <p className="text-slate-600 text-sm md:text-base leading-relaxed">
                   Lehn dich zurück. Inklusive Domain, E-Mail, rechtssicherem Cookie-Banner und SSL. Updates und Backups laufen unsichtbar im Hintergrund.
                 </p>
               </motion.div>
 
               {/* Item 4: Conversion & SEO */}
               <motion.div 
-                whileHover={{ y: -8, scale: 1.02 }}
+                whileHover={{ y: -5, scale: 1.01 }}
                 transition={{ type: "spring", stiffness: 400, damping: 10 }}
-                className="bg-white dark:bg-[#0B0F19] border border-slate-200 dark:border-slate-800 rounded-2xl p-6 md:p-8 shadow-sm dark:shadow-none hover:shadow-xl hover:border-emerald-200 transition-all duration-300 group relative overflow-hidden"
+                className="bg-white border border-slate-200 rounded-2xl p-6 md:p-8 shadow-sm hover:shadow-xl hover:border-emerald-200 transition-all duration-300 group relative overflow-hidden"
               >
                 <div className="absolute top-0 right-0 w-32 h-32 bg-emerald-50/50 rounded-bl-full -z-10 group-hover:scale-110 transition-transform duration-500"></div>
                 <div className="w-12 h-12 rounded-xl bg-emerald-50 border border-emerald-100 flex items-center justify-center text-emerald-600 mb-6 group-hover:scale-110 group-hover:bg-emerald-600 group-hover:text-white transition-all duration-300">
                   <Target className="w-6 h-6" />
                 </div>
-                <h4 className="text-xl font-bold mb-3 text-slate-900 dark:text-white">Psychologie & Lokales SEO</h4>
-                <p className="text-slate-600 dark:text-slate-200 text-sm md:text-base leading-relaxed">
+                <h4 className="text-xl font-bold mb-3 text-slate-900">Psychologie & Lokales SEO</h4>
+                <p className="text-slate-600 text-sm md:text-base leading-relaxed">
                   Kein blindes Raten. Jedes Element ist strategisch auf Neukundengewinnung optimiert. Dank modernsten SEO-Standards wirst du in deiner Region optimal auf Google gefunden.
                 </p>
               </motion.div>
 
               {/* Item 5: Portal */}
               <motion.div 
-                whileHover={{ y: -8, scale: 1.02 }}
+                whileHover={{ y: -5, scale: 1.01 }}
                 transition={{ type: "spring", stiffness: 400, damping: 10 }}
-                className="bg-white dark:bg-[#0B0F19] border border-slate-200 dark:border-slate-800 rounded-2xl p-6 md:p-8 shadow-sm dark:shadow-none hover:shadow-xl hover:border-purple-200 transition-all duration-300 group relative overflow-hidden"
+                className="bg-white border border-slate-200 rounded-2xl p-6 md:p-8 shadow-sm hover:shadow-xl hover:border-purple-200 transition-all duration-300 group relative overflow-hidden"
               >
                 <div className="absolute top-0 right-0 w-32 h-32 bg-purple-50/50 rounded-bl-full -z-10 group-hover:scale-110 transition-transform duration-500"></div>
                 <div className="w-12 h-12 rounded-xl bg-purple-50 border border-purple-100 flex items-center justify-center text-purple-600 mb-6 group-hover:scale-110 group-hover:bg-purple-600 group-hover:text-white transition-all duration-300">
                   <LayoutDashboard className="w-6 h-6" />
                 </div>
-                <h4 className="text-xl font-bold mb-3 text-slate-900 dark:text-white">Exklusives Kundenportal</h4>
-                <p className="text-slate-600 dark:text-slate-200 text-sm md:text-base leading-relaxed">
+                <h4 className="text-xl font-bold mb-3 text-slate-900">Exklusives Kundenportal</h4>
+                <p className="text-slate-600 text-sm md:text-base leading-relaxed">
                   Behalte die volle Kontrolle. In deinem Dashboard verwaltest du Rechnungen, forderst mit einem Klick Änderungen an und überblickst deinen Traffic.
                 </p>
               </motion.div>
 
               {/* Item 6: Ansprechpartner */}
               <motion.div 
-                whileHover={{ y: -8, scale: 1.02 }}
+                whileHover={{ y: -5, scale: 1.01 }}
                 transition={{ type: "spring", stiffness: 400, damping: 10 }}
-                className="bg-white dark:bg-[#0B0F19] border border-slate-200 dark:border-slate-800 rounded-2xl p-6 md:p-8 shadow-sm dark:shadow-none hover:shadow-xl hover:border-rose-200 transition-all duration-300 group relative overflow-hidden"
+                className="bg-white border border-slate-200 rounded-2xl p-6 md:p-8 shadow-sm hover:shadow-xl hover:border-rose-200 transition-all duration-300 group relative overflow-hidden"
               >
                 <div className="absolute top-0 right-0 w-32 h-32 bg-rose-50/50 rounded-bl-full -z-10 group-hover:scale-110 transition-transform duration-500"></div>
                 <div className="w-12 h-12 rounded-xl bg-rose-50 border border-rose-100 flex items-center justify-center text-rose-600 mb-6 group-hover:scale-110 group-hover:bg-rose-600 group-hover:text-white transition-all duration-300">
                   <MessageSquare className="w-6 h-6" />
                 </div>
-                <h4 className="text-xl font-bold mb-3 text-slate-900 dark:text-white">Dein Tech-Partner</h4>
-                <p className="text-slate-600 dark:text-slate-200 text-sm md:text-base leading-relaxed">
+                <h4 className="text-xl font-bold mb-3 text-slate-900">Dein Tech-Partner</h4>
+                <p className="text-slate-600 text-sm md:text-base leading-relaxed">
                   Keine anonymen Support-Tickets oder Hotlines. Du bekommst einen direkten, persönlichen Ansprechpartner, der dein Projekt in- und auswendig kennt.
                 </p>
               </motion.div>
@@ -613,7 +609,7 @@ export default function Home() {
         <ComparisonSection />
 
         {/* --- TESTIMONIALS --- */}
-        <section className="py-24 lg:py-32 bg-white dark:bg-[#0B0F19] border-t border-slate-200 dark:border-slate-800 overflow-hidden" id="referenzen">
+        <section className="py-20 lg:py-32 bg-white border-t border-slate-200 overflow-hidden" id="referenzen">
           <motion.div 
             initial="hidden"
             whileInView="visible"
@@ -621,17 +617,17 @@ export default function Home() {
             variants={staggerContainer}
             className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
           >
-            <motion.div variants={fadeInUp} className="text-center max-w-3xl mx-auto mb-20">
-              <h3 className="text-4xl md:text-5xl font-sans font-bold text-slate-900 dark:text-white tracking-tight mb-6">
+            <motion.div variants={fadeInUp} className="text-center max-w-3xl mx-auto mb-16 md:mb-20">
+              <h3 className="text-3xl md:text-5xl font-sans font-bold text-slate-900 tracking-tight mb-6">
                 Kunden, die uns<br/>vertrauen.
               </h3>
-              <p className="text-xl text-slate-600 dark:text-slate-200 leading-relaxed">
+              <p className="text-base md:text-xl text-slate-600 leading-relaxed max-w-2xl mx-auto">
                 Echte Ergebnisse von echten Unternehmen. Erfahre, wie unsere Partner mit dem richtigen Web‑Layout exponentiell gewachsen sind.
               </p>
             </motion.div>
             
             <motion.div variants={fadeInUp} className="relative max-w-5xl mx-auto">
-              <div className="relative overflow-hidden px-4 md:px-16 py-8 h-auto min-h-[400px] md:min-h-[340px] flex items-center">
+              <div className="relative overflow-hidden px-4 md:px-16 py-8 h-auto min-h-[450px] md:min-h-[340px] flex items-center">
                 <AnimatePresence mode="wait">
                   <motion.div
                     key={currentTestimonialIndex}
@@ -641,33 +637,33 @@ export default function Home() {
                     transition={{ duration: 0.4, ease: [0.32, 0.72, 0, 1] }}
                     className="w-full flex items-center justify-center"
                   >
-                    <div className="bg-white dark:bg-[#0B0F19] border border-slate-200 dark:border-slate-800 rounded-3xl p-8 md:p-12 w-full flex flex-col md:flex-row gap-8 md:gap-12 items-center relative group shadow-sm dark:shadow-none hover:shadow-xl hover:border-slate-300 dark:hover:border-rose-500/50 dark:hover:shadow-[0_0_30px_-5px_rgba(244,63,94,0.15)] transition-all duration-500">
+                    <div className="bg-white border border-slate-200 rounded-3xl p-6 md:p-12 w-full flex flex-col md:flex-row gap-8 md:gap-12 items-center relative group shadow-sm hover:shadow-xl hover:border-slate-300 transition-all duration-500">
                       
                       {/* Decorative quote mark */}
-                      <div className="absolute top-8 left-8 text-8xl text-indigo-50 font-serif leading-none select-none -z-0">
+                      <div className="absolute top-4 left-4 md:top-8 md:left-8 text-7xl md:text-8xl text-indigo-50 font-serif leading-none select-none -z-0">
                         &quot;
                       </div>
 
                       <div className="flex-shrink-0 text-center md:text-left flex flex-col items-center md:items-start z-10 w-full md:w-1/3">
-                        <div className="relative mb-6">
+                        <div className="relative mb-4 md:mb-6">
                           <Image 
                             src={testimonialsData[currentTestimonialIndex].img} 
                             alt={testimonialsData[currentTestimonialIndex].name} 
                             width={112}
                             height={112}
-                            className="w-28 h-28 rounded-full object-cover ring-4 ring-white shadow-md z-10 relative" 
+                            className="w-24 h-24 md:w-28 md:h-28 rounded-full object-cover ring-4 ring-white shadow-md z-10 relative" 
                           />
                           <div className="absolute inset-0 rounded-full bg-indigo-500 blur-xl opacity-20 -z-10 transform scale-110"></div>
                         </div>
-                        <div className="font-bold text-2xl text-slate-900 dark:text-white mb-1">{testimonialsData[currentTestimonialIndex].name}</div>
-                        <div className="text-sm text-indigo-600 font-semibold mb-4 uppercase tracking-wider">{testimonialsData[currentTestimonialIndex].role}</div>
+                        <div className="font-bold text-xl md:text-2xl text-slate-900 mb-1">{testimonialsData[currentTestimonialIndex].name}</div>
+                        <div className="text-xs md:text-sm text-indigo-600 font-semibold mb-4 uppercase tracking-wider">{testimonialsData[currentTestimonialIndex].role}</div>
                         <div className="flex items-center gap-1">
-                          {[1,2,3,4,5].map(star => <Star key={star} className="w-5 h-5 fill-amber-400 text-amber-400 drop-shadow-sm dark:shadow-none" />)}
+                          {[1,2,3,4,5].map(star => <Star key={star} className="w-4 h-4 md:w-5 md:h-5 fill-amber-400 text-amber-400 drop-shadow-sm" />)}
                         </div>
                       </div>
 
                       <div className="flex-1 relative z-10 text-center md:text-left">
-                        <p className="text-slate-700 text-xl md:text-2xl leading-relaxed md:leading-normal font-medium">
+                        <p className="text-slate-700 text-lg md:text-2xl leading-relaxed md:leading-normal font-medium">
                           {testimonialsData[currentTestimonialIndex].quote}
                         </p>
                       </div>
@@ -677,21 +673,21 @@ export default function Home() {
               </div>
 
               {/* Navigation Controls */}
-              <div className="flex flex-col sm:flex-row items-center justify-between gap-6 px-4 md:px-16 mt-8">
+              <div className="flex flex-col sm:flex-row items-center justify-between gap-6 px-4 md:px-16 mt-4">
                 <div className="flex items-center gap-3">
                   <button 
                     onClick={prevTestimonial}
-                    className="w-12 h-12 rounded-full bg-white dark:bg-[#0B0F19] border border-slate-200 dark:border-slate-800 flex items-center justify-center text-slate-500 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-slate-50 dark:hover:bg-slate-800 hover:shadow-md hover:border-slate-300 dark:hover:border-rose-500/50 dark:hover:shadow-[0_0_30px_-5px_rgba(244,63,94,0.15)] transition-all group"
+                    className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-white border border-slate-200 flex items-center justify-center text-slate-500 hover:text-slate-900 hover:bg-slate-50 hover:shadow-md hover:border-slate-300 transition-all group"
                     aria-label="Vorherige Referenz"
                   >
-                    <ChevronLeft className="w-6 h-6 group-hover:-translate-x-0.5 transition-transform" />
+                    <ChevronLeft className="w-5 h-5 md:w-6 md:h-6 group-hover:-translate-x-0.5 transition-transform" />
                   </button>
                   <button 
                     onClick={nextTestimonial}
-                    className="w-12 h-12 rounded-full bg-white dark:bg-[#0B0F19] border border-slate-200 dark:border-slate-800 flex items-center justify-center text-slate-500 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-slate-50 dark:hover:bg-slate-800 hover:shadow-md hover:border-slate-300 dark:hover:border-rose-500/50 dark:hover:shadow-[0_0_30px_-5px_rgba(244,63,94,0.15)] transition-all group"
+                    className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-white border border-slate-200 flex items-center justify-center text-slate-500 hover:text-slate-900 hover:bg-slate-50 hover:shadow-md hover:border-slate-300 transition-all group"
                     aria-label="Nächste Referenz"
                   >
-                    <ChevronRight className="w-6 h-6 group-hover:translate-x-0.5 transition-transform" />
+                    <ChevronRight className="w-5 h-5 md:w-6 md:h-6 group-hover:translate-x-0.5 transition-transform" />
                   </button>
                 </div>
                 
@@ -700,7 +696,7 @@ export default function Home() {
                     <button
                       key={idx}
                       onClick={() => setCurrentTestimonialIndex(idx)}
-                      className={`h-2.5 rounded-full transition-all duration-300 ${currentTestimonialIndex === idx ? 'bg-slate-900 w-8' : 'bg-slate-200 w-2.5 hover:bg-slate-400'}`}
+                      className={`h-2 md:h-2.5 rounded-full transition-all duration-300 ${currentTestimonialIndex === idx ? 'bg-slate-900 w-6 md:w-8' : 'bg-slate-200 w-2 md:w-2.5 hover:bg-slate-400'}`}
                       aria-label={`Gehe zu Referenz ${idx + 1}`}
                     />
                   ))}
@@ -714,7 +710,7 @@ export default function Home() {
         <HowItWorksSection />
 
         {/* --- PRICING --- */}
-        <section id="preise" className="py-24 lg:py-32 bg-slate-50 dark:bg-[#0B0F19] relative overflow-hidden border-t border-slate-200 dark:border-slate-800">
+        <section id="preise" className="py-20 lg:py-32 bg-slate-50 relative overflow-hidden border-t border-slate-200">
           <motion.div 
             initial="hidden"
             whileInView="visible"
@@ -722,29 +718,29 @@ export default function Home() {
             variants={staggerContainer}
             className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10"
           >
-            <motion.div variants={fadeInUp} className="text-center max-w-3xl mx-auto mb-16">
-              <h2 className="text-4xl md:text-5xl font-sans font-bold text-slate-900 dark:text-white tracking-tight mb-6">
+            <motion.div variants={fadeInUp} className="text-center max-w-3xl mx-auto mb-12">
+              <h2 className="text-3xl md:text-5xl font-sans font-bold text-slate-900 tracking-tight mb-6">
                 Ein System, das sich selbst bezahlt macht.
               </h2>
-              <p className="text-xl text-slate-600 dark:text-slate-200 leading-relaxed">
+              <p className="text-base md:text-xl text-slate-600 leading-relaxed max-w-2xl mx-auto">
                 Keine versteckten Gebühren. Keine bösen Überraschungen. Wähle das Setup, das dir den maximalen Hebel für dein aktuelles Wachstum gibt.
               </p>
             </motion.div>
 
             <motion.div variants={fadeInUp} className="flex justify-center mb-16 relative z-20">
-              <div className="bg-white dark:bg-[#0B0F19] p-1 rounded-lg inline-flex items-center shadow-sm dark:shadow-none border border-slate-200 dark:border-slate-800">
+              <div className="bg-white p-1 rounded-lg inline-flex items-center shadow-sm border border-slate-200">
                 <button 
                   onClick={() => setIsYearly(false)}
-                  className={`px-8 py-3 rounded-md font-semibold text-sm transition-all duration-200 ${!isYearly ? 'bg-slate-900 text-white shadow-sm dark:shadow-none' : 'text-slate-600 dark:text-slate-200 hover:text-slate-900 dark:hover:text-white'}`}
+                  className={`px-4 sm:px-8 py-2 md:py-3 rounded-md font-semibold text-xs md:text-sm transition-all duration-200 ${!isYearly ? 'bg-slate-900 text-white shadow-sm' : 'text-slate-600 hover:text-slate-900'}`}
                 >
                   Monatlich kündbar
                 </button>
                 <button 
                   onClick={() => setIsYearly(true)}
-                  className={`px-8 py-3 rounded-md font-semibold text-sm transition-all duration-200 flex items-center gap-2 ${isYearly ? 'bg-slate-900 text-white shadow-sm dark:shadow-none' : 'text-slate-600 dark:text-slate-200 hover:text-slate-900 dark:hover:text-white'}`}
+                  className={`px-4 sm:px-8 py-2 md:py-3 rounded-md font-semibold text-xs md:text-sm transition-all duration-200 flex items-center gap-2 ${isYearly ? 'bg-slate-900 text-white shadow-sm' : 'text-slate-600 hover:text-slate-900'}`}
                 >
                   Jährlich
-                  <span className={`px-2 py-0.5 rounded text-[10px] uppercase font-bold tracking-wider transition-colors ${isYearly ? 'bg-white/20 text-white' : 'bg-rose-100 text-rose-700'}`}>
+                  <span className={`px-1.5 py-0.5 rounded text-[9px] md:text-[10px] uppercase font-bold tracking-wider transition-colors ${isYearly ? 'bg-white/20 text-white' : 'bg-rose-100 text-rose-700'}`}>
                     -15%
                   </span>
                 </button>
@@ -755,29 +751,29 @@ export default function Home() {
               
               {/* Start Plan */}
               <motion.div 
-                className="bg-white dark:bg-[#0B0F19] rounded-xl p-8 border border-slate-200 dark:border-slate-800 shadow-sm dark:shadow-none hover:shadow-md transition-shadow duration-300 flex flex-col relative"
+                className="bg-white rounded-xl p-6 md:p-8 border border-slate-200 shadow-sm hover:shadow-md transition-shadow duration-300 flex flex-col relative"
               >
-                <h4 className="text-2xl font-bold text-slate-900 dark:text-white mb-2">Start</h4>
-                <p className="text-slate-600 dark:text-slate-200 mb-8 min-h-[48px]">Für lokale Betriebe, die modern auftreten wollen.</p>
+                <h4 className="text-xl md:text-2xl font-bold text-slate-900 mb-2">Start</h4>
+                <p className="text-slate-600 mb-8 min-h-[48px] text-sm md:text-base">Für lokale Betriebe, die modern auftreten wollen.</p>
                 
                 <div className="mb-8">
                   <div className="flex items-end gap-1 mb-2">
-                    {isYearly && <span className="text-lg font-medium text-slate-400 line-through mb-1">359€</span>}
-                    <span className="text-4xl font-bold text-slate-900 dark:text-white tracking-tight">{isYearly ? '249€' : '359€'}</span>
-                    <span className="text-slate-600 dark:text-slate-200 font-medium pb-1">/ mo</span>
+                    {isYearly && <span className="text-base md:text-lg font-medium text-slate-400 line-through mb-1">359€</span>}
+                    <span className="text-3xl md:text-4xl font-bold text-slate-900 tracking-tight">{isYearly ? '249€' : '359€'}</span>
+                    <span className="text-slate-600 font-medium pb-1 md:text-base text-sm">/ mo</span>
                   </div>
                   {isYearly ? (
-                    <div className="text-sm font-semibold text-emerald-600 bg-emerald-50 px-2 py-1 rounded inline-block">0€ Setup-Gebühr</div>
+                    <div className="text-xs md:text-sm font-semibold text-emerald-600 bg-emerald-50 px-2 py-1 rounded inline-block">0€ Setup-Gebühr</div>
                   ) : (
-                    <div className="text-sm text-slate-500 dark:text-slate-300">+ Einmalige Setup-Gebühr</div>
+                    <div className="text-xs md:text-sm text-slate-500">+ Einmalige Setup-Gebühr</div>
                   )}
                 </div>
                 
-                <Link href="#warteliste" className="w-full py-3 mb-8 rounded-lg font-semibold text-slate-900 dark:text-white bg-white dark:bg-[#0B0F19] border border-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors text-center">
+                <Link href="#warteliste" className="w-full py-3 mb-8 rounded-lg font-semibold text-slate-900 bg-white border border-slate-300 hover:bg-slate-50 transition-colors text-center text-sm md:text-base">
                   Plan wählen
                 </Link>
 
-                <div className="h-px bg-slate-100 dark:bg-slate-800 w-full mb-8"></div>
+                <div className="h-px bg-slate-100 w-full mb-8"></div>
                 
                 <ul className="space-y-4 flex-1">
                   {[
@@ -789,8 +785,8 @@ export default function Home() {
                     "Bis zu 10 inhaltliche Änderungen / Monat"
                   ].map((f,i)=>(
                     <li key={i} className="flex items-start gap-3">
-                      <CheckCircle2 className="w-5 h-5 text-slate-400 shrink-0 mt-0.5" />
-                      <span className="text-slate-700 text-sm leading-relaxed">{f}</span>
+                      <CheckCircle2 className="w-4 h-4 md:w-5 md:h-5 text-slate-400 shrink-0 mt-0.5" />
+                      <span className="text-slate-700 text-xs md:text-sm leading-relaxed">{f}</span>
                     </li>
                   ))}
                 </ul>
@@ -798,27 +794,27 @@ export default function Home() {
 
               {/* Growth Plan */}
               <motion.div 
-                className="bg-slate-900 rounded-xl p-8 border border-slate-800 shadow-xl transition-shadow duration-300 flex flex-col relative text-white md:-mt-4 md:mb-4"
+                className="bg-slate-900 rounded-xl p-6 md:p-8 border border-slate-800 shadow-xl transition-shadow duration-300 flex flex-col relative text-white md:-mt-4 md:mb-4"
               >
                 <div className="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-rose-500 to-purple-600 rounded-t-xl"></div>
                 
-                <h4 className="text-2xl font-bold mb-2">Growth</h4>
-                <p className="text-slate-400 mb-8 min-h-[48px]">Für Unternehmen, die Skalierung und mehr Sichtbarkeit wollen.</p>
+                <h4 className="text-xl md:text-2xl font-bold mb-2">Growth</h4>
+                <p className="text-slate-400 mb-8 min-h-[48px] text-sm md:text-base">Für Unternehmen, die Skalierung und mehr Sichtbarkeit wollen.</p>
                 
                 <div className="mb-8">
                   <div className="flex items-end gap-1 mb-2">
-                    {isYearly && <span className="text-lg font-medium text-slate-500 dark:text-slate-300 line-through mb-1">549€</span>}
-                    <span className="text-4xl font-bold tracking-tight">{isYearly ? '449€' : '549€'}</span>
-                    <span className="text-slate-400 font-medium pb-1">/ mo</span>
+                    {isYearly && <span className="text-base md:text-lg font-medium text-slate-500 line-through mb-1">549€</span>}
+                    <span className="text-3xl md:text-4xl font-bold tracking-tight">{isYearly ? '449€' : '549€'}</span>
+                    <span className="text-slate-400 font-medium pb-1 md:text-base text-sm">/ mo</span>
                   </div>
                   {isYearly ? (
-                    <div className="text-sm font-semibold text-purple-400 bg-purple-500/10 border border-purple-500/20 px-2 py-1 rounded inline-block">0€ Setup-Gebühr</div>
+                    <div className="text-xs md:text-sm font-semibold text-purple-400 bg-purple-500/10 border border-purple-500/20 px-2 py-1 rounded inline-block">0€ Setup-Gebühr</div>
                   ) : (
-                    <div className="text-sm text-slate-400">+ Einmalige Setup-Gebühr</div>
+                    <div className="text-xs md:text-sm text-slate-400">+ Einmalige Setup-Gebühr</div>
                   )}
                 </div>
                 
-                <Link href="#warteliste" className="w-full py-3 mb-8 rounded-lg font-semibold text-white bg-gradient-to-r from-rose-500 to-purple-600 hover:from-rose-600 hover:to-purple-700 transition-colors text-center">
+                <Link href="#warteliste" className="w-full py-3 mb-8 rounded-lg font-semibold text-white bg-gradient-to-r from-rose-500 to-purple-600 hover:from-rose-600 hover:to-purple-700 transition-colors text-center text-sm md:text-base">
                   Beliebteste Wahl
                 </Link>
 
@@ -834,8 +830,8 @@ export default function Home() {
                     "Alles aus dem Start-Plan"
                   ].map((f,i)=>(
                     <li key={i} className="flex items-start gap-3">
-                      <CheckCircle2 className="w-5 h-5 text-rose-400 shrink-0 mt-0.5" />
-                      <span className="text-slate-300 text-sm leading-relaxed">{f}</span>
+                      <CheckCircle2 className="w-4 h-4 md:w-5 md:h-5 text-rose-400 shrink-0 mt-0.5" />
+                      <span className="text-slate-300 text-xs md:text-sm leading-relaxed">{f}</span>
                     </li>
                   ))}
                 </ul>
@@ -843,23 +839,23 @@ export default function Home() {
 
               {/* Custom Plan */}
               <motion.div 
-                className="bg-white dark:bg-[#0B0F19] rounded-xl p-8 border border-slate-200 dark:border-slate-800 shadow-sm dark:shadow-none hover:shadow-md transition-shadow duration-300 flex flex-col relative"
+                className="bg-white rounded-xl p-6 md:p-8 border border-slate-200 shadow-sm hover:shadow-md transition-shadow duration-300 flex flex-col relative"
               >
-                <h4 className="text-2xl font-bold text-slate-900 dark:text-white mb-2">Custom</h4>
-                <p className="text-slate-600 dark:text-slate-200 mb-8 min-h-[48px]">Für sehr spezifische Logik, Portale oder große E-Commerce Projekte.</p>
+                <h4 className="text-xl md:text-2xl font-bold text-slate-900 mb-2">Custom</h4>
+                <p className="text-slate-600 mb-8 min-h-[48px] text-sm md:text-base">Für sehr spezifische Logik, Portale oder große E-Commerce Projekte.</p>
                 
                 <div className="mb-8">
                   <div className="flex items-end gap-1 h-11 mb-2">
-                    <span className="text-3xl font-bold text-slate-900 dark:text-white tracking-tight">Individuell</span>
+                    <span className="text-2xl md:text-3xl font-bold text-slate-900 tracking-tight">Individuell</span>
                   </div>
-                  <div className="text-sm font-semibold text-slate-600 dark:text-slate-200 bg-slate-100 dark:bg-slate-800 px-2 py-1 rounded inline-block">Nach Scoping</div>
+                  <div className="text-xs md:text-sm font-semibold text-slate-600 bg-slate-100 px-2 py-1 rounded inline-block">Nach Scoping</div>
                 </div>
                 
-                <Link href="#warteliste" className="w-full py-3 mb-8 rounded-lg font-semibold text-slate-900 dark:text-white bg-white dark:bg-[#0B0F19] border border-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors text-center">
+                <Link href="#warteliste" className="w-full py-3 mb-8 rounded-lg font-semibold text-slate-900 bg-white border border-slate-300 hover:bg-slate-50 transition-colors text-center text-sm md:text-base">
                   Kontakt aufnehmen
                 </Link>
 
-                <div className="h-px bg-slate-100 dark:bg-slate-800 w-full mb-8"></div>
+                <div className="h-px bg-slate-100 w-full mb-8"></div>
                 
                 <ul className="space-y-4 flex-1">
                   {[
@@ -870,8 +866,8 @@ export default function Home() {
                     "Eigener Tech-Lead & Consulting"
                   ].map((f,i)=>(
                     <li key={i} className="flex items-start gap-3">
-                      <CheckCircle2 className="w-5 h-5 text-slate-400 shrink-0 mt-0.5" />
-                      <span className="text-slate-700 text-sm leading-relaxed">{f}</span>
+                      <CheckCircle2 className="w-4 h-4 md:w-5 md:h-5 text-slate-400 shrink-0 mt-0.5" />
+                      <span className="text-slate-700 text-xs md:text-sm leading-relaxed">{f}</span>
                     </li>
                   ))}
                 </ul>
@@ -880,7 +876,7 @@ export default function Home() {
             </motion.div>
             
             <motion.div variants={fadeInUp} className="mt-12 text-center max-w-3xl mx-auto">
-              <p className="text-sm text-slate-500 dark:text-slate-300 flex flex-col md:flex-row items-center justify-center gap-2 text-left">
+              <p className="text-xs md:text-sm text-slate-500 flex flex-col md:flex-row items-center justify-center gap-2 text-center">
                 <AlertCircle className="w-4 h-4 text-slate-400 shrink-0" />
                 <span>Alle Preise zzgl. MwSt. Die Live-Schaltung der Webseite erfolgt nach finaler Abnahme aller Inhalte.</span>
               </p>
@@ -890,7 +886,7 @@ export default function Home() {
         </section>
 
         {/* --- FAQ SECTION --- */}
-        <section className="py-24 bg-white dark:bg-[#0B0F19] relative">
+        <section className="py-20 lg:py-32 bg-white relative">
           <motion.div 
             initial="hidden"
             whileInView="visible"
@@ -899,21 +895,21 @@ export default function Home() {
             className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10"
           >
             <motion.div variants={fadeInUp} className="text-center mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold font-sans text-slate-900 dark:text-white tracking-tight mb-4">Noch Fragen?</h2>
-              <p className="text-lg text-slate-600 dark:text-slate-200">Wir haben die wichtigsten Antworten hier zusammengefasst.</p>
+              <h2 className="text-2xl md:text-4xl font-bold font-sans text-slate-900 tracking-tight mb-4">Noch Fragen?</h2>
+              <p className="text-base md:text-lg text-slate-600 max-w-2xl mx-auto">Wir haben die wichtigsten Antworten hier zusammengefasst.</p>
             </motion.div>
             
             <motion.div variants={fadeInUp} className="space-y-3">
               {faqs.map((faq, index) => (
                 <div 
                   key={index} 
-                  className={`border border-slate-200 dark:border-slate-800 rounded-xl overflow-hidden transition-all duration-200 bg-white dark:bg-[#0B0F19]`}
+                  className={`border border-slate-200 rounded-xl overflow-hidden transition-all duration-200 bg-white`}
                 >
                   <button 
                     onClick={() => setOpenFaq(openFaq === index ? null : index)}
-                    className="w-full flex items-center justify-between p-6 text-left focus:outline-none hover:bg-slate-50 dark:hover:bg-slate-800"
+                    className="w-full flex items-center justify-between p-4 md:p-6 text-left focus:outline-none hover:bg-slate-50"
                   >
-                    <span className={`font-semibold text-lg pr-8 text-slate-900 dark:text-white`}>
+                    <span className={`font-semibold text-base md:text-lg pr-4 text-slate-900`}>
                       {faq.question}
                     </span>
                     <div className={`flex-shrink-0 transition-transform duration-300 ${openFaq === index ? 'rotate-180 text-rose-500' : 'text-slate-400'}`}>
@@ -929,7 +925,7 @@ export default function Home() {
                         transition={{ duration: 0.3, ease: "easeInOut" }}
                         className="overflow-hidden"
                       >
-                        <div className="p-6 pt-0 text-slate-600 dark:text-slate-200 leading-relaxed">
+                        <div className="p-4 md:p-6 pt-0 text-slate-600 text-sm md:text-base leading-relaxed">
                           {faq.answer}
                         </div>
                       </motion.div>
@@ -940,7 +936,7 @@ export default function Home() {
             </motion.div>
             
             <motion.div variants={fadeInUp} className="mt-12 text-center">
-              <Link href="/faq" className="inline-flex items-center gap-2 border-b-2 border-slate-900 text-slate-900 dark:text-white font-bold hover:text-rose-600 hover:border-rose-600 pb-1 transition-colors">
+              <Link href="/faq" className="inline-flex items-center gap-2 border-b-2 border-slate-900 text-slate-900 font-bold hover:text-rose-600 hover:border-rose-600 pb-1 transition-colors text-sm md:text-base">
                 Weitere Fragen ansehen <ArrowRight className="w-4 h-4" />
               </Link>
             </motion.div>
@@ -948,7 +944,7 @@ export default function Home() {
         </section>
 
         {/* --- FINAL CTA SECTION --- */}
-        <section className="py-24 bg-slate-50 dark:bg-[#0B0F19] relative px-4 border-t border-slate-200 dark:border-slate-800">
+        <section className="py-20 lg:py-32 bg-slate-50 relative px-4 border-t border-slate-200">
           <motion.div 
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
@@ -956,17 +952,17 @@ export default function Home() {
             transition={{ duration: 0.8 }}
             className="max-w-4xl mx-auto"
           >
-            <div className="bg-slate-900 rounded-2xl p-12 md:p-16 text-center shadow-lg flex flex-col items-center">
-              <h2 className="text-3xl md:text-5xl font-sans font-bold text-white mb-6">Bist du bereit für deinen neuen Auftritt?</h2>
-              <p className="text-lg text-slate-300 mb-10 max-w-2xl text-center leading-relaxed">
+            <div className="bg-slate-900 rounded-2xl p-8 md:p-16 text-center shadow-lg flex flex-col items-center">
+              <h2 className="text-2xl md:text-5xl font-sans font-bold text-white mb-6">Bist du bereit für deinen neuen Auftritt?</h2>
+              <p className="text-base md:text-lg text-slate-300 mb-10 max-w-2xl text-center leading-relaxed">
                 Lass uns unverbindlich sprechen. Wir klären alle offenen Fragen und prüfen gemeinsam, ob unser Leasingmodell zu deinem Geschäft passt.
               </p>
               <Link 
                 href="#warteliste"
-                className="bg-white dark:bg-[#0B0F19] text-slate-900 dark:text-white px-8 py-4 rounded-lg font-bold hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors inline-flex items-center gap-3"
+                className="bg-white text-slate-900 px-6 md:px-8 py-3 md:py-4 rounded-lg font-bold hover:bg-slate-100 transition-colors inline-flex flex-col md:flex-row items-center gap-2 md:gap-3 text-sm md:text-base"
               >
                 <span>Auf die Warteliste eintragen</span>
-                <span className="bg-rose-100 text-rose-700 text-xs font-bold px-2.5 py-1 rounded-full">-15% sichern</span>
+                <span className="bg-rose-100 text-rose-700 text-[10px] md:text-xs font-bold px-2 md:px-2.5 py-1 rounded-full whitespace-nowrap">-15% sichern</span>
               </Link>
             </div>
           </motion.div>

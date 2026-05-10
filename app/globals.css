@@ -1,8 +1,5 @@
 @import "tailwindcss";
 
-/* Completely disable dark mode by mapping the dark variant to an unused class */
-@custom-variant dark (&:where(.force-disable-dark-mode));
-
 @theme {
   --font-sans: 'Inter', sans-serif;
   

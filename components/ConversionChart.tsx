@@ -15,8 +15,8 @@ const data = [
 const CustomTooltip = ({ active, payload, label }: any) => {
   if (active && payload && payload.length) {
     return (
-      <div className="bg-white dark:bg-slate-900 p-4 rounded-xl shadow-xl border border-gray-100 dark:border-slate-800">
-        <p className="font-bold text-slate-900 dark:text-white mb-2">{label}</p>
+      <div className="bg-white p-4 rounded-xl shadow-xl border border-gray-100">
+        <p className="font-bold text-slate-900 mb-2">{label}</p>
         <div className="space-y-1">
           <p className="text-sm font-medium" style={{ color: payload[1].color }}>
             Neue Webseite: {payload[1].value}% Conversion
