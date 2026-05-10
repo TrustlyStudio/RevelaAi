@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 export function Footer() {
   return (
@@ -9,8 +10,8 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-12">
           {/* Brand Column */}
           <div className="md:col-span-1">
-            <Link href="/" className="inline-block mb-6">
-              <span className="text-2xl font-black text-white tracking-tight">revela<span className="text-rose-500">.</span></span>
+            <Link href="/" className="inline-block mb-6 group">
+              <Image src="/Revela_Logo_Wide_TransparentBG.png" alt="Revela Logo" width={160} height={48} className="h-8 md:h-10 w-auto brightness-0 invert group-hover:scale-105 transition-transform object-contain" />
             </Link>
             <p className="text-sm font-medium leading-relaxed text-slate-500 max-w-xs">
               Premium Web-Leasing für Unternehmen, die bereit sind, in ihrer Branche die Führung zu übernehmen.
@@ -45,11 +46,7 @@ export function Footer() {
             <ul className="space-y-4 text-sm font-medium">
               <li className="flex items-start gap-3">
                 <span className="block text-slate-500">Email</span>
-                <a href="mailto:hello@revela.de" className="hover:text-white transition-colors text-slate-300">hello@revela.de</a>
-              </li>
-              <li className="flex items-start gap-3">
-                <span className="block text-slate-500">Telefon</span>
-                <span className="text-slate-300">0800 123 456</span>
+                <a href="mailto:hello@revela-ai.de" className="hover:text-white transition-colors text-slate-300">hello@revela-ai.de</a>
               </li>
             </ul>
           </div>
