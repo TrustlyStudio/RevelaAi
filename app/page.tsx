@@ -99,6 +99,29 @@ export default function Home() {
   const [isSimulatingLoad, setIsSimulatingLoad] = useState(true);
   const containerRef = useRef(null);
 
+  const problemRef = useRef(null);
+  const { scrollYProgress: problemProgress } = useScroll({
+    target: problemRef,
+    offset: ["start end", "end start"]
+  });
+  const problemY1 = useTransform(problemProgress, [0, 1], [50, -50]);
+  const problemY2 = useTransform(problemProgress, [0, 1], [100, -100]);
+  const problemY3 = useTransform(problemProgress, [0, 1], [150, -150]);
+
+  const solutionRef = useRef(null);
+  const { scrollYProgress: solutionProgress } = useScroll({
+    target: solutionRef,
+    offset: ["start end", "end start"]
+  });
+  const solutionImgY = useTransform(solutionProgress, [0, 1], [50, -50]);
+
+  const statsRef = useRef(null);
+  const { scrollYProgress: statsProgress } = useScroll({
+    target: statsRef,
+    offset: ["start end", "end start"]
+  });
+  const statsCardY = useTransform(statsProgress, [0, 1], [80, -80]);
+
   useEffect(() => {
     const timer = setTimeout(() => setIsSimulatingLoad(false), 1200);
     return () => clearTimeout(timer);
@@ -286,7 +309,7 @@ export default function Home() {
         </motion.section>
 
         {/* --- PROBLEM AGITATION SECTION --- */}
-        <section className="py-20 lg:py-32 bg-slate-50 relative overflow-hidden" id="probleme">
+        <section ref={problemRef} className="py-20 lg:py-32 bg-slate-50 relative overflow-hidden" id="probleme">
           <motion.div 
             initial="hidden"
             whileInView="visible"
@@ -296,8 +319,8 @@ export default function Home() {
           >
             <motion.div 
               variants={{
-                hidden: { opacity: 0, scale: 0.9, y: 30 },
-                visible: { opacity: 1, scale: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } }
+                hidden: { opacity: 0, scale: 0.95 },
+                visible: { opacity: 1, scale: 1, transition: { duration: 0.6, ease: "easeOut" } }
               }} 
               className="text-center max-w-3xl mx-auto mb-16 md:mb-20"
             >
@@ -332,9 +355,10 @@ export default function Home() {
               ].map((card, i) => (
                 <motion.div 
                   key={i}
+                  style={{ y: i === 0 ? problemY1 : i === 1 ? problemY2 : problemY3 }}
                   variants={{
-                    hidden: { opacity: 0, y: 15 },
-                    visible: { opacity: 1, y: 0, transition: { duration: 0.5 } }
+                    hidden: { opacity: 0, scale: 0.95 },
+                    visible: { opacity: 1, scale: 1, transition: { duration: 0.5 } }
                   }} 
                   className="bg-white rounded-2xl p-6 md:p-8 border border-slate-200 shadow-sm hover:shadow-xl hover:-translate-y-1 hover:border-slate-300 transition-all duration-300 group"
                 >
@@ -352,7 +376,7 @@ export default function Home() {
         </section>
 
         {/* --- THE SOLUTION / METHOD --- */}
-        <section className="py-20 lg:py-32 bg-white relative border-t border-slate-200">
+        <section ref={solutionRef} className="py-20 lg:py-32 bg-white relative border-t border-slate-200">
           <motion.div 
             initial="hidden"
             whileInView="visible"
@@ -361,7 +385,14 @@ export default function Home() {
             className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
           >
             <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
-              <motion.div variants={fadeInUp} className="order-2 lg:order-1 relative w-full aspect-square md:aspect-auto md:h-[600px] bg-slate-50 rounded-2xl border border-slate-200 overflow-hidden flex items-center justify-center p-6 md:p-12 shadow-inner">
+              <motion.div 
+                style={{ y: solutionImgY }} 
+                variants={{
+                  hidden: { opacity: 0, scale: 0.95 },
+                  visible: { opacity: 1, scale: 1, transition: { duration: 0.6 } }
+                }} 
+                className="order-2 lg:order-1 relative w-full aspect-square md:aspect-auto md:h-[600px] bg-slate-50 rounded-2xl border border-slate-200 overflow-hidden flex items-center justify-center p-6 md:p-12 shadow-inner"
+              >
                 <div className="relative z-10 bg-white rounded-xl p-6 md:p-8 shadow-sm border border-slate-200 w-full max-w-md">
                   <div className="flex justify-between items-center mb-8 pb-4 border-b border-slate-100">
                     <h5 className="font-semibold text-slate-900 text-lg">Ergebnisse</h5>
@@ -444,7 +475,7 @@ export default function Home() {
         </section>
 
         {/* --- STATISTICS / ROI SECTION --- */}
-        <section className="py-20 lg:py-32 bg-slate-900 relative border-t border-slate-800 text-white overflow-hidden">
+        <section ref={statsRef} className="py-20 lg:py-32 bg-slate-900 relative border-t border-slate-800 text-white overflow-hidden">
           {/* Parallax background glow for dark section */}
           <motion.div 
             style={{ y: y1 }}
@@ -484,7 +515,14 @@ export default function Home() {
                 </div>
               </motion.div>
 
-              <motion.div variants={fadeInUp} className="relative h-[300px] md:h-[400px] w-full rounded-xl bg-slate-800 border border-slate-700 p-6 md:p-8 flex flex-col shadow-2xl">
+              <motion.div 
+                style={{ y: statsCardY }} 
+                variants={{
+                  hidden: { opacity: 0, scale: 0.95 },
+                  visible: { opacity: 1, scale: 1, transition: { duration: 0.6 } }
+                }} 
+                className="relative h-[300px] md:h-[400px] w-full rounded-xl bg-slate-800 border border-slate-700 p-6 md:p-8 flex flex-col shadow-2xl"
+              >
                 <div className="flex justify-between items-center mb-6 md:mb-8 border-b border-slate-700 pb-4 md:pb-6">
                   <div>
                     <h4 className="text-sm md:text-lg font-bold text-white">Conversion-Gate</h4>
