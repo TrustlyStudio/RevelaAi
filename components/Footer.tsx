@@ -11,7 +11,7 @@ export function Footer() {
           {/* Brand Column */}
           <div className="md:col-span-1">
             <Link href="/" className="inline-block mb-6 group">
-              <Image src="/Revela_Logo_Wide_TransparentBG.png" alt="Revela Logo" width={160} height={48} className="h-8 md:h-10 w-auto brightness-0 invert group-hover:scale-105 transition-transform object-contain" />
+              <Image src="/VANICY_Logo_Wide_Cropped.png" alt="Vanicy Logo" width={160} height={48} className="h-8 md:h-10 w-auto brightness-0 invert group-hover:scale-105 transition-transform object-contain" />
             </Link>
             <p className="text-sm font-medium leading-relaxed text-slate-500 max-w-xs">
               Premium Web-Leasing für Unternehmen, die bereit sind, in ihrer Branche die Führung zu übernehmen.
@@ -50,7 +50,7 @@ export function Footer() {
             <ul className="space-y-4 text-sm font-medium">
               <li className="flex items-start gap-3">
                 <span className="block text-slate-500">Email</span>
-                <a href="mailto:hello@revela-ai.de" className="hover:text-white transition-colors text-slate-300">hello@revela-ai.de</a>
+                <a href="mailto:hello@vanicy.de" className="hover:text-white transition-colors text-slate-300">hello@vanicy.de</a>
               </li>
             </ul>
           </div>
@@ -58,7 +58,7 @@ export function Footer() {
 
         <div className="pt-8 border-t border-slate-900 flex flex-col md:flex-row items-center justify-between gap-6 text-xs font-semibold tracking-wider text-slate-600">
           <div className="flex flex-col md:flex-row items-center gap-4">
-            <span>&copy; {new Date().getFullYear()} Revela Web & Marketing Agency. Alle Rechte vorbehalten.</span>
+            <span>&copy; {new Date().getFullYear()} Vanicy Web & Marketing Agency. Alle Rechte vorbehalten.</span>
           </div>
           
           <div className="flex items-center gap-6">

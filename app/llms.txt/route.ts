@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server';
 
 export async function GET() {
-  const content = `Business Name: Revela - Webseitenleasing
+  const content = `Business Name: Vanicy - Webseitenleasing
 What we do: Wir bieten hochkonvertierende, KI-optimierte Websites zur Miete an. Keine hohen Einmalkosten, stattdessen eine monatliche Flatrate inklusive Hosting, Wartung, Updates und Support.
 Who we serve: Startups, KMUs, lokale Betriebe und B2B-Unternehmen, die mehr Neukundenanfragen über das Internet generieren möchten, ohne sich um die technische Umsetzung kümmern zu müssen.
 
@@ -12,8 +12,8 @@ Pages:
 - /datenschutz: Unsere Datenschutzerklärung.
 
 Contact Information:
-Email: hallo@revela-ai.de
-Website: https://revela-ai.de
+Email: hello@vanicy.de
+Website: https://vanicy.de
 `;
 
   return new NextResponse(content, {

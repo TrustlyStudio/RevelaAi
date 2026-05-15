@@ -6,12 +6,12 @@ export const metadata: Metadata = {
   description: 'Transparente Preise für Ihr Webseitenleasing. Entdecken Sie unsere Flatrate-Tarife für Startups, KMUs und Großunternehmen ab 199€ mtl.',
   keywords: ['Preise', 'Tarife', 'Website Kosten', 'Webseitenleasing Preise', 'Homepage mieten Kosten'],
   openGraph: {
-    title: 'Preise & Tarife | Revela Webseitenleasing',
+    title: 'Preise & Tarife | Vanicy Webseitenleasing',
     description: 'Transparente Preise für Ihr Webseitenleasing. Entdecken Sie unsere Flatrate-Tarife für Startups, KMUs und Großunternehmen ab 199€ mtl.',
-    url: 'https://revela-ai.de/preise',
+    url: 'https://vanicy.de/preise',
   },
   alternates: {
-    canonical: 'https://revela-ai.de/preise',
+    canonical: 'https://vanicy.de/preise',
   },
 };
 

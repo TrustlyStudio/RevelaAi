@@ -1,7 +1,7 @@
 import { MetadataRoute } from 'next';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://revela-ai.de';
+  const baseUrl = 'https://vanicy.de';
   const currentDate = new Date();
 
   return [

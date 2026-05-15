@@ -4,15 +4,15 @@ import { Footer } from "@/components/Footer";
 
 export const metadata: Metadata = {
   title: 'Datenschutzerklärung',
-  description: 'Datenschutzerklärung für Revela Webseitenleasing. Informationen zu Cookies, Analytics und Datenerfassung auf unserer Website.',
-  keywords: ['Datenschutz', 'Privacy Policy', 'DSGVO', 'Revela'],
+  description: 'Datenschutzerklärung für Vanicy Webseitenleasing. Informationen zu Cookies, Analytics und Datenerfassung auf unserer Website.',
+  keywords: ['Datenschutz', 'Privacy Policy', 'DSGVO', 'Vanicy'],
   openGraph: {
-    title: 'Datenschutzerklärung | Revela',
-    description: 'Datenschutzerklärung für Revela Webseitenleasing.',
-    url: 'https://revela-ai.de/datenschutz',
+    title: 'Datenschutzerklärung | Vanicy',
+    description: 'Datenschutzerklärung für Vanicy Webseitenleasing.',
+    url: 'https://vanicy.de/datenschutz',
   },
   alternates: {
-    canonical: 'https://revela-ai.de/datenschutz',
+    canonical: 'https://vanicy.de/datenschutz',
   },
 };
 
@@ -27,7 +27,7 @@ export default function Datenschutz() {
             Verantwortliche Stelle im Sinne der Datenschutzgesetze, insbesondere der EU-Datenschutzgrundverordnung (DSGVO), ist:
           </p>
           <p className="font-bold">
-            Revela<br />
+            Vanicy<br />
             Musterstraße 1<br />
             12345 Musterstadt
           </p>

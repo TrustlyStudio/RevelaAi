@@ -164,7 +164,7 @@ export function WaitlistModal() {
                   <span className="font-black text-lg text-white">R</span>
                 </div>
                 <div>
-                  <h3 className="font-bold text-slate-900 leading-tight">Revela Warteliste</h3>
+                  <h3 className="font-bold text-slate-900 leading-tight">Vanicy Warteliste</h3>
                   <p className="text-xs text-gray-500 font-medium">Unverbindlich & Kostenlos</p>
                 </div>
               </div>

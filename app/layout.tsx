@@ -10,26 +10,26 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://revela-ai.de'),
+  metadataBase: new URL('https://vanicy.de'),
   title: {
-    template: '%s | Revela',
-    default: 'Revela | Webseitenleasing',
+    template: '%s | Vanicy',
+    default: 'Vanicy | Webseitenleasing',
   },
-  description: 'Professionelles Webseitenleasing von Revela. KI-optimierte, conversion-starke Websites zur Miete ab 199€/Monat. Steigern Sie Ihren Umsatz ohne hohes Startkapital.',
+  description: 'Professionelles Webseitenleasing von Vanicy. KI-optimierte, conversion-starke Websites zur Miete ab 199€/Monat. Steigern Sie Ihren Umsatz ohne hohes Startkapital.',
   keywords: [
     'Webseitenleasing', 'Website mieten', 'Webdesign Agentur', 'Homepage mieten', 
-    'Conversion Optimierung', 'Landingpage erstellen', 'KI Website', 'Revela', 'B2B Websites'
+    'Conversion Optimierung', 'Landingpage erstellen', 'KI Website', 'Vanicy', 'B2B Websites'
   ],
   openGraph: {
-    title: 'Revela | Webseitenleasing',
-    description: 'KI-optimierte, conversion-starke Websites zur Miete ab 199€/Monat. Maximal conversion-fokussiert mit der Revela-Methode.',
+    title: 'Vanicy | Webseitenleasing',
+    description: 'KI-optimierte, conversion-starke Websites zur Miete ab 199€/Monat. Maximal conversion-fokussiert mit der Vanicy-Methode.',
     type: 'website',
     locale: 'de_DE',
-    siteName: 'Revela',
+    siteName: 'Vanicy',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Revela | Webseitenleasing',
+    title: 'Vanicy | Webseitenleasing',
     description: 'KI-optimierte, conversion-starke Websites zur Miete ab 199€/Monat.',
   },
   robots: {
@@ -49,10 +49,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   const jsonLdOrg = {
     "@context": "https://schema.org",
     "@type": "Organization",
-    "name": "Revela",
-    "url": "https://revela-ai.de",
-    "logo": "https://revela-ai.de/icon.png",
-    "description": "Revela bietet professionelles Webseitenleasing für B2B und B2C Unternehmen. Wir erstellen conversion-starke, KI-optimierte Webseiten zur Miete.",
+    "name": "Vanicy",
+    "url": "https://vanicy.de",
+    "logo": "https://vanicy.de/Vanicy_Logo_Icon_TransparentBG.png",
+    "description": "Vanicy bietet professionelles Webseitenleasing für B2B und B2C Unternehmen. Wir erstellen conversion-starke, KI-optimierte Webseiten zur Miete.",
     "contactPoint": { 
       "@type": "ContactPoint", 
       "contactType": "customer service" 
@@ -63,25 +63,25 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   const jsonLdWebSite = {
     "@context": "https://schema.org",
     "@type": "WebSite",
-    "name": "Revela",
-    "url": "https://revela-ai.de",
-    "description": "Professionelles Webseitenleasing von Revela. KI-optimierte, conversion-starke Websites zur Miete ab 199€/Monat.",
+    "name": "Vanicy",
+    "url": "https://vanicy.de",
+    "description": "Professionelles Webseitenleasing von Vanicy. KI-optimierte, conversion-starke Websites zur Miete ab 199€/Monat.",
     "inLanguage": "de-DE"
   };
 
   const jsonLdLocalBusiness = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
-    "name": "Revela",
+    "name": "Vanicy",
     "description": "Professionelles Webseitenleasing und Webdesign-Agentur. Wir erstellen maßgeschneiderte Homepages für Ihren Erfolg.",
-    "url": "https://revela-ai.de",
+    "url": "https://vanicy.de",
     "priceRange": "$$"
   };
 
   return (
     <html lang="de" className={`scroll-smooth ${inter.variable}`}>
       <head>
-        <link rel="alternate" hrefLang="de" href="https://revela-ai.de" />
+        <link rel="alternate" hrefLang="de" href="https://vanicy.de" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdOrg) }}

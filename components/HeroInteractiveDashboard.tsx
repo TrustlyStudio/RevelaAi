@@ -25,9 +25,9 @@ export function HeroInteractiveDashboard() {
     setMounted(true);
   }, []);
 
-  // Constants for Revela's impact
-  const REVELA_MULTIPLIER = 3.5; 
-  const projectedLeads = Math.round((traffic * (conversionRate / 100)) * REVELA_MULTIPLIER);
+  // Constants for Vanicy's impact
+  const VANICY_MULTIPLIER = 3.5; 
+  const projectedLeads = Math.round((traffic * (conversionRate / 100)) * VANICY_MULTIPLIER);
   const currentLeads = Math.round(traffic * (conversionRate / 100));
   const lift = projectedLeads - currentLeads;
 
@@ -56,7 +56,7 @@ export function HeroInteractiveDashboard() {
             <div className="w-2.5 h-2.5 rounded-full bg-emerald-500/30"></div>
           </div>
           <div className="ml-4 px-2 py-0.5 bg-white rounded-md text-[9px] font-mono text-slate-400 border border-slate-100 w-32 md:w-48 truncate">
-            conversion-optimizer.revela.app
+            conversion-optimizer.vanicy.app
           </div>
         </div>
 
@@ -124,7 +124,7 @@ export function HeroInteractiveDashboard() {
               <div className="absolute top-0 right-0 w-24 h-24 md:w-32 md:h-32 bg-rose-500/10 rounded-full blur-2xl md:blur-3xl -mr-12 md:-mr-16 -mt-12 md:-mt-16 transition-opacity duration-500 group-hover/card:opacity-100 opacity-50"></div>
               
               <div>
-                <span className="text-[8px] md:text-[9px] font-bold text-slate-400 uppercase tracking-[0.2em] mb-1 block">Mit Revela Optimization</span>
+                <span className="text-[8px] md:text-[9px] font-bold text-slate-400 uppercase tracking-[0.2em] mb-1 block">Mit Vanicy Optimization</span>
                 <AnimatePresence mode="wait">
                   <motion.div 
                     key={projectedLeads}
@@ -145,7 +145,7 @@ export function HeroInteractiveDashboard() {
                     className="h-full bg-gradient-to-r from-rose-500 to-purple-600 shadow-[0_0_15px_rgba(244,63,94,0.5)]"
                   />
                 </div>
-                <span className="text-[9px] md:text-[10px] font-bold text-rose-400">+{REVELA_MULTIPLIER}x</span>
+                <span className="text-[9px] md:text-[10px] font-bold text-rose-400">+{VANICY_MULTIPLIER}x</span>
               </div>
             </div>
 
@@ -175,7 +175,7 @@ export function HeroInteractiveDashboard() {
                 <Zap className="w-3.5 h-3.5 md:w-4 h-4 text-indigo-600 fill-indigo-600/20" />
              </div>
              <p className="text-[9px] md:text-[10px] text-indigo-900 leading-tight">
-               <span className="font-bold">Prognose:</span> Revela nutzt <span className="font-bold">Next.js 15 & KI-Edge</span> Rendering für sub-50ms Ladezeiten.
+               <span className="font-bold">Prognose:</span> Vanicy nutzt <span className="font-bold">Next.js 15 & KI-Edge</span> Rendering für sub-50ms Ladezeiten.
              </p>
           </div>
 
@@ -207,7 +207,7 @@ export function HeroInteractiveDashboard() {
           </div>
           <div>
             <div className="text-[10px] font-bold text-slate-500 tracking-wider uppercase">Conversion Rate</div>
-            <div className="text-xl font-bold text-slate-900">{(conversionRate * REVELA_MULTIPLIER).toFixed(1)}% <span className="text-xs text-emerald-500 tracking-normal">▲</span></div>
+            <div className="text-xl font-bold text-slate-900">{(conversionRate * VANICY_MULTIPLIER).toFixed(1)}% <span className="text-xs text-emerald-500 tracking-normal">▲</span></div>
           </div>
         </motion.div>
       </motion.div>
