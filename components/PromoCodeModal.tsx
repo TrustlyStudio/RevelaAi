@@ -89,8 +89,8 @@ export function PromoCodeModal({ isOpen, onClose, checkoutUrl }: PromoCodeModalP
 
               <div className="text-sm border-t border-slate-100 pt-6 mb-8">
                 <p className="text-slate-500">
-                  <strong className="text-slate-700">So funktioniert's:</strong><br />
-                  Füge deinen kopierten Code im nächsten Schritt (Stripe Checkout) in das Feld <span className="font-semibold">"Aktionscode hinzufügen"</span> ein. Die 299€ werden dann sofort abgezogen!
+                  <strong className="text-slate-700">So funktioniert&apos;s:</strong><br />
+                  Füge deinen kopierten Code im nächsten Schritt (Stripe Checkout) in das Feld <span className="font-semibold">&quot;Aktionscode hinzufügen&quot;</span> ein. Die 299€ werden dann sofort abgezogen!
                 </p>
               </div>
 

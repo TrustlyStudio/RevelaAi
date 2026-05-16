@@ -16,6 +16,7 @@ import { PromoCodeModal } from '@/components/PromoCodeModal';
 const ConversionChart = dynamic(() => import('@/components/ConversionChart').then(mod => mod.ConversionChart), { ssr: false });
 
 import { HowItWorksSection } from '@/components/HowItWorksSection';
+import { CustomerPortalSection } from '@/components/CustomerPortalSection';
 import { CustomerProjects } from '@/components/CustomerProjects';
 import { AnimatedCounter } from '@/components/AnimatedCounter';
 import { HeroInteractiveDashboard } from '@/components/HeroInteractiveDashboard';
@@ -765,6 +766,9 @@ export default function Home() {
 
         {/* --- HOW IT WORKS --- */}
         <HowItWorksSection />
+        
+        {/* --- CUSTOMER PORTAL --- */}
+        <CustomerPortalSection />
 
         {/* --- PRICING --- */}
         <section id="preise" className="py-20 lg:py-32 bg-slate-50 relative overflow-hidden border-t border-slate-200">
