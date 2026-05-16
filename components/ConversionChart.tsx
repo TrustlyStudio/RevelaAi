@@ -15,14 +15,14 @@ const data = [
 const CustomTooltip = ({ active, payload, label }: any) => {
   if (active && payload && payload.length) {
     return (
-      <div className="bg-white p-4 rounded-xl shadow-xl border border-gray-100">
-        <p className="font-bold text-slate-900 mb-2">{label}</p>
+      <div className="bg-white p-3 md:p-4 rounded-xl shadow-xl border border-gray-100 whitespace-nowrap">
+        <p className="font-bold text-slate-900 mb-1 md:mb-2 text-xs md:text-base">{label}</p>
         <div className="space-y-1">
-          <p className="text-sm font-medium" style={{ color: payload[1].color }}>
-            Neue Webseite: {payload[1].value}% Conversion
+          <p className="text-[10px] md:text-sm font-medium" style={{ color: payload[1].color }}>
+            Neu: {payload[1].value}%
           </p>
-          <p className="text-sm font-medium" style={{ color: payload[0].color }}>
-            Alte Webseite: {payload[0].value}% Conversion
+          <p className="text-[10px] md:text-sm font-medium" style={{ color: payload[0].color }}>
+            Alt: {payload[0].value}%
           </p>
         </div>
       </div>
@@ -33,11 +33,11 @@ const CustomTooltip = ({ active, payload, label }: any) => {
 
 export function ConversionChart() {
   return (
-    <div className="w-full h-full min-h-[300px]">
+    <div className="w-full h-full">
       <ResponsiveContainer width="100%" height="100%">
         <AreaChart
           data={data}
-          margin={{ top: 20, right: 30, left: 0, bottom: 0 }}
+          margin={{ top: 10, right: 10, left: -20, bottom: 0 }}
         >
           <defs>
             <linearGradient id="colorNeu" x1="0" y1="0" x2="0" y2="1">

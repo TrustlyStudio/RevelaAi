@@ -523,8 +523,10 @@ export default function Home() {
                     </div>
                   </div>
                 </div>
-                <div className="flex-1 w-full relative">
-                  <ConversionChart />
+                <div className="flex-1 w-full relative min-w-0 min-h-0 -mx-2 md:mx-0">
+                  <div className="absolute inset-0">
+                    <ConversionChart />
+                  </div>
                 </div>
               </motion.div>
               

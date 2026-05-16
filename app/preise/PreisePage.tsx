@@ -82,6 +82,37 @@ const addOnsMonatlich = [
   { name: "Content-Paket", desc: "Monatlich eine neue, SEO-optimierte Service- oder Ratgeber-Seite." },
 ];
 
+const getTooltipText = (val: string) => {
+  if (val.includes('Basis')) return "Umfasst grundlegende Best-Practices als solides Fundament.";
+  if (val.includes('Standard')) return "Bewährte Umsetzung, die für die meisten Standard-Anwendungsfälle passt.";
+  if (val.includes('Erweitert')) return "Erweiterte Maßnahmen inklusive tieferer Optimierungen für bessere Performance.";
+  if (val.includes('Premium')) return "Maximaler Aufwand: State-of-the-Art Umsetzung mit höchstem Detailgrad.";
+  return null;
+};
+
+const FeatureValue = ({ value, isBusiness, className = "font-semibold text-sm", isMobile = false }: { value: string, isBusiness?: boolean, className?: string, isMobile?: boolean }) => {
+  if (value === 'Nicht enthalten') {
+    return <Minus className={`w-5 h-5 text-slate-300 ${isMobile ? 'ml-auto' : 'mx-auto'}`} />;
+  }
+
+  const tooltip = getTooltipText(value);
+  const colorClass = isBusiness ? "text-transparent bg-clip-text bg-gradient-to-r from-rose-500 to-purple-600 font-bold" : "";
+
+  if (!tooltip) {
+    return <span className={`${className} ${colorClass}`}>{value}</span>;
+  }
+
+  return (
+    <div className={`relative group/tooltip inline-block cursor-help z-10 ${isMobile ? 'w-auto' : 'w-full text-center lg:w-auto'}`}>
+      <span className={`${className} ${colorClass} border-b border-dotted border-slate-400/60 pb-0.5`}>{value}</span>
+      <div className="absolute bottom-full mb-2 left-1/2 -translate-x-1/2 w-48 p-2.5 bg-slate-900 text-white text-xs font-medium leading-relaxed rounded-lg shadow-xl opacity-0 pointer-events-none group-hover/tooltip:opacity-100 transition-all duration-200 z-50 text-center scale-95 group-hover/tooltip:scale-100 origin-bottom">
+        {tooltip}
+        <div className="absolute top-full left-1/2 -translate-x-1/2 border-4 border-transparent border-t-slate-900"></div>
+      </div>
+    </div>
+  );
+};
+
 export default function PreisePage() {
   const [term, setTerm] = useState<12 | 24 | 36>(12);
   const [openFaq, setOpenFaq] = useState<number | null>(null);
@@ -279,25 +310,13 @@ export default function PreisePage() {
                             {item.name}
                           </td>
                           <td className="py-4 px-6 text-center text-slate-700">
-                            {item.essential === 'Nicht enthalten' ? (
-                              <Minus className="w-5 h-5 text-slate-300 mx-auto" />
-                            ) : (
-                              <span className="font-semibold text-sm">{item.essential}</span>
-                            )}
+                            <FeatureValue value={item.essential} />
                           </td>
                           <td className="py-4 px-6 text-center bg-rose-50/50 border-x border-rose-100/50">
-                            {item.business === 'Nicht enthalten' ? (
-                              <Minus className="w-5 h-5 text-slate-300 mx-auto" />
-                            ) : (
-                              <span className="font-bold text-transparent bg-clip-text bg-gradient-to-r from-rose-500 to-purple-600 text-sm">{item.business}</span>
-                            )}
+                            <FeatureValue value={item.business} isBusiness />
                           </td>
                           <td className="py-4 px-6 text-center text-slate-700 border-r border-slate-100">
-                            {item.pro === 'Nicht enthalten' ? (
-                              <Minus className="w-5 h-5 text-slate-300 mx-auto" />
-                            ) : (
-                              <span className="font-semibold text-sm">{item.pro}</span>
-                            )}
+                            <FeatureValue value={item.pro} />
                           </td>
                         </tr>
                       ))}
@@ -381,13 +400,9 @@ export default function PreisePage() {
                             return (
                               <li key={j} className={`flex flex-col text-sm py-2 border-b pb-3 gap-1 ${isBusiness ? 'border-rose-100' : 'border-slate-100'}`}>
                                 <span className={isBusiness ? 'text-slate-500 font-medium' : 'text-slate-600'}>{item.name}</span>
-                                <span className={`font-bold flex justify-end ${isBusiness ? 'text-transparent bg-clip-text bg-gradient-to-r from-rose-500 to-purple-600' : 'text-slate-900'}`}>
-                                  {val === 'Nicht enthalten' ? (
-                                    <Minus className="w-5 h-5 text-slate-300" />
-                                  ) : (
-                                    val
-                                  )}
-                                </span>
+                                <div className="flex justify-end">
+                                  <FeatureValue value={val} isBusiness={isBusiness} isMobile className={!isBusiness ? "font-bold text-slate-900" : ""} />
+                                </div>
                               </li>
                             );
                           })}

@@ -184,12 +184,14 @@ export function Header() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20, transition: { duration: 0.2 } }}
             transition={{ type: 'spring', damping: 25, stiffness: 200 }}
-            className="fixed inset-0 z-40 bg-white/98 backdrop-blur-xl md:hidden pt-32 pb-6 px-4 flex flex-col justify-between overflow-y-auto"
+            className="fixed inset-0 z-40 bg-white/98 backdrop-blur-xl md:hidden overflow-y-auto overscroll-none"
           >
-            <div className="flex flex-col gap-6">
-              <div className="space-y-4">
-                <p className="text-[10px] font-bold text-gray-400 uppercase tracking-widest pl-4">Navigation</p>
-                <nav aria-label="Mobile Navigation" className="flex flex-col space-y-1">
+            <div className="flex flex-col min-h-[100dvh] pt-[104px] pb-8 px-4">
+              <div className="flex-1 flex flex-col mt-4">
+                <div className="flex flex-col gap-6">
+                  <div className="space-y-4">
+                    <p className="text-[10px] font-bold text-gray-400 uppercase tracking-widest pl-4">Navigation</p>
+                    <nav aria-label="Mobile Navigation" className="flex flex-col space-y-1">
                   {navLinks.map((link, i) => (
                     <motion.div
                       key={link.href}
@@ -246,6 +248,8 @@ export function Header() {
                 </Link>
               </div>
             </motion.div>
+            </div>
+            </div>
           </motion.div>
         )}
       </AnimatePresence>

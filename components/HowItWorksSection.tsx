@@ -102,9 +102,9 @@ export function HowItWorksSection() {
               {idx !== steps.length - 1 && (
                 <>
                   {/* Desktop connector */}
-                  <div className="hidden lg:block absolute top-[31px] left-[50%] w-[calc(100%+1.5rem)] h-[2px] bg-gradient-to-r from-rose-500/40 to-purple-600/40 z-0"></div>
+                  <div className="hidden lg:block absolute top-[31px] left-[50%] w-[calc(100%+1.5rem)] h-[2px] bg-gradient-to-r from-rose-500 to-purple-600 shadow-[0_0_8px_rgba(244,63,94,0.5)] z-0"></div>
                   {/* Mobile connector */}
-                  <div className="block lg:hidden absolute top-[64px] left-[31px] w-[2px] h-[calc(100%+2.5rem-64px)] bg-gradient-to-b from-rose-500/40 to-purple-600/40 z-0 transition-all"></div>
+                  <div className="block lg:hidden absolute top-[64px] left-[31px] w-[2px] h-[calc(100%+2.5rem-64px)] bg-gradient-to-b from-rose-500 to-purple-600 shadow-[0_0_8px_rgba(244,63,94,0.5)] z-0 transition-all"></div>
                 </>
               )}
 
@@ -120,10 +120,12 @@ export function HowItWorksSection() {
               </div>
 
               {/* Content Card */}
-              <div className="ml-6 lg:ml-0 mt-0 lg:mt-8 flex-1 w-full flex flex-col bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-5 lg:p-6 shadow-xl hover:bg-white/[0.07] hover:border-white/20 transition-colors duration-300">
+              <div className="ml-6 lg:ml-0 mt-0 lg:mt-8 flex-1 w-full flex flex-col bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-5 lg:p-6 shadow-xl hover:bg-white/[0.07] hover:border-white/20 transition-colors duration-300 group/card">
                 <div className="flex items-center justify-between mb-5">
-                  <div className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center flex-shrink-0 shadow-inner">
-                    {step.icon}
+                  <div className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center flex-shrink-0 shadow-inner group-hover/card:scale-110 group-hover/card:bg-white/10 transition-all duration-300">
+                    <div className="group-hover/card:brightness-125 transition-all duration-300">
+                      {step.icon}
+                    </div>
                   </div>
                   <div className="px-2.5 py-1 rounded-md bg-white/5 border border-white/10 text-[10px] md:text-xs font-semibold text-white/70 tracking-wide uppercase whitespace-nowrap">
                     {step.badge}

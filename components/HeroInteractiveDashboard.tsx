@@ -73,6 +73,18 @@ export function HeroInteractiveDashboard() {
                 </span>
               </div>
               <div className="relative py-2">
+                <style dangerouslySetInnerHTML={{__html: `
+                  @keyframes thumbGlow {
+                    0%, 100% { box-shadow: 0 0 10px rgba(244,63,94,0.6); }
+                    50% { box-shadow: 0 0 15px rgba(244,63,94,1), 0 0 0 6px rgba(244,63,94,0.2); }
+                  }
+                  .animate-thumb::-webkit-slider-thumb {
+                    animation: thumbGlow 2s infinite ease-in-out;
+                  }
+                  .animate-thumb::-moz-range-thumb {
+                    animation: thumbGlow 2s infinite ease-in-out;
+                  }
+                `}} />
                 <input 
                   type="range" 
                   min="500" 
@@ -83,7 +95,7 @@ export function HeroInteractiveDashboard() {
                   style={{
                     background: `linear-gradient(to right, #f43f5e, #9333ea ${percentage}%, rgba(255,255,255,0.1) ${percentage}%)`
                   }}
-                  className="w-full h-1.5 rounded-lg appearance-none cursor-pointer outline-none [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:w-4 [&::-webkit-slider-thumb]:h-4 [&::-webkit-slider-thumb]:bg-white [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:shadow-[0_0_10px_rgba(244,63,94,0.8)]"
+                  className="animate-thumb w-full h-1.5 rounded-lg appearance-none cursor-pointer outline-none [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:w-4 [&::-webkit-slider-thumb]:h-4 [&::-webkit-slider-thumb]:bg-white [&::-webkit-slider-thumb]:rounded-full [&::-moz-range-thumb]:w-4 [&::-moz-range-thumb]:h-4 [&::-moz-range-thumb]:bg-white [&::-moz-range-thumb]:rounded-full [&::-moz-range-thumb]:border-none"
                 />
               </div>
             </div>
