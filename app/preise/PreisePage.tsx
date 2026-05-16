@@ -5,64 +5,65 @@ import { motion, AnimatePresence } from 'motion/react';
 import Link from 'next/link';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
+import { PromoCodeModal } from '@/components/PromoCodeModal';
 import { Minus, Plus, ChevronDown, ChevronRight } from 'lucide-react';
 
 const comparisonFeatures = [
   {
     category: "Basis & Struktur",
     items: [
-      { name: "Anzahl Unterseiten", essential: "Bis zu 3", business: "Bis zu 6", pro: "Bis zu 9", custom: "Unlimitiert" },
-      { name: "Kontaktformulare", essential: "1 Formular", business: "Bis zu 3 + Routing", pro: "Bis zu 5 + Logik", custom: "Unlimitiert" },
-      { name: "VANICY Dashboard", essential: "Inklusive", business: "Inklusive", pro: "Inklusive", custom: "Immer Inklusive" },
-      { name: "Eigenes Content Management", essential: "Nicht enthalten", business: "Inklusive", pro: "Inklusive", custom: "Voll-Individuell" },
-      { name: "Blog / News Sektion", essential: "Nicht enthalten", business: "Standard", pro: "Erweitert (Kategorien)", custom: "Premium-Lösung" },
+      { name: "Anzahl Unterseiten", essential: "Bis zu 3", business: "Bis zu 6", pro: "Bis zu 9" },
+      { name: "Kontaktformulare", essential: "1 Formular", business: "Bis zu 2", pro: "Bis zu 5 + Logik" },
+      { name: "VANICY Dashboard", essential: "Inklusive", business: "Inklusive", pro: "Inklusive" },
+      { name: "Eigenes Content Management", essential: "Nicht enthalten", business: "Nicht enthalten", pro: "Inklusive" },
+      { name: "Blog / News Sektion", essential: "Nicht enthalten", business: "Standard", pro: "Erweitert (Kategorien)" },
     ]
   },
   {
     category: "Design & Conversion",
     items: [
-      { name: "Premium Custom Webdesign", essential: "Inklusive", business: "Inklusive", pro: "Inklusive", custom: "Voll-Individuell" },
-      { name: "Mobile First & Responsive", essential: "Inklusive", business: "Inklusive", pro: "Inklusive", custom: "Responsiv & App-like" },
-      { name: "Conversion Rate Optimierung", essential: "Basis", business: "Erweitert", pro: "Premium", custom: "Laufendes A/B Testing" },
-      { name: "Call-to-Action (CTA) Fokus", essential: "Standard", business: "Datengetrieben", pro: "A/B Testing Konzipiert", custom: "Voll-Individuelle Funnels" },
-      { name: "Micro-Animations & Hover", essential: "Basis", business: "Erweitert", pro: "Premium", custom: "Voll-Individuelles Erlebnis" },
+      { name: "Premium Custom Webdesign", essential: "Inklusive", business: "Inklusive", pro: "Inklusive" },
+      { name: "Mobile First & Responsive", essential: "Inklusive", business: "Inklusive", pro: "Inklusive" },
+      { name: "Conversion Rate Optimierung", essential: "Basis", business: "Erweitert", pro: "Premium" },
+      { name: "Call-to-Action (CTA) Fokus", essential: "Standard", business: "Datengetrieben", pro: "A/B Testing Konzipiert" },
+      { name: "Micro-Animations & Hover", essential: "Basis", business: "Erweitert", pro: "Premium" },
     ]
   },
   {
     category: "Technologie & Performance",
     items: [
-      { name: "Premium High-Speed Hosting", essential: "Inklusive", business: "Inklusive", pro: "Inklusive", custom: "Dedizierter Server optional" },
-      { name: "SSL-Zertifikat & Verschlüsselung", essential: "Inklusive", business: "Inklusive", pro: "Inklusive", custom: "Enterprise Security" },
-      { name: "Globales CDN für max. Speed", essential: "Inklusive", business: "Inklusive", pro: "Inklusive", custom: "Priorisiertes CDN" },
-      { name: "Barrierefreiheit", essential: "Basis", business: "Erweitert", pro: "WCAG 2.1 Level AA", custom: "Level AAA Konformität" },
-      { name: "Security & Firewall", essential: "Inklusive", business: "Inklusive", pro: "Inklusive", custom: "Enterprise WAF" },
+      { name: "Premium High-Speed Hosting", essential: "Inklusive", business: "Inklusive", pro: "Inklusive" },
+      { name: "SSL-Zertifikat & Verschlüsselung", essential: "Inklusive", business: "Inklusive", pro: "Inklusive" },
+      { name: "Globales CDN für max. Speed", essential: "Inklusive", business: "Inklusive", pro: "Inklusive" },
+      { name: "Barrierefreiheit", essential: "Basis", business: "Erweitert", pro: "WCAG 2.1 Level AA" },
+      { name: "Security & Firewall", essential: "Inklusive", business: "Inklusive", pro: "Inklusive" },
     ]
   },
   {
     category: "SEO & Sichtbarkeit",
     items: [
-      { name: "Technisches SEO-Setup", essential: "Basis", business: "Erweitert", pro: "Pro", custom: "Premium (Laufend)" },
-      { name: "Onpage SEO", essential: "Basis (Titles)", business: "Keyword-optimiert", pro: "Maximum / Siloing", custom: "Vollständige SEO-Suite" },
-      { name: "Google Business Integration", essential: "Nicht enthalten", business: "Inklusive", pro: "Inklusive", custom: "Vollständiges Profil-Management" },
-      { name: "Google Analytics & Tracking", essential: "Nicht enthalten", business: "Nicht enthalten", pro: "Basic Setup", custom: "Umfassendes Tracking" },
-      { name: "Pagespeed Optimierung", essential: "Gut", business: "Sehr Gut", pro: "Premium (>90 Score)", custom: "Max. Performance (~100)" },
+      { name: "Technisches SEO-Setup", essential: "Basis", business: "Erweitert", pro: "Pro" },
+      { name: "Onpage SEO", essential: "Basis (Titles)", business: "Keyword-optimiert", pro: "Maximum / Siloing" },
+      { name: "Google Business Integration", essential: "Nicht enthalten", business: "Inklusive", pro: "Inklusive" },
+      { name: "Google Analytics & Tracking", essential: "Nicht enthalten", business: "Nicht enthalten", pro: "Basic Setup" },
+      { name: "Pagespeed Optimierung", essential: "Gut", business: "Sehr Gut", pro: "Premium (>90 Score)" },
     ]
   },
   {
     category: "Service & Betreuung",
     items: [
-      { name: "Inhaltsänderungen / Monat", essential: "Bis zu 10", business: "Bis zu 25", pro: "Bis zu 50", custom: "Unlimitiert" },
-      { name: "Support-Level", essential: "Support-Ticket", business: "Prio-E-Mail", pro: "Telefon + Prio", custom: "Dedizierter Tech-Lead" },
-      { name: "Premium Onboarding Call", essential: "Inklusive", business: "Inklusive", pro: "Inklusive", custom: "Workshop vor Ort/Remote" },
-      { name: "Regelmäßiges Reporting", essential: "Nicht enthalten", business: "Nicht enthalten", pro: "Monatlicher Report", custom: "Individuelle Live Dashboards" },
+      { name: "Inhaltsänderungen / Monat", essential: "Bis zu 10", business: "Bis zu 25", pro: "Bis zu 50" },
+      { name: "Support-Level", essential: "Standard Support", business: "Prio Support", pro: "Prio + Telefon Support" },
+      { name: "Premium Onboarding Call", essential: "Inklusive", business: "Inklusive", pro: "Inklusive" },
+      { name: "Regelmäßiges Reporting", essential: "Nicht enthalten", business: "Nicht enthalten", pro: "Monatlicher Report" },
     ]
   },
   {
     category: "Rechtliches & Compliance",
     items: [
-      { name: "DSGVO-konformes Setup", essential: "Inklusive", business: "Inklusive", pro: "Inklusive", custom: "Full Compliance Audit" },
-      { name: "Cookie-Consent-Banner", essential: "Basis-Banner", business: "Consent-Management", pro: "Consent-Management", custom: "Premium Setup" },
-      { name: "Impressum & Datenschutz", essential: "Basis-Generator", business: "Partner-Rechtstexte", pro: "Integrierte Lösung", custom: "Integrierte Individuallösung" },
+      { name: "DSGVO-konformes Setup", essential: "Inklusive", business: "Inklusive", pro: "Inklusive" },
+      { name: "Cookie-Consent-Banner", essential: "Basis-Banner", business: "Consent-Management", pro: "Consent-Management" },
+      { name: "Impressum & Datenschutz", essential: "Basis-Generator", business: "Partner-Rechtstexte", pro: "Integrierte Lösung" },
     ]
   }
 ];
@@ -84,6 +85,13 @@ const addOnsMonatlich = [
 export default function PreisePage() {
   const [term, setTerm] = useState<12 | 24 | 36>(12);
   const [openFaq, setOpenFaq] = useState<number | null>(null);
+  const [isPromoModalOpen, setIsPromoModalOpen] = useState(false);
+  const [checkoutUrl, setCheckoutUrl] = useState('');
+
+  const handleCheckoutClick = (url: string) => {
+    setCheckoutUrl(url);
+    setIsPromoModalOpen(true);
+  };
 
   const pricing = {
     12: {
@@ -113,18 +121,51 @@ export default function PreisePage() {
   return (
     <div className="flex flex-col min-h-screen bg-slate-50 font-sans text-slate-900 selection:bg-rose-500/30">
       <Header />
+      <PromoCodeModal 
+        isOpen={isPromoModalOpen} 
+        onClose={() => setIsPromoModalOpen(false)} 
+        checkoutUrl={checkoutUrl} 
+      />
 
       <main className="flex-grow pt-24 pb-32">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
           
-          <div className="text-center max-w-4xl mx-auto mb-16">
+          <div className="text-center max-w-4xl mx-auto mb-10">
             <h1 className="text-5xl md:text-6xl font-sans font-bold tracking-tight mb-6">
               Transparente Preise. <br className="hidden md:block"/>
               Garantiertes Wachstum.
             </h1>
-            <p className="text-xl text-slate-600 leading-relaxed max-w-2xl mx-auto">
-              Vergleiche unsere Tarife und sichere dir jetzt deine Premium-Website. Einmalige Setup-Gebühr von regulär 299€ – <span className="font-bold text-emerald-600">aktuell mit unserem Code an der Kasse 0€!</span>
+            <p className="text-xl text-slate-600 leading-relaxed max-w-2xl mx-auto mb-8">
+              Vergleiche unsere Tarife und sichere dir jetzt deine Premium-Website, mit der du online wächst.
             </p>
+
+            <div className="flex justify-center mb-12 w-full px-4 mt-8">
+              <div className="w-full max-w-3xl">
+                <div className="relative rounded-2xl bg-slate-900 border border-slate-800/80 overflow-hidden shadow-2xl shadow-slate-900/20 p-6 sm:p-8 flex flex-col sm:flex-row items-center gap-6 sm:gap-8 group">
+                  <div className="absolute top-0 right-0 w-64 h-64 bg-emerald-500/10 blur-3xl rounded-full transition-opacity opacity-50 group-hover:opacity-100 pointer-events-none"></div>
+                  
+                  <div className="relative z-10 text-center sm:text-left flex-1">
+                    <div className="inline-flex items-center justify-center sm:justify-start gap-3 mb-4">
+                      <span className="text-[10px] font-bold uppercase tracking-widest text-emerald-400 bg-emerald-400/10 px-2.5 py-1 rounded-md border border-emerald-400/20">Limitiertes Angebot</span>
+                      <span className="text-slate-400 text-sm font-medium">Regulär: <span className="line-through decoration-slate-500 decoration-2">299€ Setup</span></span>
+                    </div>
+                    <h4 className="text-xl sm:text-2xl font-bold text-white tracking-tight mb-2.5">
+                       Keine Einrichtungsgebühr für Erstkunden.
+                    </h4>
+                    <p className="text-slate-400 text-sm leading-relaxed">
+                      Entscheide dich jetzt und starte ohne Initialkosten. Klicke bei deinem Wunsch-Paket auf <strong className="text-slate-200 font-semibold">Wählen</strong>, um deinen exklusiven Aktionscode zu erhalten.
+                    </p>
+                  </div>
+                  
+                  <div className="relative z-10 shrink-0 w-full sm:w-auto flex flex-col items-center justify-center pt-4 sm:pt-0 border-t sm:border-t-0 sm:border-l border-slate-700/50 sm:pl-8">
+                    <div className="text-4xl sm:text-5xl font-black text-transparent bg-clip-text bg-gradient-to-br from-white to-slate-400 drop-shadow-sm mb-1 leading-none tracking-tighter">
+                      0€
+                    </div>
+                    <div className="text-xs font-semibold text-slate-500 uppercase tracking-widest">Setup-Kosten</div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
 
           <div className="flex justify-center mb-16 relative z-20">
@@ -161,11 +202,11 @@ export default function PreisePage() {
                     <th className="w-[20%] p-6 xl:p-8 bg-slate-50 border-b border-slate-200">
                       <span className="sr-only">Features</span>
                     </th>
-                    <th className="w-[20%] p-6 xl:p-8 border-b border-slate-200 bg-white text-center">
-                      <div className="flex flex-col items-center justify-center gap-2 mb-2">
+                    <th className="w-[26%] p-6 xl:p-8 border-b border-slate-200 bg-white text-center hover:bg-slate-50/80 transition-colors duration-300 group">
+                      <div className="flex flex-col items-center justify-center gap-2 mb-2 transition-transform duration-300 group-hover:-translate-y-1">
                         <div className="text-2xl font-bold text-slate-900">Essential</div>
                       </div>
-                      <div className="flex justify-center items-end gap-1 mb-2">
+                      <div className="flex justify-center items-end gap-1 mb-2 transition-transform duration-300 group-hover:scale-105">
                         <span className="text-3xl font-bold text-slate-900">{pricing[term].essential.price}€</span>
                         <span className="text-slate-600 font-medium pb-1">/ mo</span>
                       </div>
@@ -176,19 +217,19 @@ export default function PreisePage() {
                           </div>
                         )}
                       </div>
-                      <div className="mt-4">
-                        <a href={pricing[term].essential.link} className="inline-block w-full py-3 mb-2 rounded-lg font-semibold text-slate-900 bg-white border border-slate-300 hover:bg-slate-50 transition-colors" target="_blank" rel="noopener noreferrer">Wählen</a>
+                      <div className="mt-4 transition-transform duration-300 group-hover:translate-y-1">
+                        <button onClick={() => handleCheckoutClick(pricing[term].essential.link)} className="inline-block w-full py-3 mb-2 rounded-lg font-semibold text-slate-900 bg-white border border-slate-300 hover:bg-slate-50 hover:border-slate-400 hover:shadow-sm transition-all">Wählen</button>
                       </div>
                     </th>
-                    <th className="w-[20%] p-6 xl:p-8 border-b-2 border-rose-200 relative bg-white text-center shadow-lg shadow-rose-500/10 border-x border-rose-100/50 z-10">
+                    <th className="w-[26%] p-6 xl:p-8 border-b-2 border-rose-200 relative bg-white text-center shadow-lg shadow-rose-500/10 border-x border-rose-100/50 z-10 hover:shadow-xl hover:shadow-rose-500/20 transition-all duration-300 group">
                       <div className="absolute top-0 inset-x-0 h-1.5 bg-gradient-to-r from-rose-500 to-purple-600"></div>
-                      <div className="flex flex-col items-center justify-center gap-2 mb-2">
+                      <div className="flex flex-col items-center justify-center gap-2 mb-2 transition-transform duration-300 group-hover:-translate-y-1">
                         <span className="bg-gradient-to-r from-rose-500 to-purple-600 text-white font-semibold px-3 py-1 rounded-full text-[10px] tracking-widest uppercase mb-1 shadow-sm">
                           Am beliebtesten
                         </span>
                         <div className="text-2xl font-black text-transparent bg-clip-text bg-gradient-to-r from-rose-500 to-purple-600">Business</div>
                       </div>
-                      <div className="flex justify-center items-end gap-1 mb-2">
+                      <div className="flex justify-center items-end gap-1 mb-2 transition-transform duration-300 group-hover:scale-110">
                         <span className="text-3xl font-black text-slate-900">{pricing[term].business.price}€</span>
                         <span className="text-slate-500 font-medium pb-1">/ mo</span>
                       </div>
@@ -199,15 +240,15 @@ export default function PreisePage() {
                           </div>
                         )}
                       </div>
-                      <div className="mt-4">
-                        <a href={pricing[term].business.link} className="inline-block w-full py-3 mb-2 rounded-lg font-bold text-white bg-gradient-to-r from-rose-500 to-purple-600 hover:from-rose-600 hover:to-purple-700 transition-all shadow-md shadow-rose-500/20 active:scale-95" target="_blank" rel="noopener noreferrer">Wählen</a>
+                      <div className="mt-4 transition-transform duration-300 group-hover:translate-y-1">
+                        <button onClick={() => handleCheckoutClick(pricing[term].business.link)} className="inline-block w-full py-3 mb-2 rounded-lg font-bold text-white bg-gradient-to-r from-rose-500 to-purple-600 hover:from-rose-600 hover:to-purple-700 hover:shadow-lg transition-all shadow-md shadow-rose-500/20 active:scale-95">Wählen</button>
                       </div>
                     </th>
-                    <th className="w-[20%] p-6 xl:p-8 border-b border-slate-200 bg-white text-center border-r border-slate-200">
-                      <div className="flex flex-col items-center justify-center gap-2 mb-2">
+                    <th className="w-[26%] p-6 xl:p-8 border-b border-slate-200 bg-white text-center border-r border-slate-200 hover:bg-slate-50/80 transition-colors duration-300 group">
+                      <div className="flex flex-col items-center justify-center gap-2 mb-2 transition-transform duration-300 group-hover:-translate-y-1">
                         <div className="text-2xl font-bold text-slate-900">Pro</div>
                       </div>
-                      <div className="flex justify-center items-end gap-1 mb-2">
+                      <div className="flex justify-center items-end gap-1 mb-2 transition-transform duration-300 group-hover:scale-105">
                         <span className="text-3xl font-bold text-slate-900">{pricing[term].pro.price}€</span>
                         <span className="text-slate-600 font-medium pb-1">/ mo</span>
                       </div>
@@ -218,21 +259,8 @@ export default function PreisePage() {
                           </div>
                         )}
                       </div>
-                      <div className="mt-4">
-                        <a href={pricing[term].pro.link} className="inline-block w-full py-3 mb-2 rounded-lg font-semibold text-slate-900 bg-white border border-slate-300 hover:bg-slate-50 transition-colors" target="_blank" rel="noopener noreferrer">Wählen</a>
-                      </div>
-                    </th>
-                    <th className="w-[20%] p-6 xl:p-8 border-b border-slate-200 bg-slate-50 text-center">
-                      <div className="flex flex-col items-center justify-center gap-2 mb-2">
-                        <div className="text-xl font-bold text-slate-900">Voll-Individuell</div>
-                      </div>
-                      <div className="flex justify-center items-end gap-1 mb-2">
-                        <span className="text-2xl font-bold text-slate-900">Individuell</span>
-                        <span className="text-transparent font-medium pb-1 select-none">/ mo</span>
-                      </div>
-                      <div className="h-6 flex items-center justify-center mb-2"></div>
-                      <div className="mt-4">
-                        <a href="mailto:hello@vanicy.de" className="inline-block w-full py-3 mb-2 rounded-lg font-semibold text-slate-900 bg-white border border-slate-300 hover:bg-slate-100 transition-colors">Kontakt</a>
+                      <div className="mt-4 transition-transform duration-300 group-hover:translate-y-1">
+                        <button onClick={() => handleCheckoutClick(pricing[term].pro.link)} className="inline-block w-full py-3 mb-2 rounded-lg font-semibold text-slate-900 bg-white border border-slate-300 hover:bg-slate-50 hover:border-slate-400 hover:shadow-sm transition-all">Wählen</button>
                       </div>
                     </th>
                   </tr>
@@ -241,7 +269,7 @@ export default function PreisePage() {
                   {comparisonFeatures.map((category, catIdx) => (
                     <React.Fragment key={catIdx}>
                       <tr>
-                        <td colSpan={5} className="bg-slate-50 py-4 px-8 text-sm font-semibold text-slate-900 uppercase tracking-wider">
+                        <td colSpan={4} className="bg-slate-50 py-4 px-8 text-sm font-semibold text-slate-900 uppercase tracking-wider">
                           {category.category}
                         </td>
                       </tr>
@@ -271,13 +299,6 @@ export default function PreisePage() {
                               <span className="font-semibold text-sm">{item.pro}</span>
                             )}
                           </td>
-                          <td className="py-4 px-6 text-center text-slate-600 bg-slate-50">
-                            {item.custom === 'Nicht enthalten' ? (
-                              <Minus className="w-5 h-5 text-slate-300 mx-auto" />
-                            ) : (
-                              <span className="font-semibold text-slate-500 text-sm">{item.custom}</span>
-                            )}
-                          </td>
                         </tr>
                       ))}
                     </React.Fragment>
@@ -292,6 +313,28 @@ export default function PreisePage() {
               </p>
             </div>
           </div>
+          
+          <div className="mt-8 bg-gradient-to-br from-slate-900 to-indigo-950 rounded-2xl p-8 shadow-lg text-white border border-slate-800 flex flex-col md:flex-row items-center justify-between gap-8">
+            <div className="max-w-2xl text-left">
+              <h3 className="text-2xl font-bold mb-3 flex items-center gap-3">
+                <span className="bg-white/10 text-rose-300 text-xs px-2.5 py-1 rounded-md uppercase tracking-widest font-bold">Enterprise</span>
+                Voll-Individuell
+              </h3>
+              <p className="text-slate-300 leading-relaxed">
+                Dein Projekt sprengt den Rahmen obiger Pakete? Du brauchst voll-individuelle Architekturen, spezielle API-Anbindungen, eigene Funnels oder eine Web-App? Kein Problem.
+              </p>
+              <div className="mt-4 flex flex-wrap gap-4 text-sm text-slate-400 font-medium">
+                <span className="flex items-center gap-1.5"><Plus className="w-4 h-4 text-emerald-400" /> Unlimitierte Seiten & Logik</span>
+                <span className="flex items-center gap-1.5"><Plus className="w-4 h-4 text-emerald-400" /> A/B Testing Konzipiert</span>
+                <span className="flex items-center gap-1.5"><Plus className="w-4 h-4 text-emerald-400" /> Dedizierter Tech-Lead</span>
+              </div>
+            </div>
+            <div className="shrink-0 w-full md:w-auto">
+              <a href="mailto:hello@vanicy.de" className="inline-block w-full md:w-auto text-center py-4 px-8 rounded-xl font-bold text-slate-900 bg-white hover:bg-slate-100 transition-colors shadow-xl">
+                Jetzt anfragen
+              </a>
+            </div>
+          </div>
 
           <div className="lg:hidden flex flex-col gap-6">
             {['essential', 'business', 'pro'].map((planKey) => {
@@ -300,17 +343,17 @@ export default function PreisePage() {
               const planName = plan.charAt(0).toUpperCase() + plan.slice(1);
               
               return (
-                <div key={plan} className={`rounded-xl p-6 sm:p-8 shadow-sm border ${isBusiness ? 'bg-white border-2 border-rose-200 shadow-rose-500/10 text-slate-800 relative z-10' : 'bg-white border-slate-200'} flex flex-col`}>
+                <div key={plan} className={`rounded-xl p-6 sm:p-8 shadow-sm border ${isBusiness ? 'bg-white border-2 border-rose-200 shadow-rose-500/10 text-slate-800 z-20 hover:shadow-2xl hover:shadow-rose-500/20 hover:-translate-y-2' : 'bg-white border-slate-200 hover:shadow-xl hover:-translate-y-1 relative z-10'} flex flex-col transition-all duration-300 hover:scale-[1.02] group`}>
                   {isBusiness && <div className="absolute top-0 inset-x-0 h-1.5 bg-gradient-to-r from-rose-500 to-purple-600"></div>}
                   
                   <div className="text-center mb-6">
                     {isBusiness && (
-                      <div className="flex justify-center mb-4">
+                      <div className="flex justify-center mb-4 transition-transform duration-300 group-hover:-translate-y-1">
                         <span className="bg-gradient-to-r from-rose-500 to-purple-600 text-white font-semibold px-3 py-1 rounded-full text-[10px] tracking-widest uppercase mb-1 shadow-sm">Am beliebtesten</span>
                       </div>
                     )}
-                    <div className={`text-2xl font-black mb-2 ${isBusiness ? 'text-transparent bg-clip-text bg-gradient-to-r from-rose-500 to-purple-600' : 'text-slate-900'}`}>{planName}</div>
-                    <div className="flex justify-center items-end gap-1 mb-1">
+                    <div className={`text-2xl font-black mb-2 transition-transform duration-300 group-hover:scale-105 ${isBusiness ? 'text-transparent bg-clip-text bg-gradient-to-r from-rose-500 to-purple-600' : 'text-slate-900'}`}>{planName}</div>
+                    <div className="flex justify-center items-end gap-1 mb-1 transition-transform duration-300 group-hover:scale-105">
                       <span className={`text-4xl font-black ${isBusiness ? 'text-slate-900' : 'text-slate-900'}`}>{pricing[term][plan].price}€</span>
                       <span className={`font-medium pb-1 ${isBusiness ? 'text-slate-500' : 'text-slate-500'}`}>/ mo</span>
                     </div>
@@ -321,11 +364,11 @@ export default function PreisePage() {
                         </span>
                       </div>
                     )}
-                    <a href={pricing[term][plan].link} className={`mt-6 block w-full py-3 rounded-lg font-bold transition-all ${
+                    <button onClick={() => handleCheckoutClick(pricing[term][plan].link)} className={`mt-6 block w-full py-3 rounded-lg font-bold transition-all ${
                       isBusiness 
                         ? 'text-white bg-gradient-to-r from-rose-500 to-purple-600 hover:from-rose-600 hover:to-purple-700 shadow-md shadow-rose-500/20 active:scale-95' 
                         : 'text-slate-900 bg-white border border-slate-300 hover:bg-slate-50'
-                    }`} target="_blank" rel="noopener noreferrer">Wählen</a>
+                    }`}>Wählen</button>
                   </div>
                   
                   <div className="mt-4 space-y-6 flex-grow">

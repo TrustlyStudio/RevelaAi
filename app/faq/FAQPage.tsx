@@ -18,11 +18,11 @@ const faqCategories = [
       },
       {
         q: "Gibt es versteckte Kosten?",
-        a: "Nein, überhaupt nicht. Die monatliche Rate ist eine Sorglos-Flatrate, die alles abdeckt: Domain, Hosting, SSL, DSGVO-Tools (wie ein rechtssicheres Cookie-Banner), Software-Updates und ein Kontingent an inhaltlichen Änderungen. Lediglich zu Beginn fällt je nach Paket eine Einmalige Setup-Gebühr an (außer beim jährlichen Growth-Paket, dort erlassen wir sie dir)."
+        a: "Nein, überhaupt nicht. Die monatliche Rate ist eine Sorglos-Flatrate, die alles abdeckt: Domain, Hosting, SSL, DSGVO-Tools (wie ein rechtssicheres Cookie-Banner), Software-Updates und ein Kontingent an inhaltlichen Änderungen. Aktuell profitierst du zudem von 0€ Setup-Gebühr."
       },
       {
-        q: "Gehört die Website nach der Kündigung mir?",
-        a: "Mit unserem Web-Leasing-Modell abonnierst du eine Komplettbetreuung als Service. Die Seite liegt in unserer Infrastruktur. Wenn du kündigst, geht die Website offline - du kannst natürlich deine Domain und Inhalte mitnehmen. Code und das Design können gegen eine Einmalablöse komplett transferiert werden."
+        q: "Was passiert nach der Mindestlaufzeit?",
+        a: "Der Vertrag verlängert sich automatisch um die gleiche, ursprünglich gewählte Laufzeit, wenn er nicht mit einer Frist von 1 Monat zum Laufzeitende gekündigt wird. Nach Kündigung kannst du deine Domain und Inhalte mitnehmen. Code und Design können gegen eine Einmalablöse an dich transferiert werden."
       }
     ]
   },
@@ -157,7 +157,7 @@ export default function FAQPage() {
               href="#analyse"
               className="inline-flex items-center justify-center gap-3 bg-slate-900 px-8 py-4 rounded-xl font-semibold text-white hover:bg-slate-800 hover:shadow-md transition-all duration-200"
             >
-              Kostenlose Analyse buchen
+              Unverbindlich beraten lassen
             </Link>
           </div>
 

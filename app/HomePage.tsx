@@ -11,6 +11,7 @@ import { SocialProofWidget } from '@/components/SocialProofWidget';
 import { InfiniteLogoTicker } from '@/components/InfiniteLogoTicker';
 import dynamic from 'next/dynamic';
 import { ComparisonSection } from '@/components/ComparisonSection';
+import { PromoCodeModal } from '@/components/PromoCodeModal';
 
 const ConversionChart = dynamic(() => import('@/components/ConversionChart').then(mod => mod.ConversionChart), { ssr: false });
 
@@ -61,8 +62,8 @@ const faqs = [
     answer: "Nein. In deinem monatlichen Tarif sind kleine inhaltliche Anpassungen sowie alle wichtigen Sicherheitsupdates komplett abgedeckt. Du bist bestens versorgt."
   },
   {
-    question: "Was passiert, wenn ich kündigen möchte?",
-    answer: "Du bleibst stets flexibel. Nach einer kurzen Mindestlaufzeit kannst du monatlich kündigen. Wenn du gehst, nimmst du die Seite einfach vom Netz – oder du entscheidest dich, sie zu einem fairen, vorher festgelegten Festpreis komplett zu übernehmen."
+    question: "Was passiert nach der Mindestlaufzeit?",
+    answer: "Der Vertrag verlängert sich automatisch um die gleiche, ursprünglich gewählte Laufzeit, wenn er nicht mit einer Frist von 1 Monat zum Laufzeitende gekündigt wird. Nach Kündigung kannst du deine Domain und Inhalte mitnehmen; der Code kann gegen eine Einmalablöse übernommen werden."
   }
 ];
 
@@ -94,6 +95,13 @@ export default function Home() {
   const [term, setTerm] = useState<12 | 24 | 36>(12);
   const [currentTestimonialIndex, setCurrentTestimonialIndex] = useState(0);
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
+  const [isPromoModalOpen, setIsPromoModalOpen] = useState(false);
+  const [checkoutUrl, setCheckoutUrl] = useState('');
+
+  const handleCheckoutClick = (url: string) => {
+    setCheckoutUrl(url);
+    setIsPromoModalOpen(true);
+  };
 
   useEffect(() => {
     let interval: NodeJS.Timeout;
@@ -176,6 +184,11 @@ export default function Home() {
       />
       
       <main className="flex-grow overflow-hidden relative">
+        <PromoCodeModal 
+          isOpen={isPromoModalOpen} 
+          onClose={() => setIsPromoModalOpen(false)} 
+          checkoutUrl={checkoutUrl} 
+        />
         {/* Subtle dot matrix background for SaaS feel */}
         <div className="absolute inset-0 z-[-1] bg-[linear-gradient(to_right,#80808008_1px,transparent_1px),linear-gradient(to_bottom,#80808008_1px,transparent_1px)] bg-[size:24px_24px]"></div>
         
@@ -242,9 +255,9 @@ export default function Home() {
                   className="w-full sm:w-auto h-14 bg-white border border-slate-200 p-1.5 pr-6 rounded-full font-bold text-base hover:bg-slate-50 transition-all duration-300 flex items-center justify-between sm:justify-start gap-4 group shadow-sm active:scale-95"
                 >
                   <span className="bg-gradient-to-r from-rose-500 to-purple-600 text-white text-[10px] md:text-xs uppercase font-black tracking-widest px-4 h-full flex items-center justify-center rounded-full shadow-sm whitespace-nowrap">
-                    Gratis Report
+                    Gespräch
                   </span>
-                  <span className="text-slate-900 whitespace-nowrap pr-2">Kostenlose Analyse</span>
+                  <span className="text-slate-900 whitespace-nowrap pr-2">Jetzt beraten lassen</span>
                 </Link>
                 <Link 
                   href="#preise"
@@ -262,11 +275,11 @@ export default function Home() {
               >
                 <div className="flex items-center gap-1.5">
                   <CheckCircle2 className="w-4 h-4 text-emerald-500" />
-                  <span>Monatlich kündbar</span>
+                  <span>Schon ab 12 Monaten Laufzeit</span>
                 </div>
                 <div className="flex items-center gap-1.5">
                   <CheckCircle2 className="w-4 h-4 text-emerald-500" />
-                  <span>0€ Setup-Kosten</span>
+                  <span>Full-Service Betreuung</span>
                 </div>
               </motion.div>
             </div>
@@ -771,6 +784,34 @@ export default function Home() {
               </p>
             </motion.div>
 
+            <motion.div variants={fadeInUp} className="flex justify-center mb-12 w-full px-4">
+              <div className="w-full max-w-3xl">
+                <div className="relative rounded-2xl bg-slate-900 border border-slate-800/80 overflow-hidden shadow-2xl shadow-slate-900/20 p-6 sm:p-8 flex flex-col sm:flex-row items-center gap-6 sm:gap-8 group">
+                  <div className="absolute top-0 right-0 w-64 h-64 bg-emerald-500/10 blur-3xl rounded-full transition-opacity opacity-50 group-hover:opacity-100 pointer-events-none"></div>
+                  
+                  <div className="relative z-10 text-center sm:text-left flex-1">
+                    <div className="inline-flex items-center justify-center sm:justify-start gap-3 mb-4">
+                      <span className="text-[10px] font-bold uppercase tracking-widest text-emerald-400 bg-emerald-400/10 px-2.5 py-1 rounded-md border border-emerald-400/20">Limitiertes Angebot</span>
+                      <span className="text-slate-400 text-sm font-medium">Regulär: <span className="line-through decoration-slate-500 decoration-2">299€ Setup</span></span>
+                    </div>
+                    <h4 className="text-xl sm:text-2xl font-bold text-white tracking-tight mb-2.5">
+                       Keine Einrichtungsgebühr für Erstkunden.
+                    </h4>
+                    <p className="text-slate-400 text-sm leading-relaxed">
+                      Entscheide dich jetzt und starte ohne Initialkosten. Klicke bei deinem Wunsch-Paket auf <strong className="text-slate-200 font-semibold">Plan wählen</strong>, um deinen exklusiven Aktionscode zu erhalten.
+                    </p>
+                  </div>
+                  
+                  <div className="relative z-10 shrink-0 w-full sm:w-auto flex flex-col items-center justify-center pt-4 sm:pt-0 border-t sm:border-t-0 sm:border-l border-slate-700/50 sm:pl-8">
+                    <div className="text-4xl sm:text-5xl font-black text-transparent bg-clip-text bg-gradient-to-br from-white to-slate-400 drop-shadow-sm mb-1 leading-none tracking-tighter">
+                      0€
+                    </div>
+                    <div className="text-xs font-semibold text-slate-500 uppercase tracking-widest">Setup-Kosten</div>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+
             <motion.div variants={fadeInUp} className="flex justify-center mb-16 relative z-20">
               <div className="bg-slate-100/80 p-1.5 rounded-xl inline-flex items-center border border-slate-200/60 transition-all duration-300">
                 <button 
@@ -801,27 +842,28 @@ export default function Home() {
               
               {/* Essential Plan */}
               <motion.div 
-                className="bg-white rounded-xl p-6 md:p-8 border border-slate-200 shadow-sm hover:shadow-md transition-shadow duration-300 flex flex-col relative"
+                className="bg-white rounded-xl p-6 md:p-8 border border-slate-200 shadow-sm hover:shadow-xl hover:border-slate-300 hover:-translate-y-1 hover:scale-[1.02] transition-all duration-300 flex flex-col relative group"
               >
-                <h3 className="text-xl md:text-2xl font-bold text-slate-900 mb-2">Essential</h3>
+                <div className="absolute inset-0 bg-gradient-to-b from-slate-50/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity rounded-xl pointer-events-none"></div>
+                <h3 className="text-xl md:text-2xl font-bold text-slate-900 mb-2 transition-transform duration-300 group-hover:translate-x-1">Essential</h3>
                 <p className="text-slate-600 mb-8 min-h-[48px] text-sm md:text-base">Für lokale Betriebe und Gründer, die hochprofessionell starten wollen.</p>
                 
-                <div className="mb-8">
+                <div className="mb-8 transition-transform duration-300 group-hover:scale-105 origin-left">
                   <div className="flex items-end gap-1 mb-2">
                     <span className="text-3xl md:text-4xl font-bold text-slate-900 tracking-tight">{pricing[term].essential.price}€</span>
                     <span className="text-slate-600 font-medium pb-1 md:text-base text-sm">/ mo</span>
                   </div>
                   {term > 12 ? (
-                    <div className="text-xs md:text-sm font-semibold text-emerald-600 bg-emerald-50 px-2 py-1 rounded inline-block">Du sparst {getSavings('essential')}€</div>
+                    <div className="text-xs md:text-sm font-semibold text-emerald-600 bg-emerald-50 px-2 py-1 rounded inline-block shadow-sm">Du sparst {getSavings('essential')}€</div>
                   ) : (
                     <div className="text-xs md:text-sm text-slate-500 h-6"></div>
                   )}
                 </div>
                 
-                <div className="flex flex-col gap-3 mb-8">
-                  <Link href={pricing[term].essential.link} target="_blank" rel="noopener noreferrer" className="w-full py-3 rounded-lg font-semibold text-slate-900 bg-white border border-slate-300 hover:bg-slate-50 transition-colors text-center text-sm md:text-base">
+                <div className="flex flex-col gap-3 mb-8 transition-transform duration-300 group-hover:-translate-y-1">
+                  <button onClick={() => handleCheckoutClick(pricing[term].essential.link)} className="w-full py-3 rounded-lg font-semibold text-slate-900 bg-white border border-slate-300 hover:bg-slate-50 hover:border-slate-400 hover:shadow-sm transition-all text-center text-sm md:text-base">
                     Plan wählen
-                  </Link>
+                  </button>
                   <Link href="/preise" className="text-center text-xs text-slate-400 hover:text-slate-600 transition-colors">
                     Alle Details vergleichen
                   </Link>
@@ -832,11 +874,12 @@ export default function Home() {
                 <ul className="space-y-4 flex-1">
                   {[
                     "Bis zu 3 Unterseiten",
-                    "1 Kontaktformular",
+                    "1 Formular",
                     "VANICY Dashboard",
-                    "Basis SEO-Optimierung",
-                    "Basic Cookie-Banner",
-                    "Bis zu 10 inhaltliche Änderungen / Monat"
+                     "Basis SEO-Optimierung",
+                     "Basic Cookie-Banner",
+                    "Bis zu 10 inhaltliche Änderungen / Monat",
+                    "Standard Support"
                   ].map((f,i)=>(
                     <li key={i} className="flex items-start gap-3">
                       <CheckCircle2 className="w-4 h-4 md:w-5 md:h-5 text-slate-400 shrink-0 mt-0.5" />
@@ -848,34 +891,35 @@ export default function Home() {
 
               {/* Business Plan */}
               <motion.div 
-                className="bg-white rounded-xl p-6 md:p-8 border-2 border-rose-200 shadow-xl shadow-rose-500/10 transition-shadow duration-300 flex flex-col relative md:-mt-4 md:mb-4 z-10"
+                className="bg-white rounded-xl p-6 md:p-8 border-2 border-rose-200 shadow-xl shadow-rose-500/10 hover:shadow-2xl hover:shadow-rose-500/20 hover:-translate-y-2 hover:scale-[1.02] transition-all duration-300 flex flex-col relative md:-mt-4 md:mb-4 z-10 group"
               >
-                <div className="absolute top-0 inset-x-0 h-1.5 bg-gradient-to-r from-rose-500 to-purple-600 rounded-t-xl"></div>
+                <div className="absolute top-0 inset-x-0 h-1.5 bg-gradient-to-r from-rose-500 to-purple-600 rounded-t-xl transition-all duration-300 group-hover:h-2"></div>
+                <div className="absolute inset-0 bg-gradient-to-b from-rose-50/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity rounded-xl pointer-events-none"></div>
                 
-                <div className="flex mb-3">
+                <div className="flex mb-3 transition-transform duration-300 group-hover:-translate-y-1">
                   <span className="bg-gradient-to-r from-rose-500 to-purple-600 text-white font-semibold px-3 py-1 rounded-full text-[10px] md:text-xs tracking-widest uppercase mb-1 shadow-sm">
                     Am beliebtesten
                   </span>
                 </div>
-                <h3 className="text-xl md:text-2xl font-black mb-2 text-transparent bg-clip-text bg-gradient-to-r from-rose-500 to-purple-600">Business</h3>
-                <p className="text-slate-600 mb-8 min-h-[48px] text-sm md:text-base">Für etablierte Unternehmen, die Anfragen skalieren möchten.</p>
+                <h3 className="text-xl md:text-2xl font-black mb-2 text-transparent bg-clip-text bg-gradient-to-r from-rose-500 to-purple-600 transition-transform duration-300 group-hover:translate-x-1">Business</h3>
+                <p className="text-slate-600 mb-8 min-h-[48px] text-sm md:text-base relative z-10">Für etablierte Unternehmen, die Anfragen skalieren möchten.</p>
                 
-                <div className="mb-8">
+                <div className="mb-8 transition-transform duration-300 group-hover:scale-110 origin-left">
                   <div className="flex items-end gap-1 mb-2">
                     <span className="text-3xl md:text-4xl font-black tracking-tight text-slate-900">{pricing[term].business.price}€</span>
                     <span className="text-slate-500 font-medium pb-1 md:text-base text-sm">/ mo</span>
                   </div>
                   {term > 12 ? (
-                    <div className="text-xs md:text-sm font-bold text-rose-600 bg-rose-50 px-2 py-1 rounded inline-block border border-rose-100">Du sparst {getSavings('business')}€</div>
+                    <div className="text-xs md:text-sm font-bold text-rose-600 bg-rose-50 px-2 py-1 rounded inline-block border border-rose-100 shadow-sm">Du sparst {getSavings('business')}€</div>
                   ) : (
                     <div className="text-xs md:text-sm text-slate-400 h-6"></div>
                   )}
                 </div>
                 
-                <div className="flex flex-col gap-3 mb-8">
-                  <Link href={pricing[term].business.link} target="_blank" rel="noopener noreferrer" className="w-full py-3 rounded-lg font-bold text-white bg-gradient-to-r from-rose-500 to-purple-600 hover:from-rose-600 hover:to-purple-700 transition-all text-center text-sm md:text-base shadow-md shadow-rose-500/20 active:scale-95">
+                <div className="flex flex-col gap-3 mb-8 transition-transform duration-300 group-hover:-translate-y-1">
+                  <button onClick={() => handleCheckoutClick(pricing[term].business.link)} className="w-full py-3 rounded-lg font-bold text-white bg-gradient-to-r from-rose-500 to-purple-600 hover:from-rose-600 hover:to-purple-700 transition-all text-center text-sm md:text-base shadow-md shadow-rose-500/20 active:scale-95 hover:shadow-lg hover:shadow-rose-500/30">
                     Plan wählen
-                  </Link>
+                  </button>
                   <Link href="/preise" className="text-center text-xs text-slate-500 hover:text-slate-800 transition-colors font-medium">
                     Alle Details vergleichen
                   </Link>
@@ -886,11 +930,11 @@ export default function Home() {
                 <ul className="space-y-4 flex-1">
                   {[
                     "Bis zu 6 Unterseiten",
-                    "Bis zu 3 Formulare + Routing",
+                    "Bis zu 2 Formulare",
                     "Erweiterte SEO-Optimierung",
                     "Consent-Management (Cookies)",
                     "Bis zu 25 inhaltliche Änderungen / Monat",
-                    "Prio-Support",
+                    "Prio Support",
                     "Alles aus dem Essential-Plan"
                   ].map((f,i)=>(
                     <li key={i} className="flex items-start gap-3">
@@ -903,27 +947,28 @@ export default function Home() {
 
               {/* Pro Plan */}
               <motion.div 
-                className="bg-white rounded-xl p-6 md:p-8 border border-slate-200 shadow-sm hover:shadow-md transition-shadow duration-300 flex flex-col relative"
+                className="bg-white rounded-xl p-6 md:p-8 border border-slate-200 shadow-sm hover:shadow-xl hover:border-slate-300 hover:-translate-y-1 hover:scale-[1.02] transition-all duration-300 flex flex-col relative group"
               >
-                <h3 className="text-xl md:text-2xl font-bold text-slate-900 mb-2">Pro</h3>
+                <div className="absolute inset-0 bg-gradient-to-b from-slate-50/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity rounded-xl pointer-events-none"></div>
+                <h3 className="text-xl md:text-2xl font-bold text-slate-900 mb-2 transition-transform duration-300 group-hover:translate-x-1">Pro</h3>
                 <p className="text-slate-600 mb-8 min-h-[48px] text-sm md:text-base">Für Performance-Fokus, Recruiting & umfassende Markenpräsenz.</p>
                 
-                <div className="mb-8">
+                <div className="mb-8 transition-transform duration-300 group-hover:scale-105 origin-left">
                   <div className="flex items-end gap-1 mb-2">
                     <span className="text-3xl md:text-4xl font-bold text-slate-900 tracking-tight">{pricing[term].pro.price}€</span>
                     <span className="text-slate-600 font-medium pb-1 md:text-base text-sm">/ mo</span>
                   </div>
                   {term > 12 ? (
-                    <div className="text-xs md:text-sm font-semibold text-emerald-600 bg-emerald-50 px-2 py-1 rounded inline-block">Du sparst {getSavings('pro')}€</div>
+                    <div className="text-xs md:text-sm font-semibold text-emerald-600 bg-emerald-50 px-2 py-1 rounded inline-block shadow-sm">Du sparst {getSavings('pro')}€</div>
                   ) : (
                     <div className="text-xs md:text-sm text-slate-500 h-6"></div>
                   )}
                 </div>
                 
-                <div className="flex flex-col gap-3 mb-8">
-                  <Link href={pricing[term].pro.link} target="_blank" rel="noopener noreferrer" className="w-full py-3 rounded-lg font-semibold text-slate-900 bg-white border border-slate-300 hover:bg-slate-50 transition-colors text-center text-sm md:text-base">
+                <div className="flex flex-col gap-3 mb-8 transition-transform duration-300 group-hover:-translate-y-1">
+                  <button onClick={() => handleCheckoutClick(pricing[term].pro.link)} className="w-full py-3 rounded-lg font-semibold text-slate-900 bg-white border border-slate-300 hover:bg-slate-50 hover:border-slate-400 hover:shadow-sm transition-all text-center text-sm md:text-base">
                     Plan wählen
-                  </Link>
+                  </button>
                   <Link href="/preise" className="text-center text-xs text-slate-400 hover:text-slate-600 transition-colors">
                     Alle Details vergleichen
                   </Link>
@@ -935,10 +980,11 @@ export default function Home() {
                   {[
                     "Bis zu 9 Unterseiten",
                     "Bis zu 5 Formulare + Logik",
+                    "Eigenes Content Management",
                     "Pro (erweitert) SEO-Optimierung",
                     "Kurzreport (Tracking & Performance)",
                     "Bis zu 50 inhaltliche Änderungen / Monat",
-                    "Telefon Support + Prio",
+                    "Prio + Telefon Support",
                     "Alles aus dem Business-Plan"
                   ].map((f,i)=>(
                     <li key={i} className="flex items-start gap-3">
@@ -1038,9 +1084,9 @@ export default function Home() {
                 className="bg-white p-1.5 pr-6 shadow-xl shadow-white/5 rounded-full font-bold hover:bg-slate-50 transition-all inline-flex items-center gap-4 text-sm md:text-base group active:scale-95"
               >
                 <span className="bg-gradient-to-r from-rose-500 to-purple-600 text-white text-[10px] md:text-xs uppercase font-black tracking-widest px-3 py-2 rounded-full shadow-sm whitespace-nowrap">
-                  Unverbindlich
+                  Gespräch
                 </span>
-                <span className="text-slate-900 whitespace-nowrap pr-2">Kostenlose Analyse anfordern</span>
+                <span className="text-slate-900 whitespace-nowrap pr-2">Jetzt unverbindlich beraten lassen</span>
               </Link>
             </div>
           </motion.div>

@@ -123,7 +123,7 @@ export function WaitlistModal() {
         body: JSON.stringify({
           ...submitData,
           email: submitData.noEmail ? "Keine geschäftliche E-Mail vorhanden" : submitData.email,
-          _subject: `Neue Analyse-Anfrage: ${submitData.unternehmen || submitData.name}`
+          _subject: `Neue Beratungs-Anfrage: ${submitData.unternehmen || submitData.name}`
         })
       });
       
@@ -164,8 +164,8 @@ export function WaitlistModal() {
                   <span className="font-black text-lg text-white">R</span>
                 </div>
                 <div>
-                  <h3 className="font-bold text-slate-900 leading-tight">Kostenlose Website-Analyse</h3>
-                  <p className="text-xs text-gray-500 font-medium">Unverbindlich & Kostenlos</p>
+                  <h3 className="font-bold text-slate-900 leading-tight">Unverbindliche Beratung</h3>
+                  <p className="text-xs text-gray-500 font-medium">Kostenfrei & Unverbindlich</p>
                 </div>
               </div>
               <button 
@@ -202,7 +202,7 @@ export function WaitlistModal() {
                     </div>
                     <h3 className="text-3xl font-black text-slate-900 mb-4">Anfrage erfolgreich!</h3>
                     <p className="text-gray-500 text-lg mb-8">
-                      Vielen Dank für dein Interesse an einer kostenlosen Analyse. Wir prüfen deine Daten und melden uns sehr bald bei dir mit den Ergebnissen und nächsten Schritten.
+                      Vielen Dank für dein Interesse. Wir prüfen deine Daten und melden uns sehr bald bei dir, um gemeinsam deine Möglichkeiten zu besprechen.
                     </p>
                     <button 
                       onClick={closeModal}
@@ -224,16 +224,16 @@ export function WaitlistModal() {
                       <Zap className="w-3.5 h-3.5" /> Streng limitiert
                     </div>
                     <h3 className="text-3xl sm:text-4xl font-black text-slate-900 mb-6 tracking-tight">
-                      Sichere dir deine <span className="text-transparent bg-clip-text bg-gradient-to-r from-rose-500 to-purple-600">kostenlose Website-Analyse & Beratung!</span>
+                      Lass dich jetzt <span className="text-transparent bg-clip-text bg-gradient-to-r from-rose-500 to-purple-600">unverbindlich beraten!</span>
                     </h3>
                     <p className="text-gray-500 text-lg mb-10">
-                      Trage dich jetzt für eine kostenlose Analyse ein. Wir prüfen deine aktuelle Präsenz auf Performance, SEO, Barrierefreiheit und decken auf, wo du gerade Kunden verlierst.
+                      Fordere jetzt deine kostenfreie Beratung an. Wir schauen uns deine aktuelle Situation an und zeigen dir, wo du aktuell Potential verschenkst und wie du online wachsen kannst.
                     </p>
                     <button 
                       onClick={handleNext}
                       className="w-full py-5 bg-gradient-to-r from-rose-500 to-purple-600 shadow-xl shadow-rose-500/20 text-white rounded-full font-bold text-lg hover:shadow-2xl hover:scale-[1.02] transition-all flex justify-center items-center gap-2"
                     >
-                      Jetzt Analyse anfordern <ArrowRight className="w-5 h-5" />
+                      Jetzt beraten lassen <ArrowRight className="w-5 h-5" />
                     </button>
                     <p className="text-xs text-gray-400 mt-6 flex items-center justify-center gap-1.5">
                       <ShieldCheck className="w-4 h-4" /> 100% unverbindlich, deine Daten sind sicher.
@@ -544,7 +544,7 @@ export function WaitlistModal() {
                       {isSubmitting ? (
                         <span className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin"></span>
                       ) : (
-                        "Kostenlose Analyse anfordern"
+                        "Unverbindlich anfragen"
                       )}
                     </button>
                   </motion.form>

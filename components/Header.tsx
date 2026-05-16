@@ -84,7 +84,7 @@ export function Header() {
           
           <div className="relative z-10 flex flex-wrap items-center justify-center gap-2 md:gap-4 font-medium text-center">
             <span className="bg-rose-500 text-white px-2 py-0.5 rounded text-xs font-bold tracking-wider uppercase shadow-sm">Aktion</span>
-            <span>Sichere dir <strong>15% Rabatt</strong> auf dein Jahresleasing!</span>
+            <span>Spare dir <strong>299€ Setup-Gebühr</strong> auf dein Web-Leasing!</span>
             <span className="flex items-center gap-1.5 font-mono bg-white/10 px-2 py-0.5 rounded">
                <svg className="w-4 h-4 text-rose-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -145,7 +145,7 @@ export function Header() {
               >
                 <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-in-out"></div>
                 <span className="relative z-10 flex items-center gap-2">
-                  <span>Gratis Analyse</span>
+                  <span>Unverbindliche Beratung</span>
                   <div className="w-5 h-5 rounded-full bg-white/20 flex items-center justify-center group-hover:bg-white/40 transition-colors">
                     <ArrowRight className="w-3 h-3 group-hover:translate-x-0.5 transition-transform" />
                   </div>
@@ -233,7 +233,7 @@ export function Header() {
                   onClick={closeMobileMenu}
                   className="w-full flex items-center justify-center gap-2 py-4 rounded-xl font-bold text-white bg-gradient-to-r from-rose-500 to-purple-600 shadow-lg shadow-rose-500/25 hover:shadow-xl active:scale-95 transition-all text-lg"
                 >
-                  Kostenlose Analyse
+                  Unverbindlich beraten lassen
                 </Link>
                 <Link 
                   href="https://dashboard.vanicy.de/" 

@@ -7,7 +7,7 @@ import Image from 'next/image';
 
 const notifications = [
   { name: 'Sarah M.', location: 'München', action: 'hat soeben ein Erstgespräch gebucht.' },
-  { name: 'Thomas K.', location: 'Berlin', action: 'hat eine kostenlose Analyse angefordert.' },
+  { name: 'Thomas K.', location: 'Berlin', action: 'hat sich unverbindlich beraten lassen.' },
   { name: 'Michael B.', location: 'Hamburg', action: 'hat sich den Growth-Plan gesichert.' },
   { name: 'Julia W.', location: 'Frankfurt', action: 'hat soeben ein Erstgespräch gebucht.' },
   { name: 'Andreas S.', location: 'Wien', action: 'hat das Web-Leasing gestartet.' },
