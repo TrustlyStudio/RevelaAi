@@ -3,7 +3,8 @@
 import { motion } from 'motion/react';
 import Image from 'next/image';
 import { useRef } from 'react';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { ChevronLeft, ChevronRight, ArrowRight } from 'lucide-react';
+import Link from 'next/link';
 
 const projects = [
   { name: 'Lemuria Bay', url: 'lemuriabay.de', type: 'E-Commerce & Brand', image: '/LemuriaBay.png' },
@@ -40,9 +41,12 @@ export function CustomerProjects() {
           <h2 className="text-3xl md:text-4xl font-sans font-bold text-slate-900 tracking-tight mb-4">
             Zuletzt gelaunchte Kundenprojekte.
           </h2>
-          <p className="text-slate-600 text-lg">
+          <p className="text-slate-600 text-lg mb-6">
             Ein Querschnitt unserer Arbeit. Wir bauen Systeme, die in jeder Branche als Premium-Plattform wahrgenommen werden.
           </p>
+          <Link href="/case-studies" className="inline-flex items-center gap-2 text-rose-600 font-bold hover:text-rose-700 transition-colors group">
+            Zu den Case Studies im Detail <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+          </Link>
         </motion.div>
         
         <div className="hidden md:flex gap-3">

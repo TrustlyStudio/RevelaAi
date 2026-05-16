@@ -71,6 +71,7 @@ export function Header() {
   const navLinks = [
     { href: '/#vorteile', label: 'Vorteile' },
     { href: '/#methode', label: 'Die Methode' },
+    { href: '/case-studies', label: 'Case Studies' },
     { href: '/preise', label: 'Preise' },
     { href: '/faq', label: 'FAQ' },
   ];

@@ -24,7 +24,7 @@ export function Footer() {
             <nav aria-label="Footer Navigation Lösungen">
               <ul className="space-y-4 text-sm font-medium">
                 <li><Link href="#methode" className="hover:text-white transition-colors block">Unsere Methode</Link></li>
-                <li><Link href="#referenzen" className="hover:text-white transition-colors block">Erfolgsstories</Link></li>
+                <li><Link href="/case-studies" className="hover:text-white transition-colors block">Case Studies</Link></li>
                 <li><Link href="#preise" className="hover:text-white transition-colors block">Preise & Pläne</Link></li>
                 <li><Link href="#analyse" className="hover:text-white transition-colors block">Unverbindliche Beratung</Link></li>
               </ul>

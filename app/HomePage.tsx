@@ -764,6 +764,16 @@ export default function Home() {
               </div>
             </motion.div>
           </motion.div>
+          
+          <div className="text-center mt-12 md:mt-16 pb-8">
+            <Link 
+              href="/case-studies"
+              className="inline-flex items-center gap-3 bg-white border border-slate-200 text-slate-900 font-bold px-8 py-4 rounded-xl shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all group"
+            >
+              Zu den ausführlichen Case Studies
+              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform text-rose-500" />
+            </Link>
+          </div>
         </section>
 
         {/* --- HOW IT WORKS --- */}
