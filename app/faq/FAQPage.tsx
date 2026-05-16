@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from 'motion/react';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
 import { WaitlistModal } from '@/components/WaitlistModal';
-import { ChevronDown, MessageCircleQuestion } from 'lucide-react';
+import { ChevronDown } from 'lucide-react';
 import Link from 'next/link';
 
 const faqCategories = [

@@ -20,7 +20,7 @@ export async function POST(req: Request) {
     } else {
       return NextResponse.json({ success: false }, { status: 400 });
     }
-  } catch (error) {
+  } catch {
     return NextResponse.json({ success: false, error: 'Internal Server Error' }, { status: 500 });
   }
 }

@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from 'motion/react';
 import Link from 'next/link';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
-import { CheckCircle2, Minus, ShieldCheck, Plus, ChevronDown, ChevronRight } from 'lucide-react';
+import { Minus, Plus, ChevronDown, ChevronRight } from 'lucide-react';
 
 const comparisonFeatures = [
   {
