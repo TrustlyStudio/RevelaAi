@@ -12,6 +12,7 @@ import { InfiniteLogoTicker } from '@/components/InfiniteLogoTicker';
 import dynamic from 'next/dynamic';
 import { ComparisonSection } from '@/components/ComparisonSection';
 import { PromoCodeModal } from '@/components/PromoCodeModal';
+import { LeadPopup } from '@/components/LeadPopup';
 
 const ConversionChart = dynamic(() => import('@/components/ConversionChart').then(mod => mod.ConversionChart), { ssr: false });
 
@@ -41,7 +42,8 @@ import {
   Wallet,
   Hourglass,
   ChevronRight,
-  ChevronLeft
+  ChevronLeft,
+  X
 } from 'lucide-react';
 import Link from 'next/link';
 
@@ -98,6 +100,133 @@ export default function Home() {
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
   const [isPromoModalOpen, setIsPromoModalOpen] = useState(false);
   const [checkoutUrl, setCheckoutUrl] = useState('');
+  const [selectedProblem, setSelectedProblem] = useState<number | null>(null);
+
+  const problems = [
+    {
+      icon: <Ghost className="w-6 h-6 text-indigo-600" />,
+      iconBg: "bg-indigo-50 border-indigo-100",
+      title: 'Das teure Geisterschloss',
+      desc: 'Deine Website sieht vielleicht nett aus, aber generiert null echte Anfragen. Jeder Tag ohne Traffic ist verschwendetes Potenzial und treibt Interessenten direkt zu deinen Mitbewerbern.',
+      fullText: "Viele Designer bauen hübsche digitale Broschüren, verstehen aber nichts von Verkaufspsychologie oder Conversion-Optimierung. Das Ergebnis: Eine Website, die zwar toll aussieht, aber keine Besucher in Kunden verwandelt. Du verlierst jeden Tag bares Geld an Mitbewerber, die vielleicht eine schlechtere Leistung, aber eine besser konvertierende Website haben.",
+      stats: "96% der Website-Besucher sind noch nicht bereit zu kaufen. Ohne klare Funnel und Lead-Magnets verlierst du sie für immer.",
+      Visual: () => (
+        <div className="w-full h-48 md:h-56 bg-slate-50 rounded-2xl flex items-center justify-center relative overflow-hidden border border-slate-200 p-6 mb-8">
+          <div className="w-full h-full flex items-end justify-center gap-2 md:gap-6">
+            <div className="flex flex-col items-center">
+              <span className="text-xs font-bold text-slate-500 mb-2">1000 Besucher</span>
+              <motion.div initial={{ height: 0 }} animate={{ height: 120 }} transition={{ duration: 1 }} className="w-16 md:w-24 bg-slate-300 rounded-t-lg relative">
+                <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.5 }} className="absolute inset-0 flex items-center justify-center text-slate-500 font-bold">100%</motion.div>
+              </motion.div>
+            </div>
+            <motion.div initial={{ opacity: 0, x: -10 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 1 }} className="flex pb-16">
+              <ArrowRight className="w-6 h-6 text-slate-300" />
+            </motion.div>
+            <div className="flex flex-col items-center">
+              <span className="text-xs font-bold text-slate-500 mb-2">Abbruch</span>
+              <motion.div initial={{ height: 0 }} animate={{ height: 115 }} transition={{ duration: 1, delay: 1 }} className="w-16 md:w-24 bg-rose-400 rounded-t-lg relative">
+                <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1.5 }} className="absolute inset-0 flex items-center justify-center text-white font-bold">96%</motion.div>
+              </motion.div>
+            </div>
+            <motion.div initial={{ opacity: 0, x: -10 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 2 }} className="flex pb-16">
+              <ArrowRight className="w-6 h-6 text-slate-300" />
+            </motion.div>
+            <div className="flex flex-col items-center">
+              <span className="text-xs font-bold text-indigo-600 mb-2">Anfragen</span>
+              <motion.div initial={{ height: 0 }} animate={{ height: 10 }} transition={{ duration: 1, delay: 2 }} className="w-16 md:w-24 bg-indigo-500 rounded-t-lg mt-auto relative">
+                <motion.div initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 2.5 }} className="absolute -top-6 left-1/2 -translate-x-1/2 text-indigo-600 font-bold">4%</motion.div>
+              </motion.div>
+            </div>
+          </div>
+        </div>
+      )
+    },
+    {
+      icon: <Hourglass className="w-6 h-6 text-rose-500" />,
+      iconBg: "bg-rose-50 border-rose-100",
+      title: 'Die Baukasten-Hölle',
+      desc: 'Ewig lange Ladezeiten, ständige Updates und ein System, das bei jeder Änderung zerschießt. Weißt du, dass 53% deiner Besucher sofort abspringen, wenn die Seite länger als 3 Sekunden lädt?',
+      fullText: "Wix, Squarespace oder günstiges WordPress-Hosting: Am Anfang sparen sie Geld, später fressen sie deine gesamte Zeit. Wenn du selbst Plugins updaten musst, Ladezeiten im roten Bereich liegen und mobile Layouts zerschossen sind, leiden deine Google-Rankings und deine Conversions massiv. Ein CEO sollte keine Plugins aktualisieren.",
+      stats: "Mit jeder Sekunde längerer Ladezeit sinkt die Conversion-Rate um bis zu 20%.",
+      Visual: () => (
+        <div className="w-full h-48 md:h-56 bg-slate-900 rounded-2xl flex items-center justify-center relative overflow-hidden border border-slate-800 p-6 mb-8">
+          <div className="absolute inset-0 flex items-center justify-center mix-blend-screen opacity-20">
+             <div className="w-[200%] h-[200%] bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-50"></div>
+          </div>
+          <div className="relative z-10 flex flex-col items-center">
+            <motion.div
+              animate={{ rotate: 360 }}
+              transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
+              className="w-20 h-20 rounded-full border-4 border-slate-700 border-t-rose-500 border-r-rose-500 mb-6 flex items-center justify-center"
+            >
+              <Hourglass className="w-8 h-8 text-rose-500" />
+            </motion.div>
+            <div className="flex items-center gap-4 text-white font-mono flex-col">
+               <span className="text-slate-400 text-sm">Ladezeit (Sekunden)</span>
+               <div className="flex gap-2 text-2xl font-black">
+                 <motion.span initial={{ opacity: 1, color: "#fff" }} animate={{ opacity: 0.5, color: "#f43f5e" }} transition={{ duration: 0.5, delay: 1 }}>0.5</motion.span>
+                 <span className="text-slate-600">-</span>
+                 <motion.span initial={{ opacity: 1, color: "#fff" }} animate={{ opacity: 0.5, color: "#f43f5e" }} transition={{ duration: 0.5, delay: 2 }}>1.2</motion.span>
+                 <span className="text-slate-600">-</span>
+                 <motion.span initial={{ opacity: 0, scale: 0.5 }} animate={{ opacity: 1, scale: 1.2, color: "#f43f5e" }} transition={{ duration: 0.5, delay: 3 }}>4.8s!</motion.span>
+               </div>
+            </div>
+          </div>
+        </div>
+      )
+    },
+    {
+      icon: <Wallet className="w-6 h-6 text-amber-600" />,
+      iconBg: "bg-amber-50 border-amber-100",
+      title: 'Die Agentur-Geiselhaft',
+      desc: 'Du hast 5.000€+ vorab gezahlt und bist jetzt abhängig. Die Agentur ist schwer erreichbar, deine Seite veraltet langsam und für jede winzige Textänderung darfst du wieder extra zahlen.',
+      fullText: "Der Klassiker: Du zahlst eine horrende Summe für die Erstellung, aber nach dem Live-Gang endet die Betreuung. Deine Website veraltet, neue Kampagnen lassen sich nur schwer integrieren, und für jede kleine Textänderung oder Erweiterung flattern Rechnungen ins Haus. Du bist gefangen in einem starren System ohne Flexibilität für schnelles Wachstum.",
+      stats: "Traditionelle Agenturprojekte sind im Schnitt nach 18 Monaten technisch veraltet.",
+      Visual: () => (
+        <div className="w-full h-48 md:h-56 bg-amber-50 rounded-2xl flex items-center justify-center relative overflow-hidden border border-amber-100 p-6 mb-8 group">
+          <div className="relative flex gap-8 items-center w-full max-w-sm">
+            <motion.div 
+               className="bg-white p-4 rounded-xl shadow-md border border-slate-200 flex-1 relative"
+               initial={{ y: 20, opacity: 0 }}
+               animate={{ y: 0, opacity: 1 }}
+               transition={{ duration: 0.5 }}
+            >
+              <div className="w-full h-2 bg-slate-100 rounded-full mb-3 hidden md:block"></div>
+              <div className="w-3/4 h-2 bg-slate-100 rounded-full mb-4 hidden md:block"></div>
+              <div className="w-full flex justify-between items-center text-xs text-slate-400 font-mono border-t border-slate-100 pt-2">
+                <span>RECHNUNG</span>
+                <span className="text-rose-500 font-bold">+180€ / Std</span>
+              </div>
+            </motion.div>
+            
+            <motion.div 
+               className="bg-white p-4 rounded-xl shadow-lg border border-slate-200 flex-1 relative -ml-16 mt-8 z-10"
+               initial={{ y: 20, opacity: 0 }}
+               animate={{ y: 0, opacity: 1 }}
+               transition={{ duration: 0.5, delay: 0.5 }}
+            >
+              <div className="w-full h-2 bg-slate-100 rounded-full mb-3 hidden md:block"></div>
+              <div className="w-1/2 h-2 bg-amber-100 rounded-full mb-4 hidden md:block"></div>
+              <div className="w-full flex justify-between items-center text-xs text-slate-400 font-mono border-t border-slate-100 pt-2">
+                <span>WARTUNG</span>
+                <span className="text-rose-500 font-bold">+450€ / Mo</span>
+              </div>
+            </motion.div>
+            
+            <motion.div 
+               className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-slate-900 text-white rounded-xl shadow-2xl p-4 font-mono z-20"
+               initial={{ scale: 0.5, opacity: 0 }}
+               animate={{ scale: 1, opacity: 1 }}
+               transition={{ type: "spring", delay: 1 }}
+            >
+              <div className="text-xs text-slate-400 mb-1">Total sunk cost:</div>
+              <div className="text-xl md:text-3xl font-black text-rose-400">12.450 €</div>
+            </motion.div>
+          </div>
+        </div>
+      )
+    }
+  ];
 
   const handleCheckoutClick = (url: string) => {
     setCheckoutUrl(url);
@@ -190,6 +319,7 @@ export default function Home() {
           onClose={() => setIsPromoModalOpen(false)} 
           checkoutUrl={checkoutUrl} 
         />
+        <LeadPopup />
         {/* Subtle dot matrix background for SaaS feel */}
         <div className="absolute inset-0 z-[-1] bg-[linear-gradient(to_right,#80808008_1px,transparent_1px),linear-gradient(to_bottom,#80808008_1px,transparent_1px)] bg-[size:24px_24px]"></div>
         
@@ -317,62 +447,116 @@ export default function Home() {
             variants={staggerContainer}
             className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10"
           >
-            <motion.div 
-              variants={{
-                hidden: { opacity: 0, scale: 0.9, y: 30 },
-                visible: { opacity: 1, scale: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } }
-              }} 
-              className="text-center max-w-3xl mx-auto mb-16 md:mb-20"
-            >
-              <h2 className="text-3xl md:text-5xl font-sans font-bold text-slate-900 tracking-tight mb-6">
-                Warum deine aktuelle Website heimlich Geld verbrennt.
-              </h2>
-              <p className="text-base md:text-xl text-slate-600 leading-relaxed max-w-2xl mx-auto">
-                Du verlierst jeden Tag potenzielle Kunden an die Konkurrenz, ohne es überhaupt zu bemerken. Das sind die drei größten Wachstums-Bremsen.
-              </p>
-            </motion.div>
+                    <motion.div 
+                      variants={{
+                        hidden: { opacity: 0, scale: 0.9, y: 30 },
+                        visible: { opacity: 1, scale: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } }
+                      }} 
+                      className="text-center max-w-3xl mx-auto mb-16 md:mb-20"
+                    >
+                      <h2 className="text-3xl md:text-5xl font-sans font-bold text-slate-900 tracking-tight mb-6">
+                        Warum deine aktuelle Website heimlich Geld verbrennt.
+                      </h2>
+                      <p className="text-base md:text-xl text-slate-600 leading-relaxed max-w-2xl mx-auto">
+                        Du verlierst jeden Tag potenzielle Kunden an die Konkurrenz, ohne es überhaupt zu bemerken. Das sind die drei größten Wachstums-Bremsen.
+                      </p>
+                    </motion.div>
 
-            <div className="grid md:grid-cols-3 gap-6">
-              {[
-                {
-                  icon: <Ghost className="w-6 h-6 text-indigo-600" />,
-                  iconBg: "bg-indigo-50 border-indigo-100",
-                  title: 'Das teure Geisterschloss',
-                  desc: 'Deine Website sieht vielleicht nett aus, aber generiert null echte Anfragen. Jeder Tag ohne Traffic ist verschwendetes Potenzial und treibt Interessenten direkt zu deinen Mitbewerbern.',
-                },
-                {
-                  icon: <Hourglass className="w-6 h-6 text-rose-500" />,
-                  iconBg: "bg-rose-50 border-rose-100",
-                  title: 'Die Baukasten-Hölle',
-                  desc: 'Ewig lange Ladezeiten, ständige Updates und ein System, das bei jeder Änderung zerschießt. Weißt du, dass 53% deiner Besucher sofort abspringen, wenn die Seite länger als 3 Sekunden lädt?',
-                },
-                {
-                  icon: <Wallet className="w-6 h-6 text-amber-600" />,
-                  iconBg: "bg-amber-50 border-amber-100",
-                  title: 'Die Agentur-Geiselhaft',
-                  desc: 'Du hast 5.000€+ vorab gezahlt und bist jetzt abhängig. Die Agentur ist schwer erreichbar, deine Seite veraltet langsam und für jede winzige Textänderung darfst du wieder extra zahlen.',
-                }
-              ].map((card, i) => (
-                <motion.div 
-                  key={i}
-                  variants={{
-                    hidden: { opacity: 0, y: 15 },
-                    visible: { opacity: 1, y: 0, transition: { duration: 0.5 } }
-                  }} 
-                  className="bg-white rounded-2xl p-6 md:p-8 border border-slate-200 shadow-sm hover:shadow-xl hover:-translate-y-1 hover:border-slate-300 transition-all duration-300 group"
-                >
-                  <div className={`w-12 h-12 rounded-xl mb-6 flex items-center justify-center border ${card.iconBg} group-hover:scale-110 transition-transform duration-300 relative`}>
-                    {card.icon}
-                  </div>
-                  <h3 className="text-xl font-bold text-slate-900 mb-3 group-hover:text-indigo-600 transition-colors">{card.title}</h3>
-                  <p className="text-slate-600 text-sm md:text-base leading-relaxed">
-                    {card.desc}
-                  </p>
-                </motion.div>
-              ))}
-            </div>
-          </motion.div>
-        </section>
+                    <div className="grid md:grid-cols-3 gap-6">
+                      {problems.map((card, i) => (
+                        <motion.div 
+                          key={i}
+                          onClick={() => setSelectedProblem(i)}
+                          variants={{
+                            hidden: { opacity: 0, y: 15 },
+                            visible: { opacity: 1, y: 0, transition: { duration: 0.5 } }
+                          }} 
+                          className="bg-white rounded-2xl p-6 md:p-8 border border-slate-200 shadow-sm hover:shadow-xl hover:-translate-y-1 hover:border-slate-300 transition-all duration-300 group cursor-pointer"
+                        >
+                          <div className={`w-12 h-12 rounded-xl mb-6 flex items-center justify-center border ${card.iconBg} group-hover:scale-110 transition-transform duration-300 relative`}>
+                            {card.icon}
+                          </div>
+                          <h3 className="text-xl font-bold text-slate-900 mb-3 group-hover:text-indigo-600 transition-colors">{card.title}</h3>
+                          <p className="text-slate-600 text-sm md:text-base leading-relaxed">
+                            {card.desc}
+                          </p>
+                          <div className="mt-6 flex items-center gap-2 text-sm font-bold text-indigo-600 group-hover:text-rose-500 transition-colors">
+                            Mehr erfahren <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                          </div>
+                        </motion.div>
+                      ))}
+                    </div>
+                  </motion.div>
+
+                  <AnimatePresence>
+                    {selectedProblem !== null && (
+                      <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 px-4 sm:px-6">
+                        <motion.div
+                          initial={{ opacity: 0 }}
+                          animate={{ opacity: 1 }}
+                          exit={{ opacity: 0 }}
+                          transition={{ duration: 0.2 }}
+                          className="absolute inset-0 bg-slate-900/60 backdrop-blur-sm cursor-pointer"
+                          onClick={() => setSelectedProblem(null)}
+                        />
+                        <motion.div
+                          initial={{ opacity: 0, scale: 0.95, y: 20 }}
+                          animate={{ opacity: 1, scale: 1, y: 0 }}
+                          exit={{ opacity: 0, scale: 0.95, y: 20 }}
+                          transition={{ type: "spring", damping: 25, stiffness: 300 }}
+                          className="relative w-full max-w-2xl bg-white rounded-3xl shadow-2xl overflow-hidden flex flex-col max-h-[90vh]"
+                          style={{ zIndex: 101 }}
+                        >
+                          <div className="flex justify-between items-center p-6 border-b border-slate-100">
+                            <div className="flex items-center gap-4">
+                              <div className={`w-12 h-12 rounded-xl flex items-center justify-center border ${problems[selectedProblem].iconBg}`}>
+                                {problems[selectedProblem].icon}
+                              </div>
+                              <h3 className="text-xl md:text-2xl font-bold text-slate-900">{problems[selectedProblem].title}</h3>
+                            </div>
+                            <button 
+                              onClick={() => setSelectedProblem(null)}
+                              className="p-2 bg-slate-50 hover:bg-slate-100 rounded-full text-slate-500 transition-colors"
+                            >
+                              <X className="w-5 h-5" />
+                            </button>
+                          </div>
+                          
+                          <div className="p-6 md:p-8 overflow-y-auto">
+                            {(() => {
+                               const VisualComponent = problems[selectedProblem].Visual;
+                               return VisualComponent ? <VisualComponent /> : null;
+                            })()}
+                            <p className="text-lg text-slate-700 leading-relaxed mb-8">
+                              {problems[selectedProblem].fullText}
+                            </p>
+                            
+                            <div className="bg-slate-50 rounded-2xl p-6 border border-slate-100 mb-8">
+                              <div className="flex items-start gap-4">
+                                <AlertCircle className="w-6 h-6 text-rose-500 flex-shrink-0 mt-1" />
+                                <div>
+                                  <h4 className="font-bold text-slate-900 mb-2">Die bittere Realität:</h4>
+                                  <p className="text-slate-600 text-sm md:text-base">
+                                    {problems[selectedProblem].stats}
+                                  </p>
+                                </div>
+                              </div>
+                            </div>
+
+                            <div className="flex flex-col sm:flex-row gap-4 items-center">
+                              <Link href="/#methode" onClick={() => setSelectedProblem(null)} className="w-full sm:w-auto text-center px-6 py-3 bg-slate-900 text-white rounded-xl font-bold shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all">
+                                Wie wir das lösen
+                              </Link>
+                              <button onClick={() => setSelectedProblem(null)} className="w-full sm:w-auto px-6 py-3 bg-white text-slate-600 rounded-xl font-bold hover:bg-slate-50 transition-colors">
+                                Schließen
+                              </button>
+                            </div>
+                          </div>
+                        </motion.div>
+                      </div>
+                    )}
+                  </AnimatePresence>
+                </section>
 
         {/* --- THE SOLUTION / METHOD --- */}
         <section className="py-20 lg:py-32 bg-white relative border-t border-slate-200">
