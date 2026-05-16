@@ -26,7 +26,7 @@ export function Footer() {
                 <li><Link href="#methode" className="hover:text-white transition-colors block">Unsere Methode</Link></li>
                 <li><Link href="#referenzen" className="hover:text-white transition-colors block">Erfolgsstories</Link></li>
                 <li><Link href="#preise" className="hover:text-white transition-colors block">Preise & Pläne</Link></li>
-                <li><Link href="#warteliste" className="hover:text-white transition-colors block">Kostenloses Erstgespräch</Link></li>
+                <li><Link href="#analyse" className="hover:text-white transition-colors block">Kostenlose Website Analyse</Link></li>
               </ul>
             </nav>
           </div>

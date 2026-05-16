@@ -4,11 +4,11 @@ import { Footer } from "@/components/Footer";
 
 export const metadata: Metadata = {
   title: 'Datenschutzerklärung',
-  description: 'Datenschutzerklärung für Vanicy Webseitenleasing. Informationen zu Cookies, Analytics und Datenerfassung auf unserer Website.',
-  keywords: ['Datenschutz', 'Privacy Policy', 'DSGVO', 'Vanicy'],
+  description: 'Datenschutzerklärung von Vanicy Webseitenleasing. Informationen zu DSGVO, Cookies, Auftragsverarbeitung und Datensicherheit.',
+  keywords: ['Datenschutz', 'Datenschutzerklärung', 'Privacy Policy', 'DSGVO', 'Vanicy Datenschutz', 'B2B Webseitenleasing Datenschutz'],
   openGraph: {
     title: 'Datenschutzerklärung | Vanicy',
-    description: 'Datenschutzerklärung für Vanicy Webseitenleasing.',
+    description: 'Datenschutzerklärung von Vanicy Webseitenleasing. Informationen zu DSGVO, Cookies, Auftragsverarbeitung und Datensicherheit.',
     url: 'https://vanicy.de/datenschutz',
   },
   alternates: {

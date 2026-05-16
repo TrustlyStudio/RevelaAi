@@ -48,7 +48,7 @@ export function WaitlistModal() {
 
   useEffect(() => {
     const checkHash = () => {
-      if (window.location.hash === '#warteliste' || window.location.hash.includes('warteliste')) {
+      if (window.location.hash === '#analyse' || window.location.hash.includes('analyse')) {
         setIsOpen(true);
       } else {
         setIsOpen(false);
@@ -60,7 +60,7 @@ export function WaitlistModal() {
     
     const handleGlobalClick = (e: MouseEvent) => {
       const link = (e.target as Element).closest('a');
-      if (link && link.href.includes('#warteliste')) {
+      if (link && link.href.includes('#analyse')) {
         setIsOpen(true);
       }
     };
@@ -123,7 +123,7 @@ export function WaitlistModal() {
         body: JSON.stringify({
           ...submitData,
           email: submitData.noEmail ? "Keine geschäftliche E-Mail vorhanden" : submitData.email,
-          _subject: `Neue Wartelisten-Anmeldung: ${submitData.unternehmen || submitData.name}`
+          _subject: `Neue Analyse-Anfrage: ${submitData.unternehmen || submitData.name}`
         })
       });
       
@@ -164,7 +164,7 @@ export function WaitlistModal() {
                   <span className="font-black text-lg text-white">R</span>
                 </div>
                 <div>
-                  <h3 className="font-bold text-slate-900 leading-tight">Vanicy Warteliste</h3>
+                  <h3 className="font-bold text-slate-900 leading-tight">Kostenlose Website-Analyse</h3>
                   <p className="text-xs text-gray-500 font-medium">Unverbindlich & Kostenlos</p>
                 </div>
               </div>
@@ -200,9 +200,9 @@ export function WaitlistModal() {
                     <div className="w-20 h-20 rounded-full bg-emerald-100 text-emerald-500 flex items-center justify-center mx-auto mb-6">
                       <CheckCircle2 className="w-10 h-10" />
                     </div>
-                    <h3 className="text-3xl font-black text-slate-900 mb-4">Du bist auf der Warteliste!</h3>
+                    <h3 className="text-3xl font-black text-slate-900 mb-4">Anfrage erfolgreich!</h3>
                     <p className="text-gray-500 text-lg mb-8">
-                      Vielen Dank für dein Interesse. Wir haben deine Daten erhalten und melden uns sehr bald bei dir, um die nächsten Schritte und Details zu besprechen.
+                      Vielen Dank für dein Interesse an einer kostenlosen Analyse. Wir prüfen deine Daten und melden uns sehr bald bei dir mit den Ergebnissen und nächsten Schritten.
                     </p>
                     <button 
                       onClick={closeModal}
@@ -224,17 +224,16 @@ export function WaitlistModal() {
                       <Zap className="w-3.5 h-3.5" /> Streng limitiert
                     </div>
                     <h3 className="text-3xl sm:text-4xl font-black text-slate-900 mb-6 tracking-tight">
-                      Sichere dir <span className="text-transparent bg-clip-text bg-gradient-to-r from-rose-500 to-purple-600">15% Rabatt</span> und den perfekten Start!
+                      Sichere dir deine <span className="text-transparent bg-clip-text bg-gradient-to-r from-rose-500 to-purple-600">kostenlose Website-Analyse & Beratung!</span>
                     </h3>
                     <p className="text-gray-500 text-lg mb-10">
-                      Trage dich jetzt auf unsere Warteliste ein. Finde in wenigen Klicks heraus, wie wir dein Geschäft mit einer überzeugenden Web-Präsenz skalieren.
+                      Trage dich jetzt für eine kostenlose Analyse ein. Wir prüfen deine aktuelle Präsenz auf Performance, SEO, Barrierefreiheit und decken auf, wo du gerade Kunden verlierst.
                     </p>
                     <button 
                       onClick={handleNext}
                       className="w-full py-5 bg-gradient-to-r from-rose-500 to-purple-600 shadow-xl shadow-rose-500/20 text-white rounded-full font-bold text-lg hover:shadow-2xl hover:scale-[1.02] transition-all flex justify-center items-center gap-2"
-                      type="button"
                     >
-                      Jetzt kostenlos eintragen <ArrowRight className="w-5 h-5" />
+                      Jetzt Analyse anfordern <ArrowRight className="w-5 h-5" />
                     </button>
                     <p className="text-xs text-gray-400 mt-6 flex items-center justify-center gap-1.5">
                       <ShieldCheck className="w-4 h-4" /> 100% unverbindlich, deine Daten sind sicher.
@@ -545,7 +544,7 @@ export function WaitlistModal() {
                       {isSubmitting ? (
                         <span className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin"></span>
                       ) : (
-                        "Auf Warteliste setzen"
+                        "Kostenlose Analyse anfordern"
                       )}
                     </button>
                   </motion.form>

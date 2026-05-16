@@ -97,8 +97,33 @@ const testimonialsData = [
 
 export default function Home() {
   const [openFaq, setOpenFaq] = useState<number | null>(0);
-  const [isYearly, setIsYearly] = useState(true);
+  const [term, setTerm] = useState<12 | 24 | 36>(12);
   const [currentTestimonialIndex, setCurrentTestimonialIndex] = useState(0);
+
+  const pricing = {
+    12: {
+      essential: { price: 249, link: "https://buy.stripe.com/fZu8wI2Tm50a8ek19h77O02" },
+      business: { price: 349, link: "https://buy.stripe.com/7sY6oA8dG50a2U0bNV77O04" },
+      pro: { price: 599, link: "https://buy.stripe.com/5kQ14g79C3W6eCI6tB77O03" }
+    },
+    24: {
+      essential: { price: 229, link: "https://buy.stripe.com/aFa14g1Pi50aeCIf0777O05" },
+      business: { price: 329, link: "https://buy.stripe.com/fZu8wI0LecsC66cbNV77O07" },
+      pro: { price: 579, link: "https://buy.stripe.com/aFafZa65y0JU3Y4aJR77O09" }
+    },
+    36: {
+      essential: { price: 209, link: "https://buy.stripe.com/8x2cMYalOaku1PW19h77O06" },
+      business: { price: 309, link: "https://buy.stripe.com/14A7sE79CfEO8ek7xF77O08" },
+      pro: { price: 559, link: "https://buy.stripe.com/cNibIUbpS50aeCI8BJ77O0a" }
+    }
+  };
+
+  const getSavings = (plan: 'essential' | 'business' | 'pro') => {
+    const price12 = pricing[12][plan].price;
+    const currentPrice = pricing[term][plan].price;
+    const monthlySavings = price12 - currentPrice;
+    return monthlySavings * term;
+  };
 
   const containerRef = useRef(null);
   const { scrollYProgress } = useScroll({
@@ -208,15 +233,17 @@ export default function Home() {
                 className="flex flex-col sm:flex-row items-center lg:items-start gap-4 justify-center lg:justify-start"
               >
                 <Link 
-                  href="#warteliste"
-                  className="w-full sm:w-auto bg-slate-900 text-white px-8 py-4 rounded-xl font-bold text-base hover:bg-slate-800 transition-all duration-300 flex items-center justify-center gap-2 group shadow-lg shadow-slate-900/10 active:scale-95"
+                  href="#analyse"
+                  className="w-full sm:w-auto h-14 bg-slate-900 border border-slate-800 p-1.5 pr-6 rounded-full font-bold text-base hover:bg-slate-800 transition-all duration-300 flex items-center justify-between sm:justify-start gap-4 group shadow-lg shadow-slate-900/10 active:scale-95"
                 >
-                  Auf die Warteliste
-                  <span className="bg-rose-500 text-white text-[9px] md:text-[10px] uppercase font-bold tracking-wider px-2 py-0.5 rounded-full ml-1">-15% für early birds</span>
+                  <span className="bg-gradient-to-r from-rose-500 to-purple-600 text-white text-[10px] md:text-xs uppercase font-black tracking-widest px-4 h-full flex items-center justify-center rounded-full shadow-sm whitespace-nowrap">
+                    Gratis Report
+                  </span>
+                  <span className="text-white whitespace-nowrap text-sm sm:text-base pr-2">Kostenlose Analyse</span>
                 </Link>
                 <Link 
                   href="#preise"
-                  className="w-full sm:w-auto bg-white text-slate-900 border border-slate-200 px-8 py-4 rounded-xl font-bold text-base hover:bg-slate-50 hover:border-slate-300 transition-all duration-300 flex items-center justify-center active:scale-95"
+                  className="w-full sm:w-auto h-14 bg-white text-slate-900 border border-slate-200 px-8 rounded-full font-bold text-sm sm:text-base hover:bg-slate-50 hover:border-slate-300 transition-all duration-300 flex items-center justify-center active:scale-95 shadow-sm"
                 >
                   Preise ansehen
                 </Link>
@@ -735,58 +762,68 @@ export default function Home() {
             <motion.div variants={fadeInUp} className="flex justify-center mb-16 relative z-20">
               <div className="bg-white p-1 rounded-lg inline-flex items-center shadow-sm border border-slate-200">
                 <button 
-                  onClick={() => setIsYearly(false)}
-                  className={`px-4 sm:px-8 py-2 md:py-3 rounded-md font-semibold text-xs md:text-sm transition-all duration-200 ${!isYearly ? 'bg-slate-900 text-white shadow-sm' : 'text-slate-600 hover:text-slate-900'}`}
+                  onClick={() => setTerm(12)}
+                  className={`px-4 sm:px-6 py-2 md:py-3 rounded-md font-semibold text-xs md:text-sm transition-all duration-200 ${term === 12 ? 'bg-slate-900 text-white shadow-sm' : 'text-slate-600 hover:text-slate-900'}`}
                 >
-                  Monatlich kündbar
+                  12 Monate
                 </button>
                 <button 
-                  onClick={() => setIsYearly(true)}
-                  className={`px-4 sm:px-8 py-2 md:py-3 rounded-md font-semibold text-xs md:text-sm transition-all duration-200 flex items-center gap-2 ${isYearly ? 'bg-slate-900 text-white shadow-sm' : 'text-slate-600 hover:text-slate-900'}`}
+                  onClick={() => setTerm(24)}
+                  className={`px-4 sm:px-6 py-2 md:py-3 rounded-md font-semibold text-xs md:text-sm transition-all duration-200 flex items-center gap-2 ${term === 24 ? 'bg-slate-900 text-white shadow-sm' : 'text-slate-600 hover:text-slate-900'}`}
                 >
-                  Jährlich
-                  <span className={`px-1.5 py-0.5 rounded text-[9px] md:text-[10px] uppercase font-bold tracking-wider transition-colors ${isYearly ? 'bg-white/20 text-white' : 'bg-rose-100 text-rose-700'}`}>
-                    -15%
+                  24 Monate
+                  <span className={`px-1.5 py-0.5 rounded text-[9px] md:text-[10px] uppercase font-bold tracking-wider transition-colors ${term === 24 ? 'bg-emerald-500 text-white' : 'bg-emerald-100 text-emerald-700'}`}>
+                    Empfehlung
                   </span>
+                </button>
+                <button 
+                  onClick={() => setTerm(36)}
+                  className={`px-4 sm:px-6 py-2 md:py-3 rounded-md font-semibold text-xs md:text-sm transition-all duration-200 ${term === 36 ? 'bg-slate-900 text-white shadow-sm' : 'text-slate-600 hover:text-slate-900'}`}
+                >
+                  36 Monate
                 </button>
               </div>
             </motion.div>
 
             <motion.div variants={fadeInUp} className="grid md:grid-cols-3 gap-6 lg:gap-8 max-w-6xl mx-auto items-stretch">
               
-              {/* Start Plan */}
+              {/* Essential Plan */}
               <motion.div 
                 className="bg-white rounded-xl p-6 md:p-8 border border-slate-200 shadow-sm hover:shadow-md transition-shadow duration-300 flex flex-col relative"
               >
-                <h3 className="text-xl md:text-2xl font-bold text-slate-900 mb-2">Start</h3>
-                <p className="text-slate-600 mb-8 min-h-[48px] text-sm md:text-base">Für lokale Betriebe, die modern auftreten wollen.</p>
+                <h3 className="text-xl md:text-2xl font-bold text-slate-900 mb-2">Essential</h3>
+                <p className="text-slate-600 mb-8 min-h-[48px] text-sm md:text-base">Für lokale Betriebe und Gründer, die hochprofessionell starten wollen.</p>
                 
                 <div className="mb-8">
                   <div className="flex items-end gap-1 mb-2">
-                    {isYearly && <span className="text-base md:text-lg font-medium text-slate-400 line-through mb-1">359€</span>}
-                    <span className="text-3xl md:text-4xl font-bold text-slate-900 tracking-tight">{isYearly ? '249€' : '359€'}</span>
+                    <span className="text-3xl md:text-4xl font-bold text-slate-900 tracking-tight">{pricing[term].essential.price}€</span>
                     <span className="text-slate-600 font-medium pb-1 md:text-base text-sm">/ mo</span>
                   </div>
-                  {isYearly ? (
-                    <div className="text-xs md:text-sm font-semibold text-emerald-600 bg-emerald-50 px-2 py-1 rounded inline-block">0€ Setup-Gebühr</div>
+                  {term > 12 ? (
+                    <div className="text-xs md:text-sm font-semibold text-emerald-600 bg-emerald-50 px-2 py-1 rounded inline-block">Du sparst {getSavings('essential')}€</div>
                   ) : (
-                    <div className="text-xs md:text-sm text-slate-500">+ Einmalige Setup-Gebühr</div>
+                    <div className="text-xs md:text-sm text-slate-500 h-6"></div>
                   )}
                 </div>
                 
-                <Link href="#warteliste" className="w-full py-3 mb-8 rounded-lg font-semibold text-slate-900 bg-white border border-slate-300 hover:bg-slate-50 transition-colors text-center text-sm md:text-base">
-                  Plan wählen
-                </Link>
+                <div className="flex flex-col gap-3 mb-8">
+                  <Link href={pricing[term].essential.link} target="_blank" rel="noopener noreferrer" className="w-full py-3 rounded-lg font-semibold text-slate-900 bg-white border border-slate-300 hover:bg-slate-50 transition-colors text-center text-sm md:text-base">
+                    Plan wählen
+                  </Link>
+                  <Link href="/preise" className="text-center text-xs text-slate-400 hover:text-slate-600 transition-colors">
+                    Alle Details vergleichen
+                  </Link>
+                </div>
 
                 <div className="h-px bg-slate-100 w-full mb-8"></div>
                 
                 <ul className="space-y-4 flex-1">
                   {[
-                    "1 Landingpage + bis zu 3 Unterseiten",
-                    "1 klarer CTA (Kontakt/Buchung)",
-                    "Responsive Design & Basic SEO",
-                    "Premium Hosting & SSL-Zertifikat",
-                    "Wartung & Sicherheits-Updates",
+                    "Bis zu 3 Unterseiten",
+                    "1 Kontaktformular",
+                    "VANICY Dashboard",
+                    "Basis SEO-Optimierung",
+                    "Basic Cookie-Banner",
                     "Bis zu 10 inhaltliche Änderungen / Monat"
                   ].map((f,i)=>(
                     <li key={i} className="flex items-start gap-3">
@@ -797,78 +834,100 @@ export default function Home() {
                 </ul>
               </motion.div>
 
-              {/* Growth Plan */}
+              {/* Business Plan */}
               <motion.div 
-                className="bg-slate-900 rounded-xl p-6 md:p-8 border border-slate-800 shadow-xl transition-shadow duration-300 flex flex-col relative text-white md:-mt-4 md:mb-4"
+                className="bg-white rounded-xl p-6 md:p-8 border-2 border-rose-200 shadow-xl shadow-rose-500/10 transition-shadow duration-300 flex flex-col relative md:-mt-4 md:mb-4 z-10"
               >
-                <div className="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-rose-500 to-purple-600 rounded-t-xl"></div>
+                <div className="absolute top-0 inset-x-0 h-1.5 bg-gradient-to-r from-rose-500 to-purple-600 rounded-t-xl"></div>
                 
-                <h3 className="text-xl md:text-2xl font-bold mb-2">Growth</h3>
-                <p className="text-slate-400 mb-8 min-h-[48px] text-sm md:text-base">Für Unternehmen, die Skalierung und mehr Sichtbarkeit wollen.</p>
+                <div className="flex mb-3">
+                  <span className="bg-gradient-to-r from-rose-500 to-purple-600 text-white font-semibold px-3 py-1 rounded-full text-[10px] md:text-xs tracking-widest uppercase mb-1 shadow-sm">
+                    Am beliebtesten
+                  </span>
+                </div>
+                <h3 className="text-xl md:text-2xl font-black mb-2 text-transparent bg-clip-text bg-gradient-to-r from-rose-500 to-purple-600">Business</h3>
+                <p className="text-slate-600 mb-8 min-h-[48px] text-sm md:text-base">Für etablierte Unternehmen, die Anfragen skalieren möchten.</p>
                 
                 <div className="mb-8">
                   <div className="flex items-end gap-1 mb-2">
-                    {isYearly && <span className="text-base md:text-lg font-medium text-slate-500 line-through mb-1">549€</span>}
-                    <span className="text-3xl md:text-4xl font-bold tracking-tight">{isYearly ? '449€' : '549€'}</span>
-                    <span className="text-slate-400 font-medium pb-1 md:text-base text-sm">/ mo</span>
+                    <span className="text-3xl md:text-4xl font-black tracking-tight text-slate-900">{pricing[term].business.price}€</span>
+                    <span className="text-slate-500 font-medium pb-1 md:text-base text-sm">/ mo</span>
                   </div>
-                  {isYearly ? (
-                    <div className="text-xs md:text-sm font-semibold text-purple-400 bg-purple-500/10 border border-purple-500/20 px-2 py-1 rounded inline-block">0€ Setup-Gebühr</div>
+                  {term > 12 ? (
+                    <div className="text-xs md:text-sm font-bold text-rose-600 bg-rose-50 px-2 py-1 rounded inline-block border border-rose-100">Du sparst {getSavings('business')}€</div>
                   ) : (
-                    <div className="text-xs md:text-sm text-slate-400">+ Einmalige Setup-Gebühr</div>
+                    <div className="text-xs md:text-sm text-slate-400 h-6"></div>
                   )}
                 </div>
                 
-                <Link href="#warteliste" className="w-full py-3 mb-8 rounded-lg font-semibold text-white bg-gradient-to-r from-rose-500 to-purple-600 hover:from-rose-600 hover:to-purple-700 transition-colors text-center text-sm md:text-base">
-                  Beliebteste Wahl
-                </Link>
-
-                <div className="h-px bg-slate-800 w-full mb-8"></div>
-                
-                <ul className="space-y-4 flex-1">
-                  {[
-                    "Bis zu 8 Unterseiten",
-                    "Erweiterte SEO-Optimierung",
-                    "Google Analytics & Cookie-Banner",
-                    "Bis zu 25 inhaltliche Änderungen / Monat",
-                    "Vorrangiger Support (SLA)",
-                    "Alles aus dem Start-Plan"
-                  ].map((f,i)=>(
-                    <li key={i} className="flex items-start gap-3">
-                      <CheckCircle2 className="w-4 h-4 md:w-5 md:h-5 text-rose-400 shrink-0 mt-0.5" />
-                      <span className="text-slate-300 text-xs md:text-sm leading-relaxed">{f}</span>
-                    </li>
-                  ))}
-                </ul>
-              </motion.div>
-
-              {/* Custom Plan */}
-              <motion.div 
-                className="bg-white rounded-xl p-6 md:p-8 border border-slate-200 shadow-sm hover:shadow-md transition-shadow duration-300 flex flex-col relative"
-              >
-                <h3 className="text-xl md:text-2xl font-bold text-slate-900 mb-2">Custom</h3>
-                <p className="text-slate-600 mb-8 min-h-[48px] text-sm md:text-base">Für sehr spezifische Logik, Portale oder große E-Commerce Projekte.</p>
-                
-                <div className="mb-8">
-                  <div className="flex items-end gap-1 h-11 mb-2">
-                    <span className="text-2xl md:text-3xl font-bold text-slate-900 tracking-tight">Individuell</span>
-                  </div>
-                  <div className="text-xs md:text-sm font-semibold text-slate-600 bg-slate-100 px-2 py-1 rounded inline-block">Nach Scoping</div>
+                <div className="flex flex-col gap-3 mb-8">
+                  <Link href={pricing[term].business.link} target="_blank" rel="noopener noreferrer" className="w-full py-3 rounded-lg font-bold text-white bg-gradient-to-r from-rose-500 to-purple-600 hover:from-rose-600 hover:to-purple-700 transition-all text-center text-sm md:text-base shadow-md shadow-rose-500/20 active:scale-95">
+                    Plan wählen
+                  </Link>
+                  <Link href="/preise" className="text-center text-xs text-slate-500 hover:text-slate-800 transition-colors font-medium">
+                    Alle Details vergleichen
+                  </Link>
                 </div>
-                
-                <Link href="#warteliste" className="w-full py-3 mb-8 rounded-lg font-semibold text-slate-900 bg-white border border-slate-300 hover:bg-slate-50 transition-colors text-center text-sm md:text-base">
-                  Kontakt aufnehmen
-                </Link>
 
                 <div className="h-px bg-slate-100 w-full mb-8"></div>
                 
                 <ul className="space-y-4 flex-1">
                   {[
-                    "Maßgeschneiderte Web-Applikation",
-                    "API/CRM-Integrationen",
-                    "Benutzer-Logins & Dashboards",
-                    "Unbegrenzte Seiten",
-                    "Eigener Tech-Lead & Consulting"
+                    "Bis zu 6 Unterseiten",
+                    "Bis zu 3 Formulare + Routing",
+                    "Erweiterte SEO-Optimierung",
+                    "Consent-Management (Cookies)",
+                    "Bis zu 25 inhaltliche Änderungen / Monat",
+                    "Prio-Support",
+                    "Alles aus dem Essential-Plan"
+                  ].map((f,i)=>(
+                    <li key={i} className="flex items-start gap-3">
+                      <CheckCircle2 className="w-4 h-4 md:w-5 md:h-5 text-rose-500 shrink-0 mt-0.5" />
+                      <span className="text-slate-700 text-xs md:text-sm leading-relaxed font-medium">{f}</span>
+                    </li>
+                  ))}
+                </ul>
+              </motion.div>
+
+              {/* Pro Plan */}
+              <motion.div 
+                className="bg-white rounded-xl p-6 md:p-8 border border-slate-200 shadow-sm hover:shadow-md transition-shadow duration-300 flex flex-col relative"
+              >
+                <h3 className="text-xl md:text-2xl font-bold text-slate-900 mb-2">Pro</h3>
+                <p className="text-slate-600 mb-8 min-h-[48px] text-sm md:text-base">Für Performance-Fokus, Recruiting & umfassende Markenpräsenz.</p>
+                
+                <div className="mb-8">
+                  <div className="flex items-end gap-1 mb-2">
+                    <span className="text-3xl md:text-4xl font-bold text-slate-900 tracking-tight">{pricing[term].pro.price}€</span>
+                    <span className="text-slate-600 font-medium pb-1 md:text-base text-sm">/ mo</span>
+                  </div>
+                  {term > 12 ? (
+                    <div className="text-xs md:text-sm font-semibold text-emerald-600 bg-emerald-50 px-2 py-1 rounded inline-block">Du sparst {getSavings('pro')}€</div>
+                  ) : (
+                    <div className="text-xs md:text-sm text-slate-500 h-6"></div>
+                  )}
+                </div>
+                
+                <div className="flex flex-col gap-3 mb-8">
+                  <Link href={pricing[term].pro.link} target="_blank" rel="noopener noreferrer" className="w-full py-3 rounded-lg font-semibold text-slate-900 bg-white border border-slate-300 hover:bg-slate-50 transition-colors text-center text-sm md:text-base">
+                    Plan wählen
+                  </Link>
+                  <Link href="/preise" className="text-center text-xs text-slate-400 hover:text-slate-600 transition-colors">
+                    Alle Details vergleichen
+                  </Link>
+                </div>
+
+                <div className="h-px bg-slate-100 w-full mb-8"></div>
+                
+                <ul className="space-y-4 flex-1">
+                  {[
+                    "Bis zu 9 Unterseiten",
+                    "Bis zu 5 Formulare + Logik",
+                    "Pro (erweitert) SEO-Optimierung",
+                    "Kurzreport (Tracking & Performance)",
+                    "Bis zu 50 inhaltliche Änderungen / Monat",
+                    "Telefon Support + Prio",
+                    "Alles aus dem Business-Plan"
                   ].map((f,i)=>(
                     <li key={i} className="flex items-start gap-3">
                       <CheckCircle2 className="w-4 h-4 md:w-5 md:h-5 text-slate-400 shrink-0 mt-0.5" />
@@ -963,11 +1022,13 @@ export default function Home() {
                 Lass uns unverbindlich sprechen. Wir klären alle offenen Fragen und prüfen gemeinsam, ob unser Leasingmodell zu deinem Geschäft passt.
               </p>
               <Link 
-                href="#warteliste"
-                className="bg-white text-slate-900 px-6 md:px-8 py-3 md:py-4 rounded-lg font-bold hover:bg-slate-100 transition-colors inline-flex flex-col md:flex-row items-center gap-2 md:gap-3 text-sm md:text-base"
+                href="#analyse"
+                className="bg-white p-1.5 pr-6 shadow-xl shadow-white/5 rounded-full font-bold hover:bg-slate-50 transition-all inline-flex items-center gap-4 text-sm md:text-base group active:scale-95"
               >
-                <span>Auf die Warteliste eintragen</span>
-                <span className="bg-rose-100 text-rose-700 text-[10px] md:text-xs font-bold px-2 md:px-2.5 py-1 rounded-full whitespace-nowrap">-15% sichern</span>
+                <span className="bg-gradient-to-r from-rose-500 to-purple-600 text-white text-[10px] md:text-xs uppercase font-black tracking-widest px-3 py-2 rounded-full shadow-sm whitespace-nowrap">
+                  Unverbindlich
+                </span>
+                <span className="text-slate-900 whitespace-nowrap pr-2">Kostenlose Analyse anfordern</span>
               </Link>
             </div>
           </motion.div>

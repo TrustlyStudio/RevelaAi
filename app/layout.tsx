@@ -12,17 +12,17 @@ const inter = Inter({
 export const metadata: Metadata = {
   metadataBase: new URL('https://vanicy.de'),
   title: {
-    template: '%s | Vanicy',
-    default: 'Vanicy | Webseitenleasing',
+    template: '%s | Vanicy - Webseitenleasing & Digitales Wachstum',
+    default: 'Vanicy | Premium B2B-Webseitenleasing & Performance Webdesign',
   },
-  description: 'Professionelles Webseitenleasing von Vanicy. KI-optimierte, conversion-starke Websites zur Miete ab 199€/Monat. Steigern Sie Ihren Umsatz ohne hohes Startkapital.',
+  description: 'Steigere deine Sichtbarkeit und Conversion-Rate mit Vanicy. Professionelles Webseitenleasing mit Top-SEO und Premium-Hosting ab 209€/Monat – ohne hohes Startkapital.',
   keywords: [
     'Webseitenleasing', 'Website mieten', 'Webdesign Agentur', 'Homepage mieten', 
-    'Conversion Optimierung', 'Landingpage erstellen', 'KI Website', 'Vanicy', 'B2B Websites'
+    'Conversion Optimierung', 'Landingpage erstellen', 'Vanicy', 'B2B Websites', 'Performance Webdesign'
   ],
   openGraph: {
-    title: 'Vanicy | Webseitenleasing',
-    description: 'KI-optimierte, conversion-starke Websites zur Miete ab 199€/Monat. Maximal conversion-fokussiert mit der Vanicy-Methode.',
+    title: 'Vanicy | Exklusives Webseitenleasing & Performance Webdesign',
+    description: 'Steigere deine Sichtbarkeit und Conversion-Rate mit Vanicy. Professionelles Webseitenleasing mit Top-SEO und Premium-Hosting ab 209€/Monat.',
     type: 'website',
     locale: 'de_DE',
     siteName: 'Vanicy',
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Vanicy | Webseitenleasing',
-    description: 'KI-optimierte, conversion-starke Websites zur Miete ab 199€/Monat.',
+    description: 'Conversion-starke Websites zur Miete ab 209€/Monat.',
   },
   robots: {
     index: true,
@@ -65,7 +65,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     "@type": "WebSite",
     "name": "Vanicy",
     "url": "https://vanicy.de",
-    "description": "Professionelles Webseitenleasing von Vanicy. KI-optimierte, conversion-starke Websites zur Miete ab 199€/Monat.",
+    "description": "Professionelles Webseitenleasing von Vanicy. Conversion-starke Websites zur Miete ab 209€/Monat.",
     "inLanguage": "de-DE"
   };
 

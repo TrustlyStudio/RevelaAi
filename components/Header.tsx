@@ -127,7 +127,9 @@ export function Header() {
               </div>
               
               <Link 
-                href="#kontakt" 
+                href="https://dashboard.vanicy.de/" 
+                target="_blank"
+                rel="noopener noreferrer"
                 className="flex items-center gap-2 px-3 py-2 rounded-full text-slate-600 font-medium hover:text-slate-900 hover:bg-slate-100 active:scale-95 transition-all duration-300 text-sm group"
               >
                 <div className="w-6 h-6 rounded-full bg-slate-100 group-hover:bg-white flex items-center justify-center border border-transparent group-hover:border-slate-200 shadow-sm transition-all">
@@ -138,12 +140,12 @@ export function Header() {
               </Link>
               
               <Link 
-                href="#warteliste" 
+                href="#analyse" 
                 className="relative overflow-hidden flex items-center justify-center gap-2 bg-gradient-to-r from-rose-500 to-purple-600 px-5 lg:px-6 py-2.5 rounded-full text-white font-bold shadow-lg shadow-rose-500/25 hover:shadow-xl hover:shadow-rose-500/40 hover:-translate-y-0.5 hover:scale-105 active:scale-95 transition-all duration-300 text-sm group"
               >
                 <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-in-out"></div>
                 <span className="relative z-10 flex items-center gap-2">
-                  <span>Warteliste</span>
+                  <span>Gratis Analyse</span>
                   <div className="w-5 h-5 rounded-full bg-white/20 flex items-center justify-center group-hover:bg-white/40 transition-colors">
                     <ArrowRight className="w-3 h-3 group-hover:translate-x-0.5 transition-transform" />
                   </div>
@@ -227,14 +229,16 @@ export function Header() {
               <div className="bg-gray-50 rounded-2xl p-6 border border-gray-100">
                 <p className="text-sm text-gray-500 mb-4 text-center font-medium">Bereit für mehr Anfragen?</p>
                 <Link 
-                  href="#warteliste" 
+                  href="#analyse" 
                   onClick={closeMobileMenu}
                   className="w-full flex items-center justify-center gap-2 py-4 rounded-xl font-bold text-white bg-gradient-to-r from-rose-500 to-purple-600 shadow-lg shadow-rose-500/25 hover:shadow-xl active:scale-95 transition-all text-lg"
                 >
-                  Auf die Warteliste
+                  Kostenlose Analyse
                 </Link>
                 <Link 
-                  href="#kontakt" 
+                  href="https://dashboard.vanicy.de/" 
+                  target="_blank"
+                  rel="noopener noreferrer"
                   onClick={closeMobileMenu}
                   className="w-full flex items-center justify-center py-4 mt-3 rounded-xl font-bold text-slate-800 bg-white border border-gray-200 shadow-sm active:scale-95 transition-all text-lg"
                 >
