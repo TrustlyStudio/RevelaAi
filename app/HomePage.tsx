@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import Image from 'next/image';
 import { motion, AnimatePresence, useScroll, useTransform, useSpring } from 'motion/react';
 import { Header } from '@/components/Header';
@@ -93,6 +93,17 @@ export default function Home() {
   const [openFaq, setOpenFaq] = useState<number | null>(0);
   const [term, setTerm] = useState<12 | 24 | 36>(12);
   const [currentTestimonialIndex, setCurrentTestimonialIndex] = useState(0);
+  const [isAutoPlaying, setIsAutoPlaying] = useState(true);
+
+  useEffect(() => {
+    let interval: NodeJS.Timeout;
+    if (isAutoPlaying) {
+      interval = setInterval(() => {
+        setCurrentTestimonialIndex((prev) => (prev + 1) % testimonialsData.length);
+      }, 5000);
+    }
+    return () => clearInterval(interval);
+  }, [isAutoPlaying]);
 
   const pricing = {
     12: {
@@ -650,7 +661,12 @@ export default function Home() {
               </p>
             </motion.div>
             
-            <motion.div variants={fadeInUp} className="relative max-w-5xl mx-auto">
+            <motion.div 
+              variants={fadeInUp} 
+              className="relative max-w-5xl mx-auto"
+              onMouseEnter={() => setIsAutoPlaying(false)}
+              onMouseLeave={() => setIsAutoPlaying(true)}
+            >
               <div className="relative overflow-hidden px-4 md:px-16 py-8 h-auto min-h-[450px] md:min-h-[340px] flex items-center">
                 <AnimatePresence mode="wait">
                   <motion.div
@@ -672,7 +688,7 @@ export default function Home() {
                         <div className="relative mb-4 md:mb-6">
                           <Image 
                             src={testimonialsData[currentTestimonialIndex].img} 
-                            alt={`Portrait von ${testimonialsData[currentTestimonialIndex].name}, einem zufriedenen Kunden für unser Webseitenleasing`} 
+                            alt={`Portrait von ${testimonialsData[currentTestimonialIndex].name}, einem zufriedenen Kunden`} 
                             width={112}
                             height={112}
                             loading="lazy"
@@ -700,29 +716,31 @@ export default function Home() {
 
               {/* Navigation Controls */}
               <div className="flex flex-col sm:flex-row items-center justify-between gap-6 px-4 md:px-16 mt-4">
-                <div className="flex items-center gap-3">
+                <div className="flex items-center gap-4">
                   <button 
                     onClick={prevTestimonial}
-                    className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-white border border-slate-200 flex items-center justify-center text-slate-500 hover:text-slate-900 hover:bg-slate-50 hover:shadow-md hover:border-slate-300 transition-all group"
+                    className="w-12 h-12 md:w-14 md:h-14 rounded-full bg-white border border-slate-200 flex items-center justify-center text-slate-600 hover:text-slate-900 hover:bg-slate-50 hover:shadow-lg hover:border-slate-300 active:scale-95 transition-all group shadow-sm relative overflow-hidden"
                     aria-label="Vorherige Referenz"
                   >
-                    <ChevronLeft className="w-5 h-5 md:w-6 md:h-6 group-hover:-translate-x-0.5 transition-transform" />
+                    <span className="absolute inset-0 bg-slate-100 opacity-0 group-hover:opacity-100 transition-opacity"></span>
+                    <ChevronLeft className="w-6 h-6 md:w-7 md:h-7 group-hover:-translate-x-1 transition-transform relative z-10" />
                   </button>
                   <button 
                     onClick={nextTestimonial}
-                    className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-white border border-slate-200 flex items-center justify-center text-slate-500 hover:text-slate-900 hover:bg-slate-50 hover:shadow-md hover:border-slate-300 transition-all group"
+                    className="w-12 h-12 md:w-14 md:h-14 rounded-full bg-white border border-slate-200 flex items-center justify-center text-slate-600 hover:text-slate-900 hover:bg-slate-50 hover:shadow-lg hover:border-slate-300 active:scale-95 transition-all group shadow-sm relative overflow-hidden"
                     aria-label="Nächste Referenz"
                   >
-                    <ChevronRight className="w-5 h-5 md:w-6 md:h-6 group-hover:translate-x-0.5 transition-transform" />
+                    <span className="absolute inset-0 bg-slate-100 opacity-0 group-hover:opacity-100 transition-opacity"></span>
+                    <ChevronRight className="w-6 h-6 md:w-7 md:h-7 group-hover:translate-x-1 transition-transform relative z-10" />
                   </button>
                 </div>
                 
-                <div className="flex gap-2">
+                <div className="flex gap-3">
                   {testimonialsData.map((_, idx) => (
                     <button
                       key={idx}
                       onClick={() => setCurrentTestimonialIndex(idx)}
-                      className={`h-2 md:h-2.5 rounded-full transition-all duration-300 ${currentTestimonialIndex === idx ? 'bg-slate-900 w-6 md:w-8' : 'bg-slate-200 w-2 md:w-2.5 hover:bg-slate-400'}`}
+                      className={`h-2.5 md:h-3 rounded-full transition-all duration-300 ${currentTestimonialIndex === idx ? 'bg-indigo-600 w-10 md:w-12 scale-110' : 'bg-slate-300 w-2.5 md:w-3 hover:bg-slate-400 hover:scale-110'}`}
                       aria-label={`Gehe zu Referenz ${idx + 1}`}
                     />
                   ))}
