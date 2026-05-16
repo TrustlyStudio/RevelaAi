@@ -234,16 +234,16 @@ export default function Home() {
               >
                 <Link 
                   href="#analyse"
-                  className="w-full sm:w-auto h-14 bg-slate-900 border border-slate-800 p-1.5 pr-6 rounded-full font-bold text-base hover:bg-slate-800 transition-all duration-300 flex items-center justify-between sm:justify-start gap-4 group shadow-lg shadow-slate-900/10 active:scale-95"
+                  className="w-full sm:w-auto h-14 bg-white border border-slate-200 p-1.5 pr-6 rounded-full font-bold text-base hover:bg-slate-50 transition-all duration-300 flex items-center justify-between sm:justify-start gap-4 group shadow-sm active:scale-95"
                 >
                   <span className="bg-gradient-to-r from-rose-500 to-purple-600 text-white text-[10px] md:text-xs uppercase font-black tracking-widest px-4 h-full flex items-center justify-center rounded-full shadow-sm whitespace-nowrap">
                     Gratis Report
                   </span>
-                  <span className="text-white whitespace-nowrap text-sm sm:text-base pr-2">Kostenlose Analyse</span>
+                  <span className="text-slate-900 whitespace-nowrap pr-2">Kostenlose Analyse</span>
                 </Link>
                 <Link 
                   href="#preise"
-                  className="w-full sm:w-auto h-14 bg-white text-slate-900 border border-slate-200 px-8 rounded-full font-bold text-sm sm:text-base hover:bg-slate-50 hover:border-slate-300 transition-all duration-300 flex items-center justify-center active:scale-95 shadow-sm"
+                  className="w-full sm:w-auto h-14 bg-transparent text-slate-600 px-8 rounded-full font-bold text-sm sm:text-base hover:text-slate-900 hover:bg-slate-200/50 transition-all duration-300 flex items-center justify-center active:scale-95"
                 >
                   Preise ansehen
                 </Link>
@@ -760,25 +760,25 @@ export default function Home() {
             </motion.div>
 
             <motion.div variants={fadeInUp} className="flex justify-center mb-16 relative z-20">
-              <div className="bg-white p-1 rounded-lg inline-flex items-center shadow-sm border border-slate-200">
+              <div className="bg-slate-100/80 p-1.5 rounded-xl inline-flex items-center border border-slate-200/60 transition-all duration-300">
                 <button 
                   onClick={() => setTerm(12)}
-                  className={`px-4 sm:px-6 py-2 md:py-3 rounded-md font-semibold text-xs md:text-sm transition-all duration-200 ${term === 12 ? 'bg-slate-900 text-white shadow-sm' : 'text-slate-600 hover:text-slate-900'}`}
+                  className={`px-4 sm:px-6 py-2 md:py-2.5 rounded-lg font-bold text-xs md:text-sm transition-all duration-200 ${term === 12 ? 'bg-white shadow-sm border border-slate-200/50 text-slate-900' : 'text-slate-500 hover:text-slate-800'}`}
                 >
                   12 Monate
                 </button>
                 <button 
                   onClick={() => setTerm(24)}
-                  className={`px-4 sm:px-6 py-2 md:py-3 rounded-md font-semibold text-xs md:text-sm transition-all duration-200 flex items-center gap-2 ${term === 24 ? 'bg-slate-900 text-white shadow-sm' : 'text-slate-600 hover:text-slate-900'}`}
+                  className={`px-4 sm:px-6 py-2 md:py-2.5 rounded-lg font-bold text-xs md:text-sm transition-all duration-200 flex items-center gap-2 ${term === 24 ? 'bg-white shadow-sm border border-rose-100/50 text-transparent bg-clip-text bg-gradient-to-r from-rose-500 to-purple-600' : 'text-slate-500 hover:text-slate-800'}`}
                 >
-                  24 Monate
-                  <span className={`px-1.5 py-0.5 rounded text-[9px] md:text-[10px] uppercase font-bold tracking-wider transition-colors ${term === 24 ? 'bg-emerald-500 text-white' : 'bg-emerald-100 text-emerald-700'}`}>
+                  24 <span className={term === 24 ? 'text-purple-600' : ''}>Monate</span>
+                  <span className={`px-1.5 py-0.5 rounded-md text-[9px] md:text-[10px] uppercase font-black tracking-widest transition-colors shadow-sm ${term === 24 ? 'bg-gradient-to-r from-rose-500 to-purple-600 text-white' : 'bg-slate-200 text-slate-600'}`}>
                     Empfehlung
                   </span>
                 </button>
                 <button 
                   onClick={() => setTerm(36)}
-                  className={`px-4 sm:px-6 py-2 md:py-3 rounded-md font-semibold text-xs md:text-sm transition-all duration-200 ${term === 36 ? 'bg-slate-900 text-white shadow-sm' : 'text-slate-600 hover:text-slate-900'}`}
+                  className={`px-4 sm:px-6 py-2 md:py-2.5 rounded-lg font-bold text-xs md:text-sm transition-all duration-200 ${term === 36 ? 'bg-white shadow-sm border border-slate-200/50 text-slate-900' : 'text-slate-500 hover:text-slate-800'}`}
                 >
                   36 Monate
                 </button>

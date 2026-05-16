@@ -128,25 +128,25 @@ export default function PreisePage() {
           </div>
 
           <div className="flex justify-center mb-16 relative z-20">
-            <div className="bg-white p-1 rounded-lg inline-flex items-center shadow-sm border border-slate-200">
+            <div className="bg-slate-100/80 p-1.5 rounded-xl inline-flex items-center border border-slate-200/60">
               <button 
                 onClick={() => setTerm(12)}
-                className={`px-6 py-3 rounded-md font-semibold text-sm transition-all duration-200 ${term === 12 ? 'bg-slate-900 text-white shadow-sm' : 'text-slate-600 hover:text-slate-900'}`}
+                className={`px-6 py-2.5 rounded-lg font-bold text-sm transition-all duration-200 ${term === 12 ? 'bg-white shadow-sm border border-slate-200/50 text-slate-900' : 'text-slate-500 hover:text-slate-800'}`}
               >
                 12 Monate
               </button>
               <button 
                 onClick={() => setTerm(24)}
-                className={`px-6 py-3 rounded-md font-semibold text-sm transition-all duration-200 flex items-center gap-2 ${term === 24 ? 'bg-slate-900 text-white shadow-sm' : 'text-slate-600 hover:text-slate-900'}`}
+                className={`px-6 py-2.5 rounded-lg font-bold text-sm transition-all duration-200 flex items-center gap-2 ${term === 24 ? 'bg-white shadow-sm border border-rose-100/50 text-transparent bg-clip-text bg-gradient-to-r from-rose-500 to-purple-600' : 'text-slate-500 hover:text-slate-800'}`}
               >
-                24 Monate
-                <span className={`px-2 py-0.5 rounded text-[10px] uppercase font-bold tracking-wider transition-colors ${term === 24 ? 'bg-emerald-500 text-white' : 'bg-emerald-100 text-emerald-700'}`}>
+                24 <span className={term === 24 ? 'text-purple-600' : ''}>Monate</span>
+                <span className={`px-2 py-0.5 rounded-md text-[10px] uppercase font-black tracking-widest transition-colors shadow-sm ${term === 24 ? 'bg-gradient-to-r from-rose-500 to-purple-600 text-white' : 'bg-slate-200 text-slate-600'}`}>
                   Empfehlung
                 </span>
               </button>
               <button 
                 onClick={() => setTerm(36)}
-                className={`px-6 py-3 rounded-md font-semibold text-sm transition-all duration-200 ${term === 36 ? 'bg-slate-900 text-white shadow-sm' : 'text-slate-600 hover:text-slate-900'}`}
+                className={`px-6 py-2.5 rounded-lg font-bold text-sm transition-all duration-200 ${term === 36 ? 'bg-white shadow-sm border border-slate-200/50 text-slate-900' : 'text-slate-500 hover:text-slate-800'}`}
               >
                 36 Monate
               </button>
@@ -251,29 +251,29 @@ export default function PreisePage() {
                             {item.name}
                           </td>
                           <td className="py-4 px-6 text-center text-slate-700">
-                            {typeof item.essential === 'boolean' ? (
-                              item.essential ? <CheckCircle2 className="w-5 h-5 text-emerald-500 mx-auto" /> : <Minus className="w-5 h-5 text-slate-300 mx-auto" />
+                            {item.essential === 'Nicht enthalten' ? (
+                              <Minus className="w-5 h-5 text-slate-300 mx-auto" />
                             ) : (
                               <span className="font-semibold text-sm">{item.essential}</span>
                             )}
                           </td>
                           <td className="py-4 px-6 text-center bg-rose-50/50 border-x border-rose-100/50">
-                            {typeof item.business === 'boolean' ? (
-                              item.business ? <CheckCircle2 className="w-5 h-5 text-rose-500 mx-auto" /> : <Minus className="w-5 h-5 text-slate-300 mx-auto" />
+                            {item.business === 'Nicht enthalten' ? (
+                              <Minus className="w-5 h-5 text-slate-300 mx-auto" />
                             ) : (
                               <span className="font-bold text-transparent bg-clip-text bg-gradient-to-r from-rose-500 to-purple-600 text-sm">{item.business}</span>
                             )}
                           </td>
                           <td className="py-4 px-6 text-center text-slate-700 border-r border-slate-100">
-                            {typeof item.pro === 'boolean' ? (
-                              item.pro ? <CheckCircle2 className="w-5 h-5 text-emerald-500 mx-auto" /> : <Minus className="w-5 h-5 text-slate-300 mx-auto" />
+                            {item.pro === 'Nicht enthalten' ? (
+                              <Minus className="w-5 h-5 text-slate-300 mx-auto" />
                             ) : (
                               <span className="font-semibold text-sm">{item.pro}</span>
                             )}
                           </td>
                           <td className="py-4 px-6 text-center text-slate-600 bg-slate-50">
-                            {typeof item.custom === 'boolean' ? (
-                              item.custom ? <CheckCircle2 className="w-5 h-5 text-slate-400 mx-auto" /> : <Minus className="w-5 h-5 text-slate-300 mx-auto" />
+                            {item.custom === 'Nicht enthalten' ? (
+                              <Minus className="w-5 h-5 text-slate-300 mx-auto" />
                             ) : (
                               <span className="font-semibold text-slate-500 text-sm">{item.custom}</span>
                             )}
@@ -338,8 +338,12 @@ export default function PreisePage() {
                             return (
                               <li key={j} className={`flex flex-col text-sm py-2 border-b pb-3 gap-1 ${isBusiness ? 'border-rose-100' : 'border-slate-100'}`}>
                                 <span className={isBusiness ? 'text-slate-500 font-medium' : 'text-slate-600'}>{item.name}</span>
-                                <span className={`font-bold text-right ${isBusiness ? 'text-transparent bg-clip-text bg-gradient-to-r from-rose-500 to-purple-600' : 'text-slate-900'}`}>
-                                  {typeof val === 'boolean' ? (val ? 'Inklusive' : 'Nicht enthalten') : val}
+                                <span className={`font-bold flex justify-end ${isBusiness ? 'text-transparent bg-clip-text bg-gradient-to-r from-rose-500 to-purple-600' : 'text-slate-900'}`}>
+                                  {val === 'Nicht enthalten' ? (
+                                    <Minus className="w-5 h-5 text-slate-300" />
+                                  ) : (
+                                    val
+                                  )}
                                 </span>
                               </li>
                             );
