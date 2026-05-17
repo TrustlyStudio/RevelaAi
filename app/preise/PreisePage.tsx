@@ -126,18 +126,18 @@ export default function PreisePage() {
 
   const pricing = {
     12: {
-      essential: { price: 249, link: "https://buy.stripe.com/fZu8wI2Tm50a8ek19h77O02" },
-      business: { price: 349, link: "https://buy.stripe.com/7sY6oA8dG50a2U0bNV77O04" },
-      pro: { price: 599, link: "https://buy.stripe.com/5kQ14g79C3W6eCI6tB77O03" }
+      essential: { price: 249, trialLink: "https://buy.stripe.com/00w6oA51u8cm2U0bNV77O0b", directLink: "https://buy.stripe.com/eVq9AM1PigIScuAcRZ77O0h" },
+      business: { price: 349, trialLink: "https://buy.stripe.com/9B65kw1PigIS2U0bNV77O0d", directLink: "https://buy.stripe.com/14A5kw2Tmboy3Y49FN77O0j" },
+      pro: { price: 599, link: "https://buy.stripe.com/cNidR2gKcfEOams19h77O0f" }
     },
     24: {
-      essential: { price: 229, link: "https://buy.stripe.com/aFa14g1Pi50aeCIf0777O05" },
-      business: { price: 329, link: "https://buy.stripe.com/fZu8wI0LecsC66cbNV77O07" },
-      pro: { price: 579, link: "https://buy.stripe.com/aFafZa65y0JU3Y4aJR77O09" }
+      essential: { price: 229, trialLink: "https://buy.stripe.com/eVqcMY79C3W6cuA4lt77O0c", directLink: "https://buy.stripe.com/00w3co8dG2S266cbNV77O0i" },
+      business: { price: 329, trialLink: "https://buy.stripe.com/00w4gs8dG8cmeCIdW377O0e", directLink: "https://buy.stripe.com/9B628keC4boy66c6tB77O0k" },
+      pro: { price: 579, link: "https://buy.stripe.com/8x2bIUeC4fEO8ekbNV77O0g" }
     },
     36: {
-      essential: { price: 209, link: "https://buy.stripe.com/8x2cMYalOaku1PW19h77O06" },
-      business: { price: 309, link: "https://buy.stripe.com/14A7sE79CfEO8ek7xF77O08" },
+      essential: { price: 209, trialLink: "https://buy.stripe.com/8x2cMYalOaku1PW19h77O06", directLink: "https://buy.stripe.com/8x2cMYalOaku1PW19h77O06" }, // Fallback to trial link for 36 months if direct not provided
+      business: { price: 309, trialLink: "https://buy.stripe.com/14A7sE79CfEO8ek7xF77O08", directLink: "https://buy.stripe.com/14A7sE79CfEO8ek7xF77O08" },
       pro: { price: 559, link: "https://buy.stripe.com/cNibIUbpS50aeCI8BJ77O0a" }
     }
   };
@@ -248,8 +248,9 @@ export default function PreisePage() {
                           </div>
                         )}
                       </div>
-                      <div className="mt-4 transition-transform duration-300 group-hover:translate-y-1">
-                        <button onClick={() => handleCheckoutClick(pricing[term].essential.link)} className="inline-block w-full py-3 mb-2 rounded-lg font-semibold text-slate-900 bg-white border border-slate-300 hover:bg-slate-50 hover:border-slate-400 hover:shadow-sm transition-all">Wählen</button>
+                      <div className="mt-4 flex flex-col gap-2 transition-transform duration-300 group-hover:translate-y-1">
+                        <button onClick={() => handleCheckoutClick(pricing[term].essential.trialLink)} className="inline-block w-full py-2 rounded-lg font-bold text-white bg-green-500 hover:bg-green-600 hover:shadow-sm transition-all text-sm">1 Monat kostenlos testen</button>
+                        <button onClick={() => handleCheckoutClick(pricing[term].essential.directLink)} className="inline-block w-full py-2 mb-2 rounded-lg font-semibold text-slate-700 bg-white border border-slate-300 hover:bg-slate-50 hover:border-slate-400 hover:shadow-sm transition-all text-sm">Direkt kaufen</button>
                       </div>
                     </th>
                     <th className="w-[26%] p-6 xl:p-8 border-b-2 border-rose-200 relative bg-white text-center shadow-lg shadow-rose-500/10 border-x border-rose-100/50 z-10 hover:shadow-xl hover:shadow-rose-500/20 transition-all duration-300 group">
@@ -271,8 +272,9 @@ export default function PreisePage() {
                           </div>
                         )}
                       </div>
-                      <div className="mt-4 transition-transform duration-300 group-hover:translate-y-1">
-                        <button onClick={() => handleCheckoutClick(pricing[term].business.link)} className="inline-block w-full py-3 mb-2 rounded-lg font-bold text-white bg-gradient-to-r from-rose-500 to-purple-600 hover:from-rose-600 hover:to-purple-700 hover:shadow-lg transition-all shadow-md shadow-rose-500/20 active:scale-95">Wählen</button>
+                      <div className="mt-4 flex flex-col gap-2 transition-transform duration-300 group-hover:translate-y-1">
+                        <button onClick={() => handleCheckoutClick(pricing[term].business.trialLink)} className="inline-block w-full py-2 rounded-lg font-bold text-white bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 hover:shadow-lg transition-all shadow-md shadow-green-500/20 active:scale-95 text-sm">1 Monat kostenlos testen</button>
+                        <button onClick={() => handleCheckoutClick(pricing[term].business.directLink)} className="inline-block w-full py-2 mb-2 rounded-lg font-semibold text-slate-700 bg-white border border-slate-300 hover:bg-slate-50 hover:border-slate-400 hover:shadow-sm transition-all text-sm">Direkt kaufen</button>
                       </div>
                     </th>
                     <th className="w-[26%] p-6 xl:p-8 border-b border-slate-200 bg-white text-center border-r border-slate-200 hover:bg-slate-50/80 transition-colors duration-300 group">
@@ -290,8 +292,9 @@ export default function PreisePage() {
                           </div>
                         )}
                       </div>
-                      <div className="mt-4 transition-transform duration-300 group-hover:translate-y-1">
-                        <button onClick={() => handleCheckoutClick(pricing[term].pro.link)} className="inline-block w-full py-3 mb-2 rounded-lg font-semibold text-slate-900 bg-white border border-slate-300 hover:bg-slate-50 hover:border-slate-400 hover:shadow-sm transition-all">Wählen</button>
+                      <div className="mt-4 flex flex-col gap-2 transition-transform duration-300 group-hover:translate-y-1">
+                        <button onClick={() => handleCheckoutClick(pricing[term].pro.link)} className="inline-block w-full py-2 rounded-lg font-semibold text-white bg-slate-900 hover:bg-slate-800 hover:shadow-sm transition-all text-sm">Direkt kaufen</button>
+                        <a href="/#analyse" className="inline-block w-full py-2 mb-2 rounded-lg font-semibold text-slate-700 bg-white border border-slate-300 hover:bg-slate-50 hover:border-slate-400 hover:shadow-sm transition-all text-sm">Kostenlos beraten lassen</a>
                       </div>
                     </th>
                   </tr>
@@ -383,11 +386,26 @@ export default function PreisePage() {
                         </span>
                       </div>
                     )}
-                    <button onClick={() => handleCheckoutClick(pricing[term][plan].link)} className={`mt-6 block w-full py-3 rounded-lg font-bold transition-all ${
-                      isBusiness 
-                        ? 'text-white bg-gradient-to-r from-rose-500 to-purple-600 hover:from-rose-600 hover:to-purple-700 shadow-md shadow-rose-500/20 active:scale-95' 
-                        : 'text-slate-900 bg-white border border-slate-300 hover:bg-slate-50'
-                    }`}>Wählen</button>
+                    
+                    <div className="mt-6 flex flex-col gap-3">
+                      {plan !== 'pro' ? (
+                        <>
+                          <button onClick={() => handleCheckoutClick(pricing[term][plan].trialLink!)} className={`block w-full py-3 rounded-lg font-bold transition-all shadow-sm active:scale-95 ${
+                            isBusiness 
+                              ? 'text-white bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 shadow-green-500/20' 
+                              : 'text-white bg-green-500 hover:bg-green-600'
+                          }`}>1 Monat kostenlos testen</button>
+                          
+                          <button onClick={() => handleCheckoutClick(pricing[term][plan].directLink!)} className="block w-full py-3 rounded-lg font-semibold transition-all text-slate-700 bg-white border border-slate-300 hover:bg-slate-50">Direkt kaufen</button>
+                        </>
+                      ) : (
+                        <>
+                          <button onClick={() => handleCheckoutClick(pricing[term].pro.link!)} className="block w-full py-3 rounded-lg font-bold transition-all shadow-sm active:scale-95 text-white bg-slate-900 border border-slate-900 hover:bg-slate-800 hover:border-slate-800">Direkt kaufen</button>
+                          
+                          <a href="/#analyse" className="block w-full py-3 rounded-lg font-semibold transition-all text-slate-700 bg-white border border-slate-300 hover:bg-slate-50 text-center">Kostenlos beraten lassen</a>
+                        </>
+                      )}
+                    </div>
                   </div>
                   
                   <div className="mt-4 space-y-6 flex-grow">

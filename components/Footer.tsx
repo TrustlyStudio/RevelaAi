@@ -1,6 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import { CookieSettingsButton } from './CookieSettingsButton';
 
 export function Footer() {
   return (
@@ -77,6 +78,7 @@ export function Footer() {
             <Link href="/impressum" className="hover:text-slate-300 transition-colors">Impressum</Link>
             <Link href="/datenschutz" className="hover:text-slate-300 transition-colors">Datenschutz</Link>
             <Link href="/agb" className="hover:text-slate-300 transition-colors">AGB</Link>
+            <CookieSettingsButton />
           </div>
         </div>
 

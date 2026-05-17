@@ -249,13 +249,13 @@ export default function Home() {
 
   const pricing = {
     12: {
-      essential: { price: 149, link: "https://buy.stripe.com/00w6oA51u8cm2U0bNV77O0b" },
-      business: { price: 229, link: "https://buy.stripe.com/9B65kw1PigIS2U0bNV77O0d" },
+      essential: { price: 149, trialLink: "https://buy.stripe.com/00w6oA51u8cm2U0bNV77O0b", directLink: "https://buy.stripe.com/eVq9AM1PigIScuAcRZ77O0h" },
+      business: { price: 229, trialLink: "https://buy.stripe.com/9B65kw1PigIS2U0bNV77O0d", directLink: "https://buy.stripe.com/14A5kw2Tmboy3Y49FN77O0j" },
       pro: { price: 449, link: "https://buy.stripe.com/cNidR2gKcfEOams19h77O0f" }
     },
     24: {
-      essential: { price: 129, link: "https://buy.stripe.com/eVqcMY79C3W6cuA4lt77O0c" },
-      business: { price: 189, link: "https://buy.stripe.com/00w4gs8dG8cmeCIdW377O0e" },
+      essential: { price: 129, trialLink: "https://buy.stripe.com/eVqcMY79C3W6cuA4lt77O0c", directLink: "https://buy.stripe.com/00w3co8dG2S266cbNV77O0i" },
+      business: { price: 189, trialLink: "https://buy.stripe.com/00w4gs8dG8cmeCIdW377O0e", directLink: "https://buy.stripe.com/9B628keC4boy66c6tB77O0k" },
       pro: { price: 399, link: "https://buy.stripe.com/8x2bIUeC4fEO8ekbNV77O0g" }
     }
   };
@@ -1053,10 +1053,10 @@ export default function Home() {
                 </div>
                 
                 <div className="flex flex-col gap-3 mb-8 transition-transform duration-300 group-hover:-translate-y-1">
-                  <button onClick={() => handleCheckoutClick(pricing[term].essential.link)} className="w-full py-3 rounded-lg font-bold text-white bg-green-500 hover:bg-green-600 transition-all text-center text-sm md:text-base border border-transparent">
+                  <button onClick={() => handleCheckoutClick(pricing[term].essential.trialLink)} className="w-full py-3 rounded-lg font-bold text-white bg-green-500 hover:bg-green-600 transition-all text-center text-sm md:text-base border border-transparent">
                     1 Monat kostenlos testen
                   </button>
-                  <button onClick={() => handleCheckoutClick(pricing[term].essential.link)} className="w-full py-3 rounded-lg font-semibold text-slate-700 bg-white border border-slate-300 hover:bg-slate-50 hover:border-slate-400 hover:shadow-sm transition-all text-center text-sm md:text-base">
+                  <button onClick={() => handleCheckoutClick(pricing[term].essential.directLink)} className="w-full py-3 rounded-lg font-semibold text-slate-700 bg-white border border-slate-300 hover:bg-slate-50 hover:border-slate-400 hover:shadow-sm transition-all text-center text-sm md:text-base">
                     Direkt kaufen
                   </button>
                   <p className="text-center text-xs font-semibold text-emerald-600">Nur kurze Zeit: 0€ Setup-Gebühr sichern.</p>
@@ -1113,10 +1113,10 @@ export default function Home() {
                 </div>
                 
                 <div className="flex flex-col gap-3 mb-8 transition-transform duration-300 group-hover:-translate-y-1">
-                  <button onClick={() => handleCheckoutClick(pricing[term].business.link)} className="w-full py-3 rounded-lg font-bold text-white bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 transition-all text-center text-sm md:text-base shadow-md shadow-green-500/20 active:scale-95 hover:shadow-lg hover:shadow-green-500/30">
+                  <button onClick={() => handleCheckoutClick(pricing[term].business.trialLink)} className="w-full py-3 rounded-lg font-bold text-white bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 transition-all text-center text-sm md:text-base shadow-md shadow-green-500/20 active:scale-95 hover:shadow-lg hover:shadow-green-500/30">
                     1 Monat kostenlos testen
                   </button>
-                  <button onClick={() => handleCheckoutClick(pricing[term].business.link)} className="w-full py-3 rounded-lg font-semibold text-slate-700 bg-white border border-slate-300 hover:bg-slate-50 hover:border-slate-400 hover:shadow-sm transition-all text-center text-sm md:text-base">
+                  <button onClick={() => handleCheckoutClick(pricing[term].business.directLink)} className="w-full py-3 rounded-lg font-semibold text-slate-700 bg-white border border-slate-300 hover:bg-slate-50 hover:border-slate-400 hover:shadow-sm transition-all text-center text-sm md:text-base">
                     Direkt kaufen
                   </button>
                   <p className="text-center text-xs font-semibold text-emerald-600">Nur kurze Zeit: 0€ Setup-Gebühr sichern.</p>

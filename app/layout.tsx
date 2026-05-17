@@ -9,6 +9,9 @@ const inter = Inter({
   preload: true,
 });
 
+import { CookieBanner } from '@/components/CookieBanner';
+import { CookieScripts } from '@/components/CookieScripts';
+
 export const metadata: Metadata = {
   metadataBase: new URL('https://vanicy.de'),
   title: {
@@ -96,7 +99,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         />
       </head>
       <body className="min-h-screen bg-brand-off-white font-sans text-brand-dark-blue transition-colors duration-300">
+        <CookieScripts />
         {children}
+        <CookieBanner />
       </body>
     </html>
   );

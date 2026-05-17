@@ -8,9 +8,9 @@ import Image from 'next/image';
 const notifications = [
   { name: 'Sarah M.', location: 'München', action: 'hat soeben ein Erstgespräch gebucht.' },
   { name: 'Thomas K.', location: 'Berlin', action: 'hat sich unverbindlich beraten lassen.' },
-  { name: 'Michael B.', location: 'Hamburg', action: 'hat sich den Growth-Plan gesichert.' },
+  { name: 'Michael B.', location: 'Hamburg', action: 'hat sich den Business-Plan gesichert.' },
   { name: 'Julia W.', location: 'Frankfurt', action: 'hat soeben ein Erstgespräch gebucht.' },
-  { name: 'Andreas S.', location: 'Wien', action: 'hat das Web-Leasing gestartet.' },
+  { name: 'Andreas S.', location: 'Wien', action: 'hat den Essential-Plan gestartet.' },
 ];
 
 export function SocialProofWidget() {
@@ -21,10 +21,10 @@ export function SocialProofWidget() {
   useEffect(() => {
     if (hasDismissed) return;
 
-    // Show first notification after 8 seconds
+    // Show first notification after 25 seconds
     const initialTimer = setTimeout(() => {
       setIsVisible(true);
-    }, 8000);
+    }, 25000);
 
     return () => clearTimeout(initialTimer);
   }, [hasDismissed]);
@@ -32,7 +32,7 @@ export function SocialProofWidget() {
   useEffect(() => {
     if (hasDismissed || !isVisible) return;
 
-    // Hide after 6 seconds, then show next one 20 seconds later
+    // Hide after 6 seconds, then show next one 45 seconds later
     const hideTimer = setTimeout(() => {
       setIsVisible(false);
       
@@ -41,7 +41,7 @@ export function SocialProofWidget() {
           setCurrentIndex((prev) => (prev + 1) % notifications.length);
           setIsVisible(true);
         }
-      }, 20000); // Wait 20 seconds before showing next
+      }, 45000); // Wait 45 seconds before showing next
     }, 6000); // Display duration 6 seconds
 
     return () => clearTimeout(hideTimer);

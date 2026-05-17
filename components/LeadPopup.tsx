@@ -31,7 +31,7 @@ export function LeadPopup() {
       // Check session storage for "already shown in this session"
       const sessionShown = sessionStorage.getItem('vanicy_lead_popup_session');
 
-      return popupCount < 2 && !sessionShown;
+      return popupCount < 1 && !sessionShown;
     };
 
     if (!checkAvailability()) return;
@@ -48,7 +48,7 @@ export function LeadPopup() {
     // 3. Trigger after conditions met
     let timer: NodeJS.Timeout;
     if (hasScrolled) {
-      // Once scrolled past 1500px, wait 8 seconds before showing
+      // Once scrolled past 1500px, wait 20 seconds before showing
       timer = setTimeout(() => {
         if (checkAvailability()) {
           setIsOpen(true);
