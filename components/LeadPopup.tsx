@@ -168,7 +168,7 @@ export function LeadPopup() {
               </div>
 
               {/* Right Side: Content */}
-              <div className="col-span-3 p-8 md:p-10 relative overflow-y-auto">
+              <div className="md:col-span-3 p-6 md:p-10 relative overflow-y-auto">
                 <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-rose-50 text-rose-600 font-bold text-sm mb-6 border border-rose-100">
                   <AlertCircle className="w-4 h-4" /> Deine Mitbewerber schlafen nicht.
                 </div>
@@ -210,7 +210,7 @@ export function LeadPopup() {
                     onClick={() => setIsOpen(false)}
                     className="w-full py-4 px-6 rounded-xl flex items-center justify-center gap-2 bg-white text-slate-700 font-bold border border-slate-200 hover:bg-slate-50 transition-all group"
                   >
-                    Direkt Pläne ansehen
+                    1 Monat kostenlos testen
                     <ArrowRight className="w-5 h-5 text-slate-400 group-hover:translate-x-1 transition-transform" />
                   </Link>
                 </div>

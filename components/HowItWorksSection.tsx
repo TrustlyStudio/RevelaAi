@@ -7,16 +7,16 @@ import { ClipboardList, Code2, Eye, Rocket } from 'lucide-react';
 const steps = [
   {
     number: "1",
-    title: "Onboarding",
-    desc: "Du füllst unser kurzes Onboarding-Formular im Dashboard aus – Zielgruppe, Wünsche, Inhalte. Das war's. Kein Anruf, keine langen Meetings. Alles digital, alles auf deinem Tempo.",
+    title: "Paket wählen & Onboarding",
+    desc: "Du wählst dein Paket und startest deinen risikofreien Gratismonat (0€ Setup). Du füllst unser kurzes Onboarding-Formular im Dashboard aus – Zielgruppe, Wünsche, Inhalte. Kein Anruf, keine langen Meetings.",
     icon: <ClipboardList className="w-5 h-5 text-rose-400" />,
-    badge: "Tag 1",
+    badge: "Kostenloser Test startet",
     pill: "100% online"
   },
   {
     number: "2",
     title: "Design & Entwicklung",
-    desc: "Wir designen und entwickeln deine Website von Grund auf. Individuell, blitzschnell und auf Conversions ausgelegt. Du kannst den Fortschritt jederzeit in deinem Dashboard einsehen.",
+    desc: "Wir designen und entwickeln deine Website von Grund auf, obwohl du noch nichts bezahlt hast. Individuell, blitzschnell und auf Conversions ausgelegt. Du kannst den Fortschritt im Dashboard einsehen.",
     icon: <Code2 className="w-5 h-5 text-purple-400" />,
     badge: "Woche 1–2",
     pill: null
@@ -24,18 +24,18 @@ const steps = [
   {
     number: "3",
     title: "Vorschau & Feedback",
-    desc: "Du erhältst einen Link zu deiner fertigen Website auf einer Vorschau-Domain – direkt in deinem Dashboard. Teile uns dein Feedback über das Portal mit. Wir überarbeiten so lange, bis du 100% zufrieden bist.",
+    desc: "Du erhältst einen Link zu deiner fertigen Website. Teste sie ausgiebig. Teile uns dein Feedback über das Portal mit. Wir überarbeiten so lange, bis du zu 100% zufrieden bist.",
     icon: <Eye className="w-5 h-5 text-rose-400" />,
-    badge: "Woche 2–3",
+    badge: "Woche 2–4",
     pill: "Unbegrenzte Feedbackrunden"
   },
   {
     number: "4",
-    title: "Launch & Autopilot",
-    desc: "Deine Website geht live. Ab jetzt läuft alles automatisch: Hosting, Sicherheit, Updates. Änderungswünsche stellst du mit einem Klick im Dashboard – wir setzen sie um.",
+    title: "Launch & Entscheidung",
+    desc: "Deine Seite geht live. Erst nach 1 Monat entscheidest du, ob du dabeibleibst (wir erinnern dich 7 Tage vorher). Wenn ja, läuft alles automatisch: Hosting, Updates und deine inhaltlichen Änderungswünsche.",
     icon: <Rocket className="w-5 h-5 text-purple-400" />,
-    badge: "Woche 3–4",
-    pill: "Bis zu 25 Änderungen / Monat"
+    badge: "Nach 1 Monat",
+    pill: "Jederzeit kündbar"
   }
 ];
 
@@ -90,7 +90,7 @@ export function HowItWorksSection() {
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
           variants={staggerContainer}
-          className="grid grid-cols-1 lg:grid-cols-4 gap-10 lg:gap-6"
+          className="grid grid-cols-1 lg:grid-cols-4 gap-10 lg:gap-6 md:max-w-2xl lg:max-w-none mx-auto"
         >
           {steps.map((step, idx) => (
             <motion.div 

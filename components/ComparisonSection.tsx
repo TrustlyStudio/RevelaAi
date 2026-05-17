@@ -194,7 +194,7 @@ export function ComparisonSection() {
           className="relative max-w-5xl mx-auto"
         >
           {/* Mobile view: Stacked cards */}
-          <div className="md:hidden space-y-8">
+          <div className="lg:hidden space-y-8 max-w-2xl mx-auto">
             {['builder', 'agency', 'vanicy'].map((colKey, index) => (
               <div 
                 key={colKey} 
@@ -233,7 +233,7 @@ export function ComparisonSection() {
           </div>
 
           {/* Desktop view: Table */}
-          <div className="hidden md:block w-full overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm">
+          <div className="hidden lg:block w-full overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm">
             <div className="grid grid-cols-4 border-b border-slate-200 bg-slate-50">
               <div className="p-6 lg:p-8 flex items-end">
                 <span className="text-sm font-bold tracking-widest text-slate-400 uppercase">Kriterium</span>
@@ -322,32 +322,30 @@ export function ComparisonSection() {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.2 }}
-              className="absolute inset-0 bg-slate-900/60 backdrop-blur-sm cursor-pointer"
-              onClick={() => setSelectedFeature(null)}
+              className="absolute inset-0 bg-slate-900/80 backdrop-blur-md"
             />
             <motion.div
-              initial={{ opacity: 0, scale: 0.95, y: 20 }}
+              initial={{ opacity: 0, scale: 0.95, y: 30 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.95, y: 20 }}
-              transition={{ type: "spring", damping: 25, stiffness: 300 }}
-              className="relative w-full max-w-2xl bg-white rounded-3xl shadow-2xl overflow-hidden flex flex-col max-h-[90vh]"
+              transition={{ type: "spring", damping: 30, stiffness: 400 }}
+              className="relative w-full max-w-2xl bg-white rounded-3xl shadow-2xl overflow-hidden flex flex-col max-h-[90vh] border border-slate-200"
               style={{ zIndex: 101 }}
             >
-              <div className="flex justify-between items-center p-6 border-b border-slate-100">
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-xl flex items-center justify-center bg-indigo-50 border border-indigo-100 text-indigo-600">
-                    <Check className="w-6 h-6" />
-                  </div>
-                  <div>
-                    <h3 className="text-xl md:text-2xl font-bold text-slate-900">{comparisonData[selectedFeature].feature}</h3>
-                  </div>
+              <div className="absolute top-0 inset-x-0 h-1.5 bg-gradient-to-r from-rose-500 via-purple-500 to-indigo-500 z-50"></div>
+              
+              <button 
+                onClick={() => setSelectedFeature(null)}
+                className="absolute top-4 right-4 p-2 text-slate-400 hover:text-slate-900 hover:bg-slate-100 rounded-full transition-colors z-[210] bg-white/50 backdrop-blur-sm shadow-sm"
+              >
+                <X className="w-5 h-5" />
+              </button>
+
+              <div className="p-6 md:p-8 pt-10 border-b border-slate-100 flex items-center gap-4 bg-white relative z-10">
+                <div className="w-12 h-12 rounded-xl flex items-center justify-center bg-indigo-50 border border-indigo-100 text-indigo-600 shrink-0">
+                  <Check className="w-6 h-6" />
                 </div>
-                <button 
-                  onClick={() => setSelectedFeature(null)}
-                  className="p-2 bg-slate-50 hover:bg-slate-100 rounded-full text-slate-500 transition-colors"
-                >
-                  <X className="w-5 h-5" />
-                </button>
+                <h3 className="text-xl md:text-2xl font-bold font-sans text-slate-900 tracking-tight">{comparisonData[selectedFeature].feature}</h3>
               </div>
               
               <div className="p-6 md:p-8 overflow-y-auto">

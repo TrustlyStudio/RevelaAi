@@ -355,7 +355,7 @@ export default function PreisePage() {
             </div>
           </div>
 
-          <div className="lg:hidden flex flex-col gap-6">
+          <div className="lg:hidden flex flex-col gap-8 max-w-2xl mx-auto">
             {['essential', 'business', 'pro'].map((planKey) => {
               const isBusiness = planKey === 'business';
               const plan = planKey as 'essential' | 'business' | 'pro';

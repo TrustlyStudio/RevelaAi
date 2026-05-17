@@ -72,7 +72,7 @@ export function Header() {
     { href: '/#vorteile', label: 'Vorteile' },
     { href: '/#methode', label: 'Die Methode' },
     { href: '/case-studies', label: 'Case Studies' },
-    { href: '/preise', label: 'Preise' },
+    { href: '/#preise', label: 'Preise' },
     { href: '/faq', label: 'FAQ' },
   ];
 
@@ -85,7 +85,7 @@ export function Header() {
           
           <div className="relative z-10 flex flex-wrap items-center justify-center gap-2 md:gap-4 font-medium text-center">
             <span className="bg-rose-500 text-white px-2 py-0.5 rounded text-xs font-bold tracking-wider uppercase shadow-sm">Aktion</span>
-            <span>Spare dir <strong>299€ Setup-Gebühr</strong> auf dein Web-Leasing!</span>
+            <span>Teste Vanicy <strong>1 vollen Monat kostenlos + 0€ Setup!</strong> Ohne Risiko.</span>
             <span className="flex items-center gap-1.5 font-mono bg-white/10 px-2 py-0.5 rounded">
                <svg className="w-4 h-4 text-rose-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -94,6 +94,15 @@ export function Header() {
                <span className="w-5 text-center">{timeLeft.minutes.toString().padStart(2, '0')}</span><span className="text-gray-400">:</span>
                <span className="w-5 text-center">{timeLeft.seconds.toString().padStart(2, '0')}</span>
             </span>
+            <button 
+              onClick={() => {
+                navigator.clipboard.writeText("0TWTQSLL");
+                alert("Aktionscode 0TWTQSLL kopiert!");
+              }}
+              className="ml-2 flex items-center gap-1.5 bg-white/10 hover:bg-white/20 px-3 py-0.5 rounded text-xs font-bold transition-colors cursor-pointer"
+            >
+              <span className="text-emerald-400">Code:</span> <span className="font-mono tracking-widest">0TWTQSLL</span>
+            </button>
           </div>
         </div>
       </div>
@@ -109,7 +118,7 @@ export function Header() {
               </Link>
             </div>
             
-            <nav aria-label="Main Navigation" className="hidden md:flex space-x-10">
+            <nav aria-label="Main Navigation" className="hidden lg:flex space-x-8 xl:space-x-10">
               {navLinks.map((link) => (
                 <Link key={link.href} href={link.href} className="text-brand-dark-blue text-sm hover:text-brand-magenta transition-colors font-medium">
                   {link.label}
@@ -117,13 +126,13 @@ export function Header() {
               ))}
             </nav>
 
-            <div className="hidden md:flex items-center gap-2 lg:gap-4">
-              <div className="flex items-center gap-2 lg:gap-3 mr-1 lg:mr-2 border-r border-gray-200 pr-3 lg:pr-5">
+            <div className="hidden lg:flex items-center gap-2 xl:gap-4">
+              <div className="flex items-center gap-2 xl:gap-3 mr-1 xl:mr-2 border-r border-gray-200 pr-3 xl:pr-5">
                 <a href="https://www.instagram.com/vanicy.de/" target="_blank" rel="noopener noreferrer" className="p-2 rounded-full text-slate-400 hover:bg-rose-50 hover:text-brand-magenta hover:scale-110 active:scale-95 transition-all" aria-label="Instagram">
-                  <Instagram className="w-4 h-4 lg:w-5 lg:h-5" />
+                  <Instagram className="w-4 h-4 xl:w-5 xl:h-5" />
                 </a>
                 <a href="https://www.linkedin.com/company/vanicy/" target="_blank" rel="noopener noreferrer" className="p-2 rounded-full text-slate-400 hover:bg-rose-50 hover:text-brand-magenta hover:scale-110 active:scale-95 transition-all" aria-label="LinkedIn">
-                  <Linkedin className="w-4 h-4 lg:w-5 lg:h-5" />
+                  <Linkedin className="w-4 h-4 xl:w-5 xl:h-5" />
                 </a>
               </div>
               
@@ -136,13 +145,13 @@ export function Header() {
                 <div className="w-6 h-6 rounded-full bg-slate-100 group-hover:bg-white flex items-center justify-center border border-transparent group-hover:border-slate-200 shadow-sm transition-all">
                   <User className="w-3.5 h-3.5 text-slate-500 group-hover:text-slate-900" />
                 </div>
-                <span className="hidden lg:block">Kunden-Login</span>
-                <span className="lg:hidden">Login</span>
+                <span className="hidden xl:block">Kunden-Login</span>
+                <span className="xl:hidden">Login</span>
               </Link>
               
               <Link 
                 href="#analyse" 
-                className="relative overflow-hidden flex items-center justify-center gap-2 bg-gradient-to-r from-rose-500 to-purple-600 px-5 lg:px-6 py-2.5 rounded-full text-white font-bold shadow-lg shadow-rose-500/25 hover:shadow-xl hover:shadow-rose-500/40 hover:-translate-y-0.5 hover:scale-105 active:scale-95 transition-all duration-300 text-sm group"
+                className="relative overflow-hidden flex items-center justify-center gap-2 bg-gradient-to-r from-rose-500 to-purple-600 px-4 xl:px-6 py-2.5 rounded-full text-white font-bold shadow-lg shadow-rose-500/25 hover:shadow-xl hover:shadow-rose-500/40 hover:-translate-y-0.5 hover:scale-105 active:scale-95 transition-all duration-300 text-sm group"
               >
                 <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-in-out"></div>
                 <span className="relative z-10 flex items-center gap-2">
@@ -159,7 +168,7 @@ export function Header() {
             </div>
             
             {/* Mobile menu trigger */}
-            <div className="md:hidden flex items-center">
+            <div className="lg:hidden flex items-center">
               <button 
                 onClick={toggleMobileMenu}
                 className="text-brand-dark-blue focus:outline-none p-2 -mr-2 bg-gray-50 rounded-full hover:bg-gray-100 transition-colors"
@@ -185,7 +194,7 @@ export function Header() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20, transition: { duration: 0.2 } }}
             transition={{ type: 'spring', damping: 25, stiffness: 200 }}
-            className="fixed inset-0 z-40 bg-white/98 backdrop-blur-xl md:hidden overflow-y-auto overscroll-none"
+            className="fixed inset-0 z-40 bg-white/98 backdrop-blur-xl lg:hidden overflow-y-auto overscroll-none"
           >
             <div className="flex flex-col min-h-[100dvh] pt-[104px] pb-8 px-4">
               <div className="flex-1 flex flex-col mt-4">

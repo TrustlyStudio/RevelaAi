@@ -49,8 +49,12 @@ import Link from 'next/link';
 
 const faqs = [
   {
+    question: "Gibt es wirklich einen kostenlosen Probemonat?",
+    answer: "Ja, absolut. Du wählst dein Paket und wir starten mit dem Bau deiner Website – komplett auf unsere Kosten. Du kannst das fertige Ergebnis einen ganzen Monat lang testen. Erst danach entscheidest du, ob du im Leasing bleibst. Kein Risiko, keine Vorabkosten."
+  },
+  {
     question: "Was bedeutet das Leasing-Modell genau?",
-    answer: "Statt viel Geld auf einmal für eine neue Website zu zahlen, mietest du deine professionelle Website bei uns für eine feste monatliche Rate. Das Beste daran: Hosting, Wartung, Updates und Support sind bereits inklusive. Du hast keine versteckten Kosten und die volle Sicherheit."
+    answer: "Statt viel Geld auf einmal für eine neue Website zu zahlen, mietest du deine professionelle Website bei uns für eine feste monatliche Rate. Hosting, Wartung, Updates und Support sind bereits inklusive. Du hast keine versteckten Kosten und volle Flexibilität."
   },
   {
     question: "Warum nutzt ihr keine Standard-Baukästen wie WordPress?",
@@ -95,12 +99,12 @@ const testimonialsData = [
 
 export default function Home() {
   const [openFaq, setOpenFaq] = useState<number | null>(0);
-  const [term, setTerm] = useState<12 | 24 | 36>(12);
+  const [term, setTerm] = useState<12 | 24>(12);
   const [currentTestimonialIndex, setCurrentTestimonialIndex] = useState(0);
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
+  const [selectedProblem, setSelectedProblem] = useState<number | null>(null);
   const [isPromoModalOpen, setIsPromoModalOpen] = useState(false);
   const [checkoutUrl, setCheckoutUrl] = useState('');
-  const [selectedProblem, setSelectedProblem] = useState<number | null>(null);
 
   const problems = [
     {
@@ -245,19 +249,14 @@ export default function Home() {
 
   const pricing = {
     12: {
-      essential: { price: 249, link: "https://buy.stripe.com/fZu8wI2Tm50a8ek19h77O02" },
-      business: { price: 349, link: "https://buy.stripe.com/7sY6oA8dG50a2U0bNV77O04" },
-      pro: { price: 599, link: "https://buy.stripe.com/5kQ14g79C3W6eCI6tB77O03" }
+      essential: { price: 149, link: "https://buy.stripe.com/00w6oA51u8cm2U0bNV77O0b" },
+      business: { price: 229, link: "https://buy.stripe.com/9B65kw1PigIS2U0bNV77O0d" },
+      pro: { price: 449, link: "https://buy.stripe.com/cNidR2gKcfEOams19h77O0f" }
     },
     24: {
-      essential: { price: 229, link: "https://buy.stripe.com/aFa14g1Pi50aeCIf0777O05" },
-      business: { price: 329, link: "https://buy.stripe.com/fZu8wI0LecsC66cbNV77O07" },
-      pro: { price: 579, link: "https://buy.stripe.com/aFafZa65y0JU3Y4aJR77O09" }
-    },
-    36: {
-      essential: { price: 209, link: "https://buy.stripe.com/8x2cMYalOaku1PW19h77O06" },
-      business: { price: 309, link: "https://buy.stripe.com/14A7sE79CfEO8ek7xF77O08" },
-      pro: { price: 559, link: "https://buy.stripe.com/cNibIUbpS50aeCI8BJ77O0a" }
+      essential: { price: 129, link: "https://buy.stripe.com/eVqcMY79C3W6cuA4lt77O0c" },
+      business: { price: 189, link: "https://buy.stripe.com/00w4gs8dG8cmeCIdW377O0e" },
+      pro: { price: 399, link: "https://buy.stripe.com/8x2bIUeC4fEO8ekbNV77O0g" }
     }
   };
 
@@ -382,19 +381,19 @@ export default function Home() {
                 className="flex flex-col sm:flex-row items-center lg:items-start gap-4 justify-center lg:justify-start"
               >
                 <Link 
-                  href="#analyse"
+                  href="#preise"
                   className="w-full sm:w-auto h-14 bg-white border border-slate-200 p-1.5 pr-6 rounded-full font-bold text-base hover:bg-slate-50 transition-all duration-300 flex items-center justify-between sm:justify-start gap-4 group shadow-sm active:scale-95"
                 >
                   <span className="bg-gradient-to-r from-rose-500 to-purple-600 text-white text-[10px] md:text-xs uppercase font-black tracking-widest px-4 h-full flex items-center justify-center rounded-full shadow-sm whitespace-nowrap">
-                    Gespräch
+                    100% Gratis
                   </span>
-                  <span className="text-slate-900 whitespace-nowrap pr-2">Jetzt beraten lassen</span>
+                  <span className="text-slate-900 whitespace-nowrap pr-2">1 Monat kostenlos testen</span>
                 </Link>
                 <Link 
-                  href="#preise"
+                  href="#analyse"
                   className="w-full sm:w-auto h-14 bg-transparent text-slate-600 px-8 rounded-full font-bold text-sm sm:text-base hover:text-slate-900 hover:bg-slate-200/50 transition-all duration-300 flex items-center justify-center active:scale-95"
                 >
-                  Preise ansehen
+                  Individuell beraten lassen
                 </Link>
               </motion.div>
 
@@ -406,11 +405,11 @@ export default function Home() {
               >
                 <div className="flex items-center gap-1.5">
                   <CheckCircle2 className="w-4 h-4 text-emerald-500" />
-                  <span>Schon ab 12 Monaten Laufzeit</span>
+                  <span>Kein Risiko, ohne Bindung</span>
                 </div>
                 <div className="flex items-center gap-1.5">
                   <CheckCircle2 className="w-4 h-4 text-emerald-500" />
-                  <span>Full-Service Betreuung</span>
+                  <span>Full-Service inkl. Support</span>
                 </div>
               </motion.div>
             </div>
@@ -462,7 +461,7 @@ export default function Home() {
                       </p>
                     </motion.div>
 
-                    <div className="grid md:grid-cols-3 gap-6">
+                    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                       {problems.map((card, i) => (
                         <motion.div 
                           key={i}
@@ -496,30 +495,30 @@ export default function Home() {
                           animate={{ opacity: 1 }}
                           exit={{ opacity: 0 }}
                           transition={{ duration: 0.2 }}
-                          className="absolute inset-0 bg-slate-900/60 backdrop-blur-sm cursor-pointer"
-                          onClick={() => setSelectedProblem(null)}
+                          className="absolute inset-0 bg-slate-900/80 backdrop-blur-md"
                         />
                         <motion.div
-                          initial={{ opacity: 0, scale: 0.95, y: 20 }}
+                          initial={{ opacity: 0, scale: 0.95, y: 30 }}
                           animate={{ opacity: 1, scale: 1, y: 0 }}
                           exit={{ opacity: 0, scale: 0.95, y: 20 }}
-                          transition={{ type: "spring", damping: 25, stiffness: 300 }}
-                          className="relative w-full max-w-2xl bg-white rounded-3xl shadow-2xl overflow-hidden flex flex-col max-h-[90vh]"
+                          transition={{ type: "spring", damping: 30, stiffness: 400 }}
+                          className="relative w-full max-w-2xl bg-white rounded-3xl shadow-2xl overflow-hidden flex flex-col max-h-[90vh] border border-slate-200"
                           style={{ zIndex: 101 }}
                         >
-                          <div className="flex justify-between items-center p-6 border-b border-slate-100">
-                            <div className="flex items-center gap-4">
-                              <div className={`w-12 h-12 rounded-xl flex items-center justify-center border ${problems[selectedProblem].iconBg}`}>
-                                {problems[selectedProblem].icon}
-                              </div>
-                              <h3 className="text-xl md:text-2xl font-bold text-slate-900">{problems[selectedProblem].title}</h3>
+                          <div className="absolute top-0 inset-x-0 h-1.5 bg-gradient-to-r from-rose-500 via-purple-500 to-indigo-500 z-50"></div>
+                          
+                          <button 
+                            onClick={() => setSelectedProblem(null)}
+                            className="absolute top-4 right-4 p-2 text-slate-400 hover:text-slate-900 hover:bg-slate-100 rounded-full transition-colors z-[210] bg-white/50 backdrop-blur-sm shadow-sm"
+                          >
+                            <X className="w-5 h-5" />
+                          </button>
+
+                          <div className="p-6 md:p-8 pt-10 border-b border-slate-100 flex items-center gap-4 bg-white relative z-10">
+                            <div className={`w-12 h-12 rounded-xl flex items-center justify-center border shrink-0 ${problems[selectedProblem].iconBg}`}>
+                              {problems[selectedProblem].icon}
                             </div>
-                            <button 
-                              onClick={() => setSelectedProblem(null)}
-                              className="p-2 bg-slate-50 hover:bg-slate-100 rounded-full text-slate-500 transition-colors"
-                            >
-                              <X className="w-5 h-5" />
-                            </button>
+                            <h3 className="text-xl md:text-2xl font-bold font-sans text-slate-900 tracking-tight">{problems[selectedProblem].title}</h3>
                           </div>
                           
                           <div className="p-6 md:p-8 overflow-y-auto">
@@ -991,22 +990,21 @@ export default function Home() {
                   
                   <div className="relative z-10 text-center sm:text-left flex-1">
                     <div className="inline-flex items-center justify-center sm:justify-start gap-3 mb-4">
-                      <span className="text-[10px] font-bold uppercase tracking-widest text-emerald-400 bg-emerald-400/10 px-2.5 py-1 rounded-md border border-emerald-400/20">Limitiertes Angebot</span>
-                      <span className="text-slate-400 text-sm font-medium">Regulär: <span className="line-through decoration-slate-500 decoration-2">299€ Setup</span></span>
+                      <span className="text-[10px] font-bold uppercase tracking-widest text-emerald-400 bg-emerald-400/10 px-2.5 py-1 rounded-md border border-emerald-400/20">Kein Risiko</span>
                     </div>
                     <h4 className="text-xl sm:text-2xl font-bold text-white tracking-tight mb-2.5">
-                       Keine Einrichtungsgebühr für Erstkunden.
+                       1 Monat komplett kostenlos testen.
                     </h4>
                     <p className="text-slate-400 text-sm leading-relaxed">
-                      Entscheide dich jetzt und starte ohne Initialkosten. Klicke bei deinem Wunsch-Paket auf <strong className="text-slate-200 font-semibold">Plan wählen</strong>, um deinen exklusiven Aktionscode zu erhalten.
+                      Wähle dein Paket, teste es für einen vollen Monat absolut gratis – wir bauen deine Website sofort. Du entscheidest erst danach, ob du bleibst. Jederzeit fair, ohne Setup-Gebühren.
                     </p>
                   </div>
                   
                   <div className="relative z-10 shrink-0 w-full sm:w-auto flex flex-col items-center justify-center pt-4 sm:pt-0 border-t sm:border-t-0 sm:border-l border-slate-700/50 sm:pl-8">
                     <div className="text-4xl sm:text-5xl font-black text-transparent bg-clip-text bg-gradient-to-br from-white to-slate-400 drop-shadow-sm mb-1 leading-none tracking-tighter">
-                      0€
+                      100%
                     </div>
-                    <div className="text-xs font-semibold text-slate-500 uppercase tracking-widest">Setup-Kosten</div>
+                    <div className="text-xs font-semibold text-slate-500 uppercase tracking-widest">Kostenloser Test</div>
                   </div>
                 </div>
               </div>
@@ -1029,16 +1027,10 @@ export default function Home() {
                     Empfehlung
                   </span>
                 </button>
-                <button 
-                  onClick={() => setTerm(36)}
-                  className={`px-4 sm:px-6 py-2 md:py-2.5 rounded-lg font-bold text-xs md:text-sm transition-all duration-200 ${term === 36 ? 'bg-white shadow-sm border border-slate-200/50 text-slate-900' : 'text-slate-500 hover:text-slate-800'}`}
-                >
-                  36 Monate
-                </button>
               </div>
             </motion.div>
 
-            <motion.div variants={fadeInUp} className="grid md:grid-cols-3 gap-6 lg:gap-8 max-w-6xl mx-auto items-stretch">
+            <motion.div variants={fadeInUp} className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 max-w-6xl mx-auto items-stretch">
               
               {/* Essential Plan */}
               <motion.div 
@@ -1061,10 +1053,14 @@ export default function Home() {
                 </div>
                 
                 <div className="flex flex-col gap-3 mb-8 transition-transform duration-300 group-hover:-translate-y-1">
-                  <button onClick={() => handleCheckoutClick(pricing[term].essential.link)} className="w-full py-3 rounded-lg font-semibold text-slate-900 bg-white border border-slate-300 hover:bg-slate-50 hover:border-slate-400 hover:shadow-sm transition-all text-center text-sm md:text-base">
-                    Plan wählen
+                  <button onClick={() => handleCheckoutClick(pricing[term].essential.link)} className="w-full py-3 rounded-lg font-bold text-white bg-green-500 hover:bg-green-600 transition-all text-center text-sm md:text-base border border-transparent">
+                    1 Monat kostenlos testen
                   </button>
-                  <Link href="/preise" className="text-center text-xs text-slate-400 hover:text-slate-600 transition-colors">
+                  <button onClick={() => handleCheckoutClick(pricing[term].essential.link)} className="w-full py-3 rounded-lg font-semibold text-slate-700 bg-white border border-slate-300 hover:bg-slate-50 hover:border-slate-400 hover:shadow-sm transition-all text-center text-sm md:text-base">
+                    Direkt kaufen
+                  </button>
+                  <p className="text-center text-xs font-semibold text-emerald-600">Nur kurze Zeit: 0€ Setup-Gebühr sichern.</p>
+                  <Link href="/preise" className="text-center text-xs text-slate-400 hover:text-slate-600 transition-colors mt-1">
                     Alle Details vergleichen
                   </Link>
                 </div>
@@ -1117,10 +1113,14 @@ export default function Home() {
                 </div>
                 
                 <div className="flex flex-col gap-3 mb-8 transition-transform duration-300 group-hover:-translate-y-1">
-                  <button onClick={() => handleCheckoutClick(pricing[term].business.link)} className="w-full py-3 rounded-lg font-bold text-white bg-gradient-to-r from-rose-500 to-purple-600 hover:from-rose-600 hover:to-purple-700 transition-all text-center text-sm md:text-base shadow-md shadow-rose-500/20 active:scale-95 hover:shadow-lg hover:shadow-rose-500/30">
-                    Plan wählen
+                  <button onClick={() => handleCheckoutClick(pricing[term].business.link)} className="w-full py-3 rounded-lg font-bold text-white bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 transition-all text-center text-sm md:text-base shadow-md shadow-green-500/20 active:scale-95 hover:shadow-lg hover:shadow-green-500/30">
+                    1 Monat kostenlos testen
                   </button>
-                  <Link href="/preise" className="text-center text-xs text-slate-500 hover:text-slate-800 transition-colors font-medium">
+                  <button onClick={() => handleCheckoutClick(pricing[term].business.link)} className="w-full py-3 rounded-lg font-semibold text-slate-700 bg-white border border-slate-300 hover:bg-slate-50 hover:border-slate-400 hover:shadow-sm transition-all text-center text-sm md:text-base">
+                    Direkt kaufen
+                  </button>
+                  <p className="text-center text-xs font-semibold text-emerald-600">Nur kurze Zeit: 0€ Setup-Gebühr sichern.</p>
+                  <Link href="/preise" className="text-center text-xs text-slate-400 hover:text-slate-600 transition-colors mt-1">
                     Alle Details vergleichen
                   </Link>
                 </div>
@@ -1166,10 +1166,14 @@ export default function Home() {
                 </div>
                 
                 <div className="flex flex-col gap-3 mb-8 transition-transform duration-300 group-hover:-translate-y-1">
-                  <button onClick={() => handleCheckoutClick(pricing[term].pro.link)} className="w-full py-3 rounded-lg font-semibold text-slate-900 bg-white border border-slate-300 hover:bg-slate-50 hover:border-slate-400 hover:shadow-sm transition-all text-center text-sm md:text-base">
-                    Plan wählen
+                  <button onClick={() => handleCheckoutClick(pricing[term].pro.link)} className="w-full py-3 rounded-lg font-bold text-white bg-slate-900 border border-slate-900 hover:bg-slate-800 hover:border-slate-800 transition-all text-center text-sm md:text-base">
+                    Direkt kaufen
                   </button>
-                  <Link href="/preise" className="text-center text-xs text-slate-400 hover:text-slate-600 transition-colors">
+                  <a href="#analyse" className="w-full py-3 rounded-lg font-semibold text-slate-700 bg-white border border-slate-300 hover:bg-slate-50 hover:border-slate-400 hover:shadow-sm transition-all text-center text-sm md:text-base">
+                    Jetzt kostenlos beraten lassen
+                  </a>
+                  <p className="text-center text-xs font-semibold text-emerald-600">Nur kurze Zeit: 0€ Setup-Gebühr sichern.</p>
+                  <Link href="/preise" className="text-center text-xs text-slate-400 hover:text-slate-600 transition-colors mt-1">
                     Alle Details vergleichen
                   </Link>
                 </div>
