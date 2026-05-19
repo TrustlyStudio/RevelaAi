@@ -41,49 +41,7 @@ export function CookieBanner() {
   const [showModal, setShowModal] = useState(false);
   const [tempConsent, setTempConsent] = useState<ConsentSettings>(defaultConsent);
 
-  useEffect(() => {
-    const data = localStorage.getItem(COOKIE_CONSENT_KEY);
-    const prefersOptOut = 
-      navigator.doNotTrack === "1" || 
-      (window as any).doNotTrack === "1" || 
-      (navigator as any).globalPrivacyControl;
-
-    if (!data) {
-      if (prefersOptOut) {
-        handleSave(defaultConsent);
-      } else {
-        setShowBanner(true);
-      }
-    } else {
-      setTempConsent(JSON.parse(data));
-    }
-    
-    const onOpenSettings = () => {
-      const currentData = localStorage.getItem(COOKIE_CONSENT_KEY);
-      if (currentData) setTempConsent(JSON.parse(currentData));
-      else setTempConsent(defaultConsent);
-      setShowModal(true);
-    };
-    
-    window.addEventListener('openCookieSettings', onOpenSettings);
-    return () => window.removeEventListener('openCookieSettings', onOpenSettings);
-  }, []);
-
-  const handleSave = (newConsent: ConsentSettings) => {
-    localStorage.setItem(COOKIE_CONSENT_KEY, JSON.stringify(newConsent));
-    setShowBanner(false);
-    setShowModal(false);
-    window.dispatchEvent(new CustomEvent('cookieConsentUpdated', { detail: newConsent }));
-    
-    // if rejected analytics/marketing, try to remove existing cookies
-    if (!newConsent.analytics || !newConsent.marketing) {
-       clearCookies(newConsent);
-    }
-  };
-  
-  const clearCookies = (consent: ConsentSettings) => {
-     // A simple helper to clear non-essential cookies.
-     // In a real scenario, prefix matching for Google/Meta.
+  const clearCookies = React.useCallback((consent: ConsentSettings) => {
      const cookies = document.cookie.split("; ");
      for (let i = 0; i < cookies.length; i++) {
         const cookie = cookies[i];
@@ -95,11 +53,51 @@ export function CookieBanner() {
         
         if ((!consent.analytics && isGa) || (!consent.marketing && isFbp)) {
            document.cookie = name + "=;expires=Thu, 01 Jan 1970 00:00:00 GMT;path=/";
-           // also try on domain root
            document.cookie = name + "=;expires=Thu, 01 Jan 1970 00:00:00 GMT;path=/;domain=" + window.location.hostname;
         }
      }
-  };
+  }, []);
+
+  const handleSave = React.useCallback((newConsent: ConsentSettings) => {
+    localStorage.setItem(COOKIE_CONSENT_KEY, JSON.stringify(newConsent));
+    setShowBanner(false);
+    setShowModal(false);
+    window.dispatchEvent(new CustomEvent('cookieConsentUpdated', { detail: newConsent }));
+    
+    if (!newConsent.analytics || !newConsent.marketing) {
+       clearCookies(newConsent);
+    }
+  }, [clearCookies]);
+
+  useEffect(() => {
+    setTimeout(() => {
+      const data = localStorage.getItem(COOKIE_CONSENT_KEY);
+      const prefersOptOut = 
+        navigator.doNotTrack === "1" || 
+        (window as any).doNotTrack === "1" || 
+        (navigator as any).globalPrivacyControl;
+
+      if (!data) {
+        if (prefersOptOut) {
+          handleSave(defaultConsent); // fallbacks to necessary only
+        } else {
+          setShowBanner(true);
+        }
+      } else {
+        setTempConsent(JSON.parse(data));
+      }
+    }, 0);
+    
+    const onOpenSettings = () => {
+      const currentData = localStorage.getItem(COOKIE_CONSENT_KEY);
+      if (currentData) setTempConsent(JSON.parse(currentData));
+      else setTempConsent(defaultConsent);
+      setShowModal(true);
+    };
+    
+    window.addEventListener('openCookieSettings', onOpenSettings);
+    return () => window.removeEventListener('openCookieSettings', onOpenSettings);
+  }, [handleSave]);
 
   const acceptAll = () => handleSave({ necessary: true, analytics: true, marketing: true });
   const rejectAll = () => handleSave(defaultConsent);

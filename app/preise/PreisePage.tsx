@@ -294,7 +294,7 @@ export default function PreisePage() {
                       </div>
                       <div className="mt-4 flex flex-col gap-2 transition-transform duration-300 group-hover:translate-y-1">
                         <button onClick={() => handleCheckoutClick(pricing[term].pro.link)} className="inline-block w-full py-2 rounded-lg font-semibold text-white bg-slate-900 hover:bg-slate-800 hover:shadow-sm transition-all text-sm">Direkt kaufen</button>
-                        <a href="/#analyse" className="inline-block w-full py-2 mb-2 rounded-lg font-semibold text-slate-700 bg-white border border-slate-300 hover:bg-slate-50 hover:border-slate-400 hover:shadow-sm transition-all text-sm">Kostenlos beraten lassen</a>
+                        <Link href="/#analyse" className="inline-block w-full py-2 mb-2 rounded-lg font-semibold text-slate-700 bg-white border border-slate-300 hover:bg-slate-50 hover:border-slate-400 hover:shadow-sm transition-all text-sm text-center">Kostenlos beraten lassen</Link>
                       </div>
                     </th>
                   </tr>
@@ -402,7 +402,7 @@ export default function PreisePage() {
                         <>
                           <button onClick={() => handleCheckoutClick(pricing[term].pro.link!)} className="block w-full py-3 rounded-lg font-bold transition-all shadow-sm active:scale-95 text-white bg-slate-900 border border-slate-900 hover:bg-slate-800 hover:border-slate-800">Direkt kaufen</button>
                           
-                          <a href="/#analyse" className="block w-full py-3 rounded-lg font-semibold transition-all text-slate-700 bg-white border border-slate-300 hover:bg-slate-50 text-center">Kostenlos beraten lassen</a>
+                          <Link href="/#analyse" className="block w-full py-3 rounded-lg font-semibold transition-all text-slate-700 bg-white border border-slate-300 hover:bg-slate-50 text-center">Kostenlos beraten lassen</Link>
                         </>
                       )}
                     </div>
