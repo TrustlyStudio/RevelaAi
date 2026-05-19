@@ -84,7 +84,7 @@ export function Header() {
           
           <div className="relative z-10 flex flex-wrap items-center justify-center gap-2 md:gap-4 font-medium text-center">
             <span className="bg-rose-500 text-white px-2 py-0.5 rounded text-xs font-bold tracking-wider uppercase shadow-sm">Aktion</span>
-            <span>Teste Vanicy <strong>1 vollen Monat kostenlos + 0€ Setup!</strong> Ohne Risiko.</span>
+            <span>Teste VANICY <strong>1 vollen Monat kostenlos + 0€ Setup!</strong> Ohne Risiko.</span>
             <span className="flex items-center gap-1.5 font-mono bg-white/10 px-2 py-0.5 rounded">
                <svg className="w-4 h-4 text-rose-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -113,7 +113,7 @@ export function Header() {
             <div className="flex-shrink-0 flex items-center">
               {/* Logo */}
               <Link href="/" className="flex items-center gap-2 group" onClick={closeMobileMenu}>
-                <Image src="/VANICY_Logo_Wide_Cropped.png" alt="Vanicy Logo" width={160} height={48} className="h-8 md:h-10 w-auto group-hover:scale-105 transition-transform object-contain" />
+                <Image src="/VANICY_Logo_Wide_Cropped.png" alt="VANICY Logo" width={160} height={48} className="h-8 md:h-10 w-auto group-hover:scale-105 transition-transform object-contain" />
               </Link>
             </div>
             
@@ -130,7 +130,7 @@ export function Header() {
                 <a href="https://www.instagram.com/vanicy.de/" target="_blank" rel="noopener noreferrer" className="p-2 rounded-full text-slate-400 hover:bg-rose-50 hover:text-brand-magenta hover:scale-110 active:scale-95 transition-all" aria-label="Instagram">
                   <Instagram className="w-4 h-4 xl:w-5 xl:h-5" />
                 </a>
-                <a href="https://www.linkedin.com/company/vanicy/" target="_blank" rel="noopener noreferrer" className="p-2 rounded-full text-slate-400 hover:bg-rose-50 hover:text-brand-magenta hover:scale-110 active:scale-95 transition-all" aria-label="LinkedIn">
+                <a href="https://www.linkedin.com/company/revela-ai" target="_blank" rel="noopener noreferrer" className="p-2 rounded-full text-slate-400 hover:bg-rose-50 hover:text-brand-magenta hover:scale-110 active:scale-95 transition-all" aria-label="LinkedIn">
                   <Linkedin className="w-4 h-4 xl:w-5 xl:h-5" />
                 </a>
               </div>
@@ -226,7 +226,7 @@ export function Header() {
                <a href="https://www.instagram.com/vanicy.de/" target="_blank" rel="noopener noreferrer" className="p-3 bg-gray-50 rounded-full text-slate-400 hover:bg-rose-50 hover:text-brand-magenta transition-colors shadow-sm border border-gray-100" aria-label="Instagram">
                  <Instagram className="w-6 h-6" />
                </a>
-               <a href="https://www.linkedin.com/company/vanicy/" target="_blank" rel="noopener noreferrer" className="p-3 bg-gray-50 rounded-full text-slate-400 hover:bg-rose-50 hover:text-brand-magenta transition-colors shadow-sm border border-gray-100" aria-label="LinkedIn">
+               <a href="https://www.linkedin.com/company/revela-ai" target="_blank" rel="noopener noreferrer" className="p-3 bg-gray-50 rounded-full text-slate-400 hover:bg-rose-50 hover:text-brand-magenta transition-colors shadow-sm border border-gray-100" aria-label="LinkedIn">
                  <Linkedin className="w-6 h-6" />
                </a>
             </div>

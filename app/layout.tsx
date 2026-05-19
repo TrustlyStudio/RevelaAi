@@ -17,24 +17,24 @@ import { ThirdPartyScripts } from '@/components/Scripts';
 export const metadata: Metadata = {
   metadataBase: new URL('https://vanicy.de'),
   title: {
-    template: '%s | Vanicy - Webseitenleasing & Digitales Wachstum',
-    default: 'Vanicy | Premium B2B-Webseitenleasing & Performance Webdesign',
+    template: '%s | VANICY - Webseitenleasing & Digitales Wachstum',
+    default: 'VANICY | Premium B2B-Webseitenleasing & Performance Webdesign',
   },
-  description: 'Steigere deine Sichtbarkeit und Conversion-Rate mit Vanicy. Professionelles Webseitenleasing mit Top-SEO und Premium-Hosting ab 209€/Monat – ohne hohes Startkapital.',
+  description: 'Steigere deine Sichtbarkeit und Conversion-Rate mit VANICY. Professionelles Webseitenleasing mit Top-SEO und Premium-Hosting ab 209€/Monat – ohne hohes Startkapital.',
   keywords: [
     'Webseitenleasing', 'Website mieten', 'Webdesign Agentur', 'Homepage mieten', 
-    'Conversion Optimierung', 'Landingpage erstellen', 'Vanicy', 'B2B Websites', 'Performance Webdesign'
+    'Conversion Optimierung', 'Landingpage erstellen', 'VANICY', 'B2B Websites', 'Performance Webdesign'
   ],
   openGraph: {
-    title: 'Vanicy | Exklusives Webseitenleasing & Performance Webdesign',
-    description: 'Steigere deine Sichtbarkeit und Conversion-Rate mit Vanicy. Professionelles Webseitenleasing mit Top-SEO und Premium-Hosting ab 209€/Monat.',
+    title: 'VANICY | Exklusives Webseitenleasing & Performance Webdesign',
+    description: 'Steigere deine Sichtbarkeit und Conversion-Rate mit VANICY. Professionelles Webseitenleasing mit Top-SEO und Premium-Hosting ab 209€/Monat.',
     type: 'website',
     locale: 'de_DE',
-    siteName: 'Vanicy',
+    siteName: 'VANICY',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Vanicy | Webseitenleasing',
+    title: 'VANICY | Webseitenleasing',
     description: 'Conversion-starke Websites zur Miete ab 209€/Monat.',
   },
   robots: {

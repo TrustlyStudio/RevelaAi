@@ -554,7 +554,7 @@ export function WaitlistModal() {
                     <button 
                       type="submit"
                       disabled={isSubmitting || !formData.name || (!formData.email && (!formData.noEmail || !formData.telefon)) || !formData.datenschutz || !!(errors.email && !formData.noEmail) || !!errors.telefon}
-                      className="w-full py-4 bg-gradient-to-r from-rose-500 to-purple-600 text-white shadow-xl shadow-rose-500/20 rounded-xl font-bold text-lg hover:shadow-2xl hover:-translate-y-0.5 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:translate-y-0 disabled:hover:shadow-none transition-all flex justify-center items-center gap-2"
+                      className="w-full py-4 mt-2 bg-gradient-to-r from-rose-500 to-purple-600 text-white shadow-xl shadow-rose-500/20 rounded-xl font-bold text-lg hover:shadow-2xl hover:-translate-y-0.5 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:translate-y-0 disabled:hover:shadow-none transition-all flex justify-center items-center gap-2"
                     >
                       {isSubmitting ? (
                         <span className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin"></span>
@@ -562,6 +562,10 @@ export function WaitlistModal() {
                         "Unverbindlich anfragen"
                       )}
                     </button>
+                    
+                    <p className="text-[10px] text-gray-400 text-center mt-3">
+                      Diese Website ist durch reCAPTCHA geschützt. Es gelten die <a href="https://policies.google.com/privacy" className="underline hover:text-gray-500" target="_blank" rel="noopener noreferrer">Datenschutzerklärung</a> und <a href="https://policies.google.com/terms" className="underline hover:text-gray-500" target="_blank" rel="noopener noreferrer">Nutzungsbedingungen</a> von Google.
+                    </p>
                   </motion.form>
                 )}
               </AnimatePresence>

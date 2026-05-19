@@ -9,9 +9,9 @@ export const metadata: Metadata = {
   },
   title: 'Allgemeine Geschäftsbedingungen (AGB)',
   description: 'Allgemeine Geschäftsbedingungen (AGB) von VANICY (Gurev & Schwabauer GbR).',
-  keywords: ['AGB', 'Geschäftsbedingungen', 'Rechtliches', 'Vanicy AGB', 'Webseitenleasing Konditionen'],
+  keywords: ['AGB', 'Geschäftsbedingungen', 'Rechtliches', 'VANICY AGB', 'Webseitenleasing Konditionen'],
   openGraph: {
-    title: 'AGB | Vanicy',
+    title: 'AGB | VANICY',
     description: 'Allgemeine Geschäftsbedingungen (AGB) von VANICY (Gurev & Schwabauer GbR).',
     url: 'https://vanicy.de/agb',
   },

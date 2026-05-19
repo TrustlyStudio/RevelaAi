@@ -9,9 +9,9 @@ export const metadata: Metadata = {
   },
   title: 'Auftragsverarbeitungsvertrag (AVV)',
   description: 'Auftragsverarbeitungsvertrag (AVV) gemäß Art. 28 DSGVO von VANICY.',
-  keywords: ['AVV', 'Auftragsverarbeitung', 'Datenschutz', 'DSGVO', 'Vanicy AVV', 'B2B AVV'],
+  keywords: ['AVV', 'Auftragsverarbeitung', 'Datenschutz', 'DSGVO', 'VANICY AVV', 'B2B AVV'],
   openGraph: {
-    title: 'AVV | Vanicy',
+    title: 'AVV | VANICY',
     description: 'Auftragsverarbeitungsvertrag (AVV) gemäß Art. 28 DSGVO von VANICY.',
     url: 'https://vanicy.de/avv',
   },

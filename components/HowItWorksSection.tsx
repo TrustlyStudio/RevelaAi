@@ -73,7 +73,7 @@ export function HowItWorksSection() {
         >
           <div className="inline-flex items-center justify-center mb-6">
             <span className="text-[10px] md:text-xs font-black uppercase tracking-widest text-transparent bg-clip-text bg-gradient-to-r from-rose-400 to-purple-400">
-              Der Vanicy Prozess
+              Der VANICY Prozess
             </span>
           </div>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-black mb-6 tracking-tight text-white">

@@ -55,7 +55,7 @@ export default function Page() {
           { "@type": "City", "name": "Landshut" },
           { "@type": "Country", "name": "Deutschland" }
         ],
-        "serviceType": "Webdesign, WebLeasing, SEO, Hosting",
+        "knowsAbout": ["Webdesign", "WebLeasing", "SEO", "Hosting"],
         "hasOfferCatalog": {
           "@type": "OfferCatalog",
           "name": "WebLeasing Pakete",
@@ -118,7 +118,7 @@ export default function Page() {
         },
         "sameAs": [
           "https://www.instagram.com/vanicy.de",
-          "https://www.linkedin.com/company/vanicy"
+          "https://www.linkedin.com/company/revela-ai"
         ]
       },
       {

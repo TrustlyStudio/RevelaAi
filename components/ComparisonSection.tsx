@@ -12,7 +12,7 @@ const comparisonData = [
     vanicy: { text: "Keine (Im Leasing inklusive)", icon: <Check className="w-5 h-5 text-emerald-500" />, type: "good" },
     details: {
       title: "Keine hohen Vorabkosten",
-      text: "Normalerweise verlangen Agenturen hohe Einmalzahlungen. Beim Vanicy Leasing verteilen wir die Kosten über die Laufzeit, sodass dir mehr Liquidität für Marketing und Wachstum bleibt.",
+      text: "Normalerweise verlangen Agenturen hohe Einmalzahlungen. Beim VANICY Leasing verteilen wir die Kosten über die Laufzeit, sodass dir mehr Liquidität für Marketing und Wachstum bleibt.",
       stats: "Du sparst dir 5.000€ bis 15.000€ initiale Investition."
     },
     Visual: () => (
@@ -31,7 +31,7 @@ const comparisonData = [
            <motion.div initial={{ height: 0 }} animate={{ height: 10 }} transition={{ duration: 1, delay: 0.4 }} className="w-full max-w-[80px] bg-indigo-500 rounded-t-lg relative">
               <span className="absolute -top-6 left-1/2 -translate-x-1/2 text-indigo-600 font-bold whitespace-nowrap text-xs md:text-sm">0 €</span>
            </motion.div>
-           <span className="text-xs font-bold text-indigo-600 uppercase tracking-wider">Vanicy</span>
+           <span className="text-xs font-bold text-indigo-600 uppercase tracking-wider">VANICY</span>
          </div>
       </div>
     )
@@ -72,7 +72,7 @@ const comparisonData = [
            </div>
            <div className="text-center">
              <div className="font-bold text-indigo-600">Minimal</div>
-             <span className="text-xs text-indigo-400 uppercase tracking-wider">Vanicy</span>
+             <span className="text-xs text-indigo-400 uppercase tracking-wider">VANICY</span>
            </div>
          </div>
       </div>
@@ -122,7 +122,7 @@ const comparisonData = [
          </div>
          <div className="w-full">
            <div className="flex justify-between text-xs font-bold mb-2">
-             <span className="text-indigo-400">Vanicy Leasing</span>
+             <span className="text-indigo-400">VANICY Leasing</span>
              <span className="text-emerald-400">Instant (0.1s - 0.5s)</span>
            </div>
            <div className="w-full h-3 bg-slate-800 rounded-full overflow-hidden">
@@ -182,7 +182,7 @@ export function ComparisonSection() {
             Der unfaire Vorteil.
           </motion.h2>
           <motion.p variants={fadeInUp} className="text-xl text-slate-600 leading-relaxed">
-            Warum du mit einem Web-Leasing bei Vanicy das Beste aus beiden Welten kombinierst: Premium-Qualität ohne das Premium-Risiko.
+            Warum du mit einem Web-Leasing bei VANICY das Beste aus beiden Welten kombinierst: Premium-Qualität ohne das Premium-Risiko.
           </motion.p>
         </motion.div>
 
@@ -207,7 +207,7 @@ export function ComparisonSection() {
                 <h3 className={`text-2xl font-bold mb-6 text-center ${colKey === 'vanicy' ? 'text-white' : 'text-slate-900'}`}>
                   {colKey === 'builder' && 'DIY Baukasten'}
                   {colKey === 'agency' && 'Traditionelle Agentur'}
-                  {colKey === 'vanicy' && 'Vanicy Leasing'}
+                  {colKey === 'vanicy' && 'VANICY Leasing'}
                 </h3>
                 
                 <div className="space-y-6 relative z-10">
@@ -249,7 +249,7 @@ export function ComparisonSection() {
               <div className="p-6 lg:p-8 text-center border-l border-slate-900 bg-slate-900 text-white relative overflow-hidden">
                 <div className="absolute top-0 right-0 w-full h-full bg-gradient-to-br from-indigo-500/10 to-purple-500/10 -z-0"></div>
                 <div className="absolute -top-3 -right-3 w-16 h-16 bg-gradient-to-br from-rose-400 to-indigo-500 blur-2xl opacity-50 rounded-full"></div>
-                <h3 className="text-xl font-bold relative z-10">Vanicy Leasing</h3>
+                <h3 className="text-xl font-bold relative z-10">VANICY Leasing</h3>
                 <p className="text-sm text-slate-400 mt-2 relative z-10">Unser All-in-One Ansatz</p>
               </div>
             </div>
@@ -286,7 +286,7 @@ export function ComparisonSection() {
                     <span className={`text-sm font-medium ${row.agency.type === 'bad' ? 'text-slate-600' : 'text-slate-900'}`}>{row.agency.text}</span>
                   </motion.div>
 
-                  {/* Vanicy */}
+                  {/* VANICY */}
                   <motion.div 
                     whileHover={{ scale: 1.05, zIndex: 10 }}
                     className="p-6 lg:p-8 border-l border-slate-900 bg-slate-900 relative flex flex-col items-center justify-center text-center gap-3 shadow-[inset_0_0_20px_rgba(0,0,0,0.5)]"
@@ -301,7 +301,7 @@ export function ComparisonSection() {
               ))}
             </div>
             
-            {/* CTA row at bottom of Vanicy column */}
+            {/* CTA row at bottom of VANICY column */}
             <div className="grid grid-cols-4 bg-slate-50 border-t border-slate-200">
               <div className="col-span-3"></div>
               <div className="p-6 text-center border-l border-slate-900 bg-slate-900">
@@ -364,7 +364,7 @@ export function ComparisonSection() {
                       <Plus className="w-5 h-5 text-indigo-600" />
                     </div>
                     <div>
-                      <h4 className="font-bold text-slate-900 mb-2">Dein Vanicy-Vorteil:</h4>
+                      <h4 className="font-bold text-slate-900 mb-2">Dein VANICY-Vorteil:</h4>
                       <p className="text-indigo-900 text-sm md:text-base font-medium">
                         {comparisonData[selectedFeature].details.stats}
                       </p>
@@ -383,7 +383,7 @@ export function ComparisonSection() {
                   </div>
                   <div className="p-4 rounded-xl border border-indigo-200 bg-indigo-50 text-center flex flex-col items-center justify-center gap-2 shadow-sm">
                      {comparisonData[selectedFeature].vanicy.icon}
-                     <span className="text-xs font-bold text-indigo-600 uppercase tracking-wider">Vanicy</span>
+                     <span className="text-xs font-bold text-indigo-600 uppercase tracking-wider">VANICY</span>
                   </div>
                 </div>
 

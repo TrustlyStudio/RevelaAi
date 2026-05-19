@@ -90,12 +90,12 @@ const staggerContainer: any = {
 };
 
 const testimonialsData = [
-  { quote: "Seit wir Vanicy nutzen, haben wir deutlich mehr qualifizierte Anfragen in unserem Postfach. Das Leasingmodell ist für uns perfekt – keine riesigen Vorabkosten und man muss sich um nichts kümmern.", name: "Sven Krause", role: "Geschäftsführer, Krause Heiztechnik", img: "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=150&h=150&fit=crop" },
+  { quote: "Seit wir VANICY nutzen, haben wir deutlich mehr qualifizierte Anfragen in unserem Postfach. Das Leasingmodell ist für uns perfekt – keine riesigen Vorabkosten und man muss sich um nichts kümmern.", name: "Sven Krause", role: "Geschäftsführer, Krause Heiztechnik", img: "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=150&h=150&fit=crop" },
   { quote: "Endlich ein Partner, der mitdenkt! Änderungen gehen blitzschnell über das Portal, und die Seite lädt so extrem schnell, dass auch unser Google-Ranking spürbar besser wurde.", name: "Laura Weber", role: "Inhaberin, Weber Immobilien", img: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=150&h=150&fit=crop" },
-  { quote: "Unsere alte Homepage war eine einzige Baustelle. Vanicy hat uns da herausgeholt. Wir zahlen einen fairen, fixen Preis im Monat und die Seite sieht einfach aus wie eine hochpreisige Produktion.", name: "Marc Tessmer", role: "Gründer", img: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop" },
+  { quote: "Unsere alte Homepage war eine einzige Baustelle. VANICY hat uns da herausgeholt. Wir zahlen einen fairen, fixen Preis im Monat und die Seite sieht einfach aus wie eine hochpreisige Produktion.", name: "Marc Tessmer", role: "Gründer", img: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop" },
   { quote: "Das persönliche Onboarding und die unfassbar schnelle Umsetzung (unter 3 Wochen) haben mich komplett überzeugt. Ich kann dieses Modell jedem Unternehmer wärmstens empfehlen.", name: "Dr. Elena Schmidt", role: "Praxisleitung", img: "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=150&h=150&fit=crop" },
-  { quote: "Transparenz und Expertise. Bei Vanicy weiß ich genau, was ich zahle und was ich an hochklassigem Service dafür bekomme. Ein Gamechanger für unseren digitalen Vertrieb.", name: "Johannes Koch", role: "CEO, Koch Logistics", img: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=150&h=150&fit=crop" },
-  { quote: "Als wir von Baukastensystemen auf das Maß-Design von Vanicy umgestellt haben, stieg unsere Conversion-Rate enorm. Das Investment macht sich absolut bezahlt.", name: "Michelle Drechsler", role: "Senior Consultant", img: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&h=150&fit=crop" }
+  { quote: "Transparenz und Expertise. Bei VANICY weiß ich genau, was ich zahle und was ich an hochklassigem Service dafür bekomme. Ein Gamechanger für unseren digitalen Vertrieb.", name: "Johannes Koch", role: "CEO, Koch Logistics", img: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=150&h=150&fit=crop" },
+  { quote: "Als wir von Baukastensystemen auf das Maß-Design von VANICY umgestellt haben, stieg unsere Conversion-Rate enorm. Das Investment macht sich absolut bezahlt.", name: "Michelle Drechsler", role: "Senior Consultant", img: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&h=150&fit=crop" }
 ];
 
 export default function Home() {
@@ -467,7 +467,7 @@ export default function Home() {
                 >
                   Gute, individuell designte Websites kosten als einmalige Investition schnell zwischen <strong>5.000 € und 15.000 €</strong>. Für viele Unternehmen ist das eine hohe finanzielle Belastung.
                   <br/><br/>
-                  Beim <strong>Website Leasing</strong> von Vanicy übernehmen wir die gesamte Entwicklung deiner High-End Homepage auf unsere Kappe. Anstatt tausende Euros im Voraus zu bezahlen, zahlst du lediglich eine planbare, <strong>niedrige monatliche Rate</strong>. Alles inklusive.
+                  Beim <strong>Website Leasing</strong> von VANICY übernehmen wir die gesamte Entwicklung deiner High-End Homepage auf unsere Kappe. Anstatt tausende Euros im Voraus zu bezahlen, zahlst du lediglich eine planbare, <strong>niedrige monatliche Rate</strong>. Alles inklusive.
                 </motion.p>
                 
                 <motion.ul
@@ -518,7 +518,7 @@ export default function Home() {
                        </div>
                        
                        <div>
-                         <span className="text-rose-500 font-bold block mb-1">Vanicy Leasing</span>
+                         <span className="text-rose-500 font-bold block mb-1">VANICY Leasing</span>
                          <h3 className="text-4xl md:text-5xl font-black text-slate-900 mb-3 transform -rotate-1 origin-left">
                            <span className="bg-clip-text text-transparent bg-gradient-to-r from-rose-500 to-purple-600">
                              ab 129 € / Monat

@@ -30,9 +30,9 @@ function AnimatedNumber({ value }: { value: number }) {
 export function HeroInteractiveDashboard() {
   const [visitors, setVisitors] = useState(3000);
 
-  const withoutVanicy = Math.round(visitors * 0.012);
-  const withVanicy = Math.round(visitors * 0.038);
-  const uplift = withVanicy - withoutVanicy;
+  const withoutVANICY = Math.round(visitors * 0.012);
+  const withVANICY = Math.round(visitors * 0.038);
+  const uplift = withVANICY - withoutVANICY;
   const yearly = uplift * 12;
 
   const percentage = ((visitors - 500) / (20000 - 500)) * 100;
@@ -120,7 +120,7 @@ export function HeroInteractiveDashboard() {
           {/* Right Column: Visualization */}
           <div className="w-full lg:w-[45%] p-6 md:p-8 bg-white/5 backdrop-blur-md relative z-10 flex flex-col justify-center">
             
-            {/* Top Card: Ohne Vanicy */}
+            {/* Top Card: Ohne VANICY */}
             <div className="bg-rose-950/30 border border-rose-900/50 rounded-2xl p-5 mb-4 relative overflow-hidden shrink-0">
                <div className="absolute -top-4 -right-4 p-3 opacity-10">
                  <AlertTriangle className="w-24 h-24 text-rose-500" />
@@ -129,7 +129,7 @@ export function HeroInteractiveDashboard() {
                  <span className="text-[10px] font-bold text-rose-400/80 uppercase tracking-widest mb-1 block">Ohne VANICY</span>
                  <div className="flex items-baseline gap-2">
                    <span className="text-3xl md:text-4xl font-black text-rose-100/90 tracking-tighter">
-                     <AnimatedNumber value={withoutVanicy} />
+                     <AnimatedNumber value={withoutVANICY} />
                    </span>
                    <span className="text-xs font-medium text-rose-200/60 uppercase tracking-wider">Anfragen / Monat</span>
                  </div>
@@ -144,7 +144,7 @@ export function HeroInteractiveDashboard() {
                </div>
             </div>
 
-            {/* Bottom Card: Mit Vanicy */}
+            {/* Bottom Card: Mit VANICY */}
             <div className="bg-gradient-to-br from-rose-500/10 to-purple-600/10 border border-rose-400/20 rounded-2xl p-5 mt-4 relative overflow-hidden group/card transition-all duration-300 hover:border-purple-400/30 shrink-0">
                {/* Hover Glow */}
                <div className="absolute inset-0 bg-gradient-to-tr from-rose-500/20 to-purple-600/20 opacity-0 group-hover/card:opacity-100 transition-opacity duration-500 pointer-events-none blur-xl"></div>
@@ -153,7 +153,7 @@ export function HeroInteractiveDashboard() {
                  <span className="text-[10px] font-bold text-white/80 uppercase tracking-widest mb-1 block">Mit VANICY</span>
                  <div className="flex items-baseline gap-2">
                    <span className="text-4xl md:text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-rose-400 to-purple-400 tracking-tighter drop-shadow-lg">
-                     <AnimatedNumber value={withVanicy} />
+                     <AnimatedNumber value={withVANICY} />
                    </span>
                    <span className="text-xs font-medium text-purple-200/60 uppercase tracking-wider pt-1">Anfragen / Monat</span>
                  </div>

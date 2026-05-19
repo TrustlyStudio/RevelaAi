@@ -9,19 +9,19 @@ export const metadata: Metadata = {
   },
   title: "Datenschutzerklärung",
   description:
-    "Datenschutzerklärung von Vanicy Webseitenleasing. Informationen zu DSGVO, Cookies, Auftragsverarbeitung und Datensicherheit.",
+    "Datenschutzerklärung von VANICY Webseitenleasing. Informationen zu DSGVO, Cookies, Auftragsverarbeitung und Datensicherheit.",
   keywords: [
     "Datenschutz",
     "Datenschutzerklärung",
     "Privacy Policy",
     "DSGVO",
-    "Vanicy Datenschutz",
+    "VANICY Datenschutz",
     "B2B Webseitenleasing Datenschutz",
   ],
   openGraph: {
-    title: "Datenschutzerklärung | Vanicy",
+    title: "Datenschutzerklärung | VANICY",
     description:
-      "Datenschutzerklärung von Vanicy Webseitenleasing. Informationen zu DSGVO, Cookies, Auftragsverarbeitung und Datensicherheit.",
+      "Datenschutzerklärung von VANICY Webseitenleasing. Informationen zu DSGVO, Cookies, Auftragsverarbeitung und Datensicherheit.",
     url: "https://vanicy.de/datenschutz",
   },
   alternates: {

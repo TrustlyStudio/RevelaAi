@@ -136,7 +136,7 @@ export function LeadPopup() {
                         />
                      </svg>
                      
-                     {/* Vanicy Line */}
+                     {/* VANICY Line */}
                      <motion.div 
                         initial={{ height: "40%" }} 
                         animate={{ height: "90%" }} 

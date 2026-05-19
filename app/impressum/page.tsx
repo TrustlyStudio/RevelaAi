@@ -8,11 +8,11 @@ export const metadata: Metadata = {
     follow: false,
   },
   title: 'Impressum',
-  description: 'Impressum von Vanicy - Gurev & Schwabauer GbR. Rechtliche Hinweise und Angaben gemäß § 5 DDG.',
-  keywords: ['Impressum', 'Rechtliches', 'Gurev & Schwabauer GbR', 'Vanicy Impressum', 'B2B Webseitenleasing'],
+  description: 'Impressum von VANICY - Gurev & Schwabauer GbR. Rechtliche Hinweise und Angaben gemäß § 5 DDG.',
+  keywords: ['Impressum', 'Rechtliches', 'Gurev & Schwabauer GbR', 'VANICY Impressum', 'B2B Webseitenleasing'],
   openGraph: {
-    title: 'Impressum | Vanicy',
-    description: 'Impressum von Vanicy - Gurev & Schwabauer GbR. Rechtliche Hinweise und Angaben gemäß § 5 DDG.',
+    title: 'Impressum | VANICY',
+    description: 'Impressum von VANICY - Gurev & Schwabauer GbR. Rechtliche Hinweise und Angaben gemäß § 5 DDG.',
     url: 'https://vanicy.de/impressum',
   },
   alternates: {
