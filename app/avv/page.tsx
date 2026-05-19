@@ -18,11 +18,11 @@ export const metadata: Metadata = {
 
 export default function AVV() {
   return (
-    <div className="flex flex-col min-h-screen bg-slate-50 font-sans text-slate-900 leading-relaxed">
+    <div className="flex flex-col min-h-screen bg-slate-50 font-sans text-slate-900 leading-relaxed overflow-x-hidden break-words">
       <Header />
-      <main className="flex-grow pt-32 pb-20 max-w-4xl mx-auto px-6">
-        <h1 className="text-3xl md:text-4xl font-black mb-2 text-transparent bg-clip-text bg-gradient-to-r from-rose-500 to-purple-600 uppercase tracking-tight">
-          Auftragsverarbeitungsvertrag (AVV)
+      <main className="flex-grow w-full pt-24 md:pt-32 pb-16 md:pb-20 max-w-4xl mx-auto px-4 sm:px-6">
+        <h1 className="text-3xl md:text-4xl lg:text-5xl font-black mb-2 text-transparent bg-clip-text bg-gradient-to-r from-rose-500 to-purple-600 uppercase tracking-tight">
+          Auftrags&shy;verarbeitungs&shy;vertrag (AVV)
         </h1>
         <p className="text-slate-600 font-medium mb-2">gemäß Art. 28 DSGVO</p>
         <p className="text-slate-500 font-medium mb-10">Stand: 19. Mai 2026</p>
@@ -38,9 +38,9 @@ export default function AVV() {
           <p className="text-sm text-slate-500">(nachfolgend: Auftraggeber)</p>
         </div>
         
-        <div className="space-y-10 text-slate-700">
+        <div className="space-y-8 md:space-y-10 text-slate-700">
           <section>
-            <h2 className="text-2xl font-bold text-slate-900 mb-4 flex items-center gap-3">
+            <h2 className="text-xl md:text-2xl font-bold text-slate-900 mb-4 flex items-center gap-3">
               <span className="flex items-center justify-center w-8 h-8 rounded-lg bg-rose-100 text-rose-600 text-sm font-bold">§ 1</span>
               Gegenstand und Dauer
             </h2>
@@ -52,7 +52,7 @@ export default function AVV() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-slate-900 mb-4 flex items-center gap-3">
+            <h2 className="text-xl md:text-2xl font-bold text-slate-900 mb-4 flex items-center gap-3">
               <span className="flex items-center justify-center w-8 h-8 rounded-lg bg-rose-100 text-rose-600 text-sm font-bold">§ 2</span>
               Art und Zweck der Datenverarbeitung
             </h2>
@@ -73,7 +73,7 @@ export default function AVV() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-slate-900 mb-4 flex items-center gap-3">
+            <h2 className="text-xl md:text-2xl font-bold text-slate-900 mb-4 flex items-center gap-3">
               <span className="flex items-center justify-center w-8 h-8 rounded-lg bg-rose-100 text-rose-600 text-sm font-bold">§ 3</span>
               Weisungsrecht des Auftraggebers
             </h2>
@@ -85,7 +85,7 @@ export default function AVV() {
           </section>
 
           <section className="bg-white p-6 rounded-2xl border-l-4 border-rose-500 shadow-sm">
-            <h2 className="text-2xl font-bold text-slate-900 mb-4 flex items-center gap-3">
+            <h2 className="text-xl md:text-2xl font-bold text-slate-900 mb-4 flex items-center gap-3">
               <span className="flex items-center justify-center w-8 h-8 rounded-lg bg-rose-100 text-rose-600 text-sm font-bold">§ 4</span>
               Technische und organisatorische Maßnahmen (TOMs)
             </h2>
@@ -103,7 +103,7 @@ export default function AVV() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-slate-900 mb-4 flex items-center gap-3">
+            <h2 className="text-xl md:text-2xl font-bold text-slate-900 mb-4 flex items-center gap-3">
               <span className="flex items-center justify-center w-8 h-8 rounded-lg bg-rose-100 text-rose-600 text-sm font-bold">§ 5</span>
               Unterauftragnehmer
             </h2>
@@ -145,7 +145,7 @@ export default function AVV() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-slate-900 mb-4 flex items-center gap-3">
+            <h2 className="text-xl md:text-2xl font-bold text-slate-900 mb-4 flex items-center gap-3">
               <span className="flex items-center justify-center w-8 h-8 rounded-lg bg-rose-100 text-rose-600 text-sm font-bold">§ 6</span>
               Pflichten des Auftragnehmers
             </h2>
@@ -162,7 +162,7 @@ export default function AVV() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-slate-900 mb-4 flex items-center gap-3">
+            <h2 className="text-xl md:text-2xl font-bold text-slate-900 mb-4 flex items-center gap-3">
               <span className="flex items-center justify-center w-8 h-8 rounded-lg bg-rose-100 text-rose-600 text-sm font-bold">§ 7</span>
               Verletzung des Schutzes personenbezogener Daten
             </h2>
@@ -170,7 +170,7 @@ export default function AVV() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-slate-900 mb-4 flex items-center gap-3">
+            <h2 className="text-xl md:text-2xl font-bold text-slate-900 mb-4 flex items-center gap-3">
               <span className="flex items-center justify-center w-8 h-8 rounded-lg bg-rose-100 text-rose-600 text-sm font-bold">§ 8</span>
               Rechte der betroffenen Personen
             </h2>
@@ -178,7 +178,7 @@ export default function AVV() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-slate-900 mb-4 flex items-center gap-3">
+            <h2 className="text-xl md:text-2xl font-bold text-slate-900 mb-4 flex items-center gap-3">
               <span className="flex items-center justify-center w-8 h-8 rounded-lg bg-rose-100 text-rose-600 text-sm font-bold">§ 9</span>
               Löschung und Rückgabe
             </h2>
@@ -189,7 +189,7 @@ export default function AVV() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-slate-900 mb-4 flex items-center gap-3">
+            <h2 className="text-xl md:text-2xl font-bold text-slate-900 mb-4 flex items-center gap-3">
               <span className="flex items-center justify-center w-8 h-8 rounded-lg bg-rose-100 text-rose-600 text-sm font-bold">§ 10</span>
               Haftung
             </h2>
@@ -197,7 +197,7 @@ export default function AVV() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-slate-900 mb-4 flex items-center gap-3">
+            <h2 className="text-xl md:text-2xl font-bold text-slate-900 mb-4 flex items-center gap-3">
               <span className="flex items-center justify-center w-8 h-8 rounded-lg bg-rose-100 text-rose-600 text-sm font-bold">§ 11</span>
               Inkrafttreten
             </h2>

@@ -18,15 +18,15 @@ export const metadata: Metadata = {
 
 export default function AGB() {
   return (
-    <div className="flex flex-col min-h-screen bg-slate-50 font-sans text-slate-900 leading-relaxed">
+    <div className="flex flex-col min-h-screen bg-slate-50 font-sans text-slate-900 leading-relaxed overflow-x-hidden break-words">
       <Header />
-      <main className="flex-grow pt-32 pb-20 max-w-4xl mx-auto px-6">
-        <h1 className="text-4xl font-black mb-2 text-transparent bg-clip-text bg-gradient-to-r from-rose-500 to-purple-600 uppercase tracking-tight">Allgemeine Geschäftsbedingungen (AGB)</h1>
+      <main className="flex-grow w-full pt-24 md:pt-32 pb-16 md:pb-20 max-w-4xl mx-auto px-4 sm:px-6">
+        <h1 className="text-3xl md:text-4xl lg:text-5xl font-black mb-2 text-transparent bg-clip-text bg-gradient-to-r from-rose-500 to-purple-600 uppercase tracking-tight">Allgemeine Geschäfts&shy;bedingungen (AGB)</h1>
         <p className="text-slate-500 font-medium mb-8">Stand: 19. Mai 2026</p>
         
-        <div className="space-y-10 text-slate-700">
+        <div className="space-y-8 md:space-y-10 text-slate-700">
           <section>
-            <h2 className="text-2xl font-bold text-slate-900 mb-4 flex items-center gap-3">
+            <h2 className="text-xl md:text-2xl font-bold text-slate-900 mb-4 flex items-center gap-3">
               <span className="flex items-center justify-center w-8 h-8 rounded-lg bg-rose-100 text-rose-600 text-sm font-bold">§ 1</span>
               Vertragspartner und Geltungsbereich
             </h2>
@@ -38,7 +38,7 @@ export default function AGB() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-slate-900 mb-4 flex items-center gap-3">
+            <h2 className="text-xl md:text-2xl font-bold text-slate-900 mb-4 flex items-center gap-3">
               <span className="flex items-center justify-center w-8 h-8 rounded-lg bg-rose-100 text-rose-600 text-sm font-bold">§ 2</span>
               Vertragsgegenstand – das WebLeasing-Modell
             </h2>
@@ -50,7 +50,7 @@ export default function AGB() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-slate-900 mb-4 flex items-center gap-3">
+            <h2 className="text-xl md:text-2xl font-bold text-slate-900 mb-4 flex items-center gap-3">
               <span className="flex items-center justify-center w-8 h-8 rounded-lg bg-rose-100 text-rose-600 text-sm font-bold">§ 3</span>
               Vertragsschluss
             </h2>
@@ -61,7 +61,7 @@ export default function AGB() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-slate-900 mb-4 flex items-center gap-3">
+            <h2 className="text-xl md:text-2xl font-bold text-slate-900 mb-4 flex items-center gap-3">
               <span className="flex items-center justify-center w-8 h-8 rounded-lg bg-rose-100 text-rose-600 text-sm font-bold">§ 4</span>
               Testphase
             </h2>
@@ -73,7 +73,7 @@ export default function AGB() {
           </section>
 
           <section className="bg-white p-6 rounded-2xl border-l-4 border-rose-500 shadow-sm">
-            <h2 className="text-2xl font-bold text-slate-900 mb-4 flex items-center gap-3">
+            <h2 className="text-xl md:text-2xl font-bold text-slate-900 mb-4 flex items-center gap-3">
               <span className="flex items-center justify-center w-8 h-8 rounded-lg bg-rose-100 text-rose-600 text-sm font-bold">§ 5</span>
               Onboarding-Phase und Abnahme
             </h2>
@@ -85,7 +85,7 @@ export default function AGB() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-slate-900 mb-4 flex items-center gap-3">
+            <h2 className="text-xl md:text-2xl font-bold text-slate-900 mb-4 flex items-center gap-3">
               <span className="flex items-center justify-center w-8 h-8 rounded-lg bg-rose-100 text-rose-600 text-sm font-bold">§ 6</span>
               Vergütung, Zahlung und SEPA
             </h2>
@@ -99,7 +99,7 @@ export default function AGB() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-slate-900 mb-4 flex items-center gap-3">
+            <h2 className="text-xl md:text-2xl font-bold text-slate-900 mb-4 flex items-center gap-3">
               <span className="flex items-center justify-center w-8 h-8 rounded-lg bg-rose-100 text-rose-600 text-sm font-bold">§ 7</span>
               Laufzeit und Kündigung
             </h2>
@@ -120,7 +120,7 @@ export default function AGB() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-slate-900 mb-4 flex items-center gap-3">
+            <h2 className="text-xl md:text-2xl font-bold text-slate-900 mb-4 flex items-center gap-3">
               <span className="flex items-center justify-center w-8 h-8 rounded-lg bg-rose-100 text-rose-600 text-sm font-bold">§ 8</span>
               Leistungsänderungen und Upgrades
             </h2>
@@ -131,7 +131,7 @@ export default function AGB() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-slate-900 mb-4 flex items-center gap-3">
+            <h2 className="text-xl md:text-2xl font-bold text-slate-900 mb-4 flex items-center gap-3">
               <span className="flex items-center justify-center w-8 h-8 rounded-lg bg-rose-100 text-rose-600 text-sm font-bold">§ 9</span>
               Nutzungsrechte, Eigentum und Buyout-Option
             </h2>
@@ -144,7 +144,7 @@ export default function AGB() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-slate-900 mb-4 flex items-center gap-3">
+            <h2 className="text-xl md:text-2xl font-bold text-slate-900 mb-4 flex items-center gap-3">
               <span className="flex items-center justify-center w-8 h-8 rounded-lg bg-rose-100 text-rose-600 text-sm font-bold">§ 10</span>
               Verantwortlichkeit für Inhalte und Freistellung
             </h2>
@@ -155,7 +155,7 @@ export default function AGB() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-slate-900 mb-4 flex items-center gap-3">
+            <h2 className="text-xl md:text-2xl font-bold text-slate-900 mb-4 flex items-center gap-3">
               <span className="flex items-center justify-center w-8 h-8 rounded-lg bg-rose-100 text-rose-600 text-sm font-bold">§ 11</span>
               Verfügbarkeit und Support
             </h2>
@@ -169,7 +169,7 @@ export default function AGB() {
           </section>
           
           <section>
-            <h2 className="text-2xl font-bold text-slate-900 mb-4 flex items-center gap-3">
+            <h2 className="text-xl md:text-2xl font-bold text-slate-900 mb-4 flex items-center gap-3">
               <span className="flex items-center justify-center w-8 h-8 rounded-lg bg-rose-100 text-rose-600 text-sm font-bold">§ 12</span>
               Datenschutz
             </h2>
@@ -180,7 +180,7 @@ export default function AGB() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-slate-900 mb-4 flex items-center gap-3">
+            <h2 className="text-xl md:text-2xl font-bold text-slate-900 mb-4 flex items-center gap-3">
               <span className="flex items-center justify-center w-8 h-8 rounded-lg bg-rose-100 text-rose-600 text-sm font-bold">§ 13</span>
               Haftung
             </h2>
@@ -192,7 +192,7 @@ export default function AGB() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-slate-900 mb-4 flex items-center gap-3">
+            <h2 className="text-xl md:text-2xl font-bold text-slate-900 mb-4 flex items-center gap-3">
               <span className="flex items-center justify-center w-8 h-8 rounded-lg bg-rose-100 text-rose-600 text-sm font-bold">§ 14</span>
               Auftragsverarbeitung
             </h2>
@@ -202,7 +202,7 @@ export default function AGB() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-slate-900 mb-4 flex items-center gap-3">
+            <h2 className="text-xl md:text-2xl font-bold text-slate-900 mb-4 flex items-center gap-3">
               <span className="flex items-center justify-center w-8 h-8 rounded-lg bg-rose-100 text-rose-600 text-sm font-bold">§ 15</span>
               Schlussbestimmungen
             </h2>

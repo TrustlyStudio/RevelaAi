@@ -543,7 +543,7 @@ export default function Home() {
                             </div>
 
                             <div className="flex flex-col sm:flex-row gap-4 items-center">
-                              <Link href="/#methode" onClick={() => setSelectedProblem(null)} className="w-full sm:w-auto text-center px-6 py-3 bg-slate-900 text-white rounded-xl font-bold shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all">
+                              <Link href="/#process" onClick={() => setSelectedProblem(null)} className="w-full sm:w-auto text-center px-6 py-3 bg-slate-900 text-white rounded-xl font-bold shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all">
                                 Wie wir das lösen
                               </Link>
                               <button onClick={() => setSelectedProblem(null)} className="w-full sm:w-auto px-6 py-3 bg-white text-slate-600 rounded-xl font-bold hover:bg-slate-50 transition-colors">
@@ -557,8 +557,8 @@ export default function Home() {
                   </AnimatePresence>
                 </section>
 
-        {/* --- THE SOLUTION / METHOD --- */}
-        <section className="py-20 lg:py-32 bg-white relative border-t border-slate-200">
+        {/* --- THE SOLUTION / METHOD / PROCESS --- */}
+        <section id="process" className="py-20 lg:py-32 bg-white relative border-t border-slate-200">
           <motion.div 
             initial="hidden"
             whileInView="visible"
@@ -609,7 +609,7 @@ export default function Home() {
 
               <motion.div variants={fadeInUp} className="order-1 lg:order-2">
                 <h3 className="text-3xl md:text-4xl font-sans font-bold text-slate-900 tracking-tight mb-6">
-                  Mieten statt teuer kaufen.
+                  Der Vanicy Prozess:<br className="hidden md:block"/> Von 0 auf Live – in unter 4 Wochen.
                 </h3>
                 <p className="text-lg text-slate-600 mb-10 leading-relaxed">
                   Vergiss hohe Einmalzahlungen. Wir haben den Markt umgekrempelt: Bei uns bekommst du eine moderne, hochwertige Website im bequemen Abo. Wir kümmern uns um die komplizierte Technik und halten alles am Laufen.

@@ -27,17 +27,17 @@ export const metadata: Metadata = {
 
 export default function Datenschutz() {
   return (
-    <div className="flex flex-col min-h-screen bg-slate-50 font-sans text-slate-900 leading-relaxed">
+    <div className="flex flex-col min-h-screen bg-slate-50 font-sans text-slate-900 leading-relaxed overflow-x-hidden break-words">
       <Header />
-      <main className="flex-grow pt-32 pb-20 max-w-4xl mx-auto px-6">
-        <h1 className="text-4xl font-black mb-4 text-transparent bg-clip-text bg-gradient-to-r from-rose-500 to-purple-600">
-          Datenschutzerklärung
+      <main className="flex-grow w-full pt-24 md:pt-32 pb-16 md:pb-20 max-w-4xl mx-auto px-4 sm:px-6">
+        <h1 className="text-3xl md:text-4xl lg:text-5xl font-black mb-4 text-transparent bg-clip-text bg-gradient-to-r from-rose-500 to-purple-600">
+          Datenschutz&shy;erklärung
         </h1>
         <p className="text-slate-500 font-medium mb-10">Stand: 19. Mai 2026</p>
 
-        <div className="space-y-10 text-slate-700">
+        <div className="space-y-8 md:space-y-10 text-slate-700">
           <section>
-            <h2 className="text-2xl font-bold text-slate-900 mb-4 pb-2 border-b border-slate-200">
+            <h2 className="text-xl md:text-2xl font-bold text-slate-900 mb-4 pb-2 border-b border-slate-200">
               1. Datenschutz auf einen Blick
             </h2>
 
@@ -118,7 +118,7 @@ export default function Datenschutz() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-slate-900 mb-4 pb-2 border-b border-slate-200">
+            <h2 className="text-xl md:text-2xl font-bold text-slate-900 mb-4 pb-2 border-b border-slate-200">
               2. Hosting
             </h2>
             <p className="mb-4">
@@ -178,7 +178,7 @@ export default function Datenschutz() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-slate-900 mb-4 pb-2 border-b border-slate-200">
+            <h2 className="text-xl md:text-2xl font-bold text-slate-900 mb-4 pb-2 border-b border-slate-200">
               3. Allgemeine Hinweise und Pflichtinformationen
             </h2>
 
@@ -450,7 +450,7 @@ export default function Datenschutz() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-slate-900 mb-4 pb-2 border-b border-slate-200">
+            <h2 className="text-xl md:text-2xl font-bold text-slate-900 mb-4 pb-2 border-b border-slate-200">
               4. Datenerfassung auf dieser Website
             </h2>
 
@@ -865,7 +865,7 @@ export default function Datenschutz() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-slate-900 mb-4 pb-2 border-b border-slate-200">
+            <h2 className="text-xl md:text-2xl font-bold text-slate-900 mb-4 pb-2 border-b border-slate-200">
               5. Soziale Medien
             </h2>
 
@@ -941,7 +941,7 @@ export default function Datenschutz() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-slate-900 mb-4 pb-2 border-b border-slate-200">
+            <h2 className="text-xl md:text-2xl font-bold text-slate-900 mb-4 pb-2 border-b border-slate-200">
               6. Analyse-Tools
             </h2>
 
@@ -1013,7 +1013,7 @@ export default function Datenschutz() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-slate-900 mb-4 pb-2 border-b border-slate-200">
+            <h2 className="text-xl md:text-2xl font-bold text-slate-900 mb-4 pb-2 border-b border-slate-200">
               7. Online-Werbung
             </h2>
 
@@ -1238,7 +1238,7 @@ export default function Datenschutz() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-slate-900 mb-4 pb-2 border-b border-slate-200">
+            <h2 className="text-xl md:text-2xl font-bold text-slate-900 mb-4 pb-2 border-b border-slate-200">
               8. CRM und Kundenverwaltung
             </h2>
             <h3 className="text-xl font-bold text-slate-900 mt-6 mb-3 text-rose-500">
@@ -1270,7 +1270,7 @@ export default function Datenschutz() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-slate-900 mb-4 pb-2 border-b border-slate-200">
+            <h2 className="text-xl md:text-2xl font-bold text-slate-900 mb-4 pb-2 border-b border-slate-200">
               9. Kommunikation und Konferenzen
             </h2>
 
@@ -1327,7 +1327,7 @@ export default function Datenschutz() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-slate-900 mb-4 pb-2 border-b border-slate-200">
+            <h2 className="text-xl md:text-2xl font-bold text-slate-900 mb-4 pb-2 border-b border-slate-200">
               10. Plugins und Tools
             </h2>
 
@@ -1454,7 +1454,7 @@ export default function Datenschutz() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-slate-900 mb-4 pb-2 border-b border-slate-200">
+            <h2 className="text-xl md:text-2xl font-bold text-slate-900 mb-4 pb-2 border-b border-slate-200">
               11. Einsatz von Künstlicher Intelligenz
             </h2>
             <p className="mb-4">
@@ -1517,7 +1517,7 @@ export default function Datenschutz() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-slate-900 mb-4 pb-2 border-b border-slate-200">
+            <h2 className="text-xl md:text-2xl font-bold text-slate-900 mb-4 pb-2 border-b border-slate-200">
               12. Eigene Dienste
             </h2>
 
@@ -1559,7 +1559,7 @@ export default function Datenschutz() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-slate-900 mb-4 pb-2 border-b border-slate-200">
+            <h2 className="text-xl md:text-2xl font-bold text-slate-900 mb-4 pb-2 border-b border-slate-200">
               13. Auftragsverarbeitung
             </h2>
             <p className="mb-4">
@@ -1738,7 +1738,7 @@ export default function Datenschutz() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-slate-900 mb-4 pb-2 border-b border-slate-200">
+            <h2 className="text-xl md:text-2xl font-bold text-slate-900 mb-4 pb-2 border-b border-slate-200">
               14. Aktualität und Änderungen
             </h2>
             <p className="mb-4">
