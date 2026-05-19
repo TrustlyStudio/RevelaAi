@@ -46,12 +46,15 @@ export function Footer() {
           {/* Contact Col */}
           <div>
             <h4 className="text-white font-bold mb-6 text-sm">Kontakt</h4>
-            <ul className="space-y-4 text-sm font-medium">
+            <ul className="space-y-4 text-sm font-medium mb-6">
               <li className="flex items-start gap-3">
                 <span className="block text-slate-500">Email</span>
                 <a href="mailto:hello@vanicy.de" className="hover:text-white transition-colors text-slate-300">hello@vanicy.de</a>
               </li>
             </ul>
+            <p className="text-xs text-slate-600 leading-relaxed max-w-[250px]">
+              VANICY ist deine WebLeasing-Agentur aus Reutlingen. Wir betreuen Unternehmen in Reutlingen, Tübingen, Stuttgart und deutschlandweit – darunter auch Kunden in Landshut und ganz Bayern.
+            </p>
           </div>
         </div>
 

@@ -12,6 +12,8 @@ const inter = Inter({
 import { CookieBanner } from '@/components/CookieBanner';
 import { CookieScripts } from '@/components/CookieScripts';
 
+import { ThirdPartyScripts } from '@/components/Scripts';
+
 export const metadata: Metadata = {
   metadataBase: new URL('https://vanicy.de'),
   title: {
@@ -39,9 +41,6 @@ export const metadata: Metadata = {
     index: true,
     follow: true,
   },
-  alternates: {
-    canonical: '/',
-  },
   verification: {
     // google: 'your-google-verification-code',
     // bing: 'your-bing-verification-code',
@@ -49,57 +48,20 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
-  const jsonLdOrg = {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "Vanicy",
-    "url": "https://vanicy.de",
-    "logo": "https://vanicy.de/Vanicy_Logo_Icon_TransparentBG.png",
-    "description": "Vanicy bietet professionelles Webseitenleasing für B2B und B2C Unternehmen. Wir erstellen conversion-starke, KI-optimierte Webseiten zur Miete.",
-    "contactPoint": { 
-      "@type": "ContactPoint", 
-      "contactType": "customer service" 
-    },
-    "sameAs": [] // social media URLs placeholder
-  };
-
-  const jsonLdWebSite = {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    "name": "Vanicy",
-    "url": "https://vanicy.de",
-    "description": "Professionelles Webseitenleasing von Vanicy. Conversion-starke Websites zur Miete ab 209€/Monat.",
-    "inLanguage": "de-DE"
-  };
-
-  const jsonLdLocalBusiness = {
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "name": "Vanicy",
-    "description": "Professionelles Webseitenleasing und Webdesign-Agentur. Wir erstellen maßgeschneiderte Homepages für Ihren Erfolg.",
-    "url": "https://vanicy.de",
-    "priceRange": "$$"
-  };
-
   return (
     <html lang="de" className={`scroll-smooth ${inter.variable}`}>
       <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <meta name="geo.region" content="DE-BW" />
+        <meta name="geo.placename" content="Reutlingen" />
+        <meta name="geo.position" content="48.4921;9.2041" />
+        <meta name="ICBM" content="48.4921, 9.2041" />
         <link rel="alternate" hrefLang="de" href="https://vanicy.de" />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdOrg) }}
-        />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdWebSite) }}
-        />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdLocalBusiness) }}
-        />
       </head>
       <body className="min-h-screen bg-brand-off-white font-sans text-brand-dark-blue transition-colors duration-300">
         <CookieScripts />
+        <ThirdPartyScripts />
         {children}
         <CookieBanner />
       </body>

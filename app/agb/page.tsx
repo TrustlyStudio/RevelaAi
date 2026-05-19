@@ -3,6 +3,10 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 
 export const metadata: Metadata = {
+  robots: {
+    index: false,
+    follow: false,
+  },
   title: 'Allgemeine Geschäftsbedingungen (AGB)',
   description: 'Allgemeine Geschäftsbedingungen (AGB) von VANICY (Gurev & Schwabauer GbR).',
   keywords: ['AGB', 'Geschäftsbedingungen', 'Rechtliches', 'Vanicy AGB', 'Webseitenleasing Konditionen'],

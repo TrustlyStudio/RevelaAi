@@ -2,16 +2,26 @@ import { Metadata } from 'next';
 import PreisePage from './PreisePage';
 
 export const metadata: Metadata = {
-  title: 'Preise & Pakete',
-  description: 'Transparente Preise für dein Premium Webseitenleasing bei Vanicy. Vergleiche unsere All-Inclusive-Tarife Essential, Business und Pro. Jetzt ab 209€ mtl. starten.',
-  keywords: ['Vanicy Preise', 'Webseitenleasing Tarife', 'Website Kosten', 'Homepage mieten', 'Webdesign Agentur Preise', 'B2B Webleasing Kosten', 'Website monatlich zahlen', 'Essential Business Pro Pakete'],
-  openGraph: {
-    title: 'Preise & Pakete | Vanicy Webseitenleasing',
-    description: 'Transparente Preise für dein Premium Webseitenleasing bei Vanicy. Vergleiche unsere All-Inclusive-Tarife Essential, Business und Pro. Jetzt ab 209€ mtl. starten.',
-    url: 'https://vanicy.de/preise',
-  },
+  title: 'WebLeasing Pakete & Preise ab 129€ | VANICY Reutlingen',
+  description: 'Essential ab 129€ (24 Mon.) oder 149€ (12 Mon.), Business ab 189€, Pro ab 399€ pro Monat. Alle Pakete inkl. Hosting, SSL, SEO & Änderungen. 0€ Einrichtungsgebühr.',
   alternates: {
     canonical: 'https://vanicy.de/preise',
+  },
+  openGraph: {
+    title: 'WebLeasing Pakete & Preise ab 129€ | VANICY Reutlingen',
+    description: 'Essential ab 129€ (24 Mon.) oder 149€ (12 Mon.), Business ab 189€, Pro ab 399€ pro Monat. Alle Pakete inkl. Hosting, SSL, SEO & Änderungen. 0€ Einrichtungsgebühr.',
+    type: 'website',
+    siteName: 'VANICY',
+    locale: 'de_DE',
+    url: 'https://vanicy.de/preise',
+    images: [{
+      url: 'https://vanicy.de/og-image.png',
+      width: 1200,
+      height: 630,
+    }],
+  },
+  twitter: {
+    card: 'summary_large_image',
   },
 };
 

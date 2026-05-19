@@ -114,6 +114,20 @@ export function WaitlistModal() {
     
     setIsSubmitting(true);
     try {
+      let token = '';
+      if (typeof window !== 'undefined' && (window as any).grecaptcha) {
+        token = await new Promise((resolve) => {
+          (window as any).grecaptcha.ready(() => {
+            (window as any).grecaptcha.execute(
+              process.env.NEXT_PUBLIC_RECAPTCHA_KEY || '6LfUYPIsAAAAAAegUgyhu9IE8BGSLhpFRE8JAGwz', 
+              { action: 'submit' }
+            ).then((t: string) => {
+              resolve(t);
+            });
+          });
+        });
+      }
+
       const { gotcha, ...submitData } = formData;
       const response = await fetch("/api/waitlist", {
         method: "POST",
@@ -123,7 +137,8 @@ export function WaitlistModal() {
         body: JSON.stringify({
           ...submitData,
           email: submitData.noEmail ? "Keine geschäftliche E-Mail vorhanden" : submitData.email,
-          _subject: `Neue Beratungs-Anfrage: ${submitData.unternehmen || submitData.name}`
+          _subject: `Neue Beratungs-Anfrage: ${submitData.unternehmen || submitData.name}`,
+          'g-recaptcha-response': token
         })
       });
       

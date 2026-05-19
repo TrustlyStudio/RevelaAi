@@ -3,6 +3,10 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 
 export const metadata: Metadata = {
+  robots: {
+    index: false,
+    follow: false,
+  },
   title: 'Impressum',
   description: 'Impressum von Vanicy - Gurev & Schwabauer GbR. Rechtliche Hinweise und Angaben gemäß § 5 DDG.',
   keywords: ['Impressum', 'Rechtliches', 'Gurev & Schwabauer GbR', 'Vanicy Impressum', 'B2B Webseitenleasing'],

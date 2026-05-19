@@ -372,7 +372,7 @@ export default function Home() {
                 transition={{ duration: 0.6, delay: 0.2 }}
                 className="text-base sm:text-lg text-slate-600 mb-8 max-w-xl mx-auto lg:mx-0 leading-relaxed font-medium"
               >
-                Keine teuren Einmalzahlungen. Wir designen, entwickeln und hosten deine neue Website – alles inklusive im bequemen Abo ab 149 €/Monat.
+                Keine teuren Einmalzahlungen. Wir designen, entwickeln und hosten deine neue Website – alles inklusive im bequemen Abo ab 129 €/Monat.
               </motion.p>
               
               <motion.div 
@@ -521,7 +521,7 @@ export default function Home() {
                          <span className="text-rose-500 font-bold block mb-1">Vanicy Leasing</span>
                          <h3 className="text-4xl md:text-5xl font-black text-slate-900 mb-3 transform -rotate-1 origin-left">
                            <span className="bg-clip-text text-transparent bg-gradient-to-r from-rose-500 to-purple-600">
-                             ab 149 € / Monat
+                             ab 129 € / Monat
                            </span>
                          </h3>
                          <p className="text-slate-700 font-medium leading-relaxed">Null Setup-Kosten. Immer auf dem neuesten technischen Stand. Hosting, Updates & inhaltliche Änderungen komplett inklusive.</p>

@@ -2,32 +2,31 @@ import { MetadataRoute } from 'next';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://vanicy.de';
-  const currentDate = new Date();
 
   return [
     {
       url: baseUrl,
-      lastModified: currentDate,
+      lastModified: '2024-05-19',
       changeFrequency: 'weekly',
       priority: 1.0,
     },
     {
       url: `${baseUrl}/preise`,
-      lastModified: currentDate,
+      lastModified: '2024-05-19',
       changeFrequency: 'weekly',
       priority: 0.9,
     },
     {
       url: `${baseUrl}/faq`,
-      lastModified: currentDate,
+      lastModified: '2024-05-19',
       changeFrequency: 'weekly',
       priority: 0.7,
     },
     {
-      url: `${baseUrl}/datenschutz`,
-      lastModified: currentDate,
+      url: `${baseUrl}/case-studies`,
+      lastModified: '2024-05-19',
       changeFrequency: 'monthly',
-      priority: 0.3,
+      priority: 0.8,
     },
   ];
 }

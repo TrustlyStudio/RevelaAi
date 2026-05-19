@@ -3,6 +3,10 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 
 export const metadata: Metadata = {
+  robots: {
+    index: false,
+    follow: false,
+  },
   title: 'Auftragsverarbeitungsvertrag (AVV)',
   description: 'Auftragsverarbeitungsvertrag (AVV) gemäß Art. 28 DSGVO von VANICY.',
   keywords: ['AVV', 'Auftragsverarbeitung', 'Datenschutz', 'DSGVO', 'Vanicy AVV', 'B2B AVV'],

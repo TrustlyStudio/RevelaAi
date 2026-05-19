@@ -3,6 +3,10 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 
 export const metadata: Metadata = {
+  robots: {
+    index: false,
+    follow: false,
+  },
   title: "Datenschutzerklärung",
   description:
     "Datenschutzerklärung von Vanicy Webseitenleasing. Informationen zu DSGVO, Cookies, Auftragsverarbeitung und Datensicherheit.",
