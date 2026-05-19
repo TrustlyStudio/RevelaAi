@@ -194,6 +194,16 @@ export default function AGB() {
           <section>
             <h2 className="text-2xl font-bold text-slate-900 mb-4 flex items-center gap-3">
               <span className="flex items-center justify-center w-8 h-8 rounded-lg bg-rose-100 text-rose-600 text-sm font-bold">§ 14</span>
+              Auftragsverarbeitung
+            </h2>
+            <div className="space-y-3">
+              <p>Soweit VANICY im Rahmen der Leistungserbringung personenbezogene Daten von Websitebesuchern des Auftraggebers verarbeitet, erfolgt dies auf Grundlage eines Auftragsverarbeitungsvertrags (AVV) gemäß Art. 28 DSGVO. Der AVV ist unter vanicy.de/avv abrufbar und wird durch Akzeptanz dieser AGB als vereinbart angesehen.</p>
+            </div>
+          </section>
+
+          <section>
+            <h2 className="text-2xl font-bold text-slate-900 mb-4 flex items-center gap-3">
+              <span className="flex items-center justify-center w-8 h-8 rounded-lg bg-rose-100 text-rose-600 text-sm font-bold">§ 15</span>
               Schlussbestimmungen
             </h2>
             <div className="space-y-3">

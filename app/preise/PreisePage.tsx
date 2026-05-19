@@ -114,7 +114,7 @@ const FeatureValue = ({ value, isBusiness, className = "font-semibold text-sm", 
 };
 
 export default function PreisePage() {
-  const [term, setTerm] = useState<12 | 24 | 36>(12);
+  const [term, setTerm] = useState<12 | 24>(12);
   const [openFaq, setOpenFaq] = useState<number | null>(null);
   const [isPromoModalOpen, setIsPromoModalOpen] = useState(false);
   const [checkoutUrl, setCheckoutUrl] = useState('');
@@ -126,19 +126,14 @@ export default function PreisePage() {
 
   const pricing = {
     12: {
-      essential: { price: 249, trialLink: "https://buy.stripe.com/00w6oA51u8cm2U0bNV77O0b", directLink: "https://buy.stripe.com/eVq9AM1PigIScuAcRZ77O0h" },
-      business: { price: 349, trialLink: "https://buy.stripe.com/9B65kw1PigIS2U0bNV77O0d", directLink: "https://buy.stripe.com/14A5kw2Tmboy3Y49FN77O0j" },
-      pro: { price: 599, link: "https://buy.stripe.com/cNidR2gKcfEOams19h77O0f" }
+      essential: { price: 149, trialLink: "https://buy.stripe.com/00w6oA51u8cm2U0bNV77O0b", directLink: "https://buy.stripe.com/eVq9AM1PigIScuAcRZ77O0h" },
+      business: { price: 229, trialLink: "https://buy.stripe.com/9B65kw1PigIS2U0bNV77O0d", directLink: "https://buy.stripe.com/14A5kw2Tmboy3Y49FN77O0j" },
+      pro: { price: 449, link: "https://buy.stripe.com/cNidR2gKcfEOams19h77O0f" }
     },
     24: {
-      essential: { price: 229, trialLink: "https://buy.stripe.com/eVqcMY79C3W6cuA4lt77O0c", directLink: "https://buy.stripe.com/00w3co8dG2S266cbNV77O0i" },
-      business: { price: 329, trialLink: "https://buy.stripe.com/00w4gs8dG8cmeCIdW377O0e", directLink: "https://buy.stripe.com/9B628keC4boy66c6tB77O0k" },
-      pro: { price: 579, link: "https://buy.stripe.com/8x2bIUeC4fEO8ekbNV77O0g" }
-    },
-    36: {
-      essential: { price: 209, trialLink: "https://buy.stripe.com/8x2cMYalOaku1PW19h77O06", directLink: "https://buy.stripe.com/8x2cMYalOaku1PW19h77O06" }, // Fallback to trial link for 36 months if direct not provided
-      business: { price: 309, trialLink: "https://buy.stripe.com/14A7sE79CfEO8ek7xF77O08", directLink: "https://buy.stripe.com/14A7sE79CfEO8ek7xF77O08" },
-      pro: { price: 559, link: "https://buy.stripe.com/cNibIUbpS50aeCI8BJ77O0a" }
+      essential: { price: 129, trialLink: "https://buy.stripe.com/eVqcMY79C3W6cuA4lt77O0c", directLink: "https://buy.stripe.com/00w3co8dG2S266cbNV77O0i" },
+      business: { price: 189, trialLink: "https://buy.stripe.com/00w4gs8dG8cmeCIdW377O0e", directLink: "https://buy.stripe.com/9B628keC4boy66c6tB77O0k" },
+      pro: { price: 399, link: "https://buy.stripe.com/8x2bIUeC4fEO8ekbNV77O0g" }
     }
   };
 
@@ -215,12 +210,6 @@ export default function PreisePage() {
                 <span className={`px-2 py-0.5 rounded-md text-[10px] uppercase font-black tracking-widest transition-colors shadow-sm ${term === 24 ? 'bg-gradient-to-r from-rose-500 to-purple-600 text-white' : 'bg-slate-200 text-slate-600'}`}>
                   Empfehlung
                 </span>
-              </button>
-              <button 
-                onClick={() => setTerm(36)}
-                className={`px-6 py-2.5 rounded-lg font-bold text-sm transition-all duration-200 ${term === 36 ? 'bg-white shadow-sm border border-slate-200/50 text-slate-900' : 'text-slate-500 hover:text-slate-800'}`}
-              >
-                36 Monate
               </button>
             </div>
           </div>
