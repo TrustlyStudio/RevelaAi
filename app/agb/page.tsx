@@ -4,11 +4,11 @@ import { Footer } from "@/components/Footer";
 
 export const metadata: Metadata = {
   title: 'Allgemeine Geschäftsbedingungen (AGB)',
-  description: 'Allgemeine Geschäftsbedingungen der Gurev & Schwabauer GbR (Vanicy). Regelungen zu Website-Abonnements, Onboarding und Zahlungsbedingungen.',
+  description: 'Allgemeine Geschäftsbedingungen (AGB) von VANICY (Gurev & Schwabauer GbR).',
   keywords: ['AGB', 'Geschäftsbedingungen', 'Rechtliches', 'Vanicy AGB', 'Webseitenleasing Konditionen'],
   openGraph: {
     title: 'AGB | Vanicy',
-    description: 'Allgemeine Geschäftsbedingungen der Gurev & Schwabauer GbR (Vanicy).',
+    description: 'Allgemeine Geschäftsbedingungen (AGB) von VANICY (Gurev & Schwabauer GbR).',
     url: 'https://vanicy.de/agb',
   },
   alternates: {
@@ -22,135 +22,188 @@ export default function AGB() {
       <Header />
       <main className="flex-grow pt-32 pb-20 max-w-4xl mx-auto px-6">
         <h1 className="text-4xl font-black mb-2 text-transparent bg-clip-text bg-gradient-to-r from-rose-500 to-purple-600 uppercase tracking-tight">Allgemeine Geschäftsbedingungen (AGB)</h1>
-        <p className="text-slate-500 font-medium mb-8">Stand: Mai 2026</p>
+        <p className="text-slate-500 font-medium mb-8">Stand: 19. Mai 2026</p>
         
         <div className="space-y-10 text-slate-700">
           <section>
             <h2 className="text-2xl font-bold text-slate-900 mb-4 flex items-center gap-3">
               <span className="flex items-center justify-center w-8 h-8 rounded-lg bg-rose-100 text-rose-600 text-sm font-bold">§ 1</span>
-              Geltungsbereich und Vertragspartner
+              Vertragspartner und Geltungsbereich
             </h2>
             <div className="space-y-3">
-              <p>(1) Diese Allgemeinen Geschäftsbedingungen (nachfolgend „AGB“) gelten für alle Verträge über Website-Abonnements, Marketing-Dienstleistungen und damit verbundene IT-Services, die zwischen der <strong>Gurev & Schwabauer GbR, Rennweg 57, 84034 Landshut</strong> (nachfolgend „Anbieter“) und ihren Kunden geschlossen werden.</p>
-              <p>(2) Das Angebot des Anbieters richtet sich <strong>ausschließlich an Unternehmer</strong> im Sinne des § 14 BGB, juristische Personen des öffentlichen Rechts oder öffentlich-rechtliche Sondervermögen (B2B). Verträge mit Verbrauchern im Sinne des § 13 BGB werden nicht geschlossen.</p>
-              <p>(3) Abweichende, entgegenstehende oder ergänzende Allgemeine Geschäftsbedingungen des Kunden werden nicht Vertragsbestandteil, es sei denn, der Anbieter stimmt ihrer Geltung ausdrücklich schriftlich zu.</p>
+              <p>(1) Diese Allgemeinen Geschäftsbedingungen gelten für alle Verträge zwischen der <strong>Gurev & Schwabauer GbR – handelnd unter dem Namen VANICY – Rennweg 57, 84034 Landshut</strong> (nachfolgend „VANICY“) und dem Auftraggeber über die Nutzung der WebLeasing-Dienste.</p>
+              <p>(2) Diese AGB gelten ausschließlich im geschäftlichen Verkehr (B2B). Vertragspartner sind ausschließlich Unternehmer im Sinne des § 14 BGB. Ein Vertragsschluss mit Verbrauchern im Sinne des § 13 BGB ist ausgeschlossen.</p>
+              <p>(3) Entgegenstehende oder abweichende Bedingungen des Auftraggebers werden nicht anerkannt, es sei denn, VANICY stimmt ihrer Geltung ausdrücklich schriftlich zu.</p>
             </div>
           </section>
 
           <section>
             <h2 className="text-2xl font-bold text-slate-900 mb-4 flex items-center gap-3">
               <span className="flex items-center justify-center w-8 h-8 rounded-lg bg-rose-100 text-rose-600 text-sm font-bold">§ 2</span>
-              Vertragsgegenstand und Leistungsumfang
+              Vertragsgegenstand – das WebLeasing-Modell
             </h2>
             <div className="space-y-3">
-              <p>(1) Gegenstand des Vertrages ist die Bereitstellung, Erstellung und Betreuung von Websites im Abonnement-Modell sowie die Bereitstellung des dazugehörigen Kundenportals und Marketings-Services gem. der individuellen Produktbeschreibung zum Zeitpunkt der Buchung.</p>
-              <p>(2) Der Anbieter erbringt seine Leistungen nach dem aktuellen Stand der Technik. Der Anbieter ist berechtigt, sich zur Erbringung der Leistungen qualifizierter Drittdienstleister (z. B. Hostinger, Stripe, Google Cloud) zu bedienen.</p>
+              <p>(1) VANICY bietet ein Leasing-Modell für professionelle Websites an. Im Rahmen dieses Modells erstellt VANICY eine individuelle Website für den Auftraggeber, stellt diese für die Dauer des Vertrages gegen monatliche Vergütung bereit und betreibt sie.</p>
+              <p>(2) Das WebLeasing umfasst je nach gewähltem Paket: Konzeption, Webdesign und Entwicklung, Hosting auf EU-Servern, SSL-Zertifikat, Content Delivery Network (CDN), SEO-Grundeinrichtung, monatliche Inhaltsänderungen sowie Support. Die genauen Leistungen richten sich nach der zum Zeitpunkt des Vertragsschlusses geltenden Leistungsbeschreibung auf vanicy.de/preise.</p>
+              <p>(3) Das WebLeasing ist kein Werkvertrag zur dauerhaften Eigentumsübertragung einer Website. Die erstellte Website verbleibt im Eigentum von VANICY und wird dem Auftraggeber zur ausschließlichen Nutzung für die Dauer des Vertrages überlassen.</p>
             </div>
           </section>
 
           <section>
             <h2 className="text-2xl font-bold text-slate-900 mb-4 flex items-center gap-3">
               <span className="flex items-center justify-center w-8 h-8 rounded-lg bg-rose-100 text-rose-600 text-sm font-bold">§ 3</span>
-              Vertragsschluss, Laufzeit und Kündigung
+              Vertragsschluss
             </h2>
             <div className="space-y-3">
-              <p>(1) Der Vertragsschluss erfolgt durch die Online-Buchung eines Abonnement-Tarifs über die Website des Anbieters und der anschließenden Bestätigung per E-Mail oder durch Unterzeichnung eines individuellen Angebots.</p>
-              <p>(2) Je nach gewähltem Tarif beträgt die Mindestvertragslaufzeit 12 oder 24 Monate. Die Zahlungsabwicklung erfolgt fortlaufend über den gewählten Abrechnungszeitraum.</p>
-              <p>(3) Der Vertrag verlängert sich nach Ablauf der Mindestvertragslaufzeit automatisch um weitere 12 Monate, sofern er nicht von einer Partei mit einer Frist von 1 Monat zum Ende der jeweiligen Laufzeit gekündigt wird.</p>
-              <p>(4) Die Kündigung kann in Textform (z. B. per E-Mail an <a href="mailto:hello@vanicy.de" className="text-rose-600 hover:underline">hello@vanicy.de</a>) oder, sofern im Kundenportal bereitgestellt, über die dortige Kündigungsfunktion erfolgen.</p>
-              <p>(5) Das Recht zur außerordentlichen Kündigung aus wichtigem Grund bleibt unberührt.</p>
-            </div>
-          </section>
-
-          <section className="bg-white p-6 rounded-2xl border-l-4 border-rose-500 shadow-sm">
-            <h2 className="text-2xl font-bold text-slate-900 mb-4 flex items-center gap-3">
-              <span className="flex items-center justify-center w-8 h-8 rounded-lg bg-rose-100 text-rose-600 text-sm font-bold">§ 4</span>
-              Onboarding-Phase und Mitwirkung
-            </h2>
-            <div className="space-y-3">
-              <p>(1) Die Erstellung der Website erfordert die aktive Mitwirkung des Kunden im Rahmen der Onboarding-Phase. Der Kunde ist verpflichtet, dem Anbieter alle für die Erstellung der Website erforderlichen Inhalte (z. B. Texte, Logos, Bilder, Zugangsdaten) rechtzeitig und in digitaler Form zur Verfügung zu stellen.</p>
-              <p>(2) Die Pflicht zur Zahlung des vereinbarten Abonnement-Preises beginnt mit dem Zustandekommen des Vertrages bzw. der Bereitstellung des Kundenzugangs/Beginn der Onboarding-Phase. Verzögert sich die Fertigstellung oder der Livegang der Website, weil der Kunde im Onboarding erforderliche Materialien, Zuarbeiten oder Freigaben nicht liefert, bleibt die Verpflichtung zur fortlaufenden Zahlung des monatlichen Entgelts hiervon unberührt.</p>
-              <p>(3) Nach Durchführung des gemeinsamen Briefing-Gesprächs und dem vollständigen Erhalt aller erforderlichen Materialien durch den Kunden benötigt der Anbieter im Schnitt 2 bis 4 Wochen (Regelfall ca. 14 Tage) bis zur Fertigstellung und Bereitstellung der Website.</p>
-              <p>(4) Der Kunde willigt ein, dass alle im Rahmen des Onboardings übermittelten Informationen und Daten vom Anbieter zum Zwecke der Vertragserfüllung gespeichert und verarbeitet werden. Der Kunde sichert zu, dass er Inhaber aller erforderlichen Rechte an den bereitgestellten Inhalten ist.</p>
+              <p>(1) Der Vertrag kommt durch die Registrierung im VANICY-Kundenportal, die Auswahl eines Pakets sowie die ausdrückliche Bestätigung dieser AGB durch Setzen eines Häkchens oder durch Unterzeichnung eines individuellen Angebots zustande.</p>
+              <p>(2) VANICY behält sich vor, einen Vertragsabschluss ohne Angabe von Gründen abzulehnen.</p>
             </div>
           </section>
 
           <section>
             <h2 className="text-2xl font-bold text-slate-900 mb-4 flex items-center gap-3">
-              <span className="flex items-center justify-center w-8 h-8 rounded-lg bg-rose-100 text-rose-600 text-sm font-bold">§ 5</span>
-              Zahlungsbedingungen und SEPA
+              <span className="flex items-center justify-center w-8 h-8 rounded-lg bg-rose-100 text-rose-600 text-sm font-bold">§ 4</span>
+              Testphase
             </h2>
             <div className="space-y-3">
-              <p>(1) Alle Preise verstehen sich als Nettopreise zzgl. der jeweils geltenden gesetzlichen Umsatzsteuer.</p>
-              <p>(2) Die Abrechnung erfolgt im Voraus über den Zahlungsdienstleister Stripe. Der Kunde ermächtigt den Anbieter, die anfallenden Gebühren über das bei Stripe hinterlegte Zahlungsmittel einzuziehen.</p>
-              <p>(3) Bei Zahlung mittels SEPA-Basislastschrift oder SEPA-Firmenlastschrift ermächtigt der Kunde den Anbieter durch Erteilung eines entsprechenden SEPA-Mandats, fällige Zahlungen vom Konto des Kunden einzuziehen. Die Frist für die Vorankündigung (Pre-Notification) des Einzugsdatums und des Einzugsbetrages wird auf <strong>1 Tag</strong> verkürzt.</p>
-              <p>(4) Schlägt ein Einzugsversuch fehl, wird der Kunde elektronisch gemahnt. Dem Kunden wird eine Frist von 7 Tagen zur Begleichung der offenen Forderung eingeräumt.</p>
-              <p>(5) Befindet sich der Kunde nach Ablauf dieser Frist weiterhin im Zahlungsverzug, ist der Anbieter berechtigt, die Website des Kunden temporär abzuschalten (Sperrung). Die Zahlungspflicht bleibt hiervon unberührt.</p>
+              <p>(1) VANICY kann dem Auftraggeber nach Maßgabe des gewählten Pakets eine kostenlose Testphase von bis zu 30 Tagen gewähren.</p>
+              <p>(2) Die Testphase endet automatisch, und der Vertrag geht in ein kostenpflichtiges Abonnement über, sofern der Auftraggeber nicht vorher kündigt. Eine Kündigung während der Testphase bewirkt die sofortige Beendigung ohne weitere Kosten.</p>
+              <p>(3) Ein Rechtsanspruch auf eine Testphase besteht nicht.</p>
+            </div>
+          </section>
+
+          <section className="bg-white p-6 rounded-2xl border-l-4 border-rose-500 shadow-sm">
+            <h2 className="text-2xl font-bold text-slate-900 mb-4 flex items-center gap-3">
+              <span className="flex items-center justify-center w-8 h-8 rounded-lg bg-rose-100 text-rose-600 text-sm font-bold">§ 5</span>
+              Onboarding-Phase und Abnahme
+            </h2>
+            <div className="space-y-3">
+              <p>(1) Die Erstellung der Website erfordert die aktive Mitwirkung des Auftraggebers im Rahmen der Onboarding-Phase. Der Auftraggeber ist verpflichtet, VANICY alle für die Erstellung der Website erforderlichen Inhalte (z. B. Texte, Logos, Bilder, Zugangsdaten) rechtzeitig in digitaler Form zur Verfügung zu stellen.</p>
+              <p>(2) Die Pflicht zur Zahlung des vereinbarten Preises beginnt mit dem Zustandekommen des Vertrages bzw. nach Ablauf einer vereinbarten Testphase. Verzögert sich die Fertigstellung, weil der Auftraggeber Materialien, Zuarbeiten oder Freigaben nicht liefert, bleibt die Zahlungspflicht unberührt.</p>
+              <p>(3) Nach der Erstellung der Website wird der Auftraggeber zur Abnahme aufgefordert. Die Website gilt als erfolgreich abgenommen, wenn der Auftraggeber nicht innerhalb von <strong>14 Tagen</strong> nach Bereitstellung schriftlich oder per E-Mail konkrete, erhebliche Mängel rügt. Unwesentliche Mängel berechtigen nicht zur Verweigerung der Abnahme.</p>
             </div>
           </section>
 
           <section>
             <h2 className="text-2xl font-bold text-slate-900 mb-4 flex items-center gap-3">
               <span className="flex items-center justify-center w-8 h-8 rounded-lg bg-rose-100 text-rose-600 text-sm font-bold">§ 6</span>
-              Abnahme (Automatische Abnahme)
+              Vergütung, Zahlung und SEPA
             </h2>
             <div className="space-y-3">
-              <p>(1) Nach Fertigstellung und Bereitstellung der Website wird der Anbieter den Kunden zur Abnahme auffordern.</p>
-              <p>(2) Die Website gilt als erfolgreich abgenommen, wenn der Kunde nicht innerhalb von <strong>14 Tagen</strong> nach Bereitstellung schriftlich oder per E-Mail konkrete, erhebliche Mängel rügt. Unwesentliche Mängel berechtigen den Kunden nicht, die Abnahme zu verweigern.</p>
+              <p>(1) Alle Preise verstehen sich als Nettopreise zzgl. der jeweils geltenden gesetzlichen Umsatzsteuer.</p>
+              <p>(2) Die Abrechnung erfolgt monatlich im Voraus über den Zahlungsdienstleister Stripe. Die erste Zahlung wird bei Vertragsschluss bzw. nach Ablauf einer Testphase fällig.</p>
+              <p>(3) Bei Zahlung mittels SEPA-Lastschrift ermächtigt der Auftraggeber VANICY, fällige Zahlungen einzuziehen. Die Frist für die Vorankündigung (Pre-Notification) des Einzugsdatums wird auf <strong>1 Tag</strong> verkürzt. Kosten für vom Auftraggeber zu vertretende Rücklastschriften trägt der Auftraggeber.</p>
+              <p>(4) Bei Zahlungsverzug ist VANICY berechtigt, die Leistungen (inklusive der Website) bis zur vollständigen Zahlung zu unterbrechen sowie Verzugszinsen in Höhe von 9 Prozentpunkten über dem Basiszinssatz zu verlangen. Befindet sich der Auftraggeber nach einer 7-Tages-Frist weiterhin im Zahlungsverzug, kann die Website temporär gesperrt werden.</p>
+              <p>(5) Preisänderungen / Erhöhungen basierend auf gestiegenen Infrastrukturkosten (max. 10% pro Jahr) werden dem Auftraggeber mindestens 6 Wochen vor Inkrafttreten per E-Mail angekündigt. Widerspricht der Auftraggeber nicht innerhalb von 2 Wochen, gilt die Änderung als akzeptiert.</p>
             </div>
           </section>
 
           <section>
             <h2 className="text-2xl font-bold text-slate-900 mb-4 flex items-center gap-3">
               <span className="flex items-center justify-center w-8 h-8 rounded-lg bg-rose-100 text-rose-600 text-sm font-bold">§ 7</span>
-              Urheberrechte und Buyout-Option
+              Laufzeit und Kündigung
             </h2>
             <div className="space-y-3">
-              <p>(1) Alle Rechte an den vom Anbieter erstellten Designs, dem Quellcode und Strukturen verbleiben beim Anbieter. Dem Kunden wird für die Dauer des Vertrages ein einfaches Nutzungsrecht eingeräumt.</p>
-              <p>(2) Nach ordnungsgemäßer Beendigung des Vertrages gilt Folgendes:</p>
-              <ul className="list-disc pl-5 space-y-2">
-                <li>Eingebrachte Inhalte (Texte, eigene Bilder, Logos) sowie die Domain können vom Kunden mitgenommen werden.</li>
-                <li>Der Quellcode und das spezifische Design verbleiben beim Anbieter.</li>
-                <li><strong>Buyout-Option:</strong> Möchte der Kunde das Design und den Quellcode nach Vertragsbeendigung übernehmen, vereinbaren die Parteien eine einmalige Ablösesumme in Höhe von <strong>6 Netto-Monatsmieten</strong>.</li>
-              </ul>
+              <p>(1) Der Vertrag wird für die bei Vertragsschluss vereinbarte Mindestlaufzeit (12 oder 24 Monate) geschlossen.</p>
+              <div className="bg-slate-100 p-4 rounded-lg font-semibold text-slate-900 border-l-4 border-slate-400">
+                ⚠️ WICHTIGER HINWEIS: AUTOMATISCHE VERTRAGSVERLÄNGERUNG<br/><br/>
+                Der Vertrag verlängert sich nach Ablauf der Mindestlaufzeit automatisch um jeweils 12 weitere Monate, sofern er nicht rechtzeitig gekündigt wird.
+              </div>
+              <p>(2) Die Kündigungsfrist beträgt:<br/>
+                - Bei einer Mindestlaufzeit von 12 Monaten: 1 Monat vor Ablauf der Laufzeit<br/>
+                - Bei einer Mindestlaufzeit von 24 Monaten: 3 Monate vor Ablauf der Laufzeit
+              </p>
+              <p>(3) Kündigungen sind im Kundenportal (dashboard.vanicy.de) oder per E-Mail an support@vanicy.de möglich.</p>
+              <p>(4) Das Recht zur außerordentlichen Kündigung aus wichtigem Grund bleibt unberührt. Ein wichtiger Grund liegt insbesondere vor, wenn der Auftraggeber mit mehr als zwei Monatsbeiträgen in Verzug ist.</p>
+              <p>(5) Nach Vertragsende wird die Website deaktiviert. Die Inhalte werden nach einer Übergangsfrist von 30 Tagen gelöscht.</p>
             </div>
           </section>
 
           <section>
             <h2 className="text-2xl font-bold text-slate-900 mb-4 flex items-center gap-3">
               <span className="flex items-center justify-center w-8 h-8 rounded-lg bg-rose-100 text-rose-600 text-sm font-bold">§ 8</span>
-              Preisanpassungsklausel
+              Leistungsänderungen und Upgrades
             </h2>
-            <p>(1) Der Anbieter ist berechtigt, die monatlichen Gebühren bei Verträgen mit einer Laufzeit von mehr als 12 Monaten anzupassen, wenn nachweisbare Kostensteigerungen für die technische Infrastruktur (z. B. Preiserhöhungen durch Hostinger, Stripe oder AI-APIs) eintreten.</p>
-            <p>(2) Eine Preiserhöhung darf maximal 10% pro Kalenderjahr betragen und muss 4 Wochen vorher angekündigt werden.</p>
+            <div className="space-y-3">
+              <p>(1) VANICY ist berechtigt, Leistungen technisch weiterzuentwickeln und anzupassen, solange die vereinbarte Grundleistung nicht wesentlich beeinträchtigt wird.</p>
+              <p>(2) Der Auftraggeber kann jederzeit ein Upgrade auf ein höherwertiges Paket vornehmen. Ein Downgrade auf ein niedrigerwertiges Paket ist zum Ende der Mindestlaufzeit möglich.</p>
+            </div>
           </section>
 
           <section>
             <h2 className="text-2xl font-bold text-slate-900 mb-4 flex items-center gap-3">
               <span className="flex items-center justify-center w-8 h-8 rounded-lg bg-rose-100 text-rose-600 text-sm font-bold">§ 9</span>
-              Rechtliche Inhalte und Freistellung
+              Nutzungsrechte, Eigentum und Buyout-Option
             </h2>
-            <p>(1) Der Kunde trägt die alleinige Verantwortung für die rechtliche Zulässigkeit der von ihm bereitgestellten Inhalte sowie für die Einhaltung der gesetzlichen Pflichten auf der fertigen Website.</p>
-            <p>(2) Der Kunde stellt den Anbieter von allen Ansprüchen Dritter vollumfänglich frei, die auf rechtswidrigen Inhalten des Kunden oder einer Verletzung von Rechten Dritter beruhen.</p>
+            <div className="space-y-3">
+              <p>(1) VANICY räumt dem Auftraggeber für die Dauer des Vertrages ein einfaches, nicht übertragbares Nutzungsrecht an der erstellten Website ein.</p>
+              <p>(2) Das Eigentum am Quellcode, technischen Aufbau und Design verbleibt bei VANICY. Von Auftraggeber bereitgestellte Inhalte (Texte, Bilder, Logos) verbleiben in seinem Eigentum und können nach Vertragsende per Export bereitgestellt werden.</p>
+              <p>(3) <strong>Buyout-Option:</strong> Der Auftraggeber kann einen Buyout beantragen, um das Design und den Quellcode nach Vertragsbeendigung zu übernehmen. Ein Rechtsanspruch auf Gewährung des Buyouts besteht jedoch nicht. Ein Buyout ist grundsätzlich erst ab einer absolvierten Vertragslaufzeit von einem Jahr möglich. Im Falle einer Einigung beträgt die einmalige Ablösesumme das <strong>12-fache der monatlichen Netto-Miete</strong> des jeweils gewählten Pakets.</p>
+              <p>(4) VANICY ist berechtigt, die realisierte Website als Referenz zu verwenden, sofern der Auftraggeber nicht ausdrücklich widerspricht.</p>
+            </div>
           </section>
 
           <section>
             <h2 className="text-2xl font-bold text-slate-900 mb-4 flex items-center gap-3">
               <span className="flex items-center justify-center w-8 h-8 rounded-lg bg-rose-100 text-rose-600 text-sm font-bold">§ 10</span>
-              Haftung und Verfügbarkeit (SLA)
+              Verantwortlichkeit für Inhalte und Freistellung
             </h2>
-            <p>(1) Der Anbieter strebt eine Erreichbarkeit der gehosteten Websites von 99% im Jahresmittel an.</p>
-            <p>(2) Der Anbieter haftet bei leichter Fahrlässigkeit nur bei Verletzung vertragswesentlicher Pflichten (Kardinalpflichten).</p>
+            <div className="space-y-3">
+              <p>(1) Der Auftraggeber ist verantwortlich dafür, dass die von ihm bereitgestellten Inhalte keine Rechte Dritter verletzen. Er stellt VANICY von sämtlichen Ansprüchen Dritter frei, die aus einer solchen Rechtsverletzung entstehen.</p>
+              <p>(2) Der Auftraggeber ist für die Rechtmäßigkeit seines Webauftritts selbst verantwortlich, insbesondere hinsichtlich Impressum und Datenschutzerklärung, sofern hierfür keine ausdrücklichen Leistungen von VANICY vereinbart wurden.</p>
+            </div>
           </section>
 
           <section>
             <h2 className="text-2xl font-bold text-slate-900 mb-4 flex items-center gap-3">
               <span className="flex items-center justify-center w-8 h-8 rounded-lg bg-rose-100 text-rose-600 text-sm font-bold">§ 11</span>
+              Verfügbarkeit und Support
+            </h2>
+            <div className="space-y-3">
+              <p>(1) VANICY strebt eine Verfügbarkeit der gehosteten Websites von 99% im Jahresmittel an. Ausgenommen sind geplante Wartungsfenster sowie Ausfälle durch Drittanbieter oder höhere Gewalt.</p>
+              <p>(2) Die angestrebten Reaktionszeiten für Support je Paket verhalten sich wie folgt:<br/>
+              - Essential: innerhalb von 2 Werktagen<br/>
+              - Business: innerhalb von 1 Werktag (Prioritäts-Support)<br/>
+              - Pro: innerhalb von 1 Werktag + telefonischer Support</p>
+            </div>
+          </section>
+          
+          <section>
+            <h2 className="text-2xl font-bold text-slate-900 mb-4 flex items-center gap-3">
+              <span className="flex items-center justify-center w-8 h-8 rounded-lg bg-rose-100 text-rose-600 text-sm font-bold">§ 12</span>
+              Datenschutz
+            </h2>
+            <div className="space-y-3">
+              <p>(1) VANICY verarbeitet personenbezogene Daten ausschließlich zur Vertragserfüllung und gemäß DSGVO/BDSG.</p>
+              <p>(2) Soweit VANICY Daten von Endnutzern der Website des Auftraggebers verarbeitet, schließen die Parteien auf Anfrage einen Auftragsverarbeitungsvertrag (AVV) gem. Art. 28 DSGVO ab.</p>
+            </div>
+          </section>
+
+          <section>
+            <h2 className="text-2xl font-bold text-slate-900 mb-4 flex items-center gap-3">
+              <span className="flex items-center justify-center w-8 h-8 rounded-lg bg-rose-100 text-rose-600 text-sm font-bold">§ 13</span>
+              Haftung
+            </h2>
+            <div className="space-y-3">
+              <p>(1) VANICY haftet unbeschränkt für Schäden aus der Verletzung des Lebens, des Körpers oder der Gesundheit sowie für vorsätzlich oder grob fahrlässig verursachte Schäden.</p>
+              <p>(2) Bei leichter Fahrlässigkeit haftet VANICY nur bei Verletzung wesentlicher Vertragspflichten (Kardinalpflichten) und auf den typischerweise vorhersehbaren Schaden begrenzt. Die Haftung ist je Schadensfall auf den 12-fachen Monatsbeitrag des betroffenen Vertrages begrenzt.</p>
+              <p>(3) Eine weitergehende Haftung (Mittelbare Schäden, Folgeschäden, entgangener Gewinn) ist ausgeschlossen.</p>
+            </div>
+          </section>
+
+          <section>
+            <h2 className="text-2xl font-bold text-slate-900 mb-4 flex items-center gap-3">
+              <span className="flex items-center justify-center w-8 h-8 rounded-lg bg-rose-100 text-rose-600 text-sm font-bold">§ 14</span>
               Schlussbestimmungen
             </h2>
-            <p>(1) Es gilt das Recht der Bundesrepublik Deutschland.</p>
-            <p>(2) Gerichtsstand für Kaufleute ist das <strong>Amtsgericht Landshut</strong>.</p>
+            <div className="space-y-3">
+              <p>(1) Es gilt das Recht der Bundesrepublik Deutschland unter Ausschluss des UN-Kaufrechts.</p>
+              <p>(2) Ausschließlicher Gerichtsstand ist das Amtsgericht Landshut / Landgericht Landshut.</p>
+              <p>(3) Sollten einzelne Bestimmungen unwirksam sein, berührt dies die Wirksamkeit der übrigen Bestimmungen nicht.</p>
+              <p>(4) Änderungen oder Ergänzungen dieses Vertrages bedürfen der Textform (E-Mail genügt).</p>
+            </div>
           </section>
+
         </div>
       </main>
       <Footer />
