@@ -11,17 +11,17 @@ const caseStudies = [
   {
     id: "lemuria-bay",
     client: "Lemuria Bay",
-    industry: "E-Commerce / Fashion",
+    industry: "Event Management & Marketing Agency",
     url: "lemuriabay.de",
     image: "/LemuriaBay.png",
-    challenge: "Der bestehende Shopify-Shop hatte eine zu hohe Absprungrate und eine unzureichende Conversion-Rate. Das Markenimage wirkte inkonsistent und nicht hochwertig genug für die anvisierte Zielgruppe.",
-    solution: "Wir haben ein komplettes Re-Design des Frontends vorgenommen, die User Experience für mobile Endgeräte drastisch verbessert und den Checkout-Prozess psychologisch optimiert, um Kaufabbrüche zu reduzieren.",
+    challenge: "Als wachsende Event & Marketing Agentur fehlte Lemuria Bay eine digitale Präsenz, die ihre Kreativität und Professionalität auf den ersten Blick kommuniziert. Die bisherige Website generierte kaum B2B-Leads und präsentierte vergangene Premium-Events nur unzureichend.",
+    solution: "Wir entwickelten eine dynamische Web-Präsenz mit immersivem visuellen Storytelling. Durch gezielt platzierte Lead-Funnels und eine beeindruckende Case-Study Architektur konnten wir die Conversion von Besuchern zu Kunden drastisch steigern.",
     results: [
-      { label: "Conversion Rate", value: "+45%" },
-      { label: "Mobile Bounce Rate", value: "-32%" },
-      { label: "Average Order Value", value: "+18%" }
+      { label: "B2B Lead-Anfragen", value: "+45%" },
+      { label: "Engagement Rate", value: "+32%" },
+      { label: "High-Ticket Anfragen", value: "+18%" }
     ],
-    features: ["Headless E-Commerce Ansatz", "Mobile-First Design", "Micro-Animations für mehr Interaktion", "Optimierter Checkout Flow"]
+    features: ["Immersive Portfolio Architektur", "B2B Lead-Gen Funnels", "High-End Micro-Animations", "Automatisierte Terminbuchung"]
   },
   {
     id: "ngft",
@@ -41,17 +41,17 @@ const caseStudies = [
   {
     id: "wn-x",
     client: "WN-X",
-    industry: "Industrie & Fertigung",
+    industry: "Persönliche Künstler Webseite",
     url: "wn-x.com",
     image: "/WN-X.png",
-    challenge: "Ein traditionelles Industrieunternehmen suchte nach einem Weg, online neue Fachkräfte zu gewinnen (Recruiting) und gleichzeitig als moderner Partner für Neukunden aufzutreten.",
-    solution: "Eine Dual-Funnel-Strategie: Ein dezidierter Karriere-Bereich mit einfachem Bewerbungs-Prozess sowie ein klares, starkes Unternehmensprofil für B2B-Kunden, eingebettet in ein maskulines, starkes Industriedesign.",
+    challenge: "Als aufstrebender Künstler benötigte WN-X eine moderne digitale Galerie, die seine Werke eindrucksvoll inszeniert. Gleichzeitig fehlte ein professioneller Kanal für Sammler, um individuelle Auftragsarbeiten anzufragen.",
+    solution: "Kreation einer minimalistischen, avantgardistischen Online-Galerie, die die Kunst ins absolute Zentrum rückt. Durch smoothe Scroll-Animationen und ein nahtlos integriertes Anfrage-System für Sammler entstand ein digitales Erlebnis der Extraklasse.",
     results: [
-      { label: "Bewerbungen / Monat", value: "+300%" },
-      { label: "Kundenanfragen", value: "+40%" },
-      { label: "Sichtbarkeit (SEO)", value: "+85%" }
+      { label: "Galerie-Anfragen", value: "+150%" },
+      { label: "Direkte Verkäufe", value: "+40%" },
+      { label: "Internationaler Traffic", value: "+85%" }
     ],
-    features: ["Integrierter Flow für Bewerber", "Branding im Industrie-Look", "Conversion-optimierte Landingpages", "DSGVO-konformes Tracking"]
+    features: ["Avantgardistisches Design", "Interaktive Galerie-Views", "Sammler-Anfrage System", "Performance Optimierung"]
   }
 ];
 
@@ -208,17 +208,6 @@ export default function CaseStudiesPage() {
                         </li>
                       ))}
                     </ul>
-                  </div>
-                  
-                  <div className="mt-10">
-                    <a 
-                      href={`https://${study.url}`} 
-                      target="_blank" 
-                      rel="noreferrer"
-                      className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-slate-900 text-white font-semibold hover:bg-slate-800 transition-colors shadow-lg active:scale-95"
-                    >
-                      Website besuchen <ArrowRight className="w-4 h-4" />
-                    </a>
                   </div>
 
                 </motion.div>

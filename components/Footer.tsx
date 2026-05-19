@@ -24,10 +24,10 @@ export function Footer() {
             <h4 className="text-white font-bold mb-6 text-sm">Lösungen</h4>
             <nav aria-label="Footer Navigation Lösungen">
               <ul className="space-y-4 text-sm font-medium">
-                <li><Link href="#methode" className="hover:text-white transition-colors block">Unsere Methode</Link></li>
-                <li><Link href="/case-studies" className="hover:text-white transition-colors block">Case Studies</Link></li>
-                <li><Link href="#preise" className="hover:text-white transition-colors block">Preise & Pläne</Link></li>
-                <li><Link href="#analyse" className="hover:text-white transition-colors block">Unverbindliche Beratung</Link></li>
+                <li><Link href="/#process" className="hover:text-white transition-colors block">Der Prozess</Link></li>
+                <li><Link href="/case-studies" className="hover:text-white transition-colors block">Referenzen</Link></li>
+                <li><Link href="/preise" className="hover:text-white transition-colors block">Preise & Pläne</Link></li>
+                <li><Link href="/#analyse" className="hover:text-white transition-colors block">Unverbindliche Beratung</Link></li>
               </ul>
             </nav>
           </div>
@@ -37,9 +37,7 @@ export function Footer() {
             <h4 className="text-white font-bold mb-6 text-sm">Unternehmen</h4>
             <nav aria-label="Footer Navigation Unternehmen">
               <ul className="space-y-4 text-sm font-medium">
-                <li><Link href="/ueber-uns" className="hover:text-white transition-colors block">Über uns</Link></li>
-                <li><Link href="/karriere" className="hover:text-white transition-colors block">Karriere</Link></li>
-                <li><Link href="/blog" className="hover:text-white transition-colors block">Blog</Link></li>
+                <li><Link href="/faq" className="hover:text-white transition-colors block">Häufige Fragen (FAQ)</Link></li>
                 <li><Link href="/kontakt" className="hover:text-white transition-colors block">Kontakt</Link></li>
               </ul>
             </nav>

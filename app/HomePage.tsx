@@ -43,7 +43,8 @@ import {
   Hourglass,
   ChevronRight,
   ChevronLeft,
-  X
+  X,
+  BarChart3
 } from 'lucide-react';
 import Link from 'next/link';
 
@@ -359,19 +360,19 @@ export default function Home() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.1 }}
-                className="text-4xl sm:text-5xl lg:text-7xl font-sans font-bold tracking-tight text-slate-900 leading-[1.1] mb-6"
+                className="text-4xl sm:text-5xl lg:text-6xl font-sans font-black tracking-tight text-slate-900 leading-[1.05] mb-6"
               >
-                Du hast eine Website. 
-                <span className="block mt-2"><AnimatedHeroText /></span>
+                Hochwertige Websites.<br />
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-rose-500 to-purple-600 block mt-1 pb-1">Zum festen Monatspreis.</span>
               </motion.h1>
               
               <motion.p 
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.2 }}
-                className="text-base sm:text-lg text-slate-600 mb-10 max-w-2xl mx-auto lg:mx-0 leading-relaxed"
+                className="text-base sm:text-lg text-slate-600 mb-8 max-w-xl mx-auto lg:mx-0 leading-relaxed font-medium"
               >
-                Schluss mit langsamen Baukasten-Seiten und überteuerten Rechnungen von Agenturen. Miete eine professionelle, moderne Website, die nachweislich Kunden gewinnt – Wartung und Support sind bereits inklusive.
+                Keine teuren Einmalzahlungen. Wir designen, entwickeln und hosten deine neue Website – alles inklusive im bequemen Abo ab 149 €/Monat.
               </motion.p>
               
               <motion.div 
@@ -380,20 +381,23 @@ export default function Home() {
                 transition={{ duration: 0.6, delay: 0.3 }}
                 className="flex flex-col sm:flex-row items-center lg:items-start gap-4 justify-center lg:justify-start"
               >
-                <Link 
-                  href="#preise"
-                  className="w-full sm:w-auto h-14 bg-white border border-slate-200 p-1.5 pr-6 rounded-full font-bold text-base hover:bg-slate-50 transition-all duration-300 flex items-center justify-between sm:justify-start gap-4 group shadow-sm active:scale-95"
+                <motion.div
+                  animate={{ scale: [1, 1.03, 1] }}
+                  transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
+                  className="w-full sm:w-auto rounded-full"
                 >
-                  <span className="bg-gradient-to-r from-rose-500 to-purple-600 text-white text-[10px] md:text-xs uppercase font-black tracking-widest px-4 h-full flex items-center justify-center rounded-full shadow-sm whitespace-nowrap">
-                    100% Gratis
-                  </span>
-                  <span className="text-slate-900 whitespace-nowrap pr-2">1 Monat kostenlos testen</span>
-                </Link>
+                  <Link 
+                    href="#preise"
+                    className="w-full sm:w-auto h-14 bg-gradient-to-r from-rose-500 to-purple-600 p-1.5 pr-6 pl-6 rounded-full font-bold text-base hover:shadow-rose-500/30 transition-all text-white flex items-center justify-center gap-4 active:scale-95 shadow-lg shadow-rose-500/20"
+                  >
+                    <span className="whitespace-nowrap">Plan auswählen</span>
+                  </Link>
+                </motion.div>
                 <Link 
                   href="#analyse"
-                  className="w-full sm:w-auto h-14 bg-transparent text-slate-600 px-8 rounded-full font-bold text-sm sm:text-base hover:text-slate-900 hover:bg-slate-200/50 transition-all duration-300 flex items-center justify-center active:scale-95"
+                  className="w-full sm:w-auto h-14 bg-white text-slate-800 border border-slate-200 px-8 rounded-full font-bold text-sm sm:text-base hover:text-slate-900 hover:bg-slate-50 transition-all duration-300 flex items-center justify-center active:scale-95 shadow-sm"
                 >
-                  Individuell beraten lassen
+                  Beratung buchen
                 </Link>
               </motion.div>
 
@@ -436,6 +440,98 @@ export default function Home() {
           <InfiniteLogoTicker />
           <div className="absolute bottom-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-slate-300 to-transparent"></div>
         </motion.section>
+
+        {/* --- WAS IST WEBSITE LEASING --- */}
+        <section className="py-20 lg:py-32 bg-white relative overflow-hidden" id="was-ist-leasing">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div className="flex flex-col lg:flex-row gap-12 lg:gap-20 items-center">
+              <div className="flex-1">
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  className="inline-flex flex-col mb-6"
+                >
+                  <span className="text-rose-500 font-bold uppercase tracking-wider text-sm mb-2">Das Konzept</span>
+                  <h2 className="text-3xl md:text-4xl lg:text-5xl font-sans font-bold text-slate-900 tracking-tight">
+                    Was ist Website Leasing?
+                  </h2>
+                </motion.div>
+                
+                <motion.p
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.1 }}
+                  className="text-lg md:text-xl text-slate-600 mb-8 leading-relaxed"
+                >
+                  Gute, individuell designte Websites kosten als einmalige Investition schnell zwischen <strong>5.000 € und 15.000 €</strong>. Für viele Unternehmen ist das eine hohe finanzielle Belastung.
+                  <br/><br/>
+                  Beim <strong>Website Leasing</strong> von Vanicy übernehmen wir die gesamte Entwicklung deiner High-End Homepage auf unsere Kappe. Anstatt tausende Euros im Voraus zu bezahlen, zahlst du lediglich eine planbare, <strong>niedrige monatliche Rate</strong>. Alles inklusive.
+                </motion.p>
+                
+                <motion.ul
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true }}
+                  variants={staggerContainer}
+                  className="space-y-4 text-slate-700"
+                >
+                  {[
+                    "Komplett individuelle Erstellung (Wir nutzen keinen Baukasten)",
+                    "Sicheres Hosting, Wartung & Updates bereits inklusive",
+                    "Regelmäßige inhaltliche Änderungen einfach auf Zuruf",
+                    "Keine versteckten Setup-Fees oder Einmalkosten"
+                  ].map((item, idx) => (
+                    <motion.li key={idx} variants={fadeInUp} className="flex items-start gap-3">
+                      <div className="w-6 h-6 rounded-full bg-emerald-100 flex items-center justify-center shrink-0 mt-0.5">
+                        <CheckCircle2 className="w-4 h-4 text-emerald-600" />
+                      </div>
+                      <span className="font-medium text-base md:text-lg">{item}</span>
+                    </motion.li>
+                  ))}
+                </motion.ul>
+              </div>
+              
+              <div className="flex-1 w-full max-w-lg lg:max-w-none mx-auto lg:mx-0">
+                 <motion.div
+                   initial={{ opacity: 0, scale: 0.95 }}
+                   whileInView={{ opacity: 1, scale: 1 }}
+                   viewport={{ once: true }}
+                   transition={{ duration: 0.6 }}
+                   className="bg-slate-50 border border-slate-200 rounded-3xl p-8 lg:p-12 shadow-sm relative overflow-hidden"
+                 >
+                    {/* Decorative reflection */}
+                    <div className="absolute top-0 right-0 p-3 opacity-20 pointer-events-none">
+                      <Zap className="w-24 h-24 text-rose-500" />
+                    </div>
+
+                    <div className="flex flex-col gap-10 relative z-10">
+                       <div className="opacity-60">
+                         <span className="text-slate-500 font-bold block mb-1">Traditionelle Agentur</span>
+                         <h3 className="text-2xl font-bold text-slate-900 line-through mb-2">~ 12.000 € Setup</h3>
+                         <p className="text-slate-500 text-sm">Hohes Risiko, veraltete Technik nach 2 Jahren, teurer Stundensatz für kleinste Änderungen.</p>
+                       </div>
+                       
+                       <div className="w-full h-px bg-slate-200 relative">
+                         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-white border border-slate-200 text-slate-400 text-xs font-bold px-2 py-0.5 rounded-full uppercase tracking-widest">vs</div>
+                       </div>
+                       
+                       <div>
+                         <span className="text-rose-500 font-bold block mb-1">Vanicy Leasing</span>
+                         <h3 className="text-4xl md:text-5xl font-black text-slate-900 mb-3 transform -rotate-1 origin-left">
+                           <span className="bg-clip-text text-transparent bg-gradient-to-r from-rose-500 to-purple-600">
+                             ab 149 € / Monat
+                           </span>
+                         </h3>
+                         <p className="text-slate-700 font-medium leading-relaxed">Null Setup-Kosten. Immer auf dem neuesten technischen Stand. Hosting, Updates & inhaltliche Änderungen komplett inklusive.</p>
+                       </div>
+                    </div>
+                 </motion.div>
+              </div>
+            </div>
+          </div>
+        </section>
 
         {/* --- PROBLEM AGITATION SECTION --- */}
         <section className="py-20 lg:py-32 bg-slate-50 relative overflow-hidden" id="probleme">
@@ -609,38 +705,38 @@ export default function Home() {
 
               <motion.div variants={fadeInUp} className="order-1 lg:order-2">
                 <h3 className="text-3xl md:text-4xl font-sans font-bold text-slate-900 tracking-tight mb-6">
-                  Der Vanicy Prozess:<br className="hidden md:block"/> Von 0 auf Live – in unter 4 Wochen.
+                  Messbare Ergebnisse <br className="hidden md:block"/> statt leerer Versprechen.
                 </h3>
                 <p className="text-lg text-slate-600 mb-10 leading-relaxed">
-                  Vergiss hohe Einmalzahlungen. Wir haben den Markt umgekrempelt: Bei uns bekommst du eine moderne, hochwertige Website im bequemen Abo. Wir kümmern uns um die komplizierte Technik und halten alles am Laufen.
+                  Deine Website ist nicht nur eine digitale Visitenkarte, sondern dein bester Vertriebsmitarbeiter. Wir fokussieren uns darauf, deine Besucher in qualifizierte Leads zu verwandeln.
                 </p>
                 
                 <div className="space-y-8">
                   <div className="flex gap-4">
                     <div className="mt-1">
-                      <Search className="w-6 h-6 text-slate-900" />
+                      <Target className="w-6 h-6 text-emerald-500" />
                     </div>
                     <div>
-                      <h4 className="text-lg font-bold text-slate-900 mb-1">1. Gemeinsamer Plan</h4>
-                      <p className="text-slate-600">Wir analysieren exakt, wonach deine Kunden suchen und strukturieren die Seite entsprechend.</p>
+                      <h4 className="text-lg font-bold text-slate-900 mb-1">Conversion-Optimiert</h4>
+                      <p className="text-slate-600">Kein Raten mehr. Jedes Element deiner neuen Website ist darauf ausgelegt, Handlungen der Nutzer auszulösen.</p>
                     </div>
                   </div>
                   <div className="flex gap-4">
                     <div className="mt-1">
-                      <Gem className="w-6 h-6 text-slate-900" />
+                      <Zap className="w-6 h-6 text-rose-500" />
                     </div>
                     <div>
-                      <h4 className="text-lg font-bold text-slate-900 mb-1">2. Hochwertiges Design</h4>
-                      <p className="text-slate-600">Individuelles, conversion-optimiertes Design. Blitzschnell und perfekt für alle Endgeräte.</p>
+                      <h4 className="text-lg font-bold text-slate-900 mb-1">Pfeilschnelle Ladezeiten</h4>
+                      <p className="text-slate-600">Wir bauen hochperformante Websites, die in Millisekunden laden – für bessere Google-Rankings und minimale Absprungraten.</p>
                     </div>
                   </div>
                   <div className="flex gap-4">
                     <div className="mt-1">
-                      <ShieldCheck className="w-6 h-6 text-slate-900" />
+                      <BarChart3 className="w-6 h-6 text-purple-500" />
                     </div>
                     <div>
-                      <h4 className="text-lg font-bold text-slate-900 mb-1">3. Mieten & entspannen</h4>
-                      <p className="text-slate-600">Sicherheit, Hosting und Updates laufen vollautomatisch im Hintergrund ohne dein Zutun.</p>
+                      <h4 className="text-lg font-bold text-slate-900 mb-1">Tracking inklusive</h4>
+                      <p className="text-slate-600">Behalte in deinem Dashboard jederzeit den Überblick über deinen Traffic und die Performance deiner Seite.</p>
                     </div>
                   </div>
                 </div>
