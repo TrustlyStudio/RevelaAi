@@ -70,7 +70,7 @@ export function CookieBanner() {
   }, [clearCookies]);
 
   useEffect(() => {
-    setTimeout(() => {
+    const timer = setTimeout(() => {
       const data = localStorage.getItem(COOKIE_CONSENT_KEY);
       const prefersOptOut = 
         navigator.doNotTrack === "1" || 
@@ -96,7 +96,10 @@ export function CookieBanner() {
     };
     
     window.addEventListener('openCookieSettings', onOpenSettings);
-    return () => window.removeEventListener('openCookieSettings', onOpenSettings);
+    return () => {
+      clearTimeout(timer);
+      window.removeEventListener('openCookieSettings', onOpenSettings);
+    };
   }, [handleSave]);
 
   const acceptAll = () => handleSave({ necessary: true, analytics: true, marketing: true });

@@ -18,7 +18,7 @@ const steps = [
     title: "Design & Entwicklung",
     desc: "Wir designen und entwickeln deine Website von Grund auf, obwohl du noch nichts bezahlt hast. Individuell, blitzschnell und auf Conversions ausgelegt. Du kannst den Fortschritt im Dashboard einsehen.",
     icon: <Code2 className="w-5 h-5 text-purple-400" />,
-    badge: "Woche 1–2",
+    badge: "Woche 1",
     pill: null
   },
   {
@@ -26,15 +26,15 @@ const steps = [
     title: "Vorschau & Feedback",
     desc: "Du erhältst einen Link zu deiner fertigen Website. Teste sie ausgiebig. Teile uns dein Feedback über das Portal mit. Wir überarbeiten so lange, bis du zu 100% zufrieden bist.",
     icon: <Eye className="w-5 h-5 text-rose-400" />,
-    badge: "Woche 2–4",
-    pill: "Unbegrenzte Feedbackrunden"
+    badge: "Woche 2",
+    pill: "2 Feedbackrunden"
   },
   {
     number: "4",
     title: "Launch & Entscheidung",
     desc: "Deine Seite geht live. Erst nach 1 Monat entscheidest du, ob du dabeibleibst (wir erinnern dich 7 Tage vorher). Wenn ja, läuft alles automatisch: Hosting, Updates und deine inhaltlichen Änderungswünsche.",
     icon: <Rocket className="w-5 h-5 text-purple-400" />,
-    badge: "Nach 1 Monat",
+    badge: "Live",
     pill: "Jederzeit kündbar"
   }
 ];

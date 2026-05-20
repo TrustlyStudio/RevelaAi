@@ -38,7 +38,6 @@ export function Footer() {
             <nav aria-label="Footer Navigation Unternehmen">
               <ul className="space-y-4 text-sm font-medium">
                 <li><Link href="/faq" className="hover:text-white transition-colors block">Häufige Fragen (FAQ)</Link></li>
-                <li><Link href="/kontakt" className="hover:text-white transition-colors block">Kontakt</Link></li>
               </ul>
             </nav>
           </div>

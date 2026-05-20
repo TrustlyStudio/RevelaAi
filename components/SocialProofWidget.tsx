@@ -14,43 +14,42 @@ const notifications = [
 ];
 
 export function SocialProofWidget() {
+  const [status, setStatus] = useState<'initial' | 'visible' | 'waiting'>('initial');
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [isVisible, setIsVisible] = useState(false);
   const [hasDismissed, setHasDismissed] = useState(false);
 
   useEffect(() => {
     if (hasDismissed) return;
 
-    // Show first notification after 25 seconds
-    const initialTimer = setTimeout(() => {
-      setIsVisible(true);
-    }, 25000);
+    let timer: NodeJS.Timeout;
 
-    return () => clearTimeout(initialTimer);
-  }, [hasDismissed]);
+    if (status === 'initial') {
+      // Wait 25 seconds before showing the first notification
+      timer = setTimeout(() => {
+        setStatus('visible');
+      }, 25000);
+    } else if (status === 'visible') {
+      // Show for 6 seconds, then switch to waiting
+      timer = setTimeout(() => {
+        setStatus('waiting');
+      }, 6000);
+    } else if (status === 'waiting') {
+      // Wait 45 seconds, then show next
+      timer = setTimeout(() => {
+        setCurrentIndex((prev) => (prev + 1) % notifications.length);
+        setStatus('visible');
+      }, 45000);
+    }
 
-  useEffect(() => {
-    if (hasDismissed || !isVisible) return;
+    return () => clearTimeout(timer);
+  }, [status, hasDismissed]);
 
-    // Hide after 6 seconds, then show next one 45 seconds later
-    const hideTimer = setTimeout(() => {
-      setIsVisible(false);
-      
-      setTimeout(() => {
-        if (!hasDismissed) {
-          setCurrentIndex((prev) => (prev + 1) % notifications.length);
-          setIsVisible(true);
-        }
-      }, 45000); // Wait 45 seconds before showing next
-    }, 6000); // Display duration 6 seconds
-
-    return () => clearTimeout(hideTimer);
-  }, [isVisible, hasDismissed]);
+  const isVisible = status === 'visible';
 
   const handleClose = (e: React.MouseEvent) => {
     e.stopPropagation();
     setHasDismissed(true);
-    setIsVisible(false);
+    setStatus('waiting');
   };
 
   const notification = notifications[currentIndex];

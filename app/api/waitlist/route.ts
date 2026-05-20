@@ -10,7 +10,9 @@ export async function POST(req: Request) {
     const response = await fetch(FORMSPREE_URL, {
       method: "POST",
       headers: {
-        "Content-Type": "application/json"
+        "Content-Type": "application/json",
+        "Referer": "https://vanicy.de",
+        "Origin": "https://vanicy.de"
       },
       body: JSON.stringify(data)
     });

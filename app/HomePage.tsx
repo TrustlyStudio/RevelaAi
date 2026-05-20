@@ -117,30 +117,30 @@ export default function Home() {
       stats: "96% der Website-Besucher sind noch nicht bereit zu kaufen. Ohne klare Funnel und Lead-Magnets verlierst du sie für immer.",
       Visual: () => (
         <div className="w-full h-48 md:h-56 bg-slate-50 rounded-2xl flex items-center justify-center relative overflow-hidden border border-slate-200 p-6 mb-8">
-          <div className="w-full h-full flex items-end justify-center gap-2 md:gap-6">
+          <div className="w-full h-full flex items-end justify-center gap-2 md:gap-6 pb-2">
             <div className="flex flex-col items-center">
-              <span className="text-xs font-bold text-slate-500 mb-2">1000 Besucher</span>
               <motion.div initial={{ height: 0 }} animate={{ height: 120 }} transition={{ duration: 1 }} className="w-16 md:w-24 bg-slate-300 rounded-t-lg relative">
-                <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.5 }} className="absolute inset-0 flex items-center justify-center text-slate-500 font-bold">100%</motion.div>
+                <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.5 }} className="absolute inset-0 flex items-center justify-center text-slate-600 font-bold text-xs md:text-sm">100%</motion.div>
               </motion.div>
+              <span className="text-[10px] md:text-xs font-bold text-slate-500 mt-2 block whitespace-nowrap">1000 Besucher</span>
             </div>
-            <motion.div initial={{ opacity: 0, x: -10 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 1 }} className="flex pb-16">
-              <ArrowRight className="w-6 h-6 text-slate-300" />
+            <motion.div initial={{ opacity: 0, x: -10 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 1 }} className="flex pb-10">
+              <ArrowRight className="w-5 h-5 md:w-6 md:h-6 text-slate-300" />
             </motion.div>
             <div className="flex flex-col items-center">
-              <span className="text-xs font-bold text-slate-500 mb-2">Abbruch</span>
               <motion.div initial={{ height: 0 }} animate={{ height: 115 }} transition={{ duration: 1, delay: 1 }} className="w-16 md:w-24 bg-rose-400 rounded-t-lg relative">
-                <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1.5 }} className="absolute inset-0 flex items-center justify-center text-white font-bold">96%</motion.div>
+                <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1.5 }} className="absolute inset-0 flex items-center justify-center text-white font-bold text-xs md:text-sm">96%</motion.div>
               </motion.div>
+              <span className="text-[10px] md:text-xs font-bold text-slate-500 mt-2 block whitespace-nowrap">Abbruch</span>
             </div>
-            <motion.div initial={{ opacity: 0, x: -10 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 2 }} className="flex pb-16">
-              <ArrowRight className="w-6 h-6 text-slate-300" />
+            <motion.div initial={{ opacity: 0, x: -10 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 2 }} className="flex pb-10">
+              <ArrowRight className="w-5 h-5 md:w-6 md:h-6 text-slate-300" />
             </motion.div>
             <div className="flex flex-col items-center">
-              <span className="text-xs font-bold text-indigo-600 mb-2">Anfragen</span>
-              <motion.div initial={{ height: 0 }} animate={{ height: 10 }} transition={{ duration: 1, delay: 2 }} className="w-16 md:w-24 bg-indigo-500 rounded-t-lg mt-auto relative">
-                <motion.div initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 2.5 }} className="absolute -top-6 left-1/2 -translate-x-1/2 text-indigo-600 font-bold">4%</motion.div>
+              <motion.div initial={{ height: 0 }} animate={{ height: 10 }} transition={{ duration: 1, delay: 2 }} className="w-16 md:w-24 bg-indigo-500 rounded-t-lg relative mt-auto">
+                <motion.div initial={{ opacity: 0, y: 5 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 2.5 }} className="absolute -top-6 left-1/2 -translate-x-1/2 text-indigo-600 font-bold text-xs md:text-sm whitespace-nowrap">4%</motion.div>
               </motion.div>
+              <span className="text-[10px] md:text-xs font-bold text-indigo-600 mt-2 block whitespace-nowrap">Anfragen</span>
             </div>
           </div>
         </div>
@@ -767,7 +767,7 @@ export default function Home() {
                   Eine Webseite, die sich selbst bezahlt macht.
                 </h3>
                 <p className="text-base md:text-lg text-slate-400 mb-10 leading-relaxed">
-                  Viele Unternehmer sehen eine Website als Kosten block. Wir sehen sie als deinen härtesten Mitarbeiter. 
+                  Viele Unternehmer sehen eine Website als reinen Kostenblock. Wir sehen sie als deinen härtesten Mitarbeiter. 
                   Durch psychologisch optimiertes Design, rasante Ladezeiten und klare Conversion-Pfade steigen deine Anfragen drastisch an.
                 </p>
                 <div className="grid grid-cols-2 gap-6 md:gap-8">
@@ -926,9 +926,9 @@ export default function Home() {
                 <div className="w-12 h-12 rounded-xl bg-rose-50 border border-rose-100 flex items-center justify-center text-rose-600 mb-6 group-hover:scale-110 group-hover:bg-rose-600 group-hover:text-white transition-all duration-300">
                   <MessageSquare className="w-6 h-6" />
                 </div>
-                <h3 className="text-xl font-bold mb-3 text-slate-900">Dein Tech-Partner</h3>
+                <h3 className="text-xl font-bold mb-3 text-slate-900">Blitzschneller Support</h3>
                 <p className="text-slate-600 text-sm md:text-base leading-relaxed">
-                  Keine anonymen Support-Tickets oder Hotlines. Du bekommst einen direkten, persönlichen Ansprechpartner, der dein Projekt in- und auswendig kennt.
+                  Keine tagelangen Wartezeiten oder anonymen Hotlines. Du genießt erstklassigen, fachkompetenten IT-Support, der in Rekordzeit direkt auf deine Fragen und Wünsche reagiert.
                 </p>
               </motion.div>
             </motion.div>

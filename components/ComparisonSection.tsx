@@ -16,19 +16,19 @@ const comparisonData = [
       stats: "Du sparst dir 5.000€ bis 15.000€ initiale Investition."
     },
     Visual: () => (
-      <div className="w-full h-40 md:h-48 bg-slate-50 border border-slate-200 rounded-2xl mb-8 flex items-end justify-around p-4 md:p-6 gap-4">
+      <div className="w-full h-40 md:h-48 bg-slate-50 border border-slate-200 rounded-2xl mb-8 flex items-end justify-around pt-12 pb-4 px-4 md:px-6 gap-4">
          <div className="flex flex-col items-center w-full gap-2">
-           <motion.div initial={{ height: 0 }} animate={{ height: 40 }} transition={{ duration: 1 }} className="w-full max-w-[80px] bg-slate-300 rounded-t-lg"></motion.div>
+           <motion.div initial={{ height: 0 }} animate={{ height: 30 }} transition={{ duration: 1 }} className="w-full max-w-[80px] bg-slate-300 rounded-t-lg"></motion.div>
            <span className="text-xs font-bold text-slate-500 uppercase tracking-wider">Baukasten</span>
          </div>
          <div className="flex flex-col items-center w-full gap-2">
-           <motion.div initial={{ height: 0 }} animate={{ height: 160 }} transition={{ duration: 1, delay: 0.2 }} className="w-full max-w-[80px] bg-rose-400 rounded-t-lg relative">
+           <motion.div initial={{ height: 0 }} animate={{ height: 90 }} transition={{ duration: 1, delay: 0.2 }} className="w-full max-w-[80px] bg-rose-400 rounded-t-lg relative">
               <span className="absolute -top-6 left-1/2 -translate-x-1/2 text-rose-500 font-bold whitespace-nowrap text-xs md:text-sm">~ 10.000 €</span>
            </motion.div>
            <span className="text-xs font-bold text-slate-500 uppercase tracking-wider">Agentur</span>
          </div>
          <div className="flex flex-col items-center w-full gap-2">
-           <motion.div initial={{ height: 0 }} animate={{ height: 10 }} transition={{ duration: 1, delay: 0.4 }} className="w-full max-w-[80px] bg-indigo-500 rounded-t-lg relative">
+           <motion.div initial={{ height: 0 }} animate={{ height: 8 }} transition={{ duration: 1, delay: 0.4 }} className="w-full max-w-[80px] bg-indigo-500 rounded-t-lg relative">
               <span className="absolute -top-6 left-1/2 -translate-x-1/2 text-indigo-600 font-bold whitespace-nowrap text-xs md:text-sm">0 €</span>
            </motion.div>
            <span className="text-xs font-bold text-indigo-600 uppercase tracking-wider">VANICY</span>

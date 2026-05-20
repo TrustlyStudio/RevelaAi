@@ -3,22 +3,23 @@ import * as React from "react"
 const MOBILE_BREAKPOINT = 768
 
 export function useIsMobile() {
-  const [isMobile, setIsMobile] = React.useState<boolean | undefined>(undefined)
+  const [isMobile, setIsMobile] = React.useState<boolean>(false)
 
   React.useEffect(() => {
     const mql = window.matchMedia(`(max-width: ${MOBILE_BREAKPOINT - 1}px)`)
+    
+    // Defer the set to avoid synchronous setState inside render path
+    const initialSync = mql.matches
+    Promise.resolve().then(() => {
+      setIsMobile(initialSync)
+    })
+    
     const onChange = () => {
-      setIsMobile(window.innerWidth < MOBILE_BREAKPOINT)
+      setIsMobile(mql.matches)
     }
     mql.addEventListener("change", onChange)
-    // Avoid calling setState synchronously during the initial effect run
-    // It's usually safe to rely on the initial state being correct, but if needed,
-    // queue it to run after the current render.
-    if (window.innerWidth < MOBILE_BREAKPOINT !== isMobile) {
-      setTimeout(() => setIsMobile(window.innerWidth < MOBILE_BREAKPOINT), 0);
-    }
     return () => mql.removeEventListener("change", onChange)
-  }, [isMobile])
+  }, [])
 
-  return !!isMobile
+  return isMobile
 }
