@@ -54,7 +54,7 @@ export function CustomerPortalSection() {
               </ul>
 
               <a 
-                href="#analyse"
+                href="/#analyse"
                 className="inline-flex items-center gap-3 bg-gradient-to-r from-rose-500 to-purple-600 text-white font-bold px-8 py-4 rounded-xl shadow-lg shadow-rose-500/25 hover:shadow-xl hover:shadow-rose-500/40 hover:-translate-y-1 transition-all group"
               >
                 Jetzt beraten lassen 

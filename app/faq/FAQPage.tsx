@@ -154,7 +154,7 @@ export default function FAQPage() {
               Lass uns einfach persönlich miteinander sprechen. Wir klären all deine Fragen in einem kurzen, unverbindlichen Termin.
             </p>
             <Link 
-              href="#analyse"
+              href="/#analyse"
               className="inline-flex items-center justify-center gap-3 bg-slate-900 px-8 py-4 rounded-xl font-semibold text-white hover:bg-slate-800 hover:shadow-md transition-all duration-200"
             >
               Unverbindlich beraten lassen

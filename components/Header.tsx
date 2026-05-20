@@ -149,7 +149,7 @@ export function Header() {
               </Link>
               
               <Link 
-                href="#analyse" 
+                href="/#analyse" 
                 className="relative overflow-hidden flex items-center justify-center gap-2 bg-gradient-to-r from-rose-500 to-purple-600 px-4 xl:px-6 py-2.5 rounded-full text-white font-bold shadow-lg shadow-rose-500/25 hover:shadow-xl hover:shadow-rose-500/40 hover:-translate-y-0.5 hover:scale-105 active:scale-95 transition-all duration-300 text-sm group"
               >
                 <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-in-out"></div>
@@ -240,7 +240,7 @@ export function Header() {
               <div className="bg-gray-50 rounded-2xl p-6 border border-gray-100">
                 <p className="text-sm text-gray-500 mb-4 text-center font-medium">Bereit für mehr Anfragen?</p>
                 <Link 
-                  href="#analyse" 
+                  href="/#analyse" 
                   onClick={closeMobileMenu}
                   className="w-full flex items-center justify-center gap-2 py-4 rounded-xl font-bold text-white bg-gradient-to-r from-rose-500 to-purple-600 shadow-lg shadow-rose-500/25 hover:shadow-xl active:scale-95 transition-all text-lg"
                 >

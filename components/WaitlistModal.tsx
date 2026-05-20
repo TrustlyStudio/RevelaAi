@@ -4,6 +4,7 @@ import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { X, ArrowRight, CheckCircle2, ShieldCheck, Zap } from 'lucide-react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 export function WaitlistModal() {
   const [isOpen, setIsOpen] = useState(false);
@@ -175,8 +176,8 @@ export function WaitlistModal() {
             {/* Header */}
             <div className="flex justify-between items-center p-6 border-b border-gray-100 bg-gray-50">
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full bg-gradient-to-br from-rose-500 to-purple-600 flex items-center justify-center text-white shadow-md">
-                  <span className="font-black text-lg text-white">R</span>
+                <div className="w-10 h-10 rounded-full bg-white flex items-center justify-center shadow-md overflow-hidden p-1.5 border border-slate-100">
+                  <Image src="/Images/Revela_Logo_Symbol_Only.png" alt="Revela Logo" width={28} height={28} className="object-contain" />
                 </div>
                 <div>
                   <h3 className="font-bold text-slate-900 leading-tight">Unverbindliche Beratung</h3>
