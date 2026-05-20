@@ -2,6 +2,7 @@
 
 import React from 'react';
 import { motion } from 'motion/react';
+import Link from 'next/link';
 import { Check, ArrowRight, LayoutDashboard, FolderKanban, FileText, FileSignature, LifeBuoy, User } from 'lucide-react';
 
 export function CustomerPortalSection() {
@@ -37,29 +38,44 @@ export function CustomerPortalSection() {
                 Dein persönliches Dashboard zeigt dir alles auf einen Blick – Projektstatus, Rechnungen, Verträge und direkter Support. Keine E-Mail-Flut, kein Rätselraten.
               </p>
 
-              <ul className="space-y-4 mb-10 w-full max-w-xl">
+              <div className="space-y-6 mb-10 w-full max-w-xl">
                 {[
-                  "Projektstatus live einsehen (Umsetzung, Feedback, Live)",
-                  "Rechnungen & Verträge herunterladen",
-                  "Support-Tickets direkt im Portal erstellen",
-                  "Profil & E-Mail selbst verwalten",
+                  {
+                    title: "Projekt-Tracking in Echtzeit",
+                    desc: "Verfolge jeden Entwicklungsschritt live mit – von der Konzeption über das responsive Design bis zum finalen Go-Live. 100% transparent und termingenau."
+                  },
+                  {
+                    title: "Änderungswünsche per Mausklick",
+                    desc: "Neues Teammitglied, geänderte Leistungen oder Bildwechsel? Reiche Anpassungen spielend leicht im Dashboard ein. Wir setzen sie blitzschnell und fehlerfrei für dich um."
+                  },
+                  {
+                    title: "Zentrales Dokumenten-Center",
+                    desc: "Lade Angebote, Verträge und rechtssichere Rechnungen mit einem Klick herunter. Perfekt sortiert und sofort bereit für deine digitale Buchhaltung."
+                  },
+                  {
+                    title: "Integrierter IT-Express-Support",
+                    desc: "Keine Warteschlangen, kein Stress. Erstelle Support-Tickets direkt im Portal. Unsere Experten kümmern sich sofort um eine rasche und proaktive Lösung."
+                  }
                 ].map((item, i) => (
-                  <li key={i} className="flex items-start gap-3">
-                    <div className="w-6 h-6 rounded-full bg-rose-500/20 flex shrink-0 items-center justify-center mt-0.5 border border-rose-500/30">
+                  <div key={i} className="flex items-start gap-4">
+                    <div className="w-6 h-6 rounded-full bg-rose-500/20 flex shrink-0 items-center justify-center mt-1 border border-rose-500/30">
                       <Check className="w-3.5 h-3.5 text-rose-400" />
                     </div>
-                    <span className="text-white/80 font-medium text-sm md:text-base leading-snug">{item}</span>
-                  </li>
+                    <div>
+                      <h4 className="text-white font-bold text-base md:text-lg mb-1">{item.title}</h4>
+                      <p className="text-white/60 text-sm leading-relaxed">{item.desc}</p>
+                    </div>
+                  </div>
                 ))}
-              </ul>
+              </div>
 
-              <a 
+              <Link 
                 href="/#analyse"
                 className="inline-flex items-center gap-3 bg-gradient-to-r from-rose-500 to-purple-600 text-white font-bold px-8 py-4 rounded-xl shadow-lg shadow-rose-500/25 hover:shadow-xl hover:shadow-rose-500/40 hover:-translate-y-1 transition-all group"
               >
                 Jetzt beraten lassen 
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-              </a>
+              </Link>
             </motion.div>
           </div>
 

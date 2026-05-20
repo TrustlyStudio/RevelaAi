@@ -11,6 +11,7 @@ export function WaitlistModal() {
   const [step, setStep] = useState(0);
   const [formData, setFormData] = useState({
     ziel: '',
+    customZiel: '',
     website: '',
     websiteUrl: '',
     unternehmen: '',
@@ -83,6 +84,7 @@ export function WaitlistModal() {
       setErrors({});
       setFormData({
         ziel: '',
+        customZiel: '',
         website: '',
         websiteUrl: '',
         unternehmen: '',
@@ -129,7 +131,8 @@ export function WaitlistModal() {
         });
       }
 
-      const { gotcha, ...submitData } = formData;
+      const { gotcha, customZiel, ...submitData } = formData;
+      const finalZiel = submitData.ziel === 'Anderes Ziel' ? customZiel : submitData.ziel;
       const response = await fetch("/api/waitlist", {
         method: "POST",
         headers: {
@@ -137,6 +140,7 @@ export function WaitlistModal() {
         },
         body: JSON.stringify({
           ...submitData,
+          ziel: finalZiel,
           email: submitData.noEmail ? "Keine geschäftliche E-Mail vorhanden" : submitData.email,
           _subject: `Neue Beratungs-Anfrage: ${submitData.unternehmen || submitData.name}`,
           'g-recaptcha-response': token
@@ -262,7 +266,15 @@ export function WaitlistModal() {
                     animate={{ opacity: 1, x: 0 }}
                     exit={{ opacity: 0, x: -20 }}
                     className="w-full"
-                    onSubmit={(e) => { e.preventDefault(); if(formData.ziel) handleNext(); }}
+                    onSubmit={(e) => { 
+                      e.preventDefault(); 
+                      if (formData.ziel) {
+                        if (formData.ziel === 'Anderes Ziel' && !formData.customZiel.trim()) {
+                          return;
+                        }
+                        handleNext(); 
+                      }
+                    }}
                   >
                     <div className="mb-2 text-sm font-bold text-rose-500 uppercase tracking-widest">Schritt 1 von 4</div>
                     <h3 className="text-2xl font-black text-slate-900 mb-8">Was ist dein aktuelles Hauptziel?</h3>
@@ -279,14 +291,61 @@ export function WaitlistModal() {
                             className="w-5 h-5 text-rose-500 rounded border-gray-300 focus:ring-rose-500"
                             checked={formData.ziel === goal}
                             onChange={() => {
-                              setFormData({...formData, ziel: goal});
-                              setTimeout(handleNext, 300);
+                              if (goal !== 'Anderes Ziel') {
+                                setFormData({
+                                  ...formData,
+                                  ziel: goal,
+                                  customZiel: ''
+                                });
+                                setTimeout(handleNext, 300);
+                              } else {
+                                setFormData({
+                                  ...formData,
+                                  ziel: goal
+                                });
+                              }
                             }}
                           />
                           <span className="ml-4 font-semibold text-slate-700">{goal}</span>
                         </label>
                       ))}
                     </div>
+
+                    <AnimatePresence>
+                      {formData.ziel === 'Anderes Ziel' && (
+                        <motion.div
+                          initial={{ opacity: 0, height: 0, marginTop: 0 }}
+                          animate={{ opacity: 1, height: 'auto', marginTop: 16 }}
+                          exit={{ opacity: 0, height: 0, marginTop: 0 }}
+                          className="overflow-hidden"
+                        >
+                          <label className="block text-sm font-bold text-slate-700 mb-2">Bitte beschreibe dein Ziel kurz: *</label>
+                          <input 
+                            type="text" 
+                            required={formData.ziel === 'Anderes Ziel'}
+                            className="w-full p-4 border-2 border-gray-200 rounded-xl focus:outline-none focus:border-rose-500 focus:ring-4 focus:ring-rose-500/10 font-medium transition-all"
+                            value={formData.customZiel}
+                            onChange={(e) => setFormData({...formData, customZiel: e.target.value})}
+                            placeholder="Mein individuelles Ziel ist..."
+                          />
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
+
+                    <AnimatePresence>
+                      {formData.ziel === 'Anderes Ziel' && (
+                        <motion.button
+                          initial={{ opacity: 0, y: 10 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          exit={{ opacity: 0, y: 10 }}
+                          type="submit"
+                          disabled={!formData.customZiel.trim()}
+                          className="w-full py-4 mt-6 bg-slate-900 text-white rounded-xl font-bold text-lg hover:bg-slate-800 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+                        >
+                          Weiter
+                        </motion.button>
+                      )}
+                    </AnimatePresence>
                   </motion.form>
                 ) : step === 2 ? (
                   <motion.form 
