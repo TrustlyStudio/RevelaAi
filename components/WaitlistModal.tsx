@@ -177,7 +177,7 @@ export function WaitlistModal() {
             <div className="flex justify-between items-center p-6 border-b border-gray-100 bg-gray-50">
               <div className="flex items-center gap-3">
                 <div className="w-10 h-10 rounded-full bg-white flex items-center justify-center shadow-md overflow-hidden p-1.5 border border-slate-100">
-                  <Image src="/Vanicy_Logo_Icon_TransparentBG.png" alt="VANICY Logo Symbol" width={28} height={28} className="object-contain" />
+                  <Image src="/Vanicy_Logo_Icon_TransparentBG-1.png" alt="VANICY Logo Symbol" width={28} height={28} className="object-contain" />
                 </div>
                 <div>
                   <h3 className="font-bold text-slate-900 leading-tight">Unverbindliche Beratung</h3>

@@ -12,7 +12,7 @@ export function Footer() {
           {/* Brand Column */}
           <div className="md:col-span-1">
             <Link href="/" className="inline-block mb-6 group">
-              <Image src="/VANICY_Logo_Wide_Cropped.png" alt="VANICY Logo" width={160} height={48} className="h-8 md:h-10 w-auto brightness-0 invert group-hover:scale-105 transition-transform object-contain" />
+              <Image src="/VANICY_Logo_Wide_Cropped-1.png" alt="VANICY Logo" width={160} height={48} className="h-8 md:h-10 w-auto brightness-0 invert group-hover:scale-105 transition-transform object-contain" />
             </Link>
             <p className="text-sm font-medium leading-relaxed text-slate-500 max-w-xs">
               Premium Web-Leasing für Unternehmen, die bereit sind, in ihrer Branche die Führung zu übernehmen.

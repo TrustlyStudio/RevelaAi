@@ -113,7 +113,7 @@ export function Header() {
             <div className="flex-shrink-0 flex items-center">
               {/* Logo */}
               <Link href="/" className="flex items-center gap-2 group" onClick={closeMobileMenu}>
-                <Image src="/VANICY_Logo_Wide_Cropped.png" alt="VANICY Logo" width={160} height={48} className="h-8 md:h-10 w-auto group-hover:scale-105 transition-transform object-contain" />
+                <Image src="/VANICY_Logo_Wide_Cropped-1.png" alt="VANICY Logo" width={160} height={48} className="h-8 md:h-10 w-auto group-hover:scale-105 transition-transform object-contain" />
               </Link>
             </div>
             
