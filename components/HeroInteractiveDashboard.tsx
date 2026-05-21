@@ -92,20 +92,20 @@ export function HeroInteractiveDashboard() {
         />
 
         {/* Card 1: Top Right */}
-        <div className="floating-card animate-float1 w-[210px] p-4" style={{ top: '5%', right: '-8%' }}>
+        <div className="floating-card animate-float1 w-[190px] sm:w-[210px] p-3 sm:p-4 absolute top-[3%] right-[2%] sm:right-[4%] md:right-[6%] lg:right-[2%] xl:right-0">
           <div className="text-[10px] text-slate-500 mb-1">Mein Web-Projekt</div>
           <div className="flex justify-between items-start mb-3">
-            <div className="text-[14px] font-bold text-slate-900 leading-tight">Taxi Berlin</div>
-            <div className="flex items-center gap-1 bg-[#EDFAF3] text-[#1A7F4B] px-2 py-0.5 rounded-full text-[11px] font-medium border border-[#bbf7d0]">
+            <div className="text-[13px] sm:text-[14px] font-bold text-slate-900 leading-tight">Taxi Berlin</div>
+            <div className="flex items-center gap-1 bg-[#EDFAF3] text-[#1A7F4B] px-2 py-0.5 rounded-full text-[10px] sm:text-[11px] font-medium border border-[#bbf7d0]">
               <div className="w-1.5 h-1.5 rounded-full bg-[#1A7F4B]"></div>
               Live ✓
             </div>
           </div>
-          <div className="flex justify-between text-[11px] mb-1">
+          <div className="flex justify-between text-[10px] sm:text-[11px] mb-1">
             <span className="text-slate-500">Plan:</span>
             <span className="text-slate-900 font-medium">Full-Service</span>
           </div>
-          <div className="flex justify-between text-[11px] mb-3">
+          <div className="flex justify-between text-[10px] sm:text-[11px] mb-3">
             <span className="text-slate-500">Performance:</span>
             <span className="text-emerald-600 font-bold flex items-center gap-0.5"><Zap className="w-3 h-3"/> 99/100</span>
           </div>
@@ -115,7 +115,7 @@ export function HeroInteractiveDashboard() {
         </div>
 
         {/* Card 2: Bottom Left */}
-        <div className="floating-card animate-float2 w-[180px] p-4 flex gap-3 items-center" style={{ bottom: '12%', left: '-12%' }}>
+        <div className="floating-card animate-float2 w-[160px] sm:w-[180px] p-3 sm:p-4 flex gap-3 items-center absolute bottom-[10%] left-[2%] sm:left-[0%] md:-left-[2%] lg:-left-[4%] xl:-left-[8%]">
           <div className="w-10 h-10 rounded-full bg-indigo-50 flex items-center justify-center shrink-0">
              <Shield className="w-5 h-5 text-indigo-500" />
           </div>
@@ -130,7 +130,7 @@ export function HeroInteractiveDashboard() {
         </div>
 
         {/* Card 3: Top Left Pill */}
-        <div className="floating-pill animate-float3 flex items-center gap-2 pr-4" style={{ top: '15%', left: '-6%' }}>
+        <div className="floating-pill animate-float3 flex items-center gap-2 pr-4 absolute top-[15%] left-[2%] md:-left-[1%] lg:-left-[3%] xl:-left-[6%]">
           <div className="w-[24px] h-[24px] rounded-full bg-gradient-to-r from-[#D4187A] to-[#9C27B0] flex items-center justify-center shrink-0 shadow-sm border border-white/20">
             <Check className="w-[12px] h-[12px] text-white" strokeWidth={3} />
           </div>
