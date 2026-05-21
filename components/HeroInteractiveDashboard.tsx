@@ -1,185 +1,145 @@
 'use client';
 
-import React, { useState, useEffect, useRef } from 'react';
-import { motion, animate } from 'motion/react';
-import { ArrowDown, AlertTriangle, TrendingUp, Users } from 'lucide-react';
-
-function AnimatedNumber({ value }: { value: number }) {
-  const nodeRef = useRef<HTMLSpanElement>(null);
-  
-  useEffect(() => {
-    const node = nodeRef.current;
-    if (!node) return;
-    
-    const currentVal = parseInt(node.textContent?.replace(/\./g, '') || "0", 10);
-    
-    const controls = animate(currentVal, value, {
-      duration: 0.6,
-      ease: "easeOut",
-      onUpdate: (latest) => {
-        node.textContent = Math.round(latest).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
-      }
-    });
-    
-    return controls.stop;
-  }, [value]);
-
-  return <span ref={nodeRef}>{value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")}</span>;
-}
+import React from 'react';
+import Image from 'next/image';
+import { Check, Shield, Zap } from 'lucide-react';
 
 export function HeroInteractiveDashboard() {
-  const [visitors, setVisitors] = useState(3000);
-
-  const withoutVANICY = Math.round(visitors * 0.012);
-  const withVANICY = Math.round(visitors * 0.038);
-  const uplift = withVANICY - withoutVANICY;
-  const yearly = uplift * 12;
-
-  const percentage = ((visitors - 500) / (20000 - 500)) * 100;
-
   return (
-    <motion.div 
-      initial={{ opacity: 0, x: 40 }}
-      animate={{ opacity: 1, x: 0 }}
-      transition={{ duration: 0.8, delay: 0.2 }}
-      className="flex-1 w-full relative group"
-    >
-      <div className="bg-[#0f1428] rounded-3xl border border-white/10 shadow-[0_30px_60px_-15px_rgba(0,0,0,0.5)] overflow-hidden relative">
-        {/* Glow Effects */}
-        <div className="absolute top-0 right-0 w-64 h-64 bg-rose-500/10 rounded-full blur-[80px] pointer-events-none"></div>
-        <div className="absolute bottom-0 left-0 w-64 h-64 bg-purple-600/10 rounded-full blur-[80px] pointer-events-none"></div>
+    <div className="flex-1 w-full relative flex items-center justify-center lg:justify-end xl:pl-10 mt-12 sm:mt-14 lg:mt-0 perspective-container">
+      <style dangerouslySetInnerHTML={{__html: `
+        .perspective-container {
+          perspective: 1000px;
+        }
+        .macbook-wrapper {
+          transform-style: preserve-3d;
+          transition: transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+          position: relative;
+        }
+        @media (min-width: 768px) {
+          .macbook-wrapper {
+            transform: rotateY(-18deg) rotateX(4deg) rotateZ(-1deg) scale(1.1);
+            filter: drop-shadow(30px 25px 40px rgba(74,21,112,0.20)) drop-shadow(0px 10px 20px rgba(0,0,0,0.12));
+          }
+          .macbook-wrapper:hover {
+            transform: rotateY(-14deg) rotateX(3deg) rotateZ(-0.5deg) scale(1.12);
+          }
+        }
+        @media (min-width: 1280px) {
+           .macbook-wrapper {
+              transform: rotateY(-18deg) rotateX(4deg) rotateZ(-1deg) scale(1.25) translateX(20px);
+           }
+           .macbook-wrapper:hover {
+              transform: rotateY(-14deg) rotateX(3deg) rotateZ(-0.5deg) scale(1.28) translateX(20px);
+           }
+        }
+        .macbook-image {
+          width: 100%;
+          height: auto;
+          display: block;
+        }
+        .floating-card {
+          position: absolute;
+          background: white;
+          border-radius: 14px;
+          box-shadow: 0 8px 32px rgba(74,21,112,0.13), 0 2px 8px rgba(0,0,0,0.06);
+          z-index: 10;
+        }
+        .floating-pill {
+          position: absolute;
+          background: white;
+          border-radius: 100px;
+          padding: 7px 14px;
+          box-shadow: 0 8px 32px rgba(74,21,112,0.13), 0 2px 8px rgba(0,0,0,0.06);
+          z-index: 10;
+        }
+        @keyframes float1 {
+          0%, 100% { transform: translateY(0px); }
+          50% { transform: translateY(-7px); }
+        }
+        @keyframes float2 {
+          0%, 100% { transform: translateY(0px); }
+          50% { transform: translateY(-5px); }
+        }
+        @keyframes float3 {
+          0%, 100% { transform: translateY(0px); }
+          50% { transform: translateY(-6px); }
+        }
+        .animate-float1 { animation: float1 4s ease-in-out infinite; }
+        .animate-float2 { animation: float2 5s ease-in-out infinite 0.8s; }
+        .animate-float3 { animation: float3 4.5s ease-in-out infinite 1.5s; }
+        
+        @media (max-width: 767px) {
+          .macbook-wrapper {
+            transform: scale(1.15) !important;
+            filter: none !important;
+          }
+          .floating-card, .floating-pill {
+            display: none !important;
+          }
+        }
+      `}} />
 
-        <div className="flex flex-col lg:flex-row h-full">
-          {/* Left Column: Controls */}
-          <div className="w-full lg:w-[55%] p-6 md:p-8 flex flex-col justify-center border-b lg:border-b-0 lg:border-r border-white/10 relative z-10">
-            <span className="text-[10px] md:text-xs font-black uppercase tracking-widest text-transparent bg-clip-text bg-gradient-to-r from-rose-500 to-purple-400 mb-3 block">
-              Interaktive Vorschau
-            </span>
-            <h3 className="text-2xl md:text-3xl font-bold text-white mb-3">
-              Wie viel verschenkst du gerade?
-            </h3>
-            <p className="text-sm text-white/60 mb-8 leading-relaxed">
-              Verschiebe den Regler und sieh, wie viele Anfragen dir mit einer nicht-optimierten Website durch die Finger gleiten.
-            </p>
+      <div className="macbook-wrapper w-full max-w-[950px]">
+        <Image 
+          src="/website-example.webp" 
+          alt="MacBook Mockup mit Praxis-Website" 
+          width={1200} 
+          height={800} 
+          quality={100}
+          priority
+          className="macbook-image"
+        />
 
-            {/* Slider Config */}
-            <div className="mb-8">
-              <div className="flex justify-between items-end mb-3">
-                <label className="text-[10px] font-bold uppercase tracking-wider text-white/60 flex items-center gap-1.5">
-                  <Users className="w-3.5 h-3.5" /> Monatliche Website-Besucher
-                </label>
-                <span className="text-base font-mono font-bold text-white">
-                  {visitors.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")}
-                </span>
-              </div>
-              <div className="relative py-2">
-                <style dangerouslySetInnerHTML={{__html: `
-                  @keyframes thumbGlow {
-                    0%, 100% { box-shadow: 0 0 10px rgba(244,63,94,0.6); }
-                    50% { box-shadow: 0 0 15px rgba(244,63,94,1), 0 0 0 6px rgba(244,63,94,0.2); }
-                  }
-                  .animate-thumb::-webkit-slider-thumb {
-                    animation: thumbGlow 2s infinite ease-in-out;
-                  }
-                  .animate-thumb::-moz-range-thumb {
-                    animation: thumbGlow 2s infinite ease-in-out;
-                  }
-                `}} />
-                <input 
-                  type="range" 
-                  min="500" 
-                  max="20000" 
-                  step="100"
-                  value={visitors}
-                  onChange={(e) => setVisitors(parseInt(e.target.value))}
-                  style={{
-                    background: `linear-gradient(to right, #f43f5e, #9333ea ${percentage}%, rgba(255,255,255,0.1) ${percentage}%)`
-                  }}
-                  className="animate-thumb w-full h-1.5 rounded-lg appearance-none cursor-pointer outline-none [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:w-4 [&::-webkit-slider-thumb]:h-4 [&::-webkit-slider-thumb]:bg-white [&::-webkit-slider-thumb]:rounded-full [&::-moz-range-thumb]:w-4 [&::-moz-range-thumb]:h-4 [&::-moz-range-thumb]:bg-white [&::-moz-range-thumb]:rounded-full [&::-moz-range-thumb]:border-none"
-                />
-              </div>
+        {/* Card 1: Top Right */}
+        <div className="floating-card animate-float1 w-[210px] p-4" style={{ top: '5%', right: '-8%' }}>
+          <div className="text-[10px] text-slate-500 mb-1">Mein Web-Projekt</div>
+          <div className="flex justify-between items-start mb-3">
+            <div className="text-[14px] font-bold text-slate-900 leading-tight">Taxi Berlin</div>
+            <div className="flex items-center gap-1 bg-[#EDFAF3] text-[#1A7F4B] px-2 py-0.5 rounded-full text-[11px] font-medium border border-[#bbf7d0]">
+              <div className="w-1.5 h-1.5 rounded-full bg-[#1A7F4B]"></div>
+              Live ✓
             </div>
-
-            {/* Stat Pills */}
-            <div className="flex flex-col gap-2 mb-6">
-              <div className="flex items-center justify-between px-3 py-2 rounded-xl bg-rose-500/10 border border-rose-500/20">
-                 <span className="text-xs font-medium text-rose-200/80">Aktuelle Conversion:</span>
-                 <span className="text-xs font-bold text-rose-400">~1.2%</span>
-              </div>
-              <div className="flex items-center justify-between px-3 py-2 rounded-xl bg-emerald-500/10 border border-emerald-500/20">
-                 <span className="text-xs font-medium text-emerald-200/80">Mit VANICY Optimierung:</span>
-                 <span className="text-xs font-bold text-emerald-400">~3.8%</span>
-              </div>
-            </div>
-
-            <p className="text-[10px] text-white/30 tracking-wide mt-auto pt-2 border-t border-white/5">
-              Basierend auf ∅ Ergebnissen unserer Kundenprojekte
-            </p>
           </div>
-
-          {/* Right Column: Visualization */}
-          <div className="w-full lg:w-[45%] p-6 md:p-8 bg-white/5 backdrop-blur-md relative z-10 flex flex-col justify-center">
-            
-            {/* Top Card: Ohne VANICY */}
-            <div className="bg-rose-950/30 border border-rose-900/50 rounded-2xl p-5 mb-4 relative overflow-hidden shrink-0">
-               <div className="absolute -top-4 -right-4 p-3 opacity-10">
-                 <AlertTriangle className="w-24 h-24 text-rose-500" />
-               </div>
-               <div className="relative z-10">
-                 <span className="text-[10px] font-bold text-rose-400/80 uppercase tracking-widest mb-1 block">Ohne VANICY</span>
-                 <div className="flex items-baseline gap-2">
-                   <span className="text-3xl md:text-4xl font-black text-rose-100/90 tracking-tighter">
-                     <AnimatedNumber value={withoutVANICY} />
-                   </span>
-                   <span className="text-xs font-medium text-rose-200/60 uppercase tracking-wider">Anfragen / Monat</span>
-                 </div>
-                 <p className="text-xs text-rose-300/50 mt-1">Bei 1.2% Conversion</p>
-               </div>
-            </div>
-
-            {/* VS Badge */}
-            <div className="relative flex justify-center -my-7 z-20 shrink-0">
-               <div className="bg-[#0f1428] border border-white/10 w-9 h-9 rounded-full flex items-center justify-center shadow-xl">
-                 <ArrowDown className="w-4 h-4 text-white/40" />
-               </div>
-            </div>
-
-            {/* Bottom Card: Mit VANICY */}
-            <div className="bg-gradient-to-br from-rose-500/10 to-purple-600/10 border border-rose-400/20 rounded-2xl p-5 mt-4 relative overflow-hidden group/card transition-all duration-300 hover:border-purple-400/30 shrink-0">
-               {/* Hover Glow */}
-               <div className="absolute inset-0 bg-gradient-to-tr from-rose-500/20 to-purple-600/20 opacity-0 group-hover/card:opacity-100 transition-opacity duration-500 pointer-events-none blur-xl"></div>
-               
-               <div className="relative z-10">
-                 <span className="text-[10px] font-bold text-white/80 uppercase tracking-widest mb-1 block">Mit VANICY</span>
-                 <div className="flex items-baseline gap-2">
-                   <span className="text-4xl md:text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-rose-400 to-purple-400 tracking-tighter drop-shadow-lg">
-                     <AnimatedNumber value={withVANICY} />
-                   </span>
-                   <span className="text-xs font-medium text-purple-200/60 uppercase tracking-wider pt-1">Anfragen / Monat</span>
-                 </div>
-                 <p className="text-xs text-purple-300/50 mt-1">Bei ∅ 3.8% Conversion</p>
-               </div>
-            </div>
-
-            {/* Uplift Badges */}
-            <div className="mt-6 text-center flex flex-col items-center gap-3 shrink-0">
-               <motion.div 
-                 animate={{ scale: [1, 1.05, 1] }} 
-                 transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut" }}
-                 className="inline-flex items-center gap-1.5 bg-emerald-500/20 border border-emerald-500/30 text-emerald-300 px-3 py-1.5 rounded-full text-xs font-bold"
-               >
-                 <TrendingUp className="w-3.5 h-3.5" />
-                 +<AnimatedNumber value={uplift} /> Anfragen mehr
-               </motion.div>
-               
-               <span className="text-[10px] md:text-[11px] text-white/50 bg-white/5 px-4 py-1.5 rounded-full border border-white/10">
-                 Das entspricht <strong className="text-white/90">~<AnimatedNumber value={yearly} /></strong> mehr Kundenanfragen pro Jahr
-               </span>
-            </div>
-
+          <div className="flex justify-between text-[11px] mb-1">
+            <span className="text-slate-500">Plan:</span>
+            <span className="text-slate-900 font-medium">Full-Service</span>
+          </div>
+          <div className="flex justify-between text-[11px] mb-3">
+            <span className="text-slate-500">Performance:</span>
+            <span className="text-emerald-600 font-bold flex items-center gap-0.5"><Zap className="w-3 h-3"/> 99/100</span>
+          </div>
+          <div className="w-full bg-slate-100 h-1.5 rounded-full overflow-hidden">
+            <div className="h-full w-[99%] bg-gradient-to-r from-emerald-400 to-emerald-500 rounded-full"></div>
           </div>
         </div>
+
+        {/* Card 2: Bottom Left */}
+        <div className="floating-card animate-float2 w-[180px] p-4 flex gap-3 items-center" style={{ bottom: '12%', left: '-12%' }}>
+          <div className="w-10 h-10 rounded-full bg-indigo-50 flex items-center justify-center shrink-0">
+             <Shield className="w-5 h-5 text-indigo-500" />
+          </div>
+          <div>
+             <div className="text-[12px] font-bold text-slate-900 leading-tight mb-0.5">
+               All-Inclusive
+             </div>
+             <div className="text-[10px] text-slate-500 leading-snug font-medium">
+               Hosting, Updates & Support integriert
+             </div>
+          </div>
+        </div>
+
+        {/* Card 3: Top Left Pill */}
+        <div className="floating-pill animate-float3 flex items-center gap-2 pr-4" style={{ top: '15%', left: '-6%' }}>
+          <div className="w-[24px] h-[24px] rounded-full bg-gradient-to-r from-[#D4187A] to-[#9C27B0] flex items-center justify-center shrink-0 shadow-sm border border-white/20">
+            <Check className="w-[12px] h-[12px] text-white" strokeWidth={3} />
+          </div>
+          <div className="text-[13px] font-bold text-slate-800">
+            0€ Setup-Gebühr
+          </div>
+        </div>
+
       </div>
-    </motion.div>
+    </div>
   );
 }

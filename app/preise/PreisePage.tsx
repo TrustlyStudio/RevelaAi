@@ -114,7 +114,7 @@ const FeatureValue = ({ value, isBusiness, className = "font-semibold text-sm", 
 };
 
 export default function PreisePage() {
-  const [term, setTerm] = useState<12 | 24>(12);
+  const [term, setTerm] = useState<12 | 24>(24);
   const [openFaq, setOpenFaq] = useState<number | null>(null);
   const [isPromoModalOpen, setIsPromoModalOpen] = useState(false);
   const [checkoutUrl, setCheckoutUrl] = useState('');

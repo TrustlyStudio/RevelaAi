@@ -24,7 +24,7 @@ export function InfiniteLogoTicker() {
   return (
     <div className="relative flex overflow-x-hidden group">
       <motion.div
-        className="py-12 flex items-center gap-16 md:gap-32 w-max px-8 md:px-16"
+        className="py-4 md:py-6 flex items-center gap-8 md:gap-14 w-max px-4 md:px-8"
         animate={{
           x: ['0%', '-50%'],
         }}

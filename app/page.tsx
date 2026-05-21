@@ -117,8 +117,7 @@ export default function Page() {
           ]
         },
         "sameAs": [
-          "https://www.instagram.com/vanicy.de",
-          "https://www.linkedin.com/company/revela-ai"
+          "https://www.instagram.com/vanicy.de"
         ]
       },
       {

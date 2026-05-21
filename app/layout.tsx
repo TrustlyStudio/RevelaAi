@@ -20,14 +20,14 @@ export const metadata: Metadata = {
     template: '%s | VANICY - Webseitenleasing & Digitales Wachstum',
     default: 'VANICY | Premium B2B-Webseitenleasing & Performance Webdesign',
   },
-  description: 'Steigere deine Sichtbarkeit und Conversion-Rate mit VANICY. Professionelles Webseitenleasing mit Top-SEO und Premium-Hosting ab 209€/Monat – ohne hohes Startkapital.',
+  description: 'Live in 7 Tagen – Design, Hosting, Support inklusive. Professionelles Webseitenleasing mit Top-SEO und Premium-Hosting ab 129€/Monat.',
   keywords: [
     'Webseitenleasing', 'Website mieten', 'Webdesign Agentur', 'Homepage mieten', 
     'Conversion Optimierung', 'Landingpage erstellen', 'VANICY', 'B2B Websites', 'Performance Webdesign'
   ],
   openGraph: {
     title: 'VANICY | Exklusives Webseitenleasing & Performance Webdesign',
-    description: 'Steigere deine Sichtbarkeit und Conversion-Rate mit VANICY. Professionelles Webseitenleasing mit Top-SEO und Premium-Hosting ab 209€/Monat.',
+    description: 'Live in 7 Tagen – Design, Hosting, Support inklusive. Professionelles Webseitenleasing mit Top-SEO und Premium-Hosting ab 129€/Monat.',
     type: 'website',
     locale: 'de_DE',
     siteName: 'VANICY',

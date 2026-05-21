@@ -10,53 +10,185 @@ import Link from 'next/link';
 
 const faqCategories = [
   {
-    title: "Allgemein",
+    title: "Das Produkt & Modell",
     faqs: [
       {
-        q: "Was ist Web-Leasing genau?",
-        a: "Beim Web-Leasing zahlst du nicht einmalig zehntausende Euro für eine neue Website, sondern abonnierst deine Website als Full-Service zur monatlichen Fixrate. In dieser Rate sind Domain, Hosting, professionelles E-Mail-Postfach, Premium-Design, Programmierung und monatliche Wartung inkludiert."
+        q: "Was ist Website Leasing überhaupt?",
+        a: "Website Leasing bedeutet: Du zahlst eine monatliche Pauschale und bekommst dafür eine fertige, professionelle Website inklusive allem was dazugehört — Design, Hosting, Pflege, Support und Änderungen. Kein Einmalinvestment, kein Eigenverantwortung für Technik. Ähnlich wie beim Auto-Leasing nutzt du etwas Professionelles ohne es kaufen zu müssen."
+      },
+      {
+        q: "Was unterscheidet VANICY von einer klassischen Webagentur?",
+        a: "Eine klassische Agentur verlangt 5.000–20.000 € einmalig — und danach bist du auf dich allein gestellt. VANICY baut deine Website, pflegt sie laufend, kümmert sich um Hosting und Support und bleibt dein Partner. Du zahlst monatlich und hast immer jemanden der sich kümmert."
+      },
+      {
+        q: "Was unterscheidet VANICY von Baukästen wie Wix oder Jimdo?",
+        a: "Bei Wix oder Jimdo baust du selbst — du brauchst Zeit, Wissen und trotzdem sieht das Ergebnis oft nach Baukasten aus. Bei VANICY baust du gar nichts selbst. Wir liefern ein professionelles Ergebnis das nach echtem Design aussieht — und du musst dich um nichts kümmern."
+      },
+      {
+        q: "Für wen ist VANICY geeignet?",
+        a: "Für inhabergeführte Unternehmen in Deutschland die eine professionelle Website brauchen aber keine Zeit, kein technisches Wissen und kein großes Budget für eine Agentur haben. Handwerker, Taxiunternehmen, Dienstleister, Coaches, Therapeuten, lokale Händler, Gastronomie, Kanzleien — kurz: jeder der Kunden über seine Website gewinnen möchte."
+      },
+      {
+        q: "Ist VANICY auch für größere Unternehmen geeignet?",
+        a: "Ja. Neben unseren Standardpaketen (Essential, Business, Pro) gibt es ein Enterprise-Paket für Unternehmen mit komplexeren Anforderungen — zum Beispiel E-Commerce, Login-Bereiche, dynamische Seiten oder Web-App-Funktionen. Sprich uns einfach an."
+      }
+    ]
+  },
+  {
+    title: "Preise & Verträge",
+    faqs: [
+      {
+        q: "Was kosten die verschiedenen Pakete?",
+        a: "Essential ab 149 €/Monat (bis zu 3 Unterseiten, 1 Call-to-Action, Basis-Support), Business ab 229 €/Monat (mehr Unterseiten, Blog/News, höhere Ticket-Priorität), Pro ab 449 €/Monat (dringende Tickets, erweiterte Features). Enterprise auf Anfrage. Alle Preise inklusive Hosting, Domain-Verwaltung, Impressum und Datenschutz."
+      },
+      {
+        q: "Gibt es eine Setup-Gebühr?",
+        a: "Nein. Kein Setup-Preis, kein Einmalinvestment. Du zahlst ausschließlich die monatliche Rate."
+      },
+      {
+        q: "Was ist der Unterschied zwischen 12 und 24 Monaten Laufzeit?",
+        a: "Bei 24 Monaten Laufzeit zahlst du einen deutlich günstigeren Monatspreis. Wenn du eh langfristig eine professionelle Website willst — und das solltest du — ist die 24-Monats-Option wirtschaftlich die bessere Wahl."
+      },
+      {
+        q: "Wann wird abgerechnet?",
+        a: "Die Abrechnung startet ab dem Tag deines Kaufs. Der erste Monat ist kostenlos."
       },
       {
         q: "Gibt es versteckte Kosten?",
-        a: "Nein, überhaupt nicht. Die monatliche Rate ist eine Sorglos-Flatrate, die alles abdeckt: Domain, Hosting, SSL, DSGVO-Tools (wie ein rechtssicheres Cookie-Banner), Software-Updates und ein Kontingent an inhaltlichen Änderungen. Aktuell profitierst du zudem von 0€ Setup-Gebühr."
+        a: "Nein. Domain, Hosting, SSL, Impressum, Datenschutz, Wartung und Support sind alle inklusive. Was extra kostet: Leistungen die über deinen gebuchten Plan hinausgehen, zum Beispiel zusätzliche Unterseiten beim Essential-Plan oder Funktionen die dem Enterprise-Bereich entsprechen."
       },
       {
-        q: "Was passiert nach der Mindestlaufzeit?",
-        a: "Der Vertrag verlängert sich automatisch um die gleiche, ursprünglich gewählte Laufzeit, wenn er nicht mit einer Frist von 1 Monat zum Laufzeitende gekündigt wird. Nach Kündigung kannst du deine Domain und Inhalte mitnehmen. Code und Design können gegen eine Einmalablöse an dich transferiert werden."
+        q: "Kann ich meinen Plan upgraden?",
+        a: "Ja, jederzeit. Du kannst von Essential auf Business oder Pro wechseln — der neue Plan gilt ab dem nächsten Abrechnungszeitraum."
       }
     ]
   },
   {
-    title: "Technik & Portal",
+    title: "Der Prozess",
     faqs: [
       {
-        q: "Wo wird meine Website gehostet?",
-        a: "Wir nutzen Enterprise-Grade Hosting-Lösungen in Europa (DSGVO-konform). Deine Website profitiert von einem globalen CDN, sodass sie von überall blitzschnell lädt."
+        q: "Wie läuft der Start ab?",
+        a: "Nach deinem Kauf erhältst du Zugang zum Kundenportal und ein Onboarding-Formular. Dort gibst du alle Informationen ein: deine Firma, Leistungen, Design-Wünsche, Inhalte und rechtliche Angaben. Sobald das Formular vollständig ausgefüllt ist, starten wir mit dem Bau."
       },
       {
-        q: "Wie funktioniert das Exklusive Kundenportal?",
-        a: "Jeder unserer Kunden erhält Zugang zu einem persönlichen Dashboard. Dort kannst du mit einem Klick Inhaltsänderungen anfordern, Rechnungen herunterladen und die wichtigsten Metriken (wie Besucherzahlen) deiner Website einsehen – ganz ohne Technik-Know-how."
+        q: "Wie lange habe ich Zeit das Onboarding auszufüllen?",
+        a: "Du hast 7 Tage Zeit das Onboarding-Formular vollständig auszufüllen. Erst danach starten wir mit dem Bau. So stellen wir sicher dass dein Projekt planbar und termingerecht fertig wird."
       },
       {
-        q: "Kümmern Sie sich um Updates und Backups?",
-        a: "Ja, vollautomatisch. Im monatlichen Preis sind tägliche Backups, Sicherheits-Checks, Updates von CMS und Plugins sowie Ladezeiten-Monitoring enthalten."
+        q: "Wie viele Feedback-Runden sind inklusive?",
+        a: "Zwei Feedback-Runden sind in jedem Paket inklusive. Das bedeutet: du siehst die fertige Website in einer Vorschau, gibst uns dein Feedback, wir setzen es um — zweimal. Danach ist die Website live."
+      },
+      {
+        q: "Was passiert nach dem Go-Live?",
+        a: "Nach dem Go-Live läuft deine Website vollständig betreut. Änderungen beantragst du über das Kundenportal-Ticketsystem. Wir kümmern uns um Wartung, Sicherheitsupdates und halten Impressum sowie Datenschutz aktuell."
+      },
+      {
+        q: "Kann ich vor Go-Live noch größere Änderungen verlangen?",
+        a: "Innerhalb der zwei inkludierten Feedback-Runden ja. Strukturelle Umbauten oder komplett neue Konzepte nach Baubeginn werden als separates Angebot behandelt."
       }
     ]
   },
   {
-    title: "Design & Änderungen",
+    title: "Technisches",
     faqs: [
       {
-        q: "Wie lange dauert es bis meine Website online ist?",
-        a: "Nach unserem Kick-Off-Gespräch und Erhalt aller Materialien (Texte, Bilder) benötigen wir im Schnitt 2-4 Wochen bis die Seite live gehen kann, meist sogar schneller (14 Tage)."
+        q: "Welches Hosting nutzt VANICY?",
+        a: "Wir hosten deine Website auf unserer eigenen Infrastruktur bei Hostinger — professionell, schnell und sicher. Du musst dich um nichts kümmern."
       },
       {
-        q: "Wie laufen inhaltliche Änderungen ab?",
-        a: "Du nutzt einfach dein Kundenportal oder schickst uns eine E-Mail mit den gewünschten Änderungen (neuer Text, neues Teambild, etc.). Normale Änderungen werden in der Regel innerhalb von 48 Stunden umgesetzt."
+        q: "Was ist mit meiner bestehenden Domain?",
+        a: "Wenn du bereits eine Domain hast, übernehmen wir die Verwaltung und verlinken sie mit deiner neuen Website. Wenn du noch keine Domain hast, bekommen wir auch das für dich geregelt."
       },
       {
-        q: "Kann ich die Inhalte auch selbst ändern?",
-        a: "Unser Modell basiert darauf, dass wir dir die Arbeit komplett abnehmen - 'Done for you'. Du sparst Zeit und Nerven, da du dich in kein komplexes CMS einarbeiten musst. Du gibst uns Bescheid, und wir erledigen den Rest."
+        q: "Ist die Website mobiloptimiert?",
+        a: "Ja, selbstverständlich. Alle VANICY-Websites sind responsive und für alle Endgeräte optimiert — Smartphone, Tablet, Desktop."
+      },
+      {
+        q: "Wie schnell lädt meine Website?",
+        a: "Schnelle Ladezeiten sind Teil unseres Standards. Wir optimieren jede Website für Performance und folgen den Google-Richtlinien für Page Speed."
+      },
+      {
+        q: "Kümmert ihr euch um Impressum und Datenschutz?",
+        a: "Ja. Impressum und Datenschutzerklärung werden von uns erstellt und aktuell gehalten. Das ist im Paket inklusive. Du musst kein Anwalt sein und kein Geld für rechtliche Texte ausgeben."
+      },
+      {
+        q: "Was passiert bei Sicherheitsproblemen oder Ausfällen?",
+        a: "Wir überwachen die Infrastruktur laufend. Bei technischen Problemen reagieren wir — du musst nichts tun. Das ist der Kern des Leasing-Modells: wir tragen die technische Verantwortung."
+      }
+    ]
+  },
+  {
+    title: "Änderungen & Support",
+    faqs: [
+      {
+        q: "Wie beantrage ich Änderungen an meiner Website?",
+        a: "Ausschließlich über das Ticketsystem im Kundenportal. Kein WhatsApp, keine E-Mail, kein Anruf nötig. Du öffnest ein Ticket, beschreibst die Änderung — wir setzen sie um."
+      },
+      {
+        q: "Was gilt als eine Änderung?",
+        a: "Eine Änderung ist eine spezifische, abgegrenzte Anpassung: ein Text an einer Stelle, ein Bild austauschen, eine Angabe aktualisieren (Öffnungszeiten, Telefonnummer, Preis) oder einen Link korrigieren."
+      },
+      {
+        q: "Was ist keine Änderung?",
+        a: "Neue Unterseiten, neue Sektionen, Designänderungen (Layout, Farben, Schriften), neue Formulare oder neue Funktionen sind keine Änderungen im Sinne des Pakets. Diese werden als separates Angebot behandelt."
+      },
+      {
+        q: "Wie schnell werden Änderungen umgesetzt?",
+        a: "Essential: innerhalb von 5 Werktagen. Business: innerhalb von 3 Werktagen. Pro: innerhalb von 1 Werktag."
+      },
+      {
+        q: "Wie viele Änderungen sind pro Monat inklusive?",
+        a: "Das hängt von deinem Paket ab. Nicht genutzte Änderungen verfallen monatlich und werden nicht übertragen."
+      },
+      {
+        q: "Kann ich VANICY auch für größere Updates beauftragen?",
+        a: "Ja. Wenn du zum Beispiel eine neue Seite brauchst oder ein Design-Refresh möchtest, können wir das als Zusatzleistung anbieten. Sprich uns einfach über das Portal an."
+      }
+    ]
+  },
+  {
+    title: "Kündigung & Eigentumsrecht",
+    faqs: [
+      {
+        q: "Wem gehört die Website?",
+        a: "Die Website gehört VANICY — du least die Nutzung. Deine eigenen Inhalte (Texte, Fotos, Logos die du uns gegeben hast) gehören natürlich dir. Das Leasing-Modell ist der Grund warum kein Einmalinvestment nötig ist."
+      },
+      {
+        q: "Was passiert wenn ich kündige?",
+        a: "Nach Ablauf der Mindestlaufzeit und nach Kündigung wird die Website offline gestellt. Deine eigenen Inhalte bekommst du auf Anfrage exportiert."
+      },
+      {
+        q: "Kann ich die Website nach Kündigung kaufen?",
+        a: "Das ist grundsätzlich möglich. Sprich uns an — wir finden eine Lösung."
+      },
+      {
+        q: "Was passiert wenn VANICY aufhört zu existieren?",
+        a: "In diesem unwahrscheinlichen Fall würden wir dir alle Website-Dateien und Inhalte übergeben damit du sie anderweitig hosten kannst. Wir würden dich rechtzeitig informieren."
+      },
+      {
+        q: "Kann ich nach der Mindestlaufzeit monatlich kündigen?",
+        a: "Ja. Nach Ablauf der gewählten Mindestlaufzeit (12 oder 24 Monate) kannst du monatlich mit entsprechender Frist kündigen."
+      }
+    ]
+  },
+  {
+    title: "Vertrauen & Sicherheit",
+    faqs: [
+      {
+        q: "Ist VANICY ein deutsches Unternehmen?",
+        a: "Ja. VANICY ist in Deutschland ansässig und alle Verträge unterliegen deutschem Recht."
+      },
+      {
+        q: "Wie lange gibt es VANICY schon?",
+        a: "VANICY ist das Website-Leasing-Produkt des Teams hinter Step V Studio, das bereits mehrere Jahre Erfahrung im Bereich Webdesign und digitales Marketing hat."
+      },
+      {
+        q: "Gibt es Referenzen die ich mir ansehen kann?",
+        a: "Ja. Auf unserer Website findest du eine Auswahl an Projekten die wir umgesetzt haben. Schau dir gerne an was wir für Lemuria Bay und andere Kunden gebaut haben."
+      },
+      {
+        q: "Kann ich VANICY vor dem Kauf testen?",
+        a: "Ja — dein erster Monat ist kostenlos. Du siehst deine fertige Website live bevor du entscheidest ob du bleibst."
       }
     ]
   }

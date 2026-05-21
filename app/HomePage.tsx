@@ -50,28 +50,24 @@ import Link from 'next/link';
 
 const faqs = [
   {
-    question: "Gibt es wirklich einen kostenlosen Probemonat?",
-    answer: "Ja, absolut. Du wählst dein Paket und wir starten mit dem Bau deiner Website – komplett auf unsere Kosten. Du kannst das fertige Ergebnis einen ganzen Monat lang testen. Erst danach entscheidest du, ob du im Leasing bleibst. Kein Risiko, keine Vorabkosten."
+    question: "Was kostet das genau — und was ist inklusive?",
+    answer: "Die Pakete starten ab 149 € im Monat (Essential). Darin enthalten sind: professionelles Website-Design, Hosting, Domain-Verwaltung, SSL-Zertifikat, Impressum und Datenschutz, laufende Wartung sowie Änderungsanfragen über unser Kundenportal. Es gibt keine Setup-Gebühr und kein Einmalinvestment. Du zahlst monatlich — das war's."
   },
   {
-    question: "Was bedeutet das Leasing-Modell genau?",
-    answer: "Statt viel Geld auf einmal für eine neue Website zu zahlen, mietest du deine professionelle Website bei uns für eine feste monatliche Rate. Hosting, Wartung, Updates und Support sind bereits inklusive. Du hast keine versteckten Kosten und volle Flexibilität."
+    question: "Wie lange dauert es bis meine Website live ist?",
+    answer: "Nach vollständigem Ausfüllen des Onboarding-Formulars bauen wir deine Website in 2–3 Werktagen. Inklusive Feedback-Runden und finaler Freigabe ist deine Website in der Regel in 5–7 Tagen live. Kein anderer Anbieter in Deutschland schafft das in dieser Zeit."
   },
   {
-    question: "Warum nutzt ihr keine Standard-Baukästen wie WordPress?",
-    answer: "Gewöhnliche Baukästen sind oft langsam, fehleranfällig und schwer zu bedienen. Wir entwickeln deine Website mit modernster, handgeschriebener Technologie. Das Ergebnis: Blitzschnelle Ladezeiten, besserer Schutz vor Hackern und ein Design, das perfekt zu dir passt und deine Kunden überzeugt."
+    question: "Gehört mir die Website — oder nicht?",
+    answer: "Die Website gehört dir nicht im klassischen Sinne — du least sie, ähnlich wie ein Geschäftsauto. Du nutzt sie vollständig und professionell so lange du Kunde bist. Das ist der Grund warum kein großes Einmalinvestment fällig ist. Wenn du kündigst, wird die Website offline gestellt. Deine Inhalte und Texte gehören dir natürlich jederzeit."
   },
   {
-    question: "Wie lange dauert es, bis die neue Seite online ist?",
-    answer: "Dank unserer bewährten und strukturierten Methode benötigen wir für die meisten Websites nur etwa 2 bis 4 Wochen vom ersten Gespräch bis zum fertigen Start der Homepage."
+    question: "Kann ich jederzeit kündigen?",
+    answer: "Du wählst beim Start eine Mindestlaufzeit von 12 oder 24 Monaten. Danach ist monatlich kündbar. Je länger die gewählte Laufzeit, desto günstiger der monatliche Preis. Eine Kündigung vor Ablauf der Mindestlaufzeit ist nicht möglich."
   },
   {
-    question: "Zahle ich extra, wenn ich Änderungen möchte?",
-    answer: "Nein. In deinem monatlichen Tarif sind kleine inhaltliche Anpassungen sowie alle wichtigen Sicherheitsupdates komplett abgedeckt. Du bist bestens versorgt."
-  },
-  {
-    question: "Was passiert nach der Mindestlaufzeit?",
-    answer: "Der Vertrag verlängert sich automatisch um die gleiche, ursprünglich gewählte Laufzeit, wenn er nicht mit einer Frist von 1 Monat zum Laufzeitende gekündigt wird. Nach Kündigung kannst du deine Domain und Inhalte mitnehmen; der Code kann gegen eine Einmalablöse übernommen werden."
+    question: "Ich bin nicht technikaffin — funktioniert das trotzdem für mich?",
+    answer: "Genau dafür wurde VANICY gebaut. Du musst nichts über Websites, Hosting oder Technik wissen. Du füllst unser Onboarding-Formular aus — wir bauen alles. Änderungen beantragst du einfach über unser Kundenportal. Kein E-Mail-Chaos, kein Technikstress."
   }
 ];
 
@@ -91,16 +87,12 @@ const staggerContainer: any = {
 
 const testimonialsData = [
   { quote: "Seit wir VANICY nutzen, haben wir deutlich mehr qualifizierte Anfragen in unserem Postfach. Das Leasingmodell ist für uns perfekt – keine riesigen Vorabkosten und man muss sich um nichts kümmern.", name: "Sven Krause", role: "Geschäftsführer, Krause Heiztechnik", img: "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=150&h=150&fit=crop" },
-  { quote: "Endlich ein Partner, der mitdenkt! Änderungen gehen blitzschnell über das Portal, und die Seite lädt so extrem schnell, dass auch unser Google-Ranking spürbar besser wurde.", name: "Laura Weber", role: "Inhaberin, Weber Immobilien", img: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=150&h=150&fit=crop" },
-  { quote: "Unsere alte Homepage war eine einzige Baustelle. VANICY hat uns da herausgeholt. Wir zahlen einen fairen, fixen Preis im Monat und die Seite sieht einfach aus wie eine hochpreisige Produktion.", name: "Marc Tessmer", role: "Gründer", img: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop" },
-  { quote: "Das persönliche Onboarding und die unfassbar schnelle Umsetzung (unter 3 Wochen) haben mich komplett überzeugt. Ich kann dieses Modell jedem Unternehmer wärmstens empfehlen.", name: "Dr. Elena Schmidt", role: "Praxisleitung", img: "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=150&h=150&fit=crop" },
-  { quote: "Transparenz und Expertise. Bei VANICY weiß ich genau, was ich zahle und was ich an hochklassigem Service dafür bekomme. Ein Gamechanger für unseren digitalen Vertrieb.", name: "Johannes Koch", role: "CEO, Koch Logistics", img: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=150&h=150&fit=crop" },
-  { quote: "Als wir von Baukastensystemen auf das Maß-Design von VANICY umgestellt haben, stieg unsere Conversion-Rate enorm. Das Investment macht sich absolut bezahlt.", name: "Michelle Drechsler", role: "Senior Consultant", img: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&h=150&fit=crop" }
+  { quote: "Endlich ein Partner, der mitdenkt! Änderungen gehen blitzschnell über das Portal, und die Seite lädt so extrem schnell, dass auch unser Google-Ranking spürbar besser wurde.", name: "Laura Weber", role: "Inhaberin, Weber Immobilien", img: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=150&h=150&fit=crop" }
 ];
 
 export default function Home() {
   const [openFaq, setOpenFaq] = useState<number | null>(0);
-  const [term, setTerm] = useState<12 | 24>(12);
+  const [term, setTerm] = useState<12 | 24>(24);
   const [currentTestimonialIndex, setCurrentTestimonialIndex] = useState(0);
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
   const [selectedProblem, setSelectedProblem] = useState<number | null>(null);
@@ -341,6 +333,101 @@ export default function Home() {
         
         {/* --- HERO SECTION --- */}
         <section className="relative pt-12 pb-20 md:pt-20 lg:pt-32 lg:pb-40 bg-white overflow-hidden">
+          <style dangerouslySetInnerHTML={{__html: `
+            .vhb {
+              position: absolute;
+              inset: 0;
+              pointer-events: none;
+              z-index: 0;
+              overflow: hidden;
+            }
+
+            /* Dot-Grid — sehr subtil */
+            .vhb-grid {
+              position: absolute;
+              inset: 0;
+              background-image: radial-gradient(
+                circle,
+                rgba(74,21,112,0.12) 1px,
+                transparent 1px
+              );
+              background-size: 28px 28px;
+            }
+
+            /* Gradient Zone oben rechts — Violet */
+            .vhb-zone-tr {
+              position: absolute;
+              top: -100px;
+              right: -100px;
+              width: 480px;
+              height: 480px;
+              background: radial-gradient(ellipse at center,
+                rgba(123,47,190,0.25) 0%,
+                rgba(74,21,112,0.12) 45%,
+                transparent 70%);
+              border-radius: 50%;
+              will-change: transform;
+              animation: vhbDrift1 20s ease-in-out infinite;
+            }
+
+            /* Gradient Zone unten links — Pink */
+            .vhb-zone-bl {
+              position: absolute;
+              bottom: -80px;
+              left: -60px;
+              width: 360px;
+              height: 360px;
+              background: radial-gradient(ellipse at center,
+                rgba(212,24,122,0.22) 0%,
+                rgba(212,24,122,0.10) 50%,
+                transparent 72%);
+              border-radius: 50%;
+              will-change: transform;
+              animation: vhbDrift2 25s ease-in-out infinite 4s;
+            }
+
+            /* Dünner Arc oben rechts */
+            .vhb-arc {
+              position: absolute;
+              top: -180px;
+              right: -180px;
+              width: 560px;
+              height: 560px;
+              border-radius: 50%;
+              border: 1px solid rgba(123,47,190,0.18);
+            }
+
+            /* Animationen — kaum wahrnehmbar, rein atmosphärisch */
+            @keyframes vhbDrift1 {
+              0%, 100% { transform: translate(0, 0) scale(1); }
+              40%       { transform: translate(-12px, 8px) scale(1.03); }
+              70%       { transform: translate(8px, -6px) scale(0.98); }
+            }
+
+            @keyframes vhbDrift2 {
+              0%, 100% { transform: translate(0, 0) scale(1); }
+              50%       { transform: translate(10px, -8px) scale(1.04); }
+            }
+
+            /* Bewegung aus bei reduzierter Motion */
+            @media (prefers-reduced-motion: reduce) {
+              .vhb-zone-tr,
+              .vhb-zone-bl { animation: none; }
+            }
+
+            /* Sicherstellen dass Hero-Content 
+               über dem Hintergrund liegt */
+            .vhb ~ * {
+              position: relative;
+              z-index: 1;
+            }
+          `}} />
+          <div className="vhb" aria-hidden="true">
+            <div className="vhb-grid"></div>
+            <div className="vhb-zone vhb-zone-tr"></div>
+            <div className="vhb-zone vhb-zone-bl"></div>
+            <div className="vhb-arc"></div>
+          </div>
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 flex flex-col lg:flex-row items-center gap-10 lg:gap-20">
             
             <div className="flex-1 text-center lg:text-left">
@@ -372,6 +459,7 @@ export default function Home() {
                 transition={{ duration: 0.6, delay: 0.2 }}
                 className="text-base sm:text-lg text-slate-600 mb-8 max-w-xl mx-auto lg:mx-0 leading-relaxed font-medium"
               >
+                <span className="font-bold text-slate-900 block mb-2">Live in 7 Tagen.</span>
                 Keine teuren Einmalzahlungen. Wir designen, entwickeln und hosten deine neue Website – alles inklusive im bequemen Abo ab 129 €/Monat.
               </motion.p>
               
@@ -390,7 +478,7 @@ export default function Home() {
                     href="#preise"
                     className="w-full sm:w-auto h-14 bg-gradient-to-r from-rose-500 to-purple-600 p-1.5 pr-6 pl-6 rounded-full font-bold text-base hover:shadow-rose-500/30 transition-all text-white flex items-center justify-center gap-4 active:scale-95 shadow-lg shadow-rose-500/20"
                   >
-                    <span className="whitespace-nowrap">Plan auswählen</span>
+                    <span className="whitespace-nowrap">Jetzt kostenlos starten →</span>
                   </Link>
                 </motion.div>
                 <Link 
@@ -405,15 +493,37 @@ export default function Home() {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.8, duration: 1 }}
-                className="mt-10 flex flex-wrap items-center justify-center lg:justify-start gap-4 md:gap-6 text-xs md:text-sm text-slate-500"
+                className="mt-8 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 sm:gap-5"
               >
-                <div className="flex items-center gap-1.5">
-                  <CheckCircle2 className="w-4 h-4 text-emerald-500" />
-                  <span>Kein Risiko, ohne Bindung</span>
+                {/* Google Rating */}
+                <div className="flex items-center gap-2">
+                  <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
+                    <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
+                    <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/>
+                    <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
+                  </svg>
+                  <div className="flex space-x-0.5 text-amber-500">
+                    <Star className="w-4 h-4 fill-current" />
+                    <Star className="w-4 h-4 fill-current" />
+                    <Star className="w-4 h-4 fill-current" />
+                    <Star className="w-4 h-4 fill-current" />
+                    <Star className="w-4 h-4 fill-current" />
+                  </div>
+                  <span className="text-[13px] font-semibold text-slate-700 ml-1">4.9/5</span>
                 </div>
-                <div className="flex items-center gap-1.5">
-                  <CheckCircle2 className="w-4 h-4 text-emerald-500" />
-                  <span>Full-Service inkl. Support</span>
+                
+                <div className="hidden sm:block w-px h-5 bg-slate-200"></div>
+                
+                <div className="flex flex-wrap justify-center items-center gap-4 text-[13px] text-slate-600 font-medium tracking-tight">
+                  <div className="flex items-center gap-1.5">
+                    <CheckCircle2 className="w-4 h-4 text-emerald-500" />
+                    <span>Ohne Bindung</span>
+                  </div>
+                  <div className="flex items-center gap-1.5">
+                    <CheckCircle2 className="w-4 h-4 text-emerald-500" />
+                    <span>Full-Service inkl.</span>
+                  </div>
                 </div>
               </motion.div>
             </div>
@@ -429,12 +539,12 @@ export default function Home() {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 1 }}
-          className="py-12 md:py-20 bg-slate-50 border-y border-slate-200 overflow-hidden relative"
+          className="py-8 md:py-12 bg-slate-50 border-y border-slate-200 overflow-hidden relative"
         >
           <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-slate-300 to-transparent"></div>
-          <div className="max-w-7xl mx-auto px-4 text-center mb-8">
+          <div className="max-w-7xl mx-auto px-4 text-center mb-0 md:mb-4">
             <h2 className="text-[11px] md:text-sm font-semibold tracking-[0.2em] text-slate-500 uppercase">
-              Die erste Wahl für über 150+ ambitionierte Unternehmen
+              Unternehmen, die auf VANICY vertrauen
             </h2>
           </div>
           <InfiniteLogoTicker />
@@ -1074,9 +1184,16 @@ export default function Home() {
               <h2 className="text-3xl md:text-5xl font-sans font-bold text-slate-900 tracking-tight mb-6">
                 Ein System, das sich selbst bezahlt macht.
               </h2>
-              <p className="text-base md:text-xl text-slate-600 leading-relaxed max-w-2xl mx-auto">
+              <p className="text-base md:text-xl text-slate-600 leading-relaxed max-w-2xl mx-auto mb-4">
                 Keine versteckten Gebühren. Keine bösen Überraschungen. Wähle das Setup, das dir den maximalen Hebel für dein aktuelles Wachstum gibt.
               </p>
+              <div className="inline-flex items-center gap-2 bg-rose-50 text-rose-600 font-semibold px-4 py-2 rounded-full text-sm">
+                <span className="relative flex h-2 w-2">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-rose-400 opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-rose-500"></span>
+                </span>
+                Start: 2-3 Tage nach vollständigem Onboarding.
+              </div>
             </motion.div>
 
             <motion.div variants={fadeInUp} className="flex justify-center mb-12 w-full px-4">
@@ -1092,7 +1209,7 @@ export default function Home() {
                        1 Monat komplett kostenlos testen.
                     </h4>
                     <p className="text-slate-400 text-sm leading-relaxed">
-                      Wähle dein Paket, teste es für einen vollen Monat absolut gratis – wir bauen deine Website sofort. Du entscheidest erst danach, ob du bleibst. Jederzeit fair, ohne Setup-Gebühren.
+                      Wähle dein Paket und starte den kostenlosen Test. Nach deinem Start erhältst du Zugang zum Kundenportal: Fülle das Onboarding innerhalb von 7 Tagen in Ruhe aus — danach beginnen wir sofort mit dem Bau deiner Website. Du entscheidest erst danach, ob du bleibst.
                     </p>
                   </div>
                   

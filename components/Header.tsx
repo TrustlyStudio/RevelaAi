@@ -4,7 +4,7 @@ import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { motion, AnimatePresence } from 'motion/react';
-import { Menu, X, ArrowRight, Instagram, Linkedin, User } from 'lucide-react';
+import { Menu, X, ArrowRight, Instagram, User } from 'lucide-react';
 
 export function Header() {
   const [timeLeft, setTimeLeft] = useState({ hours: 16, minutes: 24, seconds: 42 });
@@ -130,9 +130,6 @@ export function Header() {
                 <a href="https://www.instagram.com/vanicy.de/" target="_blank" rel="noopener noreferrer" className="p-2 rounded-full text-slate-400 hover:bg-rose-50 hover:text-brand-magenta hover:scale-110 active:scale-95 transition-all" aria-label="Instagram">
                   <Instagram className="w-4 h-4 xl:w-5 xl:h-5" />
                 </a>
-                <a href="https://www.linkedin.com/company/revela-ai" target="_blank" rel="noopener noreferrer" className="p-2 rounded-full text-slate-400 hover:bg-rose-50 hover:text-brand-magenta hover:scale-110 active:scale-95 transition-all" aria-label="LinkedIn">
-                  <Linkedin className="w-4 h-4 xl:w-5 xl:h-5" />
-                </a>
               </div>
               
               <Link 
@@ -225,9 +222,6 @@ export function Header() {
             <div className="flex justify-center items-center gap-6 mt-8">
                <a href="https://www.instagram.com/vanicy.de/" target="_blank" rel="noopener noreferrer" className="p-3 bg-gray-50 rounded-full text-slate-400 hover:bg-rose-50 hover:text-brand-magenta transition-colors shadow-sm border border-gray-100" aria-label="Instagram">
                  <Instagram className="w-6 h-6" />
-               </a>
-               <a href="https://www.linkedin.com/company/revela-ai" target="_blank" rel="noopener noreferrer" className="p-3 bg-gray-50 rounded-full text-slate-400 hover:bg-rose-50 hover:text-brand-magenta transition-colors shadow-sm border border-gray-100" aria-label="LinkedIn">
-                 <Linkedin className="w-6 h-6" />
                </a>
             </div>
 

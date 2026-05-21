@@ -77,7 +77,7 @@ export function HowItWorksSection() {
             </span>
           </div>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-black mb-6 tracking-tight text-white">
-            Von 0 auf Live – in unter 4 Wochen.
+            Von 0 auf Live – in 5–7 Tagen.
           </h2>
           <p className="text-base md:text-lg text-white/70 max-w-2xl mx-auto leading-relaxed">
             Alles läuft über unser Dashboard. Kein Telefonat nötig – es sei denn, du willst eines.
