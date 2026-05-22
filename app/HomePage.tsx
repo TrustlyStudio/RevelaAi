@@ -86,8 +86,8 @@ const staggerContainer: any = {
 };
 
 const testimonialsData = [
-  { quote: "Seit wir VANICY nutzen, haben wir deutlich mehr qualifizierte Anfragen in unserem Postfach. Das Leasingmodell ist für uns perfekt – keine riesigen Vorabkosten und man muss sich um nichts kümmern.", name: "Sven Krause", role: "Geschäftsführer, Krause Heiztechnik", img: "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=150&h=150&fit=crop" },
-  { quote: "Endlich ein Partner, der mitdenkt! Änderungen gehen blitzschnell über das Portal, und die Seite lädt so extrem schnell, dass auch unser Google-Ranking spürbar besser wurde.", name: "Laura Weber", role: "Inhaberin, Weber Immobilien", img: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=150&h=150&fit=crop" }
+  { quote: "Die Seite war durchgehend online und wir mussten uns um absolut nichts kümmern. Wenn man bedenkt dass solche individuellen Websites bei anderen Agenturen locker mehrere tausend Euro kosten und dann oft nur halb so gut umgesetzt werden, ist das Angebot hier einfach unschlagbar. Ich kann VANICY jedem Unternehmen uneingeschränkt empfehlen. Großartige und professionelle Arbeit!", name: "Willi Hecht", role: "CEO Lemuria Bay", img: "/WilliBild.jpeg" },
+  { quote: "Seit wir VANICY nutzen, haben wir deutlich mehr qualifizierte Anfragen in unserem Postfach. Das Leasingmodell ist für uns perfekt – keine riesigen Vorabkosten und man muss sich um nichts kümmern.", name: "Sven Krause", role: "Geschäftsführer, Krause Heiztechnik", img: "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=150&h=150&fit=crop" }
 ];
 
 export default function Home() {
@@ -1072,7 +1072,7 @@ export default function Home() {
               onMouseEnter={() => setIsAutoPlaying(false)}
               onMouseLeave={() => setIsAutoPlaying(true)}
             >
-              <div className="relative overflow-hidden px-4 md:px-16 py-8 h-auto min-h-[450px] md:min-h-[340px] flex items-center">
+              <div className="relative overflow-hidden px-4 md:px-16 py-8 h-auto min-h-[500px] sm:min-h-[400px] md:min-h-[350px] flex items-center">
                 <AnimatePresence mode="wait">
                   <motion.div
                     key={currentTestimonialIndex}
@@ -1080,9 +1080,9 @@ export default function Home() {
                     animate={{ opacity: 1, scale: 1, x: 0 }}
                     exit={{ opacity: 0, scale: 0.95, x: -20 }}
                     transition={{ duration: 0.4, ease: [0.32, 0.72, 0, 1] }}
-                    className="w-full flex items-center justify-center"
+                    className="w-full flex items-center justify-center h-full"
                   >
-                    <div className="bg-white border border-slate-200 rounded-3xl p-6 md:p-12 w-full flex flex-col md:flex-row gap-8 md:gap-12 items-center relative group shadow-sm hover:shadow-xl hover:border-slate-300 transition-all duration-500">
+                    <div className="bg-white border border-slate-200 rounded-3xl p-6 md:p-12 w-full max-w-5xl min-h-[500px] sm:min-h-[400px] md:min-h-[350px] lg:min-h-[320px] flex flex-col md:flex-row gap-8 md:gap-12 items-center relative group shadow-sm hover:shadow-xl hover:border-slate-300 transition-all duration-500">
                       
                       {/* Decorative quote mark */}
                       <div className="absolute top-4 left-4 md:top-8 md:left-8 text-7xl md:text-8xl text-indigo-50 font-serif leading-none select-none -z-0">
@@ -1109,8 +1109,8 @@ export default function Home() {
                         </div>
                       </div>
 
-                      <div className="flex-1 relative z-10 text-center md:text-left">
-                        <p className="text-slate-700 text-lg md:text-2xl leading-relaxed md:leading-normal font-medium">
+                      <div className="flex-1 relative z-10 text-center md:text-left h-full flex items-center">
+                        <p className={`text-slate-700 leading-relaxed md:leading-normal font-medium transition-all ${testimonialsData[currentTestimonialIndex].quote.length > 250 ? 'text-base md:text-lg lg:text-xl' : 'text-lg md:text-2xl lg:text-3xl'}`}>
                           {testimonialsData[currentTestimonialIndex].quote}
                         </p>
                       </div>
