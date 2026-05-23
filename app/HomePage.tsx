@@ -55,7 +55,7 @@ const faqs = [
   },
   {
     question: "Wie lange dauert es bis meine Website live ist?",
-    answer: "Nach vollständigem Ausfüllen des Onboarding-Formulars bauen wir deine Website in 2–3 Werktagen. Inklusive Feedback-Runden und finaler Freigabe ist deine Website in der Regel in 5–7 Tagen live. Kein anderer Anbieter in Deutschland schafft das in dieser Zeit."
+    answer: "Nach vollständigem Ausfüllen des Onboarding-Formulars bauen wir deine Website in 2–3 Werktagen. Inklusive Feedback-Runden und finaler Freigabe ist deine Website in der Regel nach maximal 7 Tagen live."
   },
   {
     question: "Gehört mir die Website — oder nicht?",
