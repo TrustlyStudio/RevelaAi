@@ -50,24 +50,24 @@ import Link from 'next/link';
 
 const faqs = [
   {
-    question: "Was kostet das genau — und was ist inklusive?",
-    answer: "Die Pakete starten ab 149 € im Monat (Essential). Darin enthalten sind: professionelles Website-Design, Hosting, Domain-Verwaltung, SSL-Zertifikat, Impressum und Datenschutz, laufende Wartung sowie Änderungsanfragen über unser Kundenportal. Es gibt keine Setup-Gebühr und kein Einmalinvestment. Du zahlst monatlich — das war's."
+    question: "Was kostet das genau - und was ist inklusive?",
+    answer: "Die Pakete starten ab 149 € im Monat (Essential). Darin enthalten sind: professionelles Website-Design, Hosting, Domain-Verwaltung, SSL-Zertifikat, Impressum und Datenschutz, laufende Wartung sowie Änderungsanfragen über unser Kundenportal. Es gibt keine Setup-Gebühr und kein Einmalinvestment. Du zahlst monatlich - das war's."
   },
   {
     question: "Wie lange dauert es bis meine Website live ist?",
     answer: "Nach vollständigem Ausfüllen des Onboarding-Formulars bauen wir deine Website in 2–3 Werktagen. Inklusive Feedback-Runden und finaler Freigabe ist deine Website in der Regel nach maximal 7 Tagen live."
   },
   {
-    question: "Gehört mir die Website — oder nicht?",
-    answer: "Die Website gehört dir nicht im klassischen Sinne — du least sie, ähnlich wie ein Geschäftsauto. Du nutzt sie vollständig und professionell so lange du Kunde bist. Das ist der Grund warum kein großes Einmalinvestment fällig ist. Wenn du kündigst, wird die Website offline gestellt. Deine Inhalte und Texte gehören dir natürlich jederzeit."
+    question: "Gehört mir die Website - oder nicht?",
+    answer: "Die Website gehört dir nicht im klassischen Sinne - du least sie, ähnlich wie ein Geschäftsauto. Du nutzt sie vollständig und professionell so lange du Kunde bist. Das ist der Grund warum kein großes Einmalinvestment fällig ist. Wenn du kündigst, wird die Website offline gestellt. Deine Inhalte und Texte gehören dir natürlich jederzeit."
   },
   {
     question: "Kann ich jederzeit kündigen?",
     answer: "Du wählst beim Start eine Mindestlaufzeit von 12 oder 24 Monaten. Danach ist monatlich kündbar. Je länger die gewählte Laufzeit, desto günstiger der monatliche Preis. Eine Kündigung vor Ablauf der Mindestlaufzeit ist nicht möglich."
   },
   {
-    question: "Ich bin nicht technikaffin — funktioniert das trotzdem für mich?",
-    answer: "Genau dafür wurde VANICY gebaut. Du musst nichts über Websites, Hosting oder Technik wissen. Du füllst unser Onboarding-Formular aus — wir bauen alles. Änderungen beantragst du einfach über unser Kundenportal. Kein E-Mail-Chaos, kein Technikstress."
+    question: "Ich bin nicht technikaffin - funktioniert das trotzdem für mich?",
+    answer: "Genau dafür wurde VANICY gebaut. Du musst nichts über Websites, Hosting oder Technik wissen. Du füllst unser Onboarding-Formular aus - wir bauen alles. Änderungen beantragst du einfach über unser Kundenportal. Kein E-Mail-Chaos, kein Technikstress."
   }
 ];
 
@@ -342,7 +342,7 @@ export default function Home() {
               overflow: hidden;
             }
 
-            /* Dot-Grid — sehr subtil */
+            /* Dot-Grid - sehr subtil */
             .vhb-grid {
               position: absolute;
               inset: 0;
@@ -354,7 +354,7 @@ export default function Home() {
               background-size: 28px 28px;
             }
 
-            /* Gradient Zone oben rechts — Violet */
+            /* Gradient Zone oben rechts - Violet */
             .vhb-zone-tr {
               position: absolute;
               top: -100px;
@@ -370,7 +370,7 @@ export default function Home() {
               animation: vhbDrift1 20s ease-in-out infinite;
             }
 
-            /* Gradient Zone unten links — Pink */
+            /* Gradient Zone unten links - Pink */
             .vhb-zone-bl {
               position: absolute;
               bottom: -80px;
@@ -397,7 +397,7 @@ export default function Home() {
               border: 1px solid rgba(123,47,190,0.18);
             }
 
-            /* Animationen — kaum wahrnehmbar, rein atmosphärisch */
+            /* Animationen - kaum wahrnehmbar, rein atmosphärisch */
             @keyframes vhbDrift1 {
               0%, 100% { transform: translate(0, 0) scale(1); }
               40%       { transform: translate(-12px, 8px) scale(1.03); }
@@ -1209,7 +1209,7 @@ export default function Home() {
                        1 Monat komplett kostenlos testen.
                     </h4>
                     <p className="text-slate-400 text-sm leading-relaxed">
-                      Wähle dein Paket und starte den kostenlosen Test. Nach deinem Start erhältst du Zugang zum Kundenportal: Fülle das Onboarding innerhalb von 7 Tagen in Ruhe aus — danach beginnen wir sofort mit dem Bau deiner Website. Du entscheidest erst danach, ob du bleibst.
+                      Wähle dein Paket und starte den kostenlosen Test. Nach deinem Start erhältst du Zugang zum Kundenportal: Fülle das Onboarding innerhalb von 7 Tagen in Ruhe aus - danach beginnen wir sofort mit dem Bau deiner Website. Du entscheidest erst danach, ob du bleibst.
                     </p>
                   </div>
                   

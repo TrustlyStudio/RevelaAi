@@ -187,7 +187,7 @@ export default function AVV() {
               Löschung und Rückgabe
             </h2>
             <div className="space-y-3">
-              <p>(1) Nach Beendigung des Hauptvertrags löscht der Auftragnehmer alle personenbezogenen Daten, die im Rahmen dieses AVV verarbeitet wurden, oder gibt sie — auf Wunsch des Auftraggebers — zurück, sofern nicht gesetzliche Aufbewahrungspflichten einer Löschung entgegenstehen.</p>
+              <p>(1) Nach Beendigung des Hauptvertrags löscht der Auftragnehmer alle personenbezogenen Daten, die im Rahmen dieses AVV verarbeitet wurden, oder gibt sie - auf Wunsch des Auftraggebers - zurück, sofern nicht gesetzliche Aufbewahrungspflichten einer Löschung entgegenstehen.</p>
               <p>(2) Die Löschung wird auf Anfrage schriftlich bestätigt.</p>
             </div>
           </section>

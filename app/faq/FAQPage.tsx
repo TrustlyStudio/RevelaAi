@@ -14,23 +14,23 @@ const faqCategories = [
     faqs: [
       {
         q: "Was ist Website Leasing überhaupt?",
-        a: "Website Leasing bedeutet: Du zahlst eine monatliche Pauschale und bekommst dafür eine fertige, professionelle Website inklusive allem was dazugehört — Design, Hosting, Pflege, Support und Änderungen. Kein Einmalinvestment, kein Eigenverantwortung für Technik. Ähnlich wie beim Auto-Leasing nutzt du etwas Professionelles ohne es kaufen zu müssen."
+        a: "Website Leasing bedeutet: Du zahlst eine monatliche Pauschale und bekommst dafür eine fertige, professionelle Website inklusive allem was dazugehört - Design, Hosting, Pflege, Support und Änderungen. Kein Einmalinvestment, kein Eigenverantwortung für Technik. Ähnlich wie beim Auto-Leasing nutzt du etwas Professionelles ohne es kaufen zu müssen."
       },
       {
         q: "Was unterscheidet VANICY von einer klassischen Webagentur?",
-        a: "Eine klassische Agentur verlangt 5.000–20.000 € einmalig — und danach bist du auf dich allein gestellt. VANICY baut deine Website, pflegt sie laufend, kümmert sich um Hosting und Support und bleibt dein Partner. Du zahlst monatlich und hast immer jemanden der sich kümmert."
+        a: "Eine klassische Agentur verlangt 5.000 € - 20.000 € einmalig - und danach bist du auf dich allein gestellt. VANICY baut deine Website, pflegt sie laufend, kümmert sich um Hosting und Support und bleibt dein Partner. Du zahlst monatlich und hast immer jemanden der sich kümmert."
       },
       {
         q: "Was unterscheidet VANICY von Baukästen wie Wix oder Jimdo?",
-        a: "Bei Wix oder Jimdo baust du selbst — du brauchst Zeit, Wissen und trotzdem sieht das Ergebnis oft nach Baukasten aus. Bei VANICY baust du gar nichts selbst. Wir liefern ein professionelles Ergebnis das nach echtem Design aussieht — und du musst dich um nichts kümmern."
+        a: "Bei Wix oder Jimdo baust du selbst - du brauchst Zeit, Wissen und trotzdem sieht das Ergebnis oft nach Baukasten aus. Bei VANICY baust du gar nichts selbst. Wir liefern ein professionelles Ergebnis das nach echtem Design aussieht - und du musst dich um nichts kümmern."
       },
       {
         q: "Für wen ist VANICY geeignet?",
-        a: "Für inhabergeführte Unternehmen in Deutschland die eine professionelle Website brauchen aber keine Zeit, kein technisches Wissen und kein großes Budget für eine Agentur haben. Handwerker, Taxiunternehmen, Dienstleister, Coaches, Therapeuten, lokale Händler, Gastronomie, Kanzleien — kurz: jeder der Kunden über seine Website gewinnen möchte."
+        a: "Für inhabergeführte Unternehmen in Deutschland die eine professionelle Website brauchen aber keine Zeit, kein technisches Wissen und kein großes Budget für eine Agentur haben. Handwerker, Taxiunternehmen, Dienstleister, Coaches, Therapeuten, lokale Händler, Gastronomie, Kanzleien - kurz: jeder der Kunden über seine Website gewinnen möchte."
       },
       {
         q: "Ist VANICY auch für größere Unternehmen geeignet?",
-        a: "Ja. Neben unseren Standardpaketen (Essential, Business, Pro) gibt es ein Enterprise-Paket für Unternehmen mit komplexeren Anforderungen — zum Beispiel E-Commerce, Login-Bereiche, dynamische Seiten oder Web-App-Funktionen. Sprich uns einfach an."
+        a: "Ja. Neben unseren Standardpaketen (Essential, Business, Pro) gibt es ein Enterprise-Paket für Unternehmen mit komplexeren Anforderungen - zum Beispiel E-Commerce, Login-Bereiche, dynamische Seiten oder Web-App-Funktionen. Sprich uns einfach an."
       }
     ]
   },
@@ -39,7 +39,12 @@ const faqCategories = [
     faqs: [
       {
         q: "Was kosten die verschiedenen Pakete?",
-        a: "Essential ab 149 €/Monat (bis zu 3 Unterseiten, 1 Call-to-Action, Basis-Support), Business ab 229 €/Monat (mehr Unterseiten, Blog/News, höhere Ticket-Priorität), Pro ab 449 €/Monat (dringende Tickets, erweiterte Features). Enterprise auf Anfrage. Alle Preise inklusive Hosting, Domain-Verwaltung, Impressum und Datenschutz."
+        a: `• Essential (ab 149 €/Monat):* Bis zu 3 Unterseiten, 1 klarer Call-to-Action, Basis-Support. Perfekt für den lokalen Einstieg.
+• Business (ab 229 €/Monat):* Mehr Unterseiten, Blog-/News-Bereich, höhere Ticket-Priorität.
+• Pro (ab 449 €/Monat):* Express-Support bei dringenden Tickets, erweiterte Funktionen.
+• Enterprise: Maßgeschneiderte Individuallösungen auf Anfrage.
+
+*Alle Preise verstehen sich als Nettopreise zzgl. der gesetzlichen MwSt. Alle Tarife beinhalten bereits das Premium-Hosting, die Domain-Verwaltung sowie die Erstellung von Impressum und DSGVO-konformer Datenschutzerklärung.`
       },
       {
         q: "Gibt es eine Setup-Gebühr?",
@@ -47,7 +52,7 @@ const faqCategories = [
       },
       {
         q: "Was ist der Unterschied zwischen 12 und 24 Monaten Laufzeit?",
-        a: "Bei 24 Monaten Laufzeit zahlst du einen deutlich günstigeren Monatspreis. Wenn du eh langfristig eine professionelle Website willst — und das solltest du — ist die 24-Monats-Option wirtschaftlich die bessere Wahl."
+        a: "Bei einer Laufzeit von 24 Monaten sicherst du dir unseren günstigsten Monatspreis. Da eine professionelle Website ohnehin eine langfristige Investition in dein Unternehmen ist - und sein sollte -, ist die 24-Monats-Option wirtschaftlich die klügste Wahl für maximale Budgetsicherheit und planbare Betriebsausgaben."
       },
       {
         q: "Wann wird abgerechnet?",
@@ -55,11 +60,11 @@ const faqCategories = [
       },
       {
         q: "Gibt es versteckte Kosten?",
-        a: "Nein. Domain, Hosting, SSL, Impressum, Datenschutz, Wartung und Support sind alle inklusive. Was extra kostet: Leistungen die über deinen gebuchten Plan hinausgehen, zum Beispiel zusätzliche Unterseiten beim Essential-Plan oder Funktionen die dem Enterprise-Bereich entsprechen."
+        a: "Nein. Domain, Hosting, SSL-Zertifikat, rechtssicheres Impressum und Datenschutz, regelmäßige Sicherheitswartung und Support sind komplett inklusive. Zusätzliche Kosten entstehen nur bei individuellen Sonderwünschen, die über deinen gebuchten Plan hinausgehen (z. B. extra Unterseiten oder spezielle Software-Schnittstellen)."
       },
       {
         q: "Kann ich meinen Plan upgraden?",
-        a: "Ja, jederzeit. Du kannst von Essential auf Business oder Pro wechseln — der neue Plan gilt ab dem nächsten Abrechnungszeitraum."
+        a: "Ja, jederzeit. Du kannst von Essential auf Business oder Pro wechseln - der neue Plan gilt ab dem nächsten Abrechnungszeitraum."
       }
     ]
   },
@@ -76,7 +81,7 @@ const faqCategories = [
       },
       {
         q: "Wie viele Feedback-Runden sind inklusive?",
-        a: "Zwei Feedback-Runden sind in jedem Paket inklusive. Das bedeutet: du siehst die fertige Website in einer Vorschau, gibst uns dein Feedback, wir setzen es um — zweimal. Danach ist die Website live."
+        a: "Zwei Feedback-Runden sind in jedem Paket inklusive. Das bedeutet: du siehst die fertige Website in einer Vorschau, gibst uns dein Feedback, wir setzen es um - zweimal. Danach ist die Website live."
       },
       {
         q: "Was passiert nach dem Go-Live?",
@@ -93,7 +98,7 @@ const faqCategories = [
     faqs: [
       {
         q: "Welches Hosting nutzt VANICY?",
-        a: "Wir hosten deine Website auf unserer eigenen Infrastruktur bei Hostinger — professionell, schnell und sicher. Du musst dich um nichts kümmern."
+        a: "Wir hosten deine Website auf unserer eigenen Infrastruktur bei Hostinger - professionell, schnell und sicher. Du musst dich um nichts kümmern."
       },
       {
         q: "Was ist mit meiner bestehenden Domain?",
@@ -101,7 +106,7 @@ const faqCategories = [
       },
       {
         q: "Ist die Website mobiloptimiert?",
-        a: "Ja, selbstverständlich. Alle VANICY-Websites sind responsive und für alle Endgeräte optimiert — Smartphone, Tablet, Desktop."
+        a: "Ja, selbstverständlich. Alle VANICY-Websites sind responsive und für alle Endgeräte optimiert - Smartphone, Tablet, Desktop."
       },
       {
         q: "Wie schnell lädt meine Website?",
@@ -113,7 +118,7 @@ const faqCategories = [
       },
       {
         q: "Was passiert bei Sicherheitsproblemen oder Ausfällen?",
-        a: "Wir überwachen die Infrastruktur laufend. Bei technischen Problemen reagieren wir — du musst nichts tun. Das ist der Kern des Leasing-Modells: wir tragen die technische Verantwortung."
+        a: "Wir überwachen die Infrastruktur laufend. Bei technischen Problemen reagieren wir - du musst nichts tun. Das ist der Kern des Leasing-Modells: wir tragen die technische Verantwortung."
       }
     ]
   },
@@ -122,7 +127,7 @@ const faqCategories = [
     faqs: [
       {
         q: "Wie beantrage ich Änderungen an meiner Website?",
-        a: "Ausschließlich über das Ticketsystem im Kundenportal. Kein WhatsApp, keine E-Mail, kein Anruf nötig. Du öffnest ein Ticket, beschreibst die Änderung — wir setzen sie um."
+        a: "Ausschließlich über das Ticketsystem im Kundenportal. Kein WhatsApp, keine E-Mail, kein Anruf nötig. Du öffnest ein Ticket, beschreibst die Änderung - wir setzen sie um."
       },
       {
         q: "Was gilt als eine Änderung?",
@@ -151,19 +156,19 @@ const faqCategories = [
     faqs: [
       {
         q: "Wem gehört die Website?",
-        a: "Die Website gehört VANICY — du least die Nutzung. Deine eigenen Inhalte (Texte, Fotos, Logos die du uns gegeben hast) gehören natürlich dir. Das Leasing-Modell ist der Grund warum kein Einmalinvestment nötig ist."
+        a: "Das Design und die technische Infrastruktur der Webseite werden von VANICY bereitgestellt und gepflegt (wie beim Fahrzeugleasing). Deine eigenen Inhalte wie Texte, Fotos, Logos und Kundendaten gehören rechtlich zu 100 % dir und werden auf Wunsch jederzeit für dich exportiert."
       },
       {
-        q: "Was passiert wenn ich kündige?",
-        a: "Nach Ablauf der Mindestlaufzeit und nach Kündigung wird die Website offline gestellt. Deine eigenen Inhalte bekommst du auf Anfrage exportiert."
+        q: "Was passiert, wenn ich kündige?",
+        a: "Nach Ablauf deiner Mindestlaufzeit kannst du flexibel kündigen. Wir schalten die Seite dann zum Vertragsende ab. Selbstverständlich überlassen wir dir deine Texte und Bilder als strukturierten Daten-Export, sodass du nichts verlierst."
       },
       {
         q: "Kann ich die Website nach Kündigung kaufen?",
-        a: "Das ist grundsätzlich möglich. Sprich uns an — wir finden eine Lösung."
+        a: "Ja, absolut! Wir glauben an faire Partnerschaften. Wenn du die Webseite nach der Laufzeit komplett übernehmen und auf eigenen Servern weiterbetreiben möchtest, bieten wir dir ein faires Übernahme-Angebot an. Sprich uns einfach darauf an."
       },
       {
-        q: "Was passiert wenn VANICY aufhört zu existieren?",
-        a: "In diesem unwahrscheinlichen Fall würden wir dir alle Website-Dateien und Inhalte übergeben damit du sie anderweitig hosten kannst. Wir würden dich rechtzeitig informieren."
+        q: "Was passiert, wenn VANICY aufhört zu existieren?",
+        a: "Obwohl dieser Fall extrem unwahrscheinlich ist, bist du vollkommen abgesichert: Sollte VANICY jemals den Betrieb einstellen, garantieren wir dir vertraglich die schlüsselfertige Übergabe aller Webseiten-Dateien (Quellcode, Datenbanken und Inhalte). Du kannst die Seite dann sofort und ohne Unterbrechung bei jedem beliebigen anderen Anbieter weiterhosten."
       },
       {
         q: "Kann ich nach der Mindestlaufzeit monatlich kündigen?",
@@ -183,12 +188,12 @@ const faqCategories = [
         a: "VANICY ist das Website-Leasing-Produkt des Teams hinter Step V Studio, das bereits mehrere Jahre Erfahrung im Bereich Webdesign und digitales Marketing hat."
       },
       {
-        q: "Gibt es Referenzen die ich mir ansehen kann?",
+        q: "Gibt es Referenzen, die ich mir ansehen kann?",
         a: "Ja. Auf unserer Website findest du eine Auswahl an Projekten die wir umgesetzt haben. Schau dir gerne an was wir für Lemuria Bay und andere Kunden gebaut haben."
       },
       {
         q: "Kann ich VANICY vor dem Kauf testen?",
-        a: "Ja — dein erster Monat ist kostenlos. Du siehst deine fertige Website live bevor du entscheidest ob du bleibst."
+        a: "Ja - dein erster Monat ist kostenlos. Du siehst deine fertige Website live bevor du entscheidest ob du bleibst."
       }
     ]
   }
@@ -266,7 +271,7 @@ export default function FAQPage() {
                           transition={{ duration: 0.3, ease: "easeInOut" }}
                           className="overflow-hidden"
                         >
-                          <div className="p-6 sm:p-8 pt-0 text-slate-600 text-lg leading-relaxed">
+                          <div className="p-6 sm:p-8 pt-0 text-slate-600 text-lg leading-relaxed whitespace-pre-line">
                             {faq.a}
                           </div>
                         </motion.div>

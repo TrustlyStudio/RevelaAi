@@ -823,7 +823,7 @@ export default function Datenschutz() {
               <strong>Stripe Payments Europe, Limited</strong>, 1 Grand Canal
               Street Lower, Grand Canal Dock, Dublin D02 H210, Irland.
               Zahlungsdaten werden ausschließlich von Stripe erfasst und
-              verarbeitet — wir selbst speichern zu keinem Zeitpunkt
+              verarbeitet - wir selbst speichern zu keinem Zeitpunkt
               vollständige Zahlungsmittelinformationen. Von Stripe erhalten wir
               lediglich: Stripe-Kunden-ID, Subscription-ID, Zahlungsstatus,
               Datum, Betrag und die letzten vier Ziffern der Zahlungsmethode.
@@ -1032,7 +1032,7 @@ export default function Datenschutz() {
               Conversion-Cookie gesetzt (Gültigkeit: 30 Tage), das es uns
               ermöglicht zu erkennen, ob ein Nutzer über unsere Anzeige auf die
               Website gelangt ist und eine bestimmte Aktion ausgeführt hat. Die
-              dabei erhobenen Informationen sind für uns anonym — sie dienen
+              dabei erhobenen Informationen sind für uns anonym - sie dienen
               ausschließlich der Conversion-Statistik. Google ist nach dem EU-US
               DPF zertifiziert. Deaktivierung personalisierter Anzeigen:{" "}
               <a
