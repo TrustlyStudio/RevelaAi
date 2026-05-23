@@ -8,10 +8,10 @@ import Link from 'next/link';
 
 const projects = [
   { name: 'Lemuria Bay', url: 'lemuriabay.de', type: 'E-Commerce & Brand', image: '/LemuriaBay.png' },
-  { name: 'NGFT', url: 'ngft.com', type: 'Technologie', image: '/NGFT.png' },
   { name: 'WN-X', url: 'wn-x.com', type: 'Industrie & B2B', image: '/WN-X.png' },
   { name: 'Tecktaxi', url: 'tecktaxi.de', type: 'Mobilität & Lokal', image: '/Tecktaxi.png' },
   { name: 'Taxi Beate', url: 'taxibeate.de', type: 'Mobilität & Lokal', image: '/Taxibeate.png' },
+  { name: 'NGFT', url: 'ngft.com', type: 'Technologie', image: '/NGFT.png' },
 ];
 
 export function CustomerProjects() {
