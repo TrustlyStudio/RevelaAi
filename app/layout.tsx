@@ -58,6 +58,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <meta name="geo.position" content="48.4921;9.2041" />
         <meta name="ICBM" content="48.4921, 9.2041" />
         <link rel="alternate" hrefLang="de" href="https://vanicy.de" />
+        {/* Privacy-friendly analytics by Plausible */}
+        <script async src="https://plausible.io/js/pa-yaIKDsNb1st7nuBOXbAmN.js"></script>
+        <script dangerouslySetInnerHTML={{ __html: `
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init()
+` }} />
       </head>
       <body className="min-h-screen bg-brand-off-white font-sans text-brand-dark-blue transition-colors duration-300">
         <CookieScripts />
