@@ -39,19 +39,49 @@ const caseStudies = [
     features: ["B2B Lead-Gen Architektur", "Technisches SEO-Setup", "Interaktive Produkt-Demos", "Enterprise Hosting"]
   },
   {
+    id: "tecktaxi",
+    client: "Tecktaxi",
+    industry: "Mobilität & Personentransport",
+    url: "tecktaxi.de",
+    image: "/Tecktaxi.png",
+    challenge: "Tecktaxi benötigte eine hocheffiziente Buchungsplattform und optimierte lokale Präsenz, um Fahrtenanfragen im regionalen Raum automatisiert und reibungslos zu erfassen.",
+    solution: "Wir bauten eine moderne, mobiloptimierte Landingpage mit einem schnellen Online-Tarifrechner und direkten Buchungsformularen, die Anfragen direkt via Kundenportal an den Betreiber übermitteln.",
+    results: [
+      { label: "Online Buchungen", value: "+180%" },
+      { label: "Mobile-Sichtbarkeit", value: "+95%" },
+      { label: "Ladezeit-Optimierung", value: "-65%" }
+    ],
+    features: ["Echtzeit Tarif-Schätzung", "Direkt-Ruf Integration", "Optimierte Mobilversion", "Automatisches Ticket-Backend"]
+  },
+  {
+    id: "taxi-beate",
+    client: "Taxi Beate",
+    industry: "Lokalverkehr & Krankenbeförderung",
+    url: "taxibeate.de",
+    image: "/Taxibeate.png",
+    challenge: "Die Patientenfahrten und regulären Services von Taxi Beate sollten online übersichtlich präsentiert werden, um vor allem älteren Fahrgästen und Partner-Einrichtungen die unkomplizierte Buchung zu ermöglichen.",
+    solution: "Entwicklung einer barrierefreien, hochgradig lesbaren Service-Schnittstelle. Durch klare Leistungsdarstellungen und clevere Mobiloptimierung wurde der telefonische und digitale Buchungsprozess perfektioniert.",
+    results: [
+      { label: "Telefonanrufe", value: "+85%" },
+      { label: "Krankenfahrten-Anfragen", value: "+120%" },
+      { label: "Anwender-Zufriedenheit", value: "98%" }
+    ],
+    features: ["Barrierefreie Typografie", "1-Klick-Telefonanruf", "Leistungsübersichten", "DSGVO-konforme Übermittlung"]
+  },
+  {
     id: "wn-x",
     client: "WN-X",
-    industry: "Persönliche Künstler Webseite",
+    industry: "Hersteller & B2B-Plattform",
     url: "wn-x.com",
     image: "/WN-X.png",
-    challenge: "Als aufstrebender Künstler benötigte WN-X eine moderne digitale Galerie, die seine Werke eindrucksvoll inszeniert. Gleichzeitig fehlte ein professioneller Kanal für Sammler, um individuelle Auftragsarbeiten anzufragen.",
-    solution: "Kreation einer minimalistischen, avantgardistischen Online-Galerie, die die Kunst ins absolute Zentrum rückt. Durch smoothe Scroll-Animationen und ein nahtlos integriertes Anfrage-System für Sammler entstand ein digitales Erlebnis der Extraklasse.",
+    challenge: "Als aufstrebender Innovator benötigte WN-X eine digitale Premium-Plattform, die ihre High-Tech-Lösungen und Fertigungsqualitäten optimal inszeniert sowie B2B-Leads qualifiziert erfasst.",
+    solution: "Kreation einer hocheffizienten, avantgardistischen Produktpräsentation mit edlen Scroll-Effekten und nahtlos integrierten interaktiven Produktspezifikationen für anspruchsvolle Firmenpartner.",
     results: [
-      { label: "Galerie-Anfragen", value: "+150%" },
-      { label: "Direkte Verkäufe", value: "+40%" },
+      { label: "B2B-Anfragen", value: "+150%" },
+      { label: "Engagement-Rate", value: "+120%" },
       { label: "Internationaler Traffic", value: "+85%" }
     ],
-    features: ["Avantgardistisches Design", "Interaktive Galerie-Views", "Sammler-Anfrage System", "Performance Optimierung"]
+    features: ["Avantgardistisches B2B-Design", "Interaktive Produkt-Details", "Individueller Konfigurator", "Premium Performance-Setup"]
   }
 ];
 
