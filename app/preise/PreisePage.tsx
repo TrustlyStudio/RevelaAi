@@ -14,7 +14,7 @@ const comparisonFeatures = [
     items: [
       { name: "Anzahl Unterseiten", essential: "Bis zu 3", business: "Bis zu 6", pro: "Bis zu 9" },
       { name: "Kontaktformulare", essential: "1 Formular", business: "Bis zu 2", pro: "Bis zu 5 + Logik" },
-      { name: "VANICY Dashboard", essential: "Inklusive", business: "Inklusive", pro: "Inklusive" },
+      { name: "VANICY Kunden-Dashboard", essential: "Inklusive", business: "Inklusive", pro: "Inklusive" },
       { name: "Eigenes Content Management", essential: "Nicht enthalten", business: "Nicht enthalten", pro: "Inklusive" },
       { name: "Blog / News Sektion", essential: "Nicht enthalten", business: "Standard", pro: "Erweitert (Kategorien)" },
     ]
@@ -40,13 +40,14 @@ const comparisonFeatures = [
     ]
   },
   {
-    category: "SEO & Sichtbarkeit",
+    category: "Analytics & SEO",
     items: [
+      { name: "Besucherstatistiken (Views, Bounce)", essential: "Basis-Statistiken", business: "Verlauf & Live", pro: "Vollständiges Tracking" },
+      { name: "Traffic-Quellen & Weltkarte", essential: "Nicht enthalten", business: "Visueller Report", pro: "Städte & Regionen" },
+      { name: "Google PageSpeed Analyse", essential: "Manuell", business: "Performance-Werte", pro: "Live Dashboard" },
+      { name: "Core Web Vitals Reporting", essential: "Basis", business: "Erweitert", pro: "Lighthouse Integration" },
       { name: "Technisches SEO-Setup", essential: "Basis", business: "Erweitert", pro: "Pro" },
       { name: "Onpage SEO", essential: "Basis (Titles)", business: "Keyword-optimiert", pro: "Maximum / Siloing" },
-      { name: "Google Business Integration", essential: "Nicht enthalten", business: "Inklusive", pro: "Inklusive" },
-      { name: "Google Analytics & Tracking", essential: "Nicht enthalten", business: "Nicht enthalten", pro: "Basic Setup" },
-      { name: "Pagespeed Optimierung", essential: "Gut", business: "Sehr Gut", pro: "Premium (>90 Score)" },
     ]
   },
   {
@@ -55,7 +56,6 @@ const comparisonFeatures = [
       { name: "Inhaltsänderungen / Monat", essential: "Bis zu 10", business: "Bis zu 25", pro: "Bis zu 50" },
       { name: "Support-Level", essential: "Standard Support", business: "Prio Support", pro: "Prio + Telefon Support" },
       { name: "Premium Onboarding Call", essential: "Inklusive", business: "Inklusive", pro: "Inklusive" },
-      { name: "Regelmäßiges Reporting", essential: "Nicht enthalten", business: "Nicht enthalten", pro: "Monatlicher Report" },
     ]
   },
   {

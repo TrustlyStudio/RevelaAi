@@ -176,41 +176,36 @@ export function CustomerPortalSection() {
                       </div>
                     </div>
 
-                    {/* Progress Stepper */}
-                    <div className="bg-white rounded-xl p-3 sm:p-5 border border-slate-200 shadow-sm flex-1">
-                      <span className="text-[9px] sm:text-[10px] font-bold text-slate-400 uppercase tracking-wider mb-4 block">Aktuelles Projekt</span>
+                    {/* Analytics Section */}
+                    <div className="bg-white rounded-xl p-3 sm:p-5 border border-slate-200 shadow-sm flex-1 flex flex-col">
+                      <div className="flex justify-between items-center mb-4">
+                        <span className="text-[9px] sm:text-[10px] font-bold text-slate-400 uppercase tracking-wider">Besucherübersicht</span>
+                        <div className="flex gap-1">
+                           <span className="bg-slate-100 text-slate-500 text-[8px] sm:text-[9px] px-2 py-0.5 rounded">30 Tage</span>
+                        </div>
+                      </div>
                       
-                      <div className="flex items-center justify-between relative mt-4">
-                        <div className="absolute top-[9px] left-2 right-2 h-[2px] bg-slate-100 z-0"></div>
-                        <div className="absolute top-[9px] left-2 right-2 h-[2px] bg-gradient-to-r from-emerald-400 to-rose-400 w-full z-0"></div>
-                        
-                        {/* Steps */}
-                        <div className="flex flex-col items-center gap-1.5 relative z-10">
-                          <div className="w-5 h-5 rounded-full bg-emerald-500 text-white flex items-center justify-center shadow-md">
-                            <Check className="w-3 h-3" />
+                      <div className="flex-1 flex gap-4">
+                        {/* Fake Map */}
+                        <div className="flex-1 bg-slate-50 rounded-lg border border-slate-100 relative overflow-hidden flex items-center justify-center">
+                          <div className="absolute inset-0 opacity-20" style={{
+                            backgroundImage: 'radial-gradient(circle at 50% 50%, #475569 1px, transparent 1px)',
+                            backgroundSize: '8px 8px'
+                          }}></div>
+                          <div className="relative z-10 flex flex-col items-center gap-1">
+                             <div className="w-2 h-2 rounded-full bg-rose-500 shadow-[0_0_8px_rgba(244,63,94,0.8)]"></div>
+                             <span className="text-[8px] font-bold text-slate-400 uppercase">Weltkarte</span>
                           </div>
-                          <span className="text-[8px] sm:text-[9px] font-bold text-emerald-600">Prüfung</span>
-                        </div>
-                        
-                        <div className="flex flex-col items-center gap-1.5 relative z-10">
-                          <div className="w-5 h-5 rounded-full bg-emerald-500 text-white flex items-center justify-center shadow-md">
-                            <Check className="w-3 h-3" />
-                          </div>
-                          <span className="text-[8px] sm:text-[9px] font-bold text-emerald-600">Umsetzung</span>
                         </div>
 
-                        <div className="flex flex-col items-center gap-1.5 relative z-10">
-                          <div className="w-5 h-5 rounded-full bg-emerald-500 text-white flex items-center justify-center shadow-md">
-                            <Check className="w-3 h-3" />
-                          </div>
-                          <span className="text-[8px] sm:text-[9px] font-bold text-emerald-600">Feedback</span>
-                        </div>
-
-                        <div className="flex flex-col items-center gap-1.5 relative z-10">
-                          <div className="w-5 h-5 rounded-full bg-white border-2 border-rose-500 flex items-center justify-center shadow-lg shadow-rose-500/20">
-                            <div className="w-2 h-2 rounded-full bg-rose-500"></div>
-                          </div>
-                          <span className="text-[8px] sm:text-[9px] font-bold text-transparent bg-clip-text bg-gradient-to-r from-rose-500 to-purple-600">Live</span>
+                        {/* Fake Donut Chart */}
+                        <div className="w-1/3 bg-slate-50 rounded-lg border border-slate-100 flex flex-col items-center justify-center relative p-2">
+                           <div className="w-12 h-12 sm:w-16 sm:h-16 rounded-full border-4 border-slate-200 border-t-rose-500 border-r-purple-500 transform -rotate-45 mb-2"></div>
+                           <span className="text-[8px] sm:text-[9px] font-bold text-slate-600 uppercase">Quellen</span>
+                           <div className="mt-2 flex flex-col gap-1 w-full">
+                              <div className="flex justify-between text-[7px] sm:text-[8px] text-slate-500"><span className="flex items-center gap-1"><div className="w-1.5 h-1.5 bg-rose-500 rounded-full"></div>Google</span><span>65%</span></div>
+                              <div className="flex justify-between text-[7px] sm:text-[8px] text-slate-500"><span className="flex items-center gap-1"><div className="w-1.5 h-1.5 bg-purple-500 rounded-full"></div>Direct</span><span>35%</span></div>
+                           </div>
                         </div>
                       </div>
                     </div>

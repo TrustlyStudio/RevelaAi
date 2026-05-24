@@ -18,6 +18,7 @@ const ConversionChart = dynamic(() => import('@/components/ConversionChart').the
 
 import { HowItWorksSection } from '@/components/HowItWorksSection';
 import { CustomerPortalSection } from '@/components/CustomerPortalSection';
+import { PageSpeedSection } from '@/components/PageSpeedSection';
 import { CustomerProjects } from '@/components/CustomerProjects';
 import { AnimatedCounter } from '@/components/AnimatedCounter';
 import { HeroInteractiveDashboard } from '@/components/HeroInteractiveDashboard';
@@ -1171,6 +1172,9 @@ export default function Home() {
         {/* --- CUSTOMER PORTAL --- */}
         <CustomerPortalSection />
 
+        {/* --- PAGESPEED / ANALYTICS --- */}
+        <PageSpeedSection />
+
         {/* --- PRICING --- */}
         <section id="preise" className="py-20 lg:py-32 bg-slate-50 relative overflow-hidden border-t border-slate-200">
           <motion.div 
@@ -1284,9 +1288,10 @@ export default function Home() {
                   {[
                     "Bis zu 3 Unterseiten",
                     "1 Formular",
-                    "VANICY Dashboard",
-                     "Basis SEO-Optimierung",
-                     "Basic Cookie-Banner",
+                    "VANICY Kunden-Dashboard",
+                    "Basis-Besucherstatistiken (Besucher, Seitenaufrufe, Absprungrate)",
+                    "Basis SEO-Optimierung",
+                    "Basic Cookie-Banner",
                     "Bis zu 10 inhaltliche Änderungen / Monat",
                     "Standard Support"
                   ].map((f,i)=>(
@@ -1346,6 +1351,11 @@ export default function Home() {
                     "Bis zu 2 Formulare",
                     "Erweiterte SEO-Optimierung",
                     "Consent-Management (Cookies)",
+                    "Besucherstatistiken (30 Tage / 7 Tage / Heute / 12 Monate)",
+                    "Besucher-Verlauf (interaktiver Chart)",
+                    "Traffic-Quellen & Browser-Auswertung",
+                    "Länder-Übersicht mit Weltkarte",
+                    "Top Seiten Analyse",
                     "Bis zu 25 inhaltliche Änderungen / Monat",
                     "Prio Support",
                     "Alles aus dem Essential-Plan"
@@ -1399,7 +1409,11 @@ export default function Home() {
                     "Bis zu 5 Formulare + Logik",
                     "Eigenes Content Management",
                     "Pro (erweitert) SEO-Optimierung",
-                    "Kurzreport (Tracking & Performance)",
+                    "Vollständige Analyse-Suite inkl. Geräte-Tracking",
+                    "Regionen & Städte-Auswertung",
+                    "Google PageSpeed Analyse (3× täglich)",
+                    "Core Web Vitals (LCP, FCP, CLS, TBT)",
+                    "Verbesserungspotenzial-Report (Lighthouse)",
                     "Bis zu 50 inhaltliche Änderungen / Monat",
                     "Prio + Telefon Support",
                     "Alles aus dem Business-Plan"
