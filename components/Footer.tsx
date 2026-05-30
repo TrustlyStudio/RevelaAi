@@ -37,6 +37,7 @@ export function Footer() {
             <h4 className="text-white font-bold mb-6 text-sm">Unternehmen</h4>
             <nav aria-label="Footer Navigation Unternehmen">
               <ul className="space-y-4 text-sm font-medium">
+                <li><Link href="/ueber-uns" className="hover:text-white transition-colors block">Über uns</Link></li>
                 <li><Link href="/faq" className="hover:text-white transition-colors block">Häufige Fragen (FAQ)</Link></li>
               </ul>
             </nav>

@@ -5,7 +5,7 @@ export default function robots(): MetadataRoute.Robots {
     rules: {
       userAgent: '*',
       allow: '/',
-      disallow: ['/api/', '/admin/', '/_next/'],
+      disallow: ['/api/', '/admin/', '/_next/', '/impressum', '/datenschutz', '/agb', '/avv'],
     },
     sitemap: 'https://vanicy.de/sitemap.xml',
   };

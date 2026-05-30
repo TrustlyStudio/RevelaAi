@@ -10,7 +10,18 @@ export const metadata: Metadata = {
   },
   alternates: {
     canonical: 'https://vanicy.de/case-studies',
-  }
+  },
+  openGraph: {
+    title: 'Referenzen & Kundenprojekte | VANICY WebLeasing',
+    description: 'Echte Ergebnisse für echte Unternehmen. Sieh wie VANICY professionelle Websites mit messbaren Erfolgen umsetzt – mehr Anfragen, mehr Sichtbarkeit.',
+    type: 'website',
+    siteName: 'VANICY',
+    locale: 'de_DE',
+    url: 'https://vanicy.de/case-studies',
+  },
+  twitter: {
+    card: 'summary_large_image',
+  },
 };
 
 export default function Page() {

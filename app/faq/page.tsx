@@ -1,5 +1,6 @@
 import { Metadata } from 'next';
 import FAQPage from './FAQPage';
+import { faqCategories } from './data';
 
 export const metadata: Metadata = {
   title: 'Häufige Fragen zu WebLeasing | VANICY',
@@ -26,5 +27,28 @@ export const metadata: Metadata = {
 };
 
 export default function Page() {
-  return <FAQPage />;
+  // Generate FAQ JSON-LD Schema
+  const allFaqs = faqCategories.flatMap((cat) => cat.faqs);
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": allFaqs.map((faq) => ({
+      "@type": "Question",
+      "name": faq.q,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": faq.a
+      }
+    }))
+  };
+
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <FAQPage />
+    </>
+  );
 }

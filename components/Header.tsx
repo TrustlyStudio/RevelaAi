@@ -72,7 +72,8 @@ export function Header() {
     { href: '/#vorteile', label: 'Vorteile' },
     { href: '/#process', label: 'Der Prozess' },
     { href: '/case-studies', label: 'Referenzen' },
-    { href: '/preise', label: 'Preise' }
+    { href: '/preise', label: 'Preise' },
+    { href: '/ueber-uns', label: 'Über uns' }
   ];
 
   return (

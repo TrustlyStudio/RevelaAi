@@ -2,7 +2,7 @@ import { NextResponse } from 'next/server';
 
 export async function GET() {
   const content = `# VANICY
-> Premium WebLeasing Agentur aus Reutlingen, Deutschland.
+> Premium WebLeasing Agentur aus Landshut, Deutschland.
 > Wir bauen professionelle Websites zum festen Monatspreis
 > für kleine und mittelständische Unternehmen – ab 129€/Monat.
 ## Was wir tun
@@ -22,15 +22,19 @@ export async function GET() {
 ## Kontakt
 - Website: https://vanicy.de
 - E-Mail: support@vanicy.de
-- Standort: Reutlingen, Baden-Württemberg, Deutschland
-- Servicegebiet: Deutschland (Schwerpunkt Reutlingen,
-  Tübingen, Stuttgart, Landshut)
+- Telefon: +49 15567 424365
+- Standort: Rennweg 57, 84034 Landshut, Bayern, Deutschland
+- Servicegebiet: Deutschland (Schwerpunkt Landshut, München, Stuttgart, Berlin)
 ## Wichtige Seiten
 - [Startseite](https://vanicy.de)
 - [Preise & Pakete](https://vanicy.de/preise)
+- [Über uns](https://vanicy.de/ueber-uns)
+- [Referenzen](https://vanicy.de/case-studies)
 - [FAQ](https://vanicy.de/faq)
 - [Impressum](https://vanicy.de/impressum)
 - [Datenschutz](https://vanicy.de/datenschutz)
+- [AGB](https://vanicy.de/agb)
+- [AVV](https://vanicy.de/avv)
 `;
 
   return new NextResponse(content, {

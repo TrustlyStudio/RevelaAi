@@ -2,13 +2,13 @@ import { Metadata } from 'next';
 import PreisePage from './PreisePage';
 
 export const metadata: Metadata = {
-  title: 'WebLeasing Pakete & Preise ab 129€ | VANICY Reutlingen',
+  title: 'WebLeasing Pakete & Preise ab 129€ | VANICY',
   description: 'Essential ab 129€ (24 Mon.) oder 149€ (12 Mon.), Business ab 189€, Pro ab 399€ pro Monat. Alle Pakete inkl. Hosting, SSL, SEO & Änderungen. 0€ Einrichtungsgebühr.',
   alternates: {
     canonical: 'https://vanicy.de/preise',
   },
   openGraph: {
-    title: 'WebLeasing Pakete & Preise ab 129€ | VANICY Reutlingen',
+    title: 'WebLeasing Pakete & Preise ab 129€ | VANICY',
     description: 'Essential ab 129€ (24 Mon.) oder 149€ (12 Mon.), Business ab 189€, Pro ab 399€ pro Monat. Alle Pakete inkl. Hosting, SSL, SEO & Änderungen. 0€ Einrichtungsgebühr.',
     type: 'website',
     siteName: 'VANICY',

@@ -48,15 +48,34 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
+  const orgJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "VANICY",
+    "url": "https://vanicy.de",
+    "logo": "https://vanicy.de/icon.png",
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+49-155-674-24365",
+      "contactType": "customer service",
+      "email": "support@vanicy.de",
+      "areaServed": "DE",
+      "availableLanguage": "German"
+    },
+    "sameAs": [
+      "https://www.instagram.com/vanicy.de/"
+    ]
+  };
+
   return (
     <html lang="de" className={`scroll-smooth ${inter.variable}`}>
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <meta name="geo.region" content="DE-BW" />
-        <meta name="geo.placename" content="Reutlingen" />
-        <meta name="geo.position" content="48.4921;9.2041" />
-        <meta name="ICBM" content="48.4921, 9.2041" />
+        <meta name="geo.region" content="DE-BY" />
+        <meta name="geo.placename" content="Landshut" />
+        <meta name="geo.position" content="48.54419;12.14685" />
+        <meta name="ICBM" content="48.54419, 12.14685" />
         <link rel="alternate" hrefLang="de" href="https://vanicy.de" />
         {/* Privacy-friendly analytics by Plausible */}
         <script async src="https://plausible.io/js/pa-yaIKDsNb1st7nuBOXbAmN.js"></script>
@@ -64,6 +83,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
   plausible.init()
 ` }} />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(orgJsonLd) }} />
       </head>
       <body className="min-h-screen bg-brand-off-white font-sans text-brand-dark-blue transition-colors duration-300">
         <CookieScripts />
