@@ -4,7 +4,7 @@ import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { motion, AnimatePresence } from 'motion/react';
-import { Menu, X, ArrowRight, Instagram, User } from 'lucide-react';
+import { Menu, X, ArrowRight, Instagram, User, Linkedin as LinkedinIcon } from 'lucide-react';
 
 export function Header() {
   const [timeLeft, setTimeLeft] = useState({ hours: 16, minutes: 24, seconds: 42 });
@@ -128,6 +128,9 @@ export function Header() {
 
             <div className="hidden lg:flex items-center gap-2 xl:gap-4">
               <div className="flex items-center gap-2 xl:gap-3 mr-1 xl:mr-2 border-r border-gray-200 pr-3 xl:pr-5">
+                <a href="https://www.linkedin.com/company/vanicy-de" target="_blank" rel="noopener noreferrer" className="p-2 rounded-full text-slate-400 hover:bg-[#0A66C2]/10 hover:text-[#0A66C2] hover:scale-110 active:scale-95 transition-all" aria-label="LinkedIn">
+                  <LinkedinIcon className="w-4 h-4 xl:w-5 xl:h-5" />
+                </a>
                 <a href="https://www.instagram.com/vanicy.de/" target="_blank" rel="noopener noreferrer" className="p-2 rounded-full text-slate-400 hover:bg-rose-50 hover:text-brand-magenta hover:scale-110 active:scale-95 transition-all" aria-label="Instagram">
                   <Instagram className="w-4 h-4 xl:w-5 xl:h-5" />
                 </a>
@@ -221,6 +224,9 @@ export function Header() {
             </div>
 
             <div className="flex justify-center items-center gap-6 mt-8">
+               <a href="https://www.linkedin.com/company/vanicy-de" target="_blank" rel="noopener noreferrer" className="p-3 bg-gray-50 rounded-full text-slate-400 hover:bg-[#0A66C2]/10 hover:text-[#0A66C2] transition-colors shadow-sm border border-gray-100" aria-label="LinkedIn">
+                 <LinkedinIcon className="w-6 h-6" />
+               </a>
                <a href="https://www.instagram.com/vanicy.de/" target="_blank" rel="noopener noreferrer" className="p-3 bg-gray-50 rounded-full text-slate-400 hover:bg-rose-50 hover:text-brand-magenta transition-colors shadow-sm border border-gray-100" aria-label="Instagram">
                  <Instagram className="w-6 h-6" />
                </a>

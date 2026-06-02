@@ -63,7 +63,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       "availableLanguage": "German"
     },
     "sameAs": [
-      "https://www.instagram.com/vanicy.de/"
+      "https://www.instagram.com/vanicy.de/",
+      "https://www.linkedin.com/company/vanicy-de"
     ]
   };
 

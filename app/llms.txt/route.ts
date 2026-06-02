@@ -23,6 +23,7 @@ export async function GET() {
 - Website: https://vanicy.de
 - E-Mail: support@vanicy.de
 - Telefon: +49 15567 424365
+- LinkedIn: https://www.linkedin.com/company/vanicy-de
 - Standort: Rennweg 57, 84034 Landshut, Bayern, Deutschland
 - Servicegebiet: Deutschland (Schwerpunkt Landshut, München, Stuttgart, Berlin)
 ## Wichtige Seiten
