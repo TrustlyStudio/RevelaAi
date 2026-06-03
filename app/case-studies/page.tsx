@@ -3,7 +3,7 @@ import CaseStudiesPage from './CaseStudiesPage';
 
 export const metadata: Metadata = {
   title: 'Referenzen & Kundenprojekte | VANICY WebLeasing',
-  description: 'Echte Ergebnisse für echte Unternehmen. Sieh wie VANICY professionelle Websites mit messbaren Erfolgen umsetzt – mehr Anfragen, mehr Sichtbarkeit.',
+  description: 'Echte Ergebnisse für echte Unternehmen. Sieh wie VANICY professionelle Websites mit messbaren Erfolgen umsetzt - mehr Anfragen, mehr Sichtbarkeit.',
   robots: {
     index: true,
     follow: true,
@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: 'Referenzen & Kundenprojekte | VANICY WebLeasing',
-    description: 'Echte Ergebnisse für echte Unternehmen. Sieh wie VANICY professionelle Websites mit messbaren Erfolgen umsetzt – mehr Anfragen, mehr Sichtbarkeit.',
+    description: 'Echte Ergebnisse für echte Unternehmen. Sieh wie VANICY professionelle Websites mit messbaren Erfolgen umsetzt - mehr Anfragen, mehr Sichtbarkeit.',
     type: 'website',
     siteName: 'VANICY',
     locale: 'de_DE',

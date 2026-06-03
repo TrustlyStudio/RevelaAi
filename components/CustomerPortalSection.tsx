@@ -35,14 +35,14 @@ export function CustomerPortalSection() {
               </h2>
               
               <p className="text-base md:text-lg text-white/60 mb-8 max-w-xl leading-relaxed">
-                Dein persönliches Dashboard zeigt dir alles auf einen Blick – Projektstatus, Rechnungen, Verträge und direkter Support. Keine E-Mail-Flut, kein Rätselraten.
+                Dein persönliches Dashboard zeigt dir alles auf einen Blick - Projektstatus, Rechnungen, Verträge und direkter Support. Keine E-Mail-Flut, kein Rätselraten.
               </p>
 
               <div className="space-y-6 mb-10 w-full max-w-xl">
                 {[
                   {
                     title: "Projekt-Tracking in Echtzeit",
-                    desc: "Verfolge jeden Entwicklungsschritt live mit – von der Konzeption über das responsive Design bis zum finalen Go-Live. 100% transparent und termingenau."
+                    desc: "Verfolge jeden Entwicklungsschritt live mit - von der Konzeption über das responsive Design bis zum finalen Go-Live. 100% transparent und termingenau."
                   },
                   {
                     title: "Änderungswünsche per Mausklick",

@@ -29,11 +29,11 @@ export function PageSpeedSection() {
               </div>
               
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-black mb-6 tracking-tight text-slate-900 leading-tight">
-                Dein kostenloser Google Lighthouse Test — direkt im Dashboard.
+                Dein kostenloser Google Lighthouse Test - direkt im Dashboard.
               </h2>
               
               <p className="text-base md:text-lg text-slate-600 mb-8 max-w-xl leading-relaxed">
-                Behalte die Qualität deiner Website im Blick. Performance, SEO, Barrierefreiheit und Core Web Vitals auf einen Blick — automatisiert und in Echtzeit gemessen.
+                Behalte die Qualität deiner Website im Blick. Performance, SEO, Barrierefreiheit und Core Web Vitals auf einen Blick - automatisiert und in Echtzeit gemessen.
               </p>
 
               <div className="space-y-4">

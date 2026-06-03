@@ -85,7 +85,7 @@ const comparisonData = [
     vanicy: { text: "Maßgeschneidert & Premium", icon: <Check className="w-5 h-5 text-emerald-500" />, type: "good" },
     details: {
       title: "Premium Design ohne Limits",
-      text: "Baukästen schränken designtechnisch massiv ein. Wir entwickeln maßgeschneidert von Hand – mit modernsten Technologien (Next.js, Tailwind), exakt wie eine teure Premium-Agentur, aber zum Bruchteil des Risikos.",
+      text: "Baukästen schränken designtechnisch massiv ein. Wir entwickeln maßgeschneidert von Hand - mit modernsten Technologien (Next.js, Tailwind), exakt wie eine teure Premium-Agentur, aber zum Bruchteil des Risikos.",
       stats: "0% Limitierungen durch Standard-Templates."
     },
     Visual: () => null // Optional, maybe we don't need visuals for ALL, but it's fine
@@ -97,7 +97,7 @@ const comparisonData = [
     vanicy: { text: "Lichtgeschwindigkeit (100/100)", icon: <Check className="w-5 h-5 text-emerald-500" />, type: "good" },
     details: {
       title: "Performance auf Enterprise-Niveau",
-      text: "Lange Ladezeiten killen jede Conversion. Durch unseren Headless-/Next.js-Ansatz gepaart mit globalen CDNs liefert deine Website in Millisekunden aus – weltweit. Baukästen und WordPress stoßen hier schnell an ihre Grenzen.",
+      text: "Lange Ladezeiten killen jede Conversion. Durch unseren Headless-/Next.js-Ansatz gepaart mit globalen CDNs liefert deine Website in Millisekunden aus - weltweit. Baukästen und WordPress stoßen hier schnell an ihre Grenzen.",
       stats: "Durchschnittliche Ladezeiten unter 0.5 Sekunden."
     },
     Visual: () => (
@@ -151,7 +151,7 @@ const comparisonData = [
     vanicy: { text: "Kostenfrei per Klick im Portal", icon: <Check className="w-5 h-5 text-emerald-500" />, type: "good" },
     details: {
       title: "Änderungen einfach delegieren",
-      text: "In unseren Plänen sind monatliche, kostenfreie Änderungen bereits enthalten. Neues Teammitglied? Neue Leistung? Einfach im Dashboard einreichen – wir setzen es innerhalb kürzester Zeit für dich um.",
+      text: "In unseren Plänen sind monatliche, kostenfreie Änderungen bereits enthalten. Neues Teammitglied? Neue Leistung? Einfach im Dashboard einreichen - wir setzen es innerhalb kürzester Zeit für dich um.",
       stats: "Keine unerwarteten Rechnungen mehr für kleine Änderungen."
     },
     Visual: () => null

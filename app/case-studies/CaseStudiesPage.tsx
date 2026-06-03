@@ -262,7 +262,7 @@ export default function CaseStudiesPage() {
               Bereit für deine eigene Erfolgsstory?
             </h2>
             <p className="text-slate-300 mb-10 max-w-2xl mx-auto md:text-lg relative z-10">
-              Lass uns unverbindlich darüber sprechen, wie wir dein Geschäft digital aufs nächste Level heben. Kein nerviges Verkaufsgespräch – versprochen.
+              Lass uns unverbindlich darüber sprechen, wie wir dein Geschäft digital aufs nächste Level heben. Kein nerviges Verkaufsgespräch - versprochen.
             </p>
             <div className="relative z-10 flex flex-col sm:flex-row items-center justify-center gap-4">
               <Link 

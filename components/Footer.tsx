@@ -53,7 +53,7 @@ export function Footer() {
               </li>
             </ul>
             <p className="text-xs text-slate-600 leading-relaxed max-w-[250px]">
-              VANICY ist deine WebLeasing-Agentur aus Reutlingen. Wir betreuen Unternehmen in Reutlingen, Tübingen, Stuttgart und deutschlandweit – darunter auch Kunden in Landshut und ganz Bayern.
+              VANICY ist deine WebLeasing-Agentur aus Reutlingen. Wir betreuen Unternehmen in Reutlingen, Tübingen, Stuttgart und deutschlandweit - darunter auch Kunden in Landshut und ganz Bayern.
             </p>
           </div>
         </div>

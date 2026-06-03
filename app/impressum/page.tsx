@@ -76,6 +76,7 @@ export default function Impressum() {
             <p className="mb-2">Dieses Impressum gilt ebenso für unsere Präsenzen auf den folgenden Social-Media-Plattformen:</p>
             <ul className="list-disc pl-5 space-y-2">
               <li><strong>Instagram:</strong> <a href="https://www.instagram.com/vanicy.de/" target="_blank" rel="noopener noreferrer" className="text-rose-600 hover:underline">https://www.instagram.com/vanicy.de/</a></li>
+              <li><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/company/vanicy-de" target="_blank" rel="noopener noreferrer" className="text-rose-600 hover:underline">https://www.linkedin.com/company/vanicy-de</a></li>
               <li><strong>WhatsApp (Business):</strong> 015567 424365</li>
             </ul>
           </section>

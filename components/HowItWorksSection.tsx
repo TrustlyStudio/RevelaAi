@@ -8,7 +8,7 @@ const steps = [
   {
     number: "1",
     title: "Paket wählen & Onboarding",
-    desc: "Du wählst dein Paket und startest deinen risikofreien Gratismonat (0€ Setup). Du füllst unser kurzes Onboarding-Formular im Dashboard aus – Zielgruppe, Wünsche, Inhalte. Kein Anruf, keine langen Meetings.",
+    desc: "Du wählst dein Paket und startest deinen risikofreien Gratismonat (0€ Setup). Du füllst unser kurzes Onboarding-Formular im Dashboard aus - Zielgruppe, Wünsche, Inhalte. Kein Anruf, keine langen Meetings.",
     icon: <ClipboardList className="w-5 h-5 text-rose-400" />,
     badge: "Kostenloser Test startet",
     pill: "100% online"
@@ -77,10 +77,10 @@ export function HowItWorksSection() {
             </span>
           </div>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-black mb-6 tracking-tight text-white">
-            Von 0 auf Live – in 5–7 Tagen.
+            Von 0 auf Live - in 5-7 Tagen.
           </h2>
           <p className="text-base md:text-lg text-white/70 max-w-2xl mx-auto leading-relaxed">
-            Alles läuft über unser Dashboard. Kein Telefonat nötig – es sei denn, du willst eines.
+            Alles läuft über unser Dashboard. Kein Telefonat nötig - es sei denn, du willst eines.
           </p>
         </motion.div>
 

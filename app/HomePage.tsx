@@ -56,7 +56,7 @@ const faqs = [
   },
   {
     question: "Wie lange dauert es bis meine Website live ist?",
-    answer: "Nach vollständigem Ausfüllen des Onboarding-Formulars bauen wir deine Website in 2–3 Werktagen. Inklusive Feedback-Runden und finaler Freigabe ist deine Website in der Regel nach maximal 7 Tagen live."
+    answer: "Nach vollständigem Ausfüllen des Onboarding-Formulars bauen wir deine Website in 2-3 Werktagen. Inklusive Feedback-Runden und finaler Freigabe ist deine Website in der Regel nach maximal 7 Tagen live."
   },
   {
     question: "Gehört mir die Website - oder nicht?",
@@ -88,7 +88,7 @@ const staggerContainer: any = {
 
 const testimonialsData = [
   { quote: "Die Seite war durchgehend online und wir mussten uns um absolut nichts kümmern. Wenn man bedenkt dass solche individuellen Websites bei anderen Agenturen locker mehrere tausend Euro kosten und dann oft nur halb so gut umgesetzt werden, ist das Angebot hier einfach unschlagbar. Ich kann VANICY jedem Unternehmen uneingeschränkt empfehlen. Großartige und professionelle Arbeit!", name: "Willi Hecht", role: "CEO Lemuria Bay", img: "/WilliBild.jpeg" },
-  { quote: "Seit wir VANICY nutzen, haben wir deutlich mehr qualifizierte Anfragen in unserem Postfach. Das Leasingmodell ist für uns perfekt – keine riesigen Vorabkosten und man muss sich um nichts kümmern.", name: "Sven Krause", role: "Geschäftsführer, Krause Heiztechnik", img: "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=150&h=150&fit=crop" }
+  { quote: "Seit wir VANICY nutzen, haben wir deutlich mehr qualifizierte Anfragen in unserem Postfach. Das Leasingmodell ist für uns perfekt - keine riesigen Vorabkosten und man muss sich um nichts kümmern.", name: "Sven Krause", role: "Geschäftsführer, Krause Heiztechnik", img: "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=150&h=150&fit=crop" }
 ];
 
 export default function Home() {
@@ -461,7 +461,7 @@ export default function Home() {
                 className="text-base sm:text-lg text-slate-600 mb-8 max-w-xl mx-auto lg:mx-0 leading-relaxed font-medium"
               >
                 <span className="font-bold text-slate-900 block mb-2">Live in 7 Tagen.</span>
-                Keine teuren Einmalzahlungen. Wir designen, entwickeln und hosten deine neue Website – alles inklusive im bequemen Abo ab 129 €/Monat.
+                Keine teuren Einmalzahlungen. Wir designen, entwickeln und hosten deine neue Website - alles inklusive im bequemen Abo ab 129 €/Monat.
               </motion.p>
               
               <motion.div 
@@ -838,7 +838,7 @@ export default function Home() {
                     </div>
                     <div>
                       <h4 className="text-lg font-bold text-slate-900 mb-1">Pfeilschnelle Ladezeiten</h4>
-                      <p className="text-slate-600">Wir bauen hochperformante Websites, die in Millisekunden laden – für bessere Google-Rankings und minimale Absprungraten.</p>
+                      <p className="text-slate-600">Wir bauen hochperformante Websites, die in Millisekunden laden - für bessere Google-Rankings und minimale Absprungraten.</p>
                     </div>
                   </div>
                   <div className="flex gap-4">
@@ -975,7 +975,7 @@ export default function Home() {
                 </div>
                 <h3 className="text-xl font-bold mb-3 text-slate-900">Lichtgeschwindigkeit</h3>
                 <p className="text-slate-600 text-sm md:text-base leading-relaxed">
-                  Jede Millisekunde zählt. Unsere Architektur garantiert blitzschnelle Ladezeiten – Google liebt das, und deine Nutzer noch mehr.
+                  Jede Millisekunde zählt. Unsere Architektur garantiert blitzschnelle Ladezeiten - Google liebt das, und deine Nutzer noch mehr.
                 </p>
               </motion.div>
 

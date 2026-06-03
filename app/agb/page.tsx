@@ -35,7 +35,7 @@ export default function AGB() {
               Vertragspartner und Geltungsbereich
             </h2>
             <div className="space-y-3">
-              <p>(1) Diese Allgemeinen Geschäftsbedingungen gelten für alle Verträge zwischen der <strong>Gurev & Schwabauer GbR – handelnd unter dem Namen VANICY – Rennweg 57, 84034 Landshut</strong> (nachfolgend „VANICY“) und dem Auftraggeber über die Nutzung der WebLeasing-Dienste.</p>
+              <p>(1) Diese Allgemeinen Geschäftsbedingungen gelten für alle Verträge zwischen der <strong>Gurev & Schwabauer GbR - handelnd unter dem Namen VANICY - Rennweg 57, 84034 Landshut</strong> (nachfolgend „VANICY“) und dem Auftraggeber über die Nutzung der WebLeasing-Dienste.</p>
               <p>(2) Diese AGB gelten ausschließlich im geschäftlichen Verkehr (B2B). Vertragspartner sind ausschließlich Unternehmer im Sinne des § 14 BGB. Ein Vertragsschluss mit Verbrauchern im Sinne des § 13 BGB ist ausgeschlossen.</p>
               <p>(3) Entgegenstehende oder abweichende Bedingungen des Auftraggebers werden nicht anerkannt, es sei denn, VANICY stimmt ihrer Geltung ausdrücklich schriftlich zu.</p>
             </div>
@@ -44,7 +44,7 @@ export default function AGB() {
           <section>
             <h2 className="text-xl md:text-2xl font-bold text-slate-900 mb-4 flex items-center gap-3">
               <span className="flex items-center justify-center w-8 h-8 rounded-lg bg-rose-100 text-rose-600 text-sm font-bold">§ 2</span>
-              Vertragsgegenstand – das WebLeasing-Modell
+              Vertragsgegenstand - das WebLeasing-Modell
             </h2>
             <div className="space-y-3">
               <p>(1) VANICY bietet ein Leasing-Modell für professionelle Websites an. Im Rahmen dieses Modells erstellt VANICY eine individuelle Website für den Auftraggeber, stellt diese für die Dauer des Vertrages gegen monatliche Vergütung bereit und betreibt sie.</p>

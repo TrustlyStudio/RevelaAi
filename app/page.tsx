@@ -3,13 +3,13 @@ import HomePage from './HomePage';
 
 export const metadata: Metadata = {
   title: 'Website mieten ab 129€/Monat | VANICY WebLeasing Reutlingen',
-  description: 'Professionelle Website zum festen Monatspreis – kein Vorabpreis, kein Risiko. Custom Design, Hosting, SEO & Support inklusive. Jetzt 1 Monat kostenlos testen. VANICY – Reutlingen.',
+  description: 'Professionelle Website zum festen Monatspreis - kein Vorabpreis, kein Risiko. Custom Design, Hosting, SEO & Support inklusive. Jetzt 1 Monat kostenlos testen. VANICY - Reutlingen.',
   alternates: {
     canonical: 'https://vanicy.de/',
   },
   openGraph: {
     title: 'Website mieten ab 129€/Monat | VANICY WebLeasing Reutlingen',
-    description: 'Professionelle Website zum festen Monatspreis – kein Vorabpreis, kein Risiko. Custom Design, Hosting, SEO & Support inklusive. Jetzt 1 Monat kostenlos testen. VANICY – Reutlingen.',
+    description: 'Professionelle Website zum festen Monatspreis - kein Vorabpreis, kein Risiko. Custom Design, Hosting, SEO & Support inklusive. Jetzt 1 Monat kostenlos testen. VANICY - Reutlingen.',
     type: 'website',
     siteName: 'VANICY',
     locale: 'de_DE',
@@ -34,7 +34,7 @@ export default function Page() {
         "@id": "https://vanicy.de/#business",
         "name": "VANICY",
         "alternateName": "VANICY WebLeasing",
-        "description": "Premium WebLeasing Agentur – professionelle Websites zum festen Monatspreis für kleine und mittelständische Unternehmen.",
+        "description": "Premium WebLeasing Agentur - professionelle Websites zum festen Monatspreis für kleine und mittelständische Unternehmen.",
         "url": "https://vanicy.de",
         "telephone": "+4915567424365",
         "email": "support@vanicy.de",
@@ -125,7 +125,7 @@ export default function Page() {
         "@id": "https://vanicy.de/#website",
         "url": "https://vanicy.de",
         "name": "VANICY",
-        "description": "Premium WebLeasing – Hochwertige Websites zum festen Monatspreis",
+        "description": "Premium WebLeasing - Hochwertige Websites zum festen Monatspreis",
         "potentialAction": {
           "@type": "SearchAction",
           "target": "https://vanicy.de/?s={search_term_string}",
@@ -140,7 +140,7 @@ export default function Page() {
             "name": "Was kostet eine Website bei VANICY?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "VANICY bietet Website-Leasing ab 129€ pro Monat an (Essential-Plan, 24 Monate Laufzeit). Der 12-Monats-Plan startet bei 149€/Monat. Business-Pläne ab 189€, Pro ab 399€ monatlich – alles inklusive Hosting, SSL, Design und Support."
+              "text": "VANICY bietet Website-Leasing ab 129€ pro Monat an (Essential-Plan, 24 Monate Laufzeit). Der 12-Monats-Plan startet bei 149€/Monat. Business-Pläne ab 189€, Pro ab 399€ monatlich - alles inklusive Hosting, SSL, Design und Support."
             }
           },
           {
@@ -156,7 +156,7 @@ export default function Page() {
             "name": "Was ist WebLeasing?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "WebLeasing bedeutet: Statt einmalig 5.000–15.000€ für eine Website zu zahlen, mietest du sie zum festen Monatspreis. Design, Entwicklung, Hosting, Updates und Support sind vollständig enthalten."
+              "text": "WebLeasing bedeutet: Statt einmalig 5.000-15.000€ für eine Website zu zahlen, mietest du sie zum festen Monatspreis. Design, Entwicklung, Hosting, Updates und Support sind vollständig enthalten."
             }
           },
           {
@@ -164,7 +164,7 @@ export default function Page() {
             "name": "Arbeitet VANICY auch mit Unternehmen außerhalb von Reutlingen?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Ja. VANICY betreut Unternehmen deutschlandweit – mit Schwerpunkt in Reutlingen, Tübingen, Stuttgart sowie Landshut und ganz Bayern. Alle Leistungen werden remote erbracht."
+              "text": "Ja. VANICY betreut Unternehmen deutschlandweit - mit Schwerpunkt in Reutlingen, Tübingen, Stuttgart sowie Landshut und ganz Bayern. Alle Leistungen werden remote erbracht."
             }
           }
         ]

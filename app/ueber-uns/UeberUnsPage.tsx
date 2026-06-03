@@ -119,7 +119,7 @@ export default function UeberUnsPage() {
           
           <motion.div variants={fadeInUp}>
             <p className="text-lg md:text-xl text-slate-600 leading-relaxed max-w-2xl mx-auto font-medium">
-              Unsere Vision ist es, jedem Unternehmen eine erstklassige, hochmoderne digitale Präsenz zu ermöglichen – stressfrei, fair und auf Autopilot. Gutes Design und exzellente Technik sollten kein Privileg sein, sondern der Standard.
+               Unsere Vision ist es, jedem Unternehmen eine erstklassige, hochmoderne digitale Präsenz zu ermöglichen - stressfrei, fair und auf Autopilot. Gutes Design und exzellente Technik sollten kein Privileg sein, sondern der Standard.
             </p>
           </motion.div>
         </motion.div>
