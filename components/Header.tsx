@@ -7,7 +7,32 @@ import { motion, AnimatePresence } from 'motion/react';
 import { Menu, X, ArrowRight, Instagram, User, Linkedin as LinkedinIcon } from 'lucide-react';
 
 export function Header() {
-  const [timeLeft, setTimeLeft] = useState({ hours: 16, minutes: 24, seconds: 42 });
+  const [isMounted, setIsMounted] = useState(false);
+  const [timeLeft, setTimeLeft] = useState(() => {
+    if (typeof window === 'undefined') {
+      return { days: 5, hours: 0, minutes: 0, seconds: 0 };
+    }
+    const now = Date.now();
+    const storageKey = 'vanicy_timer_deadline';
+    let deadline = null;
+    try {
+      deadline = localStorage.getItem(storageKey);
+    } catch (e) {}
+    let deadlineTime = deadline ? parseInt(deadline, 10) : null;
+    const limit = (4 * 24 + 12) * 60 * 60 * 1000; // 4 Tage und 12 Stunden
+    if (!deadlineTime || isNaN(deadlineTime) || (deadlineTime - now) < limit) {
+      deadlineTime = now + 5 * 24 * 60 * 60 * 1000;
+      try {
+        localStorage.setItem(storageKey, deadlineTime.toString());
+      } catch (e) {}
+    }
+    const diff = Math.max(0, deadlineTime - now);
+    const d = Math.floor(diff / (1000 * 60 * 60 * 24));
+    const h = Math.floor((diff / (1000 * 60 * 60)) % 24);
+    const m = Math.floor((diff / (1000 * 60)) % 60);
+    const s = Math.floor((diff / 1000) % 60);
+    return { days: d, hours: h, minutes: m, seconds: s };
+  });
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
@@ -23,29 +48,51 @@ export function Header() {
   }, []);
 
   useEffect(() => {
-    const timer = setInterval(() => {
-      // Calculate time based on a daily reset cycle
-      const now = new Date();
-      // Let's say it resets every 24 hours at midnight UTC
-      const tomorrow = new Date(now);
-      tomorrow.setUTCHours(24, 0, 0, 0);
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    setIsMounted(true);
+    // Helper to calculate time left
+    const calculateTimeLeft = () => {
+      const now = Date.now();
+      const storageKey = 'vanicy_timer_deadline';
+      let deadline = null;
+      try {
+        deadline = localStorage.getItem(storageKey);
+      } catch (e) {}
+      let deadlineTime = deadline ? parseInt(deadline, 10) : null;
       
-      const diff = tomorrow.getTime() - now.getTime();
+      const limit = (4 * 24 + 12) * 60 * 60 * 1000; // 4 Tage und 12 Stunden
+      if (!deadlineTime || isNaN(deadlineTime) || (deadlineTime - now) < limit) {
+        deadlineTime = now + 5 * 24 * 60 * 60 * 1000;
+        try {
+          localStorage.setItem(storageKey, deadlineTime.toString());
+        } catch (e) {}
+      }
       
+      const diff = Math.max(0, deadlineTime - now);
+      const d = Math.floor(diff / (1000 * 60 * 60 * 24));
       const h = Math.floor((diff / (1000 * 60 * 60)) % 24);
-      const m = Math.floor((diff / 1000 / 60) % 60);
+      const m = Math.floor((diff / (1000 * 60)) % 60);
       const s = Math.floor((diff / 1000) % 60);
       
-      setTimeLeft({
-        // Add a fake offset to make it look like an artificial 16-18h timer if we want,
-        // but real end-of-day is fine. Actually the prompt says "nur noch 16 stunden...".
-        // A daily midnight resetting timer works flawlessly.
-        hours: h,
-        minutes: m,
-        seconds: s
-      });
+      return { days: d, hours: h, minutes: m, seconds: s };
+    };
+
+    const timer = setInterval(() => {
+      setTimeLeft(calculateTimeLeft());
     }, 1000);
-    return () => clearInterval(timer);
+
+    const handleVisibilityChange = () => {
+      if (document.visibilityState === 'visible') {
+        setTimeLeft(calculateTimeLeft());
+      }
+    };
+
+    window.addEventListener('visibilitychange', handleVisibilityChange);
+
+    return () => {
+      clearInterval(timer);
+      window.removeEventListener('visibilitychange', handleVisibilityChange);
+    };
   }, []);
 
   // Prevent scroll when mobile menu is open
@@ -86,13 +133,15 @@ export function Header() {
           <div className="relative z-10 flex flex-wrap items-center justify-center gap-2 md:gap-4 font-medium text-center">
             <span className="bg-rose-500 text-white px-2 py-0.5 rounded text-xs font-bold tracking-wider uppercase shadow-sm">Aktion</span>
             <span>Teste VANICY <strong>1 vollen Monat kostenlos + 0€ Setup!</strong> Ohne Risiko.</span>
-            <span className="flex items-center gap-1.5 font-mono bg-white/10 px-2 py-0.5 rounded">
-               <svg className="w-4 h-4 text-rose-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <span className="flex items-center gap-1.5 font-mono bg-white/10 px-2 py-0.5 rounded text-xs md:text-sm">
+               <svg className="w-4 h-4 text-rose-400 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                </svg>
-               <span className="w-5 text-center">{timeLeft.hours.toString().padStart(2, '0')}</span><span className="text-gray-400">:</span>
-               <span className="w-5 text-center">{timeLeft.minutes.toString().padStart(2, '0')}</span><span className="text-gray-400">:</span>
-               <span className="w-5 text-center">{timeLeft.seconds.toString().padStart(2, '0')}</span>
+               <span className="text-center font-bold tracking-tight">{isMounted ? timeLeft.days.toString().padStart(2, '0') : '05'} Tage</span>
+               <span className="text-gray-400 font-semibold">:</span>
+               <span className="text-center font-bold tracking-tight">{isMounted ? timeLeft.hours.toString().padStart(2, '0') : '00'} Std</span>
+               <span className="text-gray-400 font-semibold">:</span>
+               <span className="text-center font-bold tracking-tight">{isMounted ? timeLeft.minutes.toString().padStart(2, '0') : '00'} Min</span>
             </span>
             <button 
               onClick={() => {
@@ -114,7 +163,7 @@ export function Header() {
             <div className="flex-shrink-0 flex items-center">
               {/* Logo */}
               <Link href="/" className="flex items-center gap-2 group" onClick={closeMobileMenu}>
-                <Image src="/VANICY_Logo_Wide_Cropped-1.png" alt="VANICY Logo" width={160} height={48} className="h-8 md:h-10 w-auto group-hover:scale-105 transition-transform object-contain" />
+                <Image src="/VANICY_Logo_Wide_Cropped-1.png" alt="VANICY Logo" width={160} height={48} className="h-8 w-[107px] md:h-10 md:w-[133px] group-hover:scale-105 transition-transform object-contain" />
               </Link>
             </div>
             

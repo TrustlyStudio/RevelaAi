@@ -15,6 +15,7 @@ export function HeroInteractiveDashboard() {
           transform-style: preserve-3d;
           transition: transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
           position: relative;
+          aspect-ratio: 1200 / 800;
         }
         @media (min-width: 768px) {
           .macbook-wrapper {

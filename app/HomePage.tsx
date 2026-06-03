@@ -1073,7 +1073,7 @@ export default function Home() {
               onMouseEnter={() => setIsAutoPlaying(false)}
               onMouseLeave={() => setIsAutoPlaying(true)}
             >
-              <div className="relative overflow-hidden px-4 md:px-16 py-8 h-auto min-h-[500px] sm:min-h-[400px] md:min-h-[350px] flex items-center">
+              <div className="relative overflow-visible px-4 md:px-16 py-8 h-[620px] sm:h-[520px] md:h-[460px] lg:h-[400px] flex items-center">
                 <AnimatePresence mode="wait">
                   <motion.div
                     key={currentTestimonialIndex}
@@ -1083,7 +1083,7 @@ export default function Home() {
                     transition={{ duration: 0.4, ease: [0.32, 0.72, 0, 1] }}
                     className="w-full flex items-center justify-center h-full"
                   >
-                    <div className="bg-white border border-slate-200 rounded-3xl p-6 md:p-12 w-full max-w-5xl min-h-[500px] sm:min-h-[400px] md:min-h-[350px] lg:min-h-[320px] flex flex-col md:flex-row gap-8 md:gap-12 items-center relative group shadow-sm hover:shadow-xl hover:border-slate-300 transition-all duration-500">
+                    <div className="bg-white border border-slate-200 rounded-3xl p-6 md:p-12 w-full max-w-5xl min-h-[540px] sm:min-h-[440px] md:min-h-[380px] lg:min-h-[320px] flex flex-col md:flex-row gap-8 md:gap-12 items-center relative group shadow-sm hover:shadow-xl hover:border-slate-300 transition-all duration-500">
                       
                       {/* Decorative quote mark */}
                       <div className="absolute top-4 left-4 md:top-8 md:left-8 text-7xl md:text-8xl text-indigo-50 font-serif leading-none select-none -z-0">
@@ -1111,7 +1111,15 @@ export default function Home() {
                       </div>
 
                       <div className="flex-1 relative z-10 text-center md:text-left h-full flex items-center">
-                        <p className={`text-slate-700 leading-relaxed md:leading-normal font-medium transition-all ${testimonialsData[currentTestimonialIndex].quote.length > 250 ? 'text-base md:text-lg lg:text-xl' : 'text-lg md:text-2xl lg:text-3xl'}`}>
+                        <p className={`text-slate-700 leading-relaxed md:leading-normal font-medium transition-all ${
+                          testimonialsData[currentTestimonialIndex].name === "Sven Krause"
+                            ? (testimonialsData[currentTestimonialIndex].quote.length > 250 
+                                ? 'text-[0.95rem] md:text-[1.069rem] lg:text-[1.188rem]' 
+                                : 'text-[1.069rem] md:text-[1.425rem] lg:text-[1.781rem]')
+                            : (testimonialsData[currentTestimonialIndex].quote.length > 250 
+                                ? 'text-base md:text-lg lg:text-xl' 
+                                : 'text-lg md:text-2xl lg:text-3xl')
+                        }`}>
                           {testimonialsData[currentTestimonialIndex].quote}
                         </p>
                       </div>
