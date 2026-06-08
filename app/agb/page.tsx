@@ -111,12 +111,9 @@ export default function AGB() {
               <p>(1) Der Vertrag wird für die bei Vertragsschluss vereinbarte Mindestlaufzeit (12 oder 24 Monate) geschlossen.</p>
               <div className="bg-slate-100 p-4 rounded-lg font-semibold text-slate-900 border-l-4 border-slate-400">
                 ⚠️ WICHTIGER HINWEIS: AUTOMATISCHE VERTRAGSVERLÄNGERUNG<br/><br/>
-                Der Vertrag verlängert sich nach Ablauf der Mindestlaufzeit automatisch um jeweils 12 weitere Monate, sofern er nicht rechtzeitig gekündigt wird.
+                Der Vertrag verlängert sich nach Ablauf der Mindestlaufzeit automatisch um die jeweils initial vereinbarte Mindestlaufzeit (12 oder 24 Monate) wieder, sofern er nicht rechtzeitig gekündigt wird.
               </div>
-              <p>(2) Die Kündigungsfrist beträgt:<br/>
-                - Bei einer Mindestlaufzeit von 12 Monaten: 1 Monat vor Ablauf der Laufzeit<br/>
-                - Bei einer Mindestlaufzeit von 24 Monaten: 3 Monate vor Ablauf der Laufzeit
-              </p>
+              <p>(2) Die Kündigungsfrist beträgt 1 Monat vor Ablauf der jeweiligen Laufzeit.</p>
               <p>(3) Kündigungen sind im Kundenportal (dashboard.vanicy.de) oder per E-Mail an support@vanicy.de möglich.</p>
               <p>(4) Das Recht zur außerordentlichen Kündigung aus wichtigem Grund bleibt unberührt. Ein wichtiger Grund liegt insbesondere vor, wenn der Auftraggeber mit mehr als zwei Monatsbeiträgen in Verzug ist.</p>
               <p>(5) Nach Vertragsende wird die Website deaktiviert. Die Inhalte werden nach einer Übergangsfrist von 30 Tagen gelöscht.</p>

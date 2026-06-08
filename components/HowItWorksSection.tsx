@@ -35,7 +35,7 @@ const steps = [
     desc: "Deine Seite geht live. Erst nach 1 Monat entscheidest du, ob du dabeibleibst (wir erinnern dich 7 Tage vorher). Wenn ja, läuft alles automatisch: Hosting, Updates und deine inhaltlichen Änderungswünsche.",
     icon: <Rocket className="w-5 h-5 text-purple-400" />,
     badge: "Live",
-    pill: "Jederzeit kündbar"
+    pill: "Inkl. Updates"
   }
 ];
 

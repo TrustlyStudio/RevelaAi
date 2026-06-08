@@ -52,7 +52,7 @@ import Link from 'next/link';
 const faqs = [
   {
     question: "Was kostet das genau - und was ist inklusive?",
-    answer: "Die Pakete starten ab 149 € im Monat (Essential). Darin enthalten sind: professionelles Website-Design, Hosting, Domain-Verwaltung, SSL-Zertifikat, Impressum und Datenschutz, laufende Wartung sowie Änderungsanfragen über unser Kundenportal. Es gibt keine Setup-Gebühr und kein Einmalinvestment. Du zahlst monatlich - das war's."
+    answer: "Die Pakete starten ab 129 € im Monat (Essential). Darin enthalten sind: professionelles Website-Design, Hosting, Domain-Verwaltung, SSL-Zertifikat, Impressum und Datenschutz, laufende Wartung sowie Änderungsanfragen über unser Kundenportal. Es gibt keine Setup-Gebühr und kein Einmalinvestment. Du zahlst monatlich - das war's."
   },
   {
     question: "Wie lange dauert es bis meine Website live ist?",
@@ -63,8 +63,8 @@ const faqs = [
     answer: "Die Website gehört dir nicht im klassischen Sinne - du least sie, ähnlich wie ein Geschäftsauto. Du nutzt sie vollständig und professionell so lange du Kunde bist. Das ist der Grund warum kein großes Einmalinvestment fällig ist. Wenn du kündigst, wird die Website offline gestellt. Deine Inhalte und Texte gehören dir natürlich jederzeit."
   },
   {
-    question: "Kann ich jederzeit kündigen?",
-    answer: "Du wählst beim Start eine Mindestlaufzeit von 12 oder 24 Monaten. Danach ist monatlich kündbar. Je länger die gewählte Laufzeit, desto günstiger der monatliche Preis. Eine Kündigung vor Ablauf der Mindestlaufzeit ist nicht möglich."
+    question: "Kann ich nach Ablauf der Mindestlaufzeit monatlich kündigen?",
+    answer: "Deine Website hat eine Mindestlaufzeit von 12 oder 24 Monaten. Erfolgt keine fristgerechte Kündigung zum Ende der Laufzeit, verlängert sich der Vertrag automatisch um die jeweils initial gewählte Laufzeit wieder. Eine Kündigung vor Ablauf der Mindestlaufzeit ist nicht möglich."
   },
   {
     question: "Ich bin nicht technikaffin - funktioniert das trotzdem für mich?",

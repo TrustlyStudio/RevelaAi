@@ -29,7 +29,7 @@ export const faqCategories = [
     faqs: [
       {
         q: "Was kosten die verschiedenen Pakete?",
-        a: `• Essential (ab 149 €/Monat):* Bis zu 3 Unterseiten, 1 klarer Call-to-Action, Basis-Support. Perfekt für den lokalen Einstieg.
+        a: `• Essential (ab 129 €/Monat):* Bis zu 3 Unterseiten, 1 klarer Call-to-Action, Basis-Support. Perfekt für den lokalen Einstieg.
 • Business (ab 229 €/Monat):* Mehr Unterseiten, Blog-/News-Bereich, höhere Ticket-Priorität.
 • Pro (ab 449 €/Monat):* Express-Support bei dringenden Tickets, erweiterte Funktionen.
 • Enterprise: Maßgeschneiderte Individuallösungen auf Anfrage.
@@ -150,7 +150,7 @@ export const faqCategories = [
       },
       {
         q: "Was passiert, wenn ich kündige?",
-        a: "Nach Ablauf deiner Mindestlaufzeit kannst du flexibel kündigen. Wir schalten die Seite dann zum Vertragsende ab. Selbstverständlich überlassen wir dir deine Texte und Bilder als strukturierten Daten-Export, sodass du nichts verlierst."
+        a: "Du kannst deinen Vertrag mit einer Frist von 1 Monat zum jeweiligen Laufzeitende kündigen. Wir schalten die Seite dann zum Vertragsende ab. Selbstverständlich überlassen wir dir deine Texte und Bilder als strukturierten Daten-Export, sodass du nichts verlierst."
       },
       {
         q: "Kann ich die Website nach Kündigung kaufen?",
@@ -162,7 +162,7 @@ export const faqCategories = [
       },
       {
         q: "Kann ich nach der Mindestlaufzeit monatlich kündigen?",
-        a: "Ja. Nach Ablauf der gewählten Mindestlaufzeit (12 oder 24 Monate) kannst du monatlich mit entsprechender Frist kündigen."
+        a: "Nein. Erfolgt keine fristgerechte Kündigung zum Ende der Laufzeit, verlängert sich der Vertrag automatisch um die jeweils initial gewählte Mindestlaufzeit (12 oder 24 Monate) wieder."
       }
     ]
   },
