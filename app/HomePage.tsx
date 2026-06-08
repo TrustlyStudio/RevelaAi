@@ -1308,6 +1308,18 @@ export default function Home() {
                       <span className="text-slate-700 text-xs md:text-sm leading-relaxed">{f}</span>
                     </li>
                   ))}
+                  {term === 24 && (
+                    <li className="flex items-start gap-3 mt-4 pt-4 border-t border-slate-100">
+                      <Zap className="w-4 h-4 md:w-5 md:h-5 text-rose-500 shrink-0 mt-0.5" />
+                      <div className="flex flex-col">
+                        <span className="text-slate-900 font-bold text-xs md:text-sm flex items-center flex-wrap gap-2">
+                          Kostenloser Design-Refresh
+                          <span className="bg-gradient-to-r from-rose-500 to-purple-600 text-white px-1.5 py-0.5 rounded text-[9px] uppercase tracking-widest font-black shadow-sm">Exklusiv bei 24M</span>
+                        </span>
+                        <span className="text-slate-500 text-[10px] md:text-xs mt-0.5 min-w-0">Wie beim Auto-Leasing — nach Ablauf deiner Laufzeit gestalten wir deine Website kostenlos neu.</span>
+                      </div>
+                    </li>
+                  )}
                 </ul>
               </motion.div>
 
@@ -1373,6 +1385,18 @@ export default function Home() {
                       <span className="text-slate-700 text-xs md:text-sm leading-relaxed font-medium">{f}</span>
                     </li>
                   ))}
+                  {term === 24 && (
+                    <li className="flex items-start gap-3 mt-4 pt-4 border-t border-rose-100/50">
+                      <Zap className="w-4 h-4 md:w-5 md:h-5 text-rose-500 shrink-0 mt-0.5" />
+                      <div className="flex flex-col">
+                        <span className="text-slate-900 font-bold text-xs md:text-sm flex items-center flex-wrap gap-2">
+                          Kostenloser Design-Refresh
+                          <span className="bg-gradient-to-r from-rose-500 to-purple-600 text-white px-1.5 py-0.5 rounded text-[9px] uppercase tracking-widest font-black shadow-sm">Exklusiv bei 24M</span>
+                        </span>
+                        <span className="text-slate-500 text-[10px] md:text-xs mt-0.5 min-w-0">Wie beim Auto-Leasing — nach Ablauf deiner Laufzeit gestalten wir deine Website kostenlos neu.</span>
+                      </div>
+                    </li>
+                  )}
                 </ul>
               </motion.div>
 
@@ -1431,10 +1455,42 @@ export default function Home() {
                       <span className="text-slate-700 text-xs md:text-sm leading-relaxed">{f}</span>
                     </li>
                   ))}
+                  {term === 24 && (
+                    <li className="flex items-start gap-3 mt-4 pt-4 border-t border-slate-100">
+                      <Zap className="w-4 h-4 md:w-5 md:h-5 text-rose-500 shrink-0 mt-0.5" />
+                      <div className="flex flex-col">
+                        <span className="text-slate-900 font-bold text-xs md:text-sm flex items-center flex-wrap gap-2">
+                          Kostenloser Design-Refresh
+                          <span className="bg-gradient-to-r from-rose-500 to-purple-600 text-white px-1.5 py-0.5 rounded text-[9px] uppercase tracking-widest font-black shadow-sm">Exklusiv bei 24M</span>
+                        </span>
+                        <span className="text-slate-500 text-[10px] md:text-xs mt-0.5 min-w-0">Wie beim Auto-Leasing — nach Ablauf deiner Laufzeit gestalten wir deine Website kostenlos neu.</span>
+                      </div>
+                    </li>
+                  )}
                 </ul>
               </motion.div>
 
             </motion.div>
+
+            <AnimatePresence>
+              {term === 24 && (
+                <motion.div 
+                  initial={{ opacity: 0, height: 0, marginTop: 0 }}
+                  animate={{ opacity: 1, height: 'auto', marginTop: 48 }}
+                  exit={{ opacity: 0, height: 0, marginTop: 0 }}
+                  className="max-w-3xl mx-auto overflow-hidden"
+                >
+                  <div className="bg-white border border-rose-100 shadow-sm shadow-rose-100 rounded-xl p-5 md:p-6 flex flex-col sm:flex-row items-center gap-4 text-center sm:text-left">
+                    <div className="bg-rose-50 text-rose-500 p-3 rounded-lg shrink-0">
+                       <span className="font-black text-rose-500 tracking-tighter text-2xl leading-none block">24M</span>
+                    </div>
+                    <p className="text-sm md:text-base font-medium text-slate-800 leading-relaxed">
+                      Beim 24-Monats-Plan sparst du nicht nur monatlich — du bekommst nach Ablauf auch einen <strong className="text-rose-600">kostenlosen Design-Refresh</strong>. Deine Website bleibt immer aktuell.
+                    </p>
+                  </div>
+                </motion.div>
+              )}
+            </AnimatePresence>
             
             <motion.div variants={fadeInUp} className="mt-12 text-center max-w-3xl mx-auto">
               <p className="text-xs md:text-sm text-slate-500 flex flex-col md:flex-row items-center justify-center gap-2 text-center">
