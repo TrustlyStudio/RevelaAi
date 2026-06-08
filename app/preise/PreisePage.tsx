@@ -314,11 +314,50 @@ export default function PreisePage() {
                       ))}
                     </React.Fragment>
                   ))}
+                  {term === 24 && (
+                    <React.Fragment>
+                      <tr>
+                        <td colSpan={4} className="bg-slate-50 py-4 px-8 text-sm font-semibold text-slate-900 uppercase tracking-wider">
+                           <div className="flex items-center gap-3">
+                             Immer aktuell
+                             <span className="bg-gradient-to-r from-rose-500 to-purple-600 text-white px-2.5 py-0.5 rounded text-[10px] tracking-widest font-black uppercase shadow-sm">Exklusiv bei 24M</span>
+                           </div>
+                        </td>
+                      </tr>
+                      <tr className="hover:bg-slate-50/50 transition-colors bg-gradient-to-r from-rose-50/30 to-purple-50/30">
+                        <td className="py-4 px-8">
+                          <div className="font-bold text-slate-900">Kostenloser Design-Refresh</div>
+                          <div className="text-xs text-slate-600 mt-1 max-w-sm leading-relaxed">
+                            Wie beim Auto-Leasing — nach Ablauf deiner Laufzeit gestalten wir deine Website kostenlos neu.
+                          </div>
+                        </td>
+                        <td className="py-4 px-6 text-center text-slate-700">
+                           <span className="font-semibold text-sm">Inklusive</span>
+                        </td>
+                        <td className="py-4 px-6 text-center bg-rose-50/50 border-x border-rose-100/50">
+                           <span className="font-bold text-sm text-transparent bg-clip-text bg-gradient-to-r from-rose-500 to-purple-600">Inklusive</span>
+                        </td>
+                        <td className="py-4 px-6 text-center text-slate-700 border-r border-slate-100">
+                           <span className="font-semibold text-sm">Inklusive</span>
+                        </td>
+                      </tr>
+                    </React.Fragment>
+                  )}
                 </tbody>
               </table>
             </div>
             
             <div className="p-8 bg-slate-50 border-t border-slate-200 text-center">
+              {term === 24 && (
+                <div className="mb-8 bg-white border border-rose-100 shadow-sm shadow-rose-100 rounded-xl p-4 sm:p-5 max-w-3xl mx-auto flex flex-col sm:flex-row items-center gap-4 text-center sm:text-left">
+                  <div className="bg-rose-50 text-rose-500 p-2.5 rounded-lg shrink-0">
+                     <span className="font-black text-rose-500 tracking-tighter text-xl leading-none block">24M</span>
+                  </div>
+                  <p className="text-sm font-medium text-slate-800 leading-relaxed">
+                    Beim 24-Monats-Plan sparst du nicht nur monatlich — du bekommst nach Ablauf auch einen <strong className="text-rose-600">kostenlosen Design-Refresh</strong>. Deine Website bleibt immer aktuell.
+                  </p>
+                </div>
+              )}
               <p className="text-sm text-slate-600 leading-relaxed max-w-4xl mx-auto">
                 <strong>B2B-Webleasing mit monatlicher Abrechnung.</strong> Die Mindestlaufzeit ergibt sich aus der gewählten Laufzeitoption ({term} Monate). Kündigungsfrist: 1 Monat zum Laufzeitende. Erfolgt keine fristgerechte Kündigung, verlängert sich der Vertrag automatisch um die jeweils gewählte Laufzeit. Alle Preise netto zzgl. gesetzlicher MwSt.
               </p>
@@ -416,12 +455,43 @@ export default function PreisePage() {
                         </ul>
                       </div>
                     ))}
+                    {term === 24 && (
+                      <div className="mt-4">
+                        <div className={`text-sm font-bold uppercase tracking-wider mb-3 flex flex-wrap items-center gap-2 ${isBusiness ? 'text-rose-500' : 'text-slate-800'}`}>
+                          Immer aktuell 
+                          <span className="bg-gradient-to-r from-rose-500 to-purple-600 text-white px-2 py-0.5 rounded text-[10px] tracking-widest font-black uppercase shadow-sm">
+                            Exklusiv bei 24M
+                          </span>
+                        </div>
+                        <div className={`p-4 rounded-xl border ${isBusiness ? 'bg-rose-50/50 border-rose-200/60' : 'bg-slate-50 border-slate-200'}`}>
+                          <div className="flex justify-between items-start mb-1">
+                            <span className="font-bold text-slate-900">Kostenloser Design-Refresh</span>
+                            <span className={`font-bold text-sm ${isBusiness ? 'text-transparent bg-clip-text bg-gradient-to-r from-rose-500 to-purple-600' : 'text-slate-900'}`}>
+                              Inklusive
+                            </span>
+                          </div>
+                          <div className="text-xs text-slate-600 leading-relaxed mt-1">
+                            Wie beim Auto-Leasing — nach Ablauf deiner Laufzeit gestalten wir deine Website kostenlos neu.
+                          </div>
+                        </div>
+                      </div>
+                    )}
                   </div>
                 </div>
               );
             })}
             
             <div className="p-6 bg-slate-50 border border-slate-200 rounded-xl text-center shadow-sm">
+              {term === 24 && (
+                <div className="mb-6 bg-white border border-rose-100 shadow-sm shadow-rose-100/50 rounded-xl p-4 flex flex-col items-center gap-3 text-center sm:text-left sm:flex-row">
+                  <div className="bg-rose-50 text-rose-500 p-2 rounded-lg shrink-0">
+                     <span className="font-black text-rose-500 tracking-tighter text-lg leading-none block">24M</span>
+                  </div>
+                  <p className="text-sm font-medium text-slate-800 leading-relaxed text-left">
+                    Beim 24-Monats-Plan sparst du nicht nur monatlich — du bekommst nach Ablauf auch einen <strong className="text-rose-600">kostenlosen Design-Refresh</strong>. Deine Website bleibt immer aktuell.
+                  </p>
+                </div>
+              )}
               <p className="text-sm text-slate-500 leading-relaxed text-left">
                 <strong>B2B-Webleasing mit monatlicher Abrechnung.</strong> Die Mindestlaufzeit beträgt {term} Monate. Kündigungsfrist: 1 Monat zum Laufzeitende. Automatische Verlängerung um {term} Monate. Alle Preise netto zzgl. gesetzlicher MwSt.
               </p>
