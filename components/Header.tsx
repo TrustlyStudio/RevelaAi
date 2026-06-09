@@ -13,19 +13,8 @@ export function Header() {
       return { days: 5, hours: 0, minutes: 0, seconds: 0 };
     }
     const now = Date.now();
-    const storageKey = 'vanicy_timer_deadline';
-    let deadline = null;
-    try {
-      deadline = localStorage.getItem(storageKey);
-    } catch (e) {}
-    let deadlineTime = deadline ? parseInt(deadline, 10) : null;
-    const limit = (4 * 24 + 12) * 60 * 60 * 1000; // 4 Tage und 12 Stunden
-    if (!deadlineTime || isNaN(deadlineTime) || (deadlineTime - now) < limit) {
-      deadlineTime = now + 5 * 24 * 60 * 60 * 1000;
-      try {
-        localStorage.setItem(storageKey, deadlineTime.toString());
-      } catch (e) {}
-    }
+    const deadlineTime = new Date('2026-06-13T14:00:00+02:00').getTime();
+    
     const diff = Math.max(0, deadlineTime - now);
     const d = Math.floor(diff / (1000 * 60 * 60 * 24));
     const h = Math.floor((diff / (1000 * 60 * 60)) % 24);
@@ -53,20 +42,7 @@ export function Header() {
     // Helper to calculate time left
     const calculateTimeLeft = () => {
       const now = Date.now();
-      const storageKey = 'vanicy_timer_deadline';
-      let deadline = null;
-      try {
-        deadline = localStorage.getItem(storageKey);
-      } catch (e) {}
-      let deadlineTime = deadline ? parseInt(deadline, 10) : null;
-      
-      const limit = (4 * 24 + 12) * 60 * 60 * 1000; // 4 Tage und 12 Stunden
-      if (!deadlineTime || isNaN(deadlineTime) || (deadlineTime - now) < limit) {
-        deadlineTime = now + 5 * 24 * 60 * 60 * 1000;
-        try {
-          localStorage.setItem(storageKey, deadlineTime.toString());
-        } catch (e) {}
-      }
+      const deadlineTime = new Date('2026-06-13T14:00:00+02:00').getTime();
       
       const diff = Math.max(0, deadlineTime - now);
       const d = Math.floor(diff / (1000 * 60 * 60 * 24));
@@ -142,6 +118,8 @@ export function Header() {
                <span className="text-center font-bold tracking-tight">{isMounted ? timeLeft.hours.toString().padStart(2, '0') : '00'} Std</span>
                <span className="text-gray-400 font-semibold">:</span>
                <span className="text-center font-bold tracking-tight">{isMounted ? timeLeft.minutes.toString().padStart(2, '0') : '00'} Min</span>
+               <span className="text-gray-400 font-semibold">:</span>
+               <span className="text-center font-bold tracking-tight">{isMounted ? timeLeft.seconds.toString().padStart(2, '0') : '00'} Sek</span>
             </span>
             <button 
               onClick={() => {
