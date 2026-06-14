@@ -13,7 +13,7 @@ export function Header() {
       return { days: 5, hours: 0, minutes: 0, seconds: 0 };
     }
     const now = Date.now();
-    const deadlineTime = new Date('2026-06-13T14:00:00+02:00').getTime();
+    const deadlineTime = new Date('2026-06-20T14:00:00+02:00').getTime();
     
     const diff = Math.max(0, deadlineTime - now);
     const d = Math.floor(diff / (1000 * 60 * 60 * 24));
@@ -42,7 +42,7 @@ export function Header() {
     // Helper to calculate time left
     const calculateTimeLeft = () => {
       const now = Date.now();
-      const deadlineTime = new Date('2026-06-13T14:00:00+02:00').getTime();
+      const deadlineTime = new Date('2026-06-20T14:00:00+02:00').getTime();
       
       const diff = Math.max(0, deadlineTime - now);
       const d = Math.floor(diff / (1000 * 60 * 60 * 24));
